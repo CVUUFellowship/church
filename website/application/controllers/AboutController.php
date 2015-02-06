@@ -45,16 +45,16 @@ class AboutController extends Zend_Controller_Action
           "  Treasurer  ", "Trustee at Large ", "Trustee at Large ", "Trustee at Large ");
       
         $councilPositions=array("Operations Group Director", 
-          "Membership Group Director", "Ministry Group Director", "Outreach Group Director",
+          "Membership Group Director", "Outreach Group Director",
           "Communications Group Director","Education Group Director");
         $councilTitles1=array("Operations", 
-          "Membership", "Ministry", "Outreach", "Communications",  "Education");
-        $councilTitles2=array("Group Director", 
-          "Group Director", "Group Director", "Group Director", "Group Director", "Group Director");
+          "Membership", "Outreach", "Communications",  "Education");
+        $councilTitles2=array("Director", 
+          "Director", "Director", "Director", "Director");
       
-        $staffPositions=array("Minister", "Administrator", "Director Of Religious Education (DRE)", "Choir Director / Accompanist");
-        $staffTitles1=array("", "", "Director Of", "Choir Director /");
-        $staffTitles2=array("Minister", "Administrator", "Religious Education", "Accompanist");
+        $staffPositions=array("Minister", "Administrator", "Director Of Religious Education (DRE)", "Music Director");
+        $staffTitles1=array("", "", "Director Of", "");
+        $staffTitles2=array("Minister", "Administrator", "Religious Education", "Music Director");
 
         $this->view->btitles = $boardTitles;
         $this->view->ctitles1 = $councilTitles1;

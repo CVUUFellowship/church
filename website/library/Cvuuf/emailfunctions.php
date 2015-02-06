@@ -99,10 +99,15 @@ class Cvuuf_emailfunctions
             $results[] = "$emailCount copies to be sent.";
         		$count = 0;
         		$fullcount = 0;
+
             $totalsent = 0;
-            unset($TO_array);
             $invalid = array();
             $unsub = array();
+            if ($emailCount >= 30) {
+               return array('results' => $results." (rejected to avoid spam blacklists, 30-email max. Contact jakeholland.net@gmail.com to work out how to send this)", 'log' => 'rejected to avoid spam blacklists', 'totalsent' => $totalsent, 
+                   'invalid' => $invalid, 'unsub' => $unsub);
+            }
+            unset($TO_array);
         		foreach ($peeps as $peep) 
             {
             	  $emailAddress = $peep->email;
@@ -127,7 +132,7 @@ class Cvuuf_emailfunctions
                         sleep(1);
             		    }
             // Check section limit and delay if reached
-                    if (($fullcount % 100) == 0)
+                    if (($fullcount % 10) == 0)
                     {
                         $results[] = "Progress count $fullcount sent"; 
                         sleep(5);

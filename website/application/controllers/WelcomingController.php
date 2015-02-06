@@ -314,8 +314,8 @@ class WelcomingController extends Zend_Controller_Action
                 
                 $table[$number++] = array('' => $number, 'ID' => $person->id,
               	'1' => " ", '2' => " ", 'Name' => $visitorname, 
-                  'Miss' => $missing, 'First' => $firstdate,
-              		'Visits' => $list, 'UU' => $PriorUU, 'Comments' => substr($Comment, 0, 44));
+                  'Miss' => $missing, 'First' => $firstdate, 
+              		'Visits' => $list, 'UU' => $PriorUU, 'Comments' => substr($Comment, 0, 39));
             }  /* end visitor type selection*/
             
             elseif ($Status == 'NewFriend')
@@ -355,7 +355,7 @@ class WelcomingController extends Zend_Controller_Action
                   
               	$table[$number++] = array('' => $number, 'ID' => $person->id,
               	'X' => " ", 'Name' => $person->firstname . ' ' . $person->lastname, 'Friend Date' => $frienddate,
-              		'UU' => $PriorUU, 'Comments' => substr($comments, 0, 44),
+              		'UU' => $PriorUU, 'Comments' => substr($comments, 0, 39),
                   'Miss' => $missing);
             }
             
