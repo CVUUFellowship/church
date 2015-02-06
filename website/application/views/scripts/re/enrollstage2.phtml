@@ -1,0 +1,86 @@
+<?php $this->head = "RELIGIOUS EDUCATION ENROLLMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<strong><big>2. Contact Information for <?php echo "$this->firstname $this->lastname" ?></big></strong>
+
+<br><br>
+<hr>
+<strong><big>Primary Contact</big></strong>
+    <?php if (isset($this->pnames)) : ?>
+      <?php $names = $this->pnames ?>
+<br><br>
+
+<fieldset style="border:none; font-size:80%; margin-left: 204px;">
+<form method=post>
+<table  border=1px style="empty-cells: show; background-color:white;" >    
+<tr><th><th>Name</tr>
+        <?php foreach ($names as $name) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $name[0] ?>' >
+<td><?php echo $name[1] ?>
+</tr>
+        <?php endforeach ?>
+</table>
+<input type='hidden' name='keys' value='<?php echo $this->newform->getValue('keys') ?>' >
+<input type='hidden' name='values' value='<?php echo $this->newform->getValue('values') ?>' >
+<br><input type="submit" name="pselectbutton" value="SELECT">
+</form>
+</fieldset>
+    <?php endif ?>
+
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->newform; ?>
+</fieldset>
+<br>Contact Details
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->newdform; ?>
+</fieldset>
+
+<br>
+<hr>
+<br>   
+<strong><big>Alternate Contact</big></strong>
+    <?php if (isset($this->anames)) : ?>
+      <?php $names = $this->anames ?>
+<br><br>
+
+<fieldset style="border:none; font-size:80%; margin-left: 204px;">
+<form method=post>
+<table  border=1px style="empty-cells: show; background-color:white;" >    
+<tr><th><th>Name</tr>
+        <?php foreach ($names as $name) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $name[0] ?>' >
+<td><?php echo $name[1] ?>
+</tr>
+        <?php endforeach ?>
+</table>
+<input type='hidden' name='keys' value='<?php echo $this->newform->getValue('keys') ?>' >
+<input type='hidden' name='values' value='<?php echo $this->newform->getValue('values') ?>' >
+<br><input type="submit" name="aselectbutton" value="SELECT">
+</form>
+</fieldset>
+    <?php endif ?>
+
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->newaform; ?>
+</fieldset>
+<br>Contact Details
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->newadform; ?>
+</fieldset>
+    <?php if (isset($this->nextform)) : ?>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->nextform; ?>
+</fieldset>
+    <?php endif ?>

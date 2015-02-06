@@ -1,0 +1,19 @@
+<?php $this->head = "EMAIL NEWSLETTER ANNOUNCEMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<form method=post>
+<fieldset style="border:none; ">
+<INPUT name='todo' TYPE=SUBMIT VALUE="SEND">
+Send <?php echo $this->count ?> newsletter announcement emails now.
+</fieldset>
+</form>

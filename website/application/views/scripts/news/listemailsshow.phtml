@@ -1,0 +1,35 @@
+<?php $this->head = "EMAIL LIST" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<strong><big><?php echo $this->list ?></big></strong>
+<br>
+
+<?php 
+
+for ($i=0; $i<count($this->emails); $i++)
+{
+    $email = $this->emails[$i]->email;
+    if ($email <> "")
+    {
+        $name = $this->names[$i];
+        echo "&nbsp;&nbsp;$email &nbsp;-&nbsp; $name <br>";
+    }
+}
+
+?>
+
+<form method='post'>
+<fieldset style="border:none;">
+<br><br><dt><input TYPE=SUBMIT name='continuebutton' VALUE='CONTINUE'></dt><dd> </dd>
+</fieldset>
+</FORM>

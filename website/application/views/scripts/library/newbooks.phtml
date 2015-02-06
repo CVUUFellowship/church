@@ -1,0 +1,26 @@
+<?php $this->head = "CVUUF LIBRARY RECENT ADDITIONS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>Call #<th>Title<th>Author</tr>
+
+  <?php foreach($this->catalog as $cat) : ?>
+<tr>
+  <td><?php echo $cat->callnumber ?> 
+  <td><?php echo $cat->title ?>
+  <td><?php echo $cat->author ?>
+</tr>
+    <?php endforeach ?>
+</table>  

@@ -1,0 +1,49 @@
+<?php $this->head = "CVUUF Worship Grid" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+Note: topics and presenters in <i>italics</i> are updated with upcoming services information.
+<br><br>
+<form method=POST action='/private/worshipgrid'>
+<input type='submit' id='yearbutton' name='yearbutton' value="YEAR">
+Show church year 
+<input type='text' id='year' name='year' value='<?php echo $this->year ?>' size=4>
+<br><input type='submit' id='addbutton' name='addbutton' value="ADD">
+Add a worship service.
+<br><br>
+</form>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>Date<th>Edit<th>Speaker<th>Topic<th>Performer<th>Music<th>Hymns<th>1st<th>2nd<th>ORG<th>WA<th>Info<th>9:15<th>11<th>Att</tr>
+<tr>
+
+    <?php $data = $this->data ?>
+    <?php foreach($data as $line) : ?>
+      <tr>
+      <td><?php echo $line[1]?>
+      <td><a href='/private/worshipgrid?ID=<?php echo $line[0] ?>&Year=<?php echo $this->year ?>'><small>EDIT</small></a>
+      <td><?php echo $line[3] ?>
+      <td><?php echo $line[4] ?>
+      <td><?php echo $line[5] ?>
+      <td><?php echo $line[6] ?>
+      <td><?php echo $line[7] ?>
+      <td><?php echo $line[8] ?>
+      <td><?php echo $line[9] ?>
+      <td><?php echo $line[10] ?>
+      <td><?php echo $line[11] ?>
+      <td><?php echo $line[12] ?>
+      <td><?php echo $line[13] ?>
+      <td><?php echo $line[14] ?>
+      <td><?php echo $line[15] ?>
+      </tr>
+    <?php endforeach ?>
+</table>

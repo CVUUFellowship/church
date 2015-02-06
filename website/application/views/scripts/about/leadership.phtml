@@ -1,0 +1,85 @@
+<?php $this->head = "2013/2014 LEADERSHIP" ?>
+
+<br><span style='font-size:150%; font-weight:bold;'>Board of Trustees</span><br> 
+<table style='border-collapse:separate; border-spacing:10px 0px;'>
+<thead>
+<tr>
+  <?php foreach($this->btitles as $title): ?>
+<th><?php echo "$title</th>" ?>
+  <?php endforeach ?>
+</tr>
+
+<tr>
+  <?php foreach($this->board as $person): ?>
+  <?php $name = $person['firstname'] . ' ' . $person['lastname'] ?>
+  <td style='text-align:center;'><img alt='<?php echo $name ?>' style=' border:thin solid black;' src='/media/photos/members/<?php echo $person['photolink'] ?>'>
+  <?php endforeach ?>
+</tr>
+
+<tr>
+  <?php foreach($this->board as $person): ?>
+  <?php $name = $person['firstname'] . ' ' . $person['lastname'] ?>
+  <td style='text-align:center;'><?php echo $name ?></td>
+  <?php endforeach ?>
+</tr>
+</table>
+
+
+<br><span style='font-size:150%; font-weight:bold;'>Council of Directors</span><br> 
+<table style='border-collapse:separate; border-spacing:10px 0px;'>
+<thead>
+<tr>
+  <?php foreach($this->ctitles1 as $title): ?>
+<th><?php echo "$title</th>" ?>
+  <?php endforeach ?>
+</tr>
+<tr>
+  <?php foreach($this->ctitles2 as $title): ?>
+<th><?php echo "$title</th>" ?>
+  <?php endforeach ?>
+</tr>
+
+<tr>
+  <?php foreach($this->council as $person): ?>
+  <?php $name = $person['firstname'] . ' ' . $person['lastname'] ?>
+  <td style='text-align:center;'><img alt='<?php echo $name ?>' style=' border:thin solid black;' src='/media/photos/members/<?php echo $person['photolink'] ?>'>
+  <?php endforeach ?>
+</tr>
+
+<tr>
+  <?php foreach($this->council as $person): ?>
+  <?php $name = $person['firstname'] . ' ' . $person['lastname'] ?>
+  <td style='text-align:center;'><?php echo $name ?></td>
+  <?php endforeach ?>
+</tr>
+</table>
+
+<br><span style='font-size:150%; font-weight:bold;'>Staff</span><br> 
+<table style='border-collapse:separate; border-spacing:10px 0px;'>
+<thead>
+<tr>
+  <?php foreach($this->stitles1 as $title): ?>
+<th><?php echo "$title</th>" ?>
+  <?php endforeach ?>
+</tr>
+<tr>
+  <?php foreach($this->stitles2 as $title): ?>
+<th><?php echo "$title</th>" ?>
+  <?php endforeach ?>
+</tr>
+
+<tr>
+  <?php foreach($this->staff as $person): ?>
+  <?php $name = $person['firstname'] . ' ' . $person['lastname'] ?>
+  <td style='text-align:center;'><img alt='<?php echo $name ?>' style=' border:thin solid black;' src='/media/photos/members/<?php echo $person['photolink'] ?>'>
+  <?php endforeach ?>
+</tr>
+
+<tr>
+  <?php foreach($this->staff as $person): ?>
+  <?php $name = $person['firstname'] . ' ' . $person['lastname'] ?>
+  <td style='text-align:center;'><?php echo $name ?></td>
+  <?php endforeach ?>
+</tr>
+</table>
+

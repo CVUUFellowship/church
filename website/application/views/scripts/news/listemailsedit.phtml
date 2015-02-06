@@ -1,0 +1,57 @@
+<?php $this->head = "EMAIL LIST EDIT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<strong><big><?php echo $this->list ?></big></strong>
+<br>
+
+<?php 
+//var_dump($this->emails, $this->names); 
+$emails = array();
+for ($i=0; $i<count($this->emails); $i++)
+{
+    $email = $this->emails[$i];
+    if ($email <> "")
+    {
+        $emails[] = $email;
+    
+        $name = $this->names[$i];
+        $number = $i + 1;
+        echo "&nbsp;&nbsp;$number&nbsp;&nbsp;$email &nbsp;-&nbsp; $name <br>";
+    }        
+}
+?>
+
+<form method='post' action='/news/listemailsedit'>
+<fieldset style="border:none;">
+<br><dt><input TYPE=SUBMIT name='deletebutton' VALUE='DELETE'></dt><dd> Delete the single email number
+<input type="text" name="number" value="" size="3">.</dd>
+<br><dt><input TYPE=SUBMIT name='addbutton' VALUE='ADD'></dt><dd> Add email
+<input type="text" name="newemail" value="" size="50">.</dd>
+<br><br>
+<br><dt><input TYPE=SUBMIT name='removebutton' VALUE='REMOVE'></dt><dd> Remove the whole email list. ** BE CAREFUL **</dd>
+
+<input TYPE=HIDDEN name='oldlist' VALUE='<?php echo implode(",", $emails)?>' >
+<input TYPE=HIDDEN name='oldnames' VALUE='<?php echo implode(",", $this->names)?>' >
+<input TYPE=HIDDEN name='listname' VALUE='<?php echo $this->list ?>' >
+
+</fieldset>
+</FORM>
+
+<form method='post' action='/news/listemail'>
+<fieldset style="border:none;">
+<br><dt><input TYPE=SUBMIT name='continuebutton' VALUE='CONTINUE'></dt><dd> Done editing.</dd>
+</fieldset>
+</FORM>
+
+
+

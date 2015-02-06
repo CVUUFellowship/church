@@ -1,0 +1,23 @@
+<?php $this->head = "NEWSLETTER EMAILS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+The newsletter email list has <?php echo $this->count ?> addresses.
+<br><br>
+The newsletter file which will be attached to the emails is  '<?php echo $this->file ?>'.
+<br><br><br>
+<form method=post>
+<fieldset style="border:none; ">
+<INPUT name='todo' TYPE=SUBMIT VALUE="SEND">
+Send <?php echo $this->count ?> newsletters attached to emails now.
+</fieldset>
+</form>

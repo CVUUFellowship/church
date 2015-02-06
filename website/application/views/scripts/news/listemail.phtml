@@ -1,0 +1,62 @@
+<?php $this->head = "LIST EMAIL COMPOSITION" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<?php $this->tinyMCE = true ?>
+<br><br>
+<br>
+
+<form method='post'>
+<fieldset style="border:none;">
+
+<dt>Select email list for edit or send:</dt>
+<dd>
+<select name="list" id="list" size="<?php echo sizeof($this->listnames) ?>">
+<?php foreach ($this->listnames as $name) : ?>
+    <option value="<?php echo $name ?>" label="<?php echo "$name" ?>" > <?php echo "$name" ?></option>
+<?php endforeach ?>
+</select>
+</dd></dl>
+</fieldset>
+<br><br><hr><br>
+<fieldset style="border:none;">
+<br><dt><input TYPE=SUBMIT name='showbutton' VALUE='SHOW'></dt><dd> Show addresses in an email list.</dd>
+<br><dt><input TYPE=SUBMIT name='editbutton' VALUE='EDIT'></dt><dd> Edit an email list.</dd>
+<br><dt><input TYPE=SUBMIT name='createbutton' VALUE='CREATE'></dt><dd> Create a new email list named 
+<input type="text" name="newname" value="" size="20"> with email 
+<input type="text" name="newemail" value="" size="50">.</dd>
+</fieldset>
+
+<br><hr><br>
+
+
+<fieldset style="border:none;">
+<dt>From email address:</dt>
+<dd><input type="text" name="FROM" size="30" value="<?php echo $this->email ?>"></dd>
+<dt>Subject:</dt>
+<dd><input type="text" name="SUBJECT" size="40"></dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt>Your message:</dt>
+<dd><TEXTAREA NAME="TEXT" COLS=70 ROWS=15></TEXTAREA></dd>
+</fieldset>
+<fieldset style="border:none;">
+<dt> &nbsp; </dt>
+<dd><small>Need help with entering data? <a href='http://www.freemasons-web.com/thirdParty/tiny_mce/themes/advanced/tinyMceHelp.html'>
+tinyMCE help</a></small></dd>
+<br><br>
+
+<dt><INPUT TYPE=SUBMIT name='submitbutton' VALUE="SUBMIT"></dt>
+<dd>Expect a silent delay after <b>Submit</b> while emails are sent.</dd>
+</fieldset>
+
+</FORM>

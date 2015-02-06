@@ -1,0 +1,27 @@
+<?php $this->head = "CVUUF Worship Plans" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>Date<th>Speaker<th>Topic</tr>
+<tr>
+
+    <?php $data = $this->data ?>
+    <?php foreach($data as $line) : ?>
+      <tr>
+      <td><?php echo $line[0]?>
+      <td><?php echo $line[1] ?>
+      <td><?php echo $line[2] ?>
+      </tr>
+    <?php endforeach ?>
+</table>

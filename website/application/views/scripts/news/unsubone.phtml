@@ -1,0 +1,60 @@
+<?php $this->head = "UNSUBSCRIBE ONE PERSON" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+
+<FORM ID="UnsubscribeOne" METHOD=POST>
+
+
+<br><br>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>First<th>Last<th>ALL<th>WEEK<th>NEWS<th>HOOD<th>BULK<th>Timestamp</tr>
+<?php $row = $this->unsub ?>
+<tr>
+<td><?php echo $row['id'] ?>
+<td><?php echo $row['firstname'] ?><td> <?php echo $row['lastname'] ?>
+<td> <?php echo $row['all'] ?><td> <?php echo $row['week'] ?>
+<td> <?php echo $row['news'] ?><td> <?php echo $row['hood'] ?>
+<td> <?php echo $row['bulk'] ?>
+<td> <?php echo $row['when'] ?>
+
+</tr>
+
+</table>
+<br><br>
+<span style='font-size:120%; font-weight:bold;'><?php echo "Change unsubscribes for ", $row['firstname'], ' ', $row['lastname'] ?> </span>
+<br>
+<fieldset style="border:none; ">
+  <form method=post>
+    <input type="checkbox" name="boxall" value='<?php echo $row['all'] ?>'
+    <?php if ($row['all'] == 1) echo ' checked' ?>
+    > All
+    <br><input type="checkbox" name="boxweek" value='<?php echo $row['week'] ?>'
+    <?php if ($row['week'] == 1) echo ' checked' ?>
+    > Weekly
+    <br><input type="checkbox" name="boxnews" value='<?php echo $row['news'] ?>'
+    <?php if ($row['news'] == 1) echo ' checked' ?>
+    > Newsletter
+    <br><input type="checkbox" name="boxhood" value='<?php echo $row['hood'] ?>'
+    <?php if ($row['hood'] == 1) echo ' checked' ?>
+    > Neighborhood
+    <br><input type="checkbox" name="boxbulk" value='<?php echo $row['bulk'] ?>'
+    <?php if ($row['bulk'] == 1) echo ' checked' ?>
+    > Other Bulk Emails
+
+    <br><br><input type="submit" name='submitbutton' value="SUBMIT" >
+    <input type='hidden' name='unsubid' value='<?php echo $row['id'] ?>'>
+    <br><br><input type="submit" name='donebutton' value="DONE" >
+  </form>
+
+</fieldset>

@@ -1,0 +1,26 @@
+<?php $this->head = "CVUUF Meeting Minutes" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<center>
+<strong><big>These minutes contain information which might be confidential and intended to be viewed only by CVUUF Members and Friends.</big></strong>
+</center>
+<br><br>
+    <?php if (isset($this->data)) : ?>
+    <?php $data = $this->data ?>
+    <?php foreach ($data as $item) : ?>
+<br>
+<span style='font-size:6pt;'><?php echo $item[0] ?>: </span>
+<a href='/private/showminutes?select=<?php echo $item[0] ?>'> <?php echo $item[1]?></a>    
+    <?php endforeach ?>
+    <?php endif ?>

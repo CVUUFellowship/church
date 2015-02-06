@@ -1,0 +1,52 @@
+<?php $this->head = "PROGRAMS TABLE SCHEDULE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+Please sign up no more than twice per quarter (3 months) for a given program unless you 
+have approval from Annie. Must be used only for fellowship business.
+<br><br>
+Only Council members may reserve the table, but it can be for another person.
+<br><br>
+To replace a reservation, first CLEAR then enter the new reservation.
+<br><br>
+    <form method=post>
+<fieldset style="border:none; ">
+
+<table  border=2px style="empty-cells: show; background-color:white;" >    
+<tr><th><th>Date<th>Person<th>Program</tr>
+  <?php foreach($this->entries as $date) : ?>
+<tr>
+<td><input type="checkbox" name="did[]" value='<?php echo $date[0] ?>' >
+<td><?php echo $date[1] ?>
+<td><?php echo $date[2] ?>
+<td><?php echo $date[3] ?>
+
+</tr>
+  <?php endforeach ?>  
+</table>
+<br>
+
+<table border=0px >
+<tr><td>Person: <td><input type="text" name="person" value="" size="40"></tr>
+<tr><td>Program: <td><input type="text" name="program" value="" size="40"></tr>
+<tr><td><input TYPE='submit' name='getdate' value='RESERVE'> <td> Reserve first checked date.<br>
+</table>
+
+<br>
+<input TYPE='submit' name='clear' value='CLEAR'> <td> Clear out checked dates.<br>
+
+<br>
+
+</fieldset>
+
+    </form>

@@ -1,0 +1,18 @@
+<?php $this->head = "CVUUF AUDIO SERMONS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+  
+    <?php $lines = $this->lines ?>
+    <?php for ($l = $this->start; $l < $this->count; $l++) : ?>
+<?php echo $lines[$l] ?>
+    <?php endfor ?>

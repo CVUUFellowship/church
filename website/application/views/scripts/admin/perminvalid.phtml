@@ -1,0 +1,35 @@
+<?php $this->head = "Permissions Administration" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+<hr><br>
+    <?php endif ?>
+
+<br><br>
+<span style='font-size:120%; font-weight:bold;'><?php echo "Invalid authuser entries" ?></span><br><br><br>
+
+    <?php $invalids = $this->invalid ?>
+    <form method=post>
+<table  border=2px style="empty-cells: show; background-color:#F4F3EE;" >
+<tr><th>X<th>ID<th>Name<th>Status<th>Auth</tr>
+    <?php foreach ($invalids as $user) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $user[0] ?>' >
+<td><?php echo $user[0] ?>
+<td><?php echo $user[1] ?>
+<td><?php echo $user[2] ?>
+<td><?php echo $user[3] ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+<br>
+<input type="submit" name="removebutton" value="REMOVE">
+Set selected 'X' records to auth status 'removed'
+    </form>

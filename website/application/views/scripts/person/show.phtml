@@ -1,0 +1,94 @@
+<?php $this->head = "Show Person Information" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+<span style='font-size:120%; font-weight:bold;'><?php echo "Person details" ?></span><br>
+    <?php if (isset($this->data)) : ?>
+<br><hr><br>
+
+    <?php $data = $this->data ?>
+
+<?php //var_dump($data); exit; ?>
+    <?php $item = 0 ?>
+    <?php $inactive = $data[$item++] ?>
+    <?php $pid = $data[$item++] ?>
+    <?php $name = $data[$item++] ?>
+    <?php $photo = $data[$item++] ?>
+    <?php $status = $this->status ?>
+
+<form action='/data/personchange' method='post'>
+<strong> 
+<?php if ($this->permmembership || $this->permadmin) : ?>
+  <?php if ($inactive == 'yes') : ?>
+    <span style='color:red;'><i> INACTIVE </i></span>
+  <?php elseif ($status == 'Resigned') : ?>
+    <span style='color:red;'><i> RESIGNED </i></span>
+  <?php endif ?>
+<?php endif ?>
+<?php echo $name ?> </strong>
+ 
+<?php if ($this->permmembership || $this->permadmin) : ?>
+  <small>[<?php echo $pid ?>]</small>
+<?php endif ?>
+
+    <?php if(($this->permchange) || ($this->permadmin) || ($this->userid == $pid)) : ?>
+<INPUT type="submit"  name="changebutton" value="CHANGE">
+<input type='hidden' name='personid' value=<?php echo $pid ?> >
+</form>
+
+    <?php endif ?>
+<?php if ($photo<>'') : ?>   
+  <img alt='<?php echo $name ?>' style=' border:thin solid black;' 
+  src='/media/photos/members/<?php echo $photo ?>'>
+<?php endif ?>
+<br>
+<?php if ($this->permmembership || $this->permadmin) : ?>
+  <strong>Comments: </strong><?php echo $data[$item++] ?><br>
+  <strong>Person record created: </strong><?php echo $data[$item++] ?><br>
+  <strong>Household record created: </strong><?php echo $data[$item++] ?><br>
+  <strong>Household : </strong><small>[<?php echo $data[$item++] ?>]</small> <?php echo $data[$item++] ?><br>
+<?php else : $item += 5 ?>
+<?php endif ?>
+
+
+<strong>Neighborhood: </strong>
+<?php $hooddot = $data[$item++]; $hoodname = $data[$item++]; ?>
+<?php if ($hoodname <> '') : ?>
+  <img src="/media/graphics/dots/<?PHP echo $hooddot ?>.gif"> 
+  <?php echo $hoodname ?>
+<?php endif ?>
+<br>
+<strong>Address: </strong><?php echo $data[$item++] ?><br>
+<strong>City: </strong><?php echo $data[$item++] ?><br>
+<strong>Home phone: </strong><?php echo $data[$item++] ?><br>
+<strong>Cell phone: </strong><?php echo $data[$item++] ?><br>
+
+<strong>Email address: </strong><?php  $item++; echo $data[$item]; $item--; ?><br>
+
+<?php if ($this->permmembership || $this->permadmin) : ?>
+  <strong>Email newsletter: </strong><?php echo $data[$item++];   $item++; ?><br>
+  <strong>Status: </strong><?php $status = $data[$item++]; echo $status ?><br>
+      <?php if ($status <> 'Visitor' && $status <> 'Child') : ?>
+  <strong>Membership date: </strong><?php echo $data[$item++] ?><br>
+  <strong>Inducted: </strong><?php echo $data[$item++] ?><br>
+  <strong>Angel: </strong><?php echo $data[$item++] ?><br>
+  <strong>Connections ID: </strong><?php echo $data[$item++] ?><br>
+  <strong>Private status: </strong><small>[<?php echo $data[$item++] ?>]</small> </strong><?php echo $data[$item++] ?><br>
+      <?php endif ?>
+<?php endif ?>
+    <?php endif ?>

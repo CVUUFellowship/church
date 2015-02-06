@@ -1,0 +1,357 @@
+AWSTATS DATA FILE 7.1.1 (build 1.989)
+# If you remove this file, all statistics for date 201310 will be lost/reset.
+# Last config file used to build this data file was /home/cvuuf/domains/cvuuf.org/awstats/forum/.data/awstats.forum.cvuuf.org.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 2034                
+POS_TIME 2693                
+POS_VISITOR 7325                
+POS_DAY 8956                
+POS_DOMAIN 3323                
+POS_LOGIN 3549                
+POS_ROBOT 3704                
+POS_WORMS 4279                
+POS_EMAILSENDER 4410                
+POS_EMAILRECEIVER 4553                
+POS_SESSION 9493                
+POS_SIDER 9651                
+POS_FILETYPES 4688                
+POS_DOWNLOADS 4770                
+POS_OS 4818                
+POS_BROWSER 5047                
+POS_SCREENSIZE 5522                
+POS_UNKNOWNREFERER 5596                
+POS_UNKNOWNREFERERBROWSER 5737                
+POS_ORIGIN 5819                
+POS_SEREFERRALS 5953                
+POS_PAGEREFS 6097                
+POS_SEARCHWORDS 6644                
+POS_KEYWORDS 6796                
+POS_MISC 2357                
+POS_ERRORS 6855                
+POS_CLUSTER 3405                
+POS_SIDER_404 6957                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20131101041049 1 0 10538772312031
+FirstTime 0
+LastTime 20131031104605
+LastUpdate 20131101043019 1 0 0 0 0
+TotalVisits 49                  
+TotalUnique 42                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 42                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 1 1 424 6 12 6424
+1 1 1 0 13 20 10709
+2 1 1 424 12 18 8816
+3 0 0 0 8 16 8642
+4 0 0 0 18 25 13226
+5 0 0 0 8 17 9716
+6 2 2 848 15 28 14859
+7 1 1 424 30 56 29995
+8 1 1 424 19 28 15403
+9 3 3 1272 10 18 10094
+10 3 3 1272 10 13 6728
+11 4 4 1696 9 17 9547
+12 1 1 0 11 16 8305
+13 5 5 1756 2 5 2172
+14 3 3 1272 8 10 4724
+15 2 2 424 2 5 3062
+16 4 4 1696 4 11 2934
+17 0 0 0 2 3 1473
+18 5 5 2120 6 11 5851
+19 7 7 2604 6 14 5768
+20 2 2 848 4 5 2934
+21 2 2 848 7 14 6736
+22 2 2 848 5 8 4289
+23 4 4 1696 14 27 12461
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 54 54 20896
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 13
+googlebot 69 29256 20131031010214 0
+msnbot 31 13144 20131031064214 0
+bingbot 18 6360 20131027064636 0
+robot 11 4664 20131029141914 0
+spider 6 2362 20131027094105 0
+bot[\s_+:,\.\;\/\\-] 4 1696 20131023140808 0
+baiduspider 4 1696 20131021110610 0
+no_user_agent 3 1272 20131031001946 0
+facebook 3 1518 20131030144610 0
+scoutjet 3 1272 20131027232741 0
+yie8 1 424 20131006103133 0
+seznambot 2 848 20131020005206 0
+netcraft 1 424 20131011145157 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 1
+html 54 20896 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 13
+blackberry 1 1
+linuxandroid 2 2
+winxp 16 16
+macosx6 3 3
+winlong 3 3
+linux 1 1
+win7 16 16
+macosx 4 4
+winunknown 1 1
+win2003 1 1
+Unknown 1 1
+macosx8 1 1
+macosx7 4 4
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 25
+safari7.0 2 2
+firefox5.0 1 1
+chrome23.0.1271.64 1 1
+safari7.0.0.586 1 1
+chrome30.0.1599.92 1 1
+chrome22.0.1229.79 1 1
+firefox24.0 10 10
+safari3.0.4 1 1
+chrome30.0.1599.69 4 4
+opera9.80 1 1
+msie8.0 3 3
+iphone 1 1
+safari6.0.5 2 2
+firefox6.0.2 6 6
+mozilla 1 1
+msie7.0 3 3
+firefox3.6.28 1 1
+msie10.0 3 3
+firefox23.0 1 1
+chrome30.0.1599.82 1 1
+safari5.1.9 2 2
+msie9.0 2 2
+chrome30.0.1599.101 1 1
+firefox3.6.8 3 3
+firefox11.0 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 1
+Mozilla/3.0_(compatible;_Indy_Library) 20131014135632
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 27 27
+From1 0 0
+From2 0 0
+From3 23 23
+From4 4 4
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 11
+http://www.cvuuf.org 7 7
+http://www.cvuuf.org/index/pageconstruction 4 4
+http://cvuuf.org/index.php 3 3
+http://cvuuf.org 2 2
+http://extrabot.com/help/grurokifujonely.htm 1 1
+http://www.cvuuf.org/re/children 1 1
+http://cvuuf.org/about/minister 1 1
+https://m.facebook.com 1 1
+http://cvuuf.org/visitors/links 1 1
+http://cvuuf.local/index/pageconstruction 1 1
+http://www.cvuuf.org/visitors/answers 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+403 92 56602
+404 128 83330
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 3
+/robots.txt 125 -
+/wp-login.php 2 -
+/blog/wp-login.php 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 42
+185.10.104.195 3 3 1272 20131025092932
+209.66.70.253 3 3 908 20131012193737
+79.105.161.215 3 3 908 20131014135633
+173.55.47.207 2 2 848 20131024164555
+5.158.239.185 2 2 848 20131031104258
+185.10.104.132 2 2 848 20131029112446
+98.119.36.33 2 2 848 20131026184138
+64.163.224.17 2 2 848 20131023161229
+71.165.221.205 2 2 848 20131014111246
+37.200.65.208 1 1 424 20131005221114
+173.55.236.251 1 1 424 20131003201017
+24.22.122.59 1 1 424 20131009142153
+95.79.243.228 1 1 424 20131031104605
+24.249.155.34 1 1 424 20131012234507
+166.147.104.155 1 1 424 20131029183332
+108.210.28.76 1 1 424 20131016235821
+95.134.127.12 1 1 424 20131009064504
+98.112.27.84 1 1 424 20131021165705
+74.82.68.161 1 1 424 20131008200538
+176.213.133.69 1 1 424 20131031092138
+100.43.215.166 1 1 424 20131025182641
+70.211.6.54 1 1 424 20131008134725
+64.60.85.122 1 1 424 20131015135232
+174.236.132.76 1 1 424 20131006151037
+108.249.112.247 1 1 424 20131012185613
+185.10.104.194 1 1 424 20131013061359
+96.249.194.20 1 1 424 20131010193934
+108.13.203.55 1 1 424 20131026211105
+74.99.75.225 1 1 424 20131013142649
+173.60.229.215 1 1 0 20131009014309
+76.94.75.199 1 1 424 20131018221445
+173.60.227.88 1 1 424 20131028162648
+142.129.140.3 1 1 424 20131013235410
+98.212.194.241 1 1 424 20131031070751
+173.60.226.101 1 1 424 20131026195047
+173.51.83.102 1 1 424 20131015003302
+65.241.47.202 1 1 0 20131011153030
+216.195.71.190 1 1 424 20131016195001
+71.110.114.49 1 1 0 20131022125035
+209.133.77.166 1 1 424 20131012182421
+173.55.48.234 1 1 424 20131025111053
+71.104.80.232 1 1 424 20131030215027
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 25
+20131003 1 1 424 1
+20131005 2 2 848 2
+20131006 1 1 424 1
+20131008 2 2 848 2
+20131009 4 4 1272 4
+20131010 2 2 848 2
+20131011 2 2 424 2
+20131012 6 6 2180 4
+20131013 3 3 1272 3
+20131014 4 4 1332 2
+20131015 2 2 848 2
+20131016 2 2 848 2
+20131017 1 1 424 1
+20131018 1 1 424 1
+20131020 1 1 424 1
+20131021 2 2 848 2
+20131022 1 1 0 1
+20131023 1 1 424 1
+20131024 1 1 424 1
+20131025 3 3 1272 3
+20131026 3 3 1272 3
+20131028 1 1 424 1
+20131029 2 2 848 2
+20131030 1 1 424 1
+20131031 5 5 2120 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 2
+5mn-15mn 1
+0s-30s 48
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 1
+/ 54 20896 49 49
+END_SIDER

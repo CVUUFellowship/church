@@ -1,0 +1,77 @@
+<?php $this->head = "Welcome to CVUUF Private Pages" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<hr>
+    <center>
+      <p>
+        <span style="font-size: 75%">Private Area Terms and
+        Conditions Reminder</span>
+      </p>
+    </center>
+    <blockquote>
+      <span style="font-size: 75%">1. I understand that
+      information in the CVUUF Private Area is confidential and
+      not to be distributed to others outside members and friends
+      of the CVUUF.<br>
+       2. I will not copy any web pages, files, or other
+      information in the CVUUF Private Area to any public
+      Internet site.<br>
+       3. I will keep my CVUUF Private Area user name and
+      password confidential.<br>
+       4. I will not make public the location of any web pages,
+      files, or other information in the CVUUF Private Area.<br>
+       5. I understand that my CVUUF Private Area user name and
+      password will be known to the CVUUF website administrator.</span>
+    </blockquote>
+
+    <hr>
+
+    <center>
+
+<?php
+        $functions = new Cvuuf_functions();
+      	$text = $functions->getWebtext();
+        echo ($text);
+        if ($text <> '')
+            echo ("<hr><br>");
+?>
+<!--
+    <span style="font-weight: bold; font-size: 150%;">
+    <a href="/private/showfile?file=Fiscal Year Budget 2015 for CVUUF&type=pdf">Budget 2015</a><br><br>
+    </span>
+    <span style="font-weight: bold; font-size: 150%;">
+    <a href="/private/showfile?file=Covenant_of_Good_Relations&type=pdf">Covenant Of Good Relations</a><br><br>
+    </span>
+    <span style="font-weight: bold; font-size: 120%;">
+    <a href="/private/showfile?file=CVUUF_Strategic_Plan&type=pdf">2014 CVUUF Strategic Plan</a><br><br>
+    </span><hr><br>
+-->
+    </center>
+
+
+
+<?php $this->splash = true ?>
+
+  
+  <table width='250px' border=0 >
+  	<COL span='125'>
+  	<COL span='125'>
+
+  	<TR>
+    <td>
+    <td align=center width=125px style="background:url(/media/graphics/theme/privbutton.png); ">
+<a style="text-decoration:none; " href="/private/onlinepledge"><span style="color:white; font-size:80%; font-weight:bold; font-family:Verdana,Tahoma,Arial;">
+&nbsp;&nbsp;Make Online Pledge&nbsp;&nbsp;</span></a>
+
+    </TR>
+  </table>

@@ -1,0 +1,44 @@
+<?php $this->head = "LIBRARY CATALOG MOST RECENT 100" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+
+    <?php $catalog = $this->catalog ?>
+    <?php $count = 0 ?>
+
+    <form method=post>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>X<th>ID<th>Created<th>Title<th>Call</tr>
+    <?php foreach ($catalog as $cat) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $cat->number ?>' <?php echo $this->check ?> >
+<td><?php echo $cat->number ?>
+<td><?php echo $cat->createdate ?> 
+<td><?php echo $cat->title ?>
+<td><?php echo $cat->callnumber ?>
+</tr>
+      <?php $count++; if ($count == 100) break; ?>
+    <?php endforeach ?>
+</table>
+
+<br>
+<fieldset style="border:none; ">
+<dt><input type="submit" name="recent100button" value="ALL"></dt>
+<dd>Check all records.</dd>
+<dt><input type="submit" name="recent100button" value="NONE"></dt>
+<dd>Uncheck all records.</dd>
+<dt><input type="submit" name="print100button" value="PRINT"></dt>
+<dd>Create pdf of checked records.</dd>
+</fieldset>
+
+    </form>

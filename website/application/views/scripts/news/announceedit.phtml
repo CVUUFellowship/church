@@ -1,0 +1,129 @@
+<?php $this->head = "ANNOUNCEMENT EDIT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<?php $old = $this->old;
+      $hour = $old['hour'];
+      $min = $old['min'];
+      $pm = $old['pm'];
+       ?>
+<FORM ID="AnnounceEdit" METHOD=POST>
+
+
+<br><br>
+
+<fieldset style="border:none; ">
+<dt><span style='color:red;'>*</span>Title</dt>
+<dd>
+  <input type="text" name="anmtname" size="50" value="<?php echo $old['title'] ?>">
+</dd>
+
+<dt><span style='color:red;'>*</span>Announce Expiration</dt>
+<dd>
+<input id='start_dt' name="anmtdate" value="<?php echo $old['xdate'] ?>" class='datepicker'><small>Click image for calendar</small>
+</dd>
+
+<dt>Event Date if not same</dt>
+<dd>
+<input id='event_dt' name="eventdate" value="<?php echo $old['date'] ?>" class='datepicker'><small>Click image for calendar</small>
+</dd>
+
+<dt><span style='color:red;'>*</span>Starting Time</dt>
+<dd>
+  <select name="eventtimehour">
+    <?php
+  if ((12 == $hour) && ("A" == $pm)) $s = " selected "; else $s = "";
+  echo "\n<option $s value=\"" . 0 . '">' . '12a' . '</option>';	
+  for($i=1;$i<12;++$i) {
+    if (($i == $hour) && ("A" == $pm)) $s = " selected "; else $s = "";
+    echo "\n<option $s value=\"" . $i . '">' . $i .'a' . '</option>';
+  }
+  if ((12 == $hour) && ("P" == $pm)) $s = " selected "; else $s = "";
+  echo "\n<option $s value=\"" . 12 . '">' . '12p' . '</option> ';	
+  for($i=1;$i<12;++$i) {
+    if (($i == $hour) && ("P" == $pm)) $s = " selected "; else $s = "";
+    echo "\n<option $s value=\"" . ($i+12) . '">' . $i.'p' . '</option>';
+  }
+  ?>
+  </select>
+
+
+</dd>
+<dd>
+  <select name="eventtimeminute">
+    <?php
+    for($i = 0; $i < 10; $i += 5) 
+    {
+        if ($i == $old['min']) 
+            $sel = 'selected'; 
+        else 
+            $sel = '';
+        echo "\n<option value='$i' $sel > 0$i </option>";
+    }	
+    for($i = 10; $i < 60; $i += 5) 
+    {
+        if ($i == $old['min']) 
+            $sel = 'selected'; 
+        else 
+            $sel = '';
+        echo "\n<option value='$i' $sel > $i </option>";
+    }
+    ?>
+  </select>    
+</dd>
+
+<dt>Contact</dt>
+<dd>
+<input type="text" name="anmtcon" size="50" value="<?php echo $old['con'] ?>">
+</dd>
+</fieldset>
+
+<fieldset style="border:none; ">
+<dt>Description</dt>
+<dd>
+  <textarea name="anmtdesc" cols=50 rows=5>
+  <?php echo $old['desc'] ?>
+  </textarea>
+</dd>
+</fieldset>
+
+<fieldset style="border:none; ">
+<dt><span style='color:red;'>*</span>Location</dt>
+<dd>
+<input type="text" name="anmtloc" size="50" value="<?php echo $old['loc'] ?>">
+</dd>
+</fieldset>
+
+<fieldset style="border:none; ">
+<dt>Link</dt>
+<dd>
+<input type="text" name="anmtlink" size="50" value="<?php echo $old['link'] ?>">
+</dd>
+
+<dt>Text for link</dt>
+<dd>
+<input type="text" name="anmtlinktext" size="50" value="<?php echo $old['linktext'] ?>">
+</dd>
+</fieldset>
+
+<fieldset style="border:none; ">
+<dt><span style='color:red;'>* items are required</span></dt>
+</fieldset>
+
+<fieldset style="border:none; ">
+<dt><INPUT name='todo' TYPE=SUBMIT VALUE="STORE"></dt>
+<dd>Store this edited data.</dd>
+</fieldset>
+  <input type=hidden name='aid' value=<?PHP echo $old['id'] ?> >
+</form>
+
+<?php $this->pickers = true; ?>

@@ -1,0 +1,45 @@
+<?php $this->head = "POSITIONS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<br>
+<b>Sequence</b> is for the Positions directory where positions are grouped by class and sequence is used within each group.
+<br>
+Click on an ID number to edit.
+<br><br>
+<form method=post>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>Sequence<th>Title<th>Name<th>Class</tr>
+
+    <?php foreach ($this->table as $position) : ?>
+<tr>
+		<?php $link = '<a href="/data/positions?id=' . 
+      $position["ID"] . '">' . $position["ID"] . '</a><br>'
+			?>
+
+<td><?php echo $link ?>
+<td><?php echo $position['Sequence'] ?>
+<td><?php echo $position['Title'] ?>
+<td><?php echo $position['Name'] ?>
+<td><?php echo $position['Class'] ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+<br><input type="submit"  name="addbutton" value="ADD"> Add a new position.
+</form>

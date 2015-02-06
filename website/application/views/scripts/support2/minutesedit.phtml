@@ -1,0 +1,33 @@
+<?php $this->head = "MINUTES MANAGEMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<?php $this->tinyMCE = true ?>
+<form method='post'>
+  <?php if (isset($this->minutes)) : ?>
+<fieldset style="border:none; ">
+<dt>Title</dt>
+<dd><input type="text" name="title" size=50 value="<?php echo $this->minutes->title ?>">
+<dt>&nbsp;</dt><dd>If the meeting was a Special meeting, insert "Special" before "Meeting" in the title.</dd> 
+<dt>&nbsp;</dt><dd>Begin the title with "Board", "Council", or "Fellowship" to enable proper retrieval.</dd> 
+</fieldset>
+
+<fieldset style="border:none; ">
+<dt>Minutes text</dt>
+<dd><textarea name="TEXT" COLS=80 ROWS=30>
+<?php echo $this->minutes->body ?></textarea></dd>
+</fieldset>
+  <?php endif ?>
+<input type='hidden' name='nodeid' value='<?php echo $this->minutes->nodeid ?>'>
+<br><br>
+<dt><input type="submit"  name="submitbutton" value="SUBMIT"></dt>
+</form>

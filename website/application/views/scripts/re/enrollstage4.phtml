@@ -1,0 +1,39 @@
+<?php $this->head = "RELIGIOUS EDUCATION ENROLLMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<strong><big>4. Other Health Issues for <?php echo "$this->firstname $this->lastname" ?></big></strong>
+
+<br><br>
+
+<?php $issues = $this->issues ?>
+<?php $issuenames = $this->issuenames ?>
+<form method='post'>
+<div style='margin-left: 217px;'>
+  <?php foreach($issues as $key => $value) : ?>
+<input type="checkbox" name="health[]" value="<?php echo $key ?>" 
+	<?php echo $value ?> > <?php echo $issuenames[$key] ?>
+<br><textarea name="<?php echo $key ?>" COLS=50 ROWS=3><?php echo $this->issuevalues[$key] ?></textarea>
+<br>
+  <?php endforeach ?>
+<br>
+<input type='hidden' name='keys' value='<?php echo $this->nextform->getValue('keys') ?>' >
+<input type='hidden' name='values' value='<?php echo $this->nextform->getValue('values') ?>' >
+<input type="submit" name="changeburronbutton" value="CHANGE">
+</form>
+<br><br>
+</div>
+    <?php if (isset($this->nextform)) : ?>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->nextform; ?>
+</fieldset>
+    <?php endif ?>

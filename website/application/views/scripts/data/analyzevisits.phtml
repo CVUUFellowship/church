@@ -1,0 +1,44 @@
+<?php $this->head = "ANALYZE VISIT DATES" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+    <?php if (count($this->table) == 0) :?>
+<?php echo "No visitor with last visit more than three months old." ?>
+    <?php else : ?>
+Visitors with last visit more than three months old.
+<br>
+<strong>Check any lines to mark inactive:</strong>
+<br><br>
+<fieldset style="border:none;">
+<form method='post'>
+<table>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>Last Visit<th>Visits<th>ID<th>Name</tr>
+    <?php foreach ($this->table as $line) : ?>
+<tr><td><input type="checkbox" name="id[]" value='<?php echo $line[0] ?>'' >
+  <td><?php echo $line[1] ?>
+  <td><?php echo $line[2] ?>
+  <td><?php echo $line[0] ?>
+  <td><?php echo $line[3] ?>
+</tr>
+    <?php endforeach ?>
+</table>
+<br><br><input type="submit"  name="inactivebutton" value="INACTIVE"> Mark checked visitors inactive.
+</form>
+</fieldset>
+    <?php endif ?>

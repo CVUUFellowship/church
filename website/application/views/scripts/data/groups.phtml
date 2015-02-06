@@ -1,0 +1,50 @@
+<?php $this->head = "GROUPS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<br>
+<b>Sequence</b> is for the Groups directory where groups are grouped by class and sequence is used within each group.
+<br>A group may appear more than once if it is listed in more than one Class.
+<br><br>
+Click on an <b>ID</b> number to edit.  Edit options include removing a group and cloning a group so it can appear in more than one class.
+<br><br>
+<form method=post>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>Class<th>Sequence<th>Title<th>Contact<th>Contact<th>Contact<th>Contact<th>Public</tr>
+
+    <?php foreach ($this->table as $group) : ?>
+<tr>
+		<?php $link = '<a href="/data/groups?id=' . 
+      $group["ID"] . '">' . $group["ID"] . '</a><br>'
+			?>
+
+<td><?php echo $link ?>
+<td><?php echo $group['Class'] ?>
+<td><?php echo $group['Sequence'] ?>
+<td><?php echo $group['Title'] ?>
+<td><?php echo $group['Name0'] ?>
+<td><?php echo $group['Name1'] ?>
+<td><?php echo $group['Name2'] ?>
+<td><?php echo $group['Name3'] ?>
+<td><?php echo $group['Public'] ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+<br><input type="submit"  name="addbutton" value="ADD"> Add a new group.
+</form>

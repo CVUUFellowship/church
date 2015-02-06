@@ -1,0 +1,51 @@
+<?php $this->head = "CVUUF SUNDAY SERVICES IN $this->year" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<center>					
+<p id="index">
+<a href="#January">jan</a> <a href="#February">feb</a> <a href="#March">mar</a>
+<a href="#April">apr</a> <a href="#May">may</a> <a href="#June">jun</a>
+<a href="#July">jul</a> <a href="#August">aug</a> <a href="#September">sep</a>
+<a href="#October">oct</a> <a href="#November">nov</a> <a href="#December">dec</a>
+
+<p style="font-size:120%;">Come back to this month index by clicking the
+	<span onClick="parent.location='#index'" onMouseOver="document.body.style.cursor='pointer'"
+		onMouseOut="document.body.style.cursor='auto'">
+    <img src="/media/graphics/arrow.plain.up.gif" alt="UpArrow"></span> symbol:
+<br>
+</center>
+
+    <?php foreach ($this->months as $month) : ?>
+
+  <?php $monthname = $month[0] ?>
+<a name="<?php echo $monthname ?>"></a>
+<p style="font-size:150%; font-weight:bold;">
+	<span onClick="parent.location='#index'" onMouseOver="document.body.style.cursor='pointer'"
+		onMouseOut="document.body.style.cursor='auto'"><img src="/media/graphics/arrow.plain.up.gif" alt="UpArrow"></span>
+	<span style='font-size:70%; font-weight:normal;'>
+		Index</span></p>
+      <?php foreach ($month[1] as $sunday) : ?>
+
+<center>
+<h2>
+  <?php echo "$monthname ", $sunday[0] ?>
+</h2>
+<h3><?php echo $sunday[1] ?>
+<br><?php echo $sunday[2] ?>
+</h3>
+</center>
+<p><?php echo $sunday[3] ?>
+<br><br>
+      <?php endforeach ?>    
+    <?php endforeach ?>

@@ -1,0 +1,21 @@
+[production]
+includePaths.library = APPLICATION_PATH "/../library"
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+appnamespace = "Application"
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+
+resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts/"
+
+resources.view[] =
+
+resources.db.adapter = "PDO_MYSQL"
+resources.db.params.host = "localhost"
+resources.db.params.username = "cvuuf_cvuuf"
+resources.db.params.password = "xxxx"
+resources.db.params.dbname = "cvuuf_cvuufinfo"
+resources.db.params.charset = "utf8"
+
+autoloaderNamespaces[] = "Cvuuf_"
+resources.view.encoding = "UTF-8"
+resources.view.charset = "UTF-8"

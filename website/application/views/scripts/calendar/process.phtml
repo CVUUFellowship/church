@@ -1,0 +1,34 @@
+<?php $this->head = "CALENDAR APPROVAL ACTION" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<bold><strong>Event ID <?php echo $this->calid ?></strong></bold>
+<br><br>
+<div style='margin-left:212px;'>
+<iframe src="/webcal/view_entry.php?id=<?php echo $this->calid ?>" width='600' height='400px'></iframe> 
+</div>
+<br><br>
+  <?php if ($this->done <> 'done') : ?>
+<fieldset style="border:none;">
+<form method='post'>
+<dt><input type="submit" name="approvebutton" value="APPROVE"></dt>
+<dd>Approve the event for <?php echo $this->group ?>.</dd>
+
+<dt><INPUT type="submit"  name="rejectbutton" value="REJECT"></dt>
+<dd>Reject for event for reason 
+<INPUT type="text" name="reason" size=50 value=""></dd>
+<input type='hidden' name='calid' value='<?php echo $this->calid ?>' >
+<input type='hidden' name='user' value='<?php echo $this->user ?>' >
+</form>
+</fieldset>
+  <?php endif ?>

@@ -1,0 +1,24 @@
+<?php $this->head = "EMAIL FORWARDERS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+
+
+<br><br>
+    <?php foreach ($this->lines as $line) : ?>
+  <?php if ($line[0] == '<') echo '<br>' ?>
+<br><?php echo $line ?>
+    <?php endforeach ?>

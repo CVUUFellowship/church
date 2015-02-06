@@ -1,0 +1,94 @@
+<?php $this->head = "WEBSITE TEXT EDIT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<?php $old = $this->old ?>
+<?php $nodes = $this->nodes ?>
+
+<br><br><strong><big>Text Nodes</big></strong>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>Controller<th>View</tr>
+    <?php foreach($nodes as $node) : ?>
+
+<tr>
+<td><?php echo $node->id ?>
+<?php 
+    $title = $node->title;
+    $slash = strpos($title, "/");
+    $cont = substr($title, 0, $slash);
+    $view = substr($title, $slash + 1); 
+
+?>
+<td><?php echo $cont ?><td> <?php echo $view ?>
+</tr>
+
+    <?php endforeach ?>
+</table>
+<br><hr><br>
+<FORM ID="WebsiteTestEdit" METHOD=POST>
+
+<b>Select the ID of an existing "text node":</b><br><br>
+<fieldset style="border:none; ">
+<dt>Existing ID</dt>
+<dd>
+  <input type="text" name="nodeid" size="5" value="<?php echo $old['id'] ?>">
+</dd>
+</fieldset>
+
+ <br><br>
+
+<b>Or, select which controller/view on which new text is to go:</b><br><br>
+
+<fieldset style="border:none; ">
+<dt>Controller name</dt>
+<dd>
+  <input type="text" name="contname" size="25" value="<?php echo $old['controller'] ?>">
+</dd>
+
+
+<dt>View name</dt>
+<dd>
+  <input type="text" name="viewname" size="25" value="<?php echo $old['view'] ?>">
+</dd>
+</fieldset>
+
+<br>
+
+<fieldset style="border:none; ">
+<INPUT name='todo' TYPE=SUBMIT VALUE="SELECT">
+Select where the text will appear (existing ID or controller and view).
+</fieldset>
+
+
+<br><hr><br>
+
+<b>Edit the text here:</b><br><br>
+
+<fieldset style="border:none; ">
+<dt>New text</dt>
+<dd>
+  <textarea name="thetext" cols=50 rows=5>
+<?php echo $old['thetext']?>
+  </textarea>
+</dd>
+</fieldset>
+
+
+<fieldset style="border:none; ">
+<INPUT name='todo' TYPE=SUBMIT VALUE="SAVE">
+Save this text.
+</fieldset>
+
+</form>
+
+
+<?php $this->pickers = true; ?>

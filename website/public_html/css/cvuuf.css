@@ -1,0 +1,111 @@
+A:link { color: #990000 }       /* unvisited link */
+A:visited { color: #551A8B }   /* visited links */
+A:active { color: #990000 }    /* active links */
+
+.link {color: #990000}
+
+BODY {  background-color: #e2e2e2;
+	color: #000000;	
+	font-family: Helvetica,Arial,sans-serif;
+	left: 20px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	border-style: none;
+	}
+
+.heading {
+	font-weight: bold;
+	font-size: 14pt;
+	}
+	
+EM {
+	font-weight: bold;
+	font-style: normal;
+	}
+
+.foot {	font-size: 8pt;
+	text-align: center;
+	}
+
+
+.pagetitle {	font-size: 150%;
+	font-weight: bold;
+	}
+
+
+.missionbox {
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+    position:absolute;
+    top:102px;
+    left:0px;
+    width:100%;
+    text-align:center;
+	}
+
+
+.frontbutton
+{
+color:white; 
+text-align: center; 
+fontsize:"80%"; 
+fontstyle:"normal"; 
+fontweight:"bold"; 
+fontfamily:"Verdana, Tahoma, Arial
+}
+
+  #header
+  {
+    position: absolute;
+    top:0px;
+    height: 164px;
+    left: 0px;
+    right: 0px;
+  }
+	
+  #header-inner
+  {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 4px;
+    height: 160px;
+  }
+
+    #body
+  {
+  left:0px;
+  right:0px;
+	position: absolute;
+	top:160px;
+  }
+
+.centered-cell {
+  text-align: center;
+  }
+
+.label {
+    width: 200px;
+    display: block;
+    float: left;
+    clear: left;
+    text-align: right;
+    font-size: 11pt;
+    margin-right: 4px;
+}
+
+p.purpose {
+ text-align:center;
+ font-family:"Trebuchet MS", Arial;
+ font-weight:bold;
+  font-size:16px;
+   color:#9a160e;
+   margin:0;
+   padding:0;
+    line-height:20px;
+}

@@ -1,0 +1,33 @@
+<?php $this->head = "MEMBERSHIP STATISTICS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<br><?php echo $this->once4months ?> Visitors created within last four months and visited exactly one time.
+<br><?php echo $this->multi4months ?> people created within last four months and visited multiple times.
+<br>&emsp;Note: either may contain persons who are no longer active Visitors.
+<br><br><?php echo $this->members ?> current Members.
+<br><?php echo $this->members4months ?> became Members within last four months.
+<br><br><?php echo $this->newfriends ?> current New Friends.
+<br><?php echo $this->newnewfriends ?> became New Friends within last four months.
+<br><?php echo $this->oldnewfriends ?> became New Friends more than one year ago.
+<br><br><?php echo $this->visitors ?> current Visitors.
+<br><?php echo $this->visitors4months ?> became Visitors within last four months.
+<br><br><?php echo $this->guests ?> current Guests.
+<br><?php echo $this->affiliates ?> current Affiliates.
+<br><br><?php echo $this->oncevisitors ?> current Visitors with only one visit.
+<br><?php echo $this->multivisitors ?> current Visitors with multiple visits [may be over any time].

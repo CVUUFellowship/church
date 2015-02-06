@@ -1,0 +1,292 @@
+AWSTATS DATA FILE 6.9 (build 1.925)
+# If you remove this file, all statistics for date 201301 will be lost/reset.
+
+# Position (offset in bytes) in this file of beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1864                
+POS_TIME 2535                
+POS_VISITOR 6318                
+POS_DAY 7552                
+POS_DOMAIN 3109                
+POS_LOGIN 3335                
+POS_ROBOT 3490                
+POS_WORMS 3862                
+POS_EMAILSENDER 3993                
+POS_EMAILRECEIVER 4136                
+POS_SESSION 7750                
+POS_SIDER 7920                
+POS_FILETYPES 4271                
+POS_OS 4337                
+POS_BROWSER 4423                
+POS_SCREENSIZE 4610                
+POS_UNKNOWNREFERER 4684                
+POS_UNKNOWNREFERERBROWSER 4771                
+POS_ORIGIN 4853                
+POS_SEREFERRALS 4987                
+POS_PAGEREFS 5131                
+POS_SEARCHWORDS 5642                
+POS_KEYWORDS 5794                
+POS_MISC 2199                
+POS_ERRORS 5853                
+POS_CLUSTER 3191                
+POS_SIDER_404 5954                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20130201005528 1 0 9238721982930
+FirstTime 20130125022332
+LastTime 20130131215941
+LastUpdate 20130201044902 1 0 0 0 0
+TotalVisits 36                  
+TotalUnique 31                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 31                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 2 2 824 1 1 635
+1 1 1 412 5 5 3102
+2 3 3 1212 0 0 0
+3 0 0 0 3 3 1422
+4 3 3 1164 1 1 626
+5 0 0 0 2 2 1014
+6 0 0 0 3 3 1850
+7 0 0 0 6 6 3141
+8 0 0 0 7 7 3739
+9 0 0 0 4 4 2094
+10 0 0 0 3 3 1878
+11 2 2 824 0 0 0
+12 2 2 824 5 5 2672
+13 9 9 2589 6 6 3104
+14 0 0 0 4 4 1398
+15 5 5 2060 3 3 1459
+16 3 3 1236 1 1 626
+17 3 3 1236 9 9 5578
+18 1 1 412 4 4 1450
+19 1 1 412 4 4 2271
+20 1 1 412 1 1 412
+21 2 2 824 0 0 0
+22 3 3 1236 0 1 635
+23 2 2 824 3 3 1664
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 43 43 16501
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 7
+googlebot 13 5308 20130131084125 0
+baiduspider 8 2472 20130131203722 0
+bot[+:,\.\;\/\\-] 2 800 20130130134237 0
+no_user_agent 1 412 20130128180341 0
+spider 1 388 20130125050759 0
+mj12bot 1 412 20130128031721 0
+yandex 1 412 20130128191514 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 1
+html 43 16501 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 5
+macosx 9
+winlong 3
+winxp 10
+winnt 1
+win2008 20
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 12
+msie8.0 1
+msie6.0 6
+msie5.01 1
+firefox17.0 7
+chrome 8
+msie7.0 2
+opera 3
+firefox3.6.28 1
+firefox18.0 5
+firefox9.0.1 1
+msie9.0 5
+safari 3
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 19 19
+From1 0 0
+From2 0 0
+From3 16 16
+From4 8 8
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 9
+http://cvuuf.org/index.php 4 4
+http://cvuuf.org 3 3
+http://cvuuf.org/index/pageconstruction 2 2
+http://www.cvuuf.org/index/pageconstruction 2 2
+http://cvuuf.org/nextsundays.php 1 1
+http://www.toacorn.com/news/2013-01-17/Community/Speaker_talks_real_wealth.html 1 1
+http://www.cvuuf.org/worship/upcoming 1 1
+http://cvuuf.org/library 1 1
+http://cvuuf.org/index 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+403 24 15024
+404 25 15542
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 2
+/apple-touch-icon-precomposed.png 1 -
+/robots.txt 24 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 31
+108.210.28.76 6 6 1353 20130126135537
+74.100.56.188 3 3 1236 20130128131752
+183.62.115.227 2 2 824 20130127181352
+91.207.8.157 2 2 776 20130125044508
+119.147.75.140 2 2 824 20130127230817
+71.165.221.162 2 2 824 20130131110701
+119.147.6.60 2 2 824 20130128004921
+173.60.229.209 1 1 412 20130128123602
+69.147.234.122 1 1 412 20130131170147
+66.228.216.25 1 1 388 20130125022332
+98.119.32.170 1 1 412 20130131215941
+98.173.196.28 1 1 412 20130130122945
+66.214.203.22 1 1 412 20130130025418
+91.224.247.69 1 1 388 20130125041636
+220.162.247.243 1 1 412 20130130210720
+173.51.100.106 1 1 412 20130129011533
+173.60.235.134 1 1 412 20130127151732
+76.255.128.14 1 1 412 20130129132636
+76.255.128.8 1 1 412 20130126224612
+74.100.158.222 1 1 412 20130128230331
+76.168.113.13 1 1 412 20130128022121
+69.175.58.134 1 1 412 20130128131047
+74.111.193.73 1 1 412 20130126203003
+142.4.117.37 1 1 412 20130130000137
+192.74.240.152 1 1 412 20130129115427
+142.129.141.131 1 1 412 20130127172926
+119.63.193.194 1 1 412 20130128153649
+96.249.196.144 1 1 412 20130126154306
+202.46.58.172 1 1 412 20130128153649
+173.60.226.81 1 1 412 20130129152057
+216.151.138.91 1 1 412 20130128171825
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 7
+20130125 4 4 1552 3
+20130126 14 14 4649 8
+20130127 5 5 2060 5
+20130128 9 9 3708 9
+20130129 4 4 1648 4
+20130130 4 4 1648 4
+20130131 3 3 1236 3
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 3
+5mn-15mn 1
+0s-30s 34
+15mn-30mn 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 1
+/ 43 16501 36 36
+END_SIDER

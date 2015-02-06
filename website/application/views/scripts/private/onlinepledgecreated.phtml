@@ -1,0 +1,32 @@
+<?php $this->head = "ONLINE PLEDGE CREATED" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+
+Thank you for sustaining this congregation with your gifts and joining in community for the benefit of all!
+<br><br>
+Your pledge information has been sent by email to the CVUUF Pledge Secretary and an email copy to you.
+<br><br><hr><br>
+If you would like to set up automatic pledge payments with your bank or on a credit card, you can click the following button to go to Online Payments.
+<br><br>
+  <div style="width:675px; margin-left:auto; margin-right:auto;" >
+  <table width='125px' border=0 >
+
+  	<TR>
+    <td align=center width=125px style="background:url(/media/graphics/theme/blankbutton.png); ">
+<?php /*<a href="http://tinyurl.com/yd69ntf"><span style="color:white; font-size:80%; font-weight:bold; font-family:Verdana,Tahoma,Arial;"> */ ?>
+<a href="https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=tYgT1GfNxRUldiimjHMvOfT3CqSkmBT8sVuLlF25uIzo-7YkZiNiYhc46uwjFenmums9tj3wI7okSf0MyMa8urt3Lz8Rfn-KU8cmMV2hkFA=&ver=3"><span style="color:white; font-size:80%; font-weight:bold; font-family:Verdana,Tahoma,Arial;">
+Online Payments</span></a>
+
+  </table>
+  </div>
+<br><br>

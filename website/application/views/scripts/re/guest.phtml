@@ -1,0 +1,17 @@
+<?php $this->head = "RELIGIOUS EDUCATION GUEST" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->guestForm; ?>
+</fieldset>

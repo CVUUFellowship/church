@@ -1,0 +1,244 @@
+
+
+
+
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>atlas.medialayer.net - DirectAdmin v1.42.1</title>
+	<script language="JavaScript">
+	<!-- // start preload code
+		home_image = new Image();
+		home_image.src = "/IMG_SKIN_NAV_HOME_OVER";
+		webmail_image = new Image();
+		webmail_image.src = "/IMG_SKIN_NAV_WEBMAIL_OVER";
+		password_image = new Image();
+		password_image.src = "/IMG_SKIN_NAV_PASSWORD_OVER";
+		fileman_image = new Image();
+		fileman_image.src = "/IMG_SKIN_NAV_FILEMAN_OVER";
+		help_image = new Image();
+		help_image.src = "/IMG_SKIN_NAV_HELP_OVER";
+		logout_image = new Image();
+		logout_image.src = "/IMG_SKIN_NAV_LOGOUT_OVER";
+		logout_image2 = new Image();
+		logout_image2.src = "/IMG_SKIN_NAV_LOGOUT2_OVER";
+	// done with preload code
+
+	//timer for auto-logout
+		function log_me_out()
+		{
+			location.href = '/CMD_LOGOUT';
+		}
+		setTimeout('log_me_out();', 60*60*1000);
+
+	// done with preload code -->
+	</script>
+
+	<link href="/CSS_STYLE" type="text/css" rel="stylesheet" />
+
+
+	<script type="text/javascript">
+	<!-- // start preload code
+	function tr_add_highlight()
+	{
+		add_highlight(this, 'list','listhighlight','list2','list2highlight','listwrap','listwraphighlight','listwrap2','listwrap2highlight');
+	}
+	function tr_remove_highlight()
+	{
+		add_highlight(this, 'listhighlight','list','list2highlight','list2','listwraphighlight','listwrap','listwrap2highlight','listwrap2');
+	}
+	function add_highlight(ob,h1,l1,h2,l2,h3,l3,h4,l4)
+	{
+		var tds = ob.getElementsByTagName('td');
+		for(var d=0; d<tds.length; d++)
+		{
+			switch (tds[d].className)
+			{
+				case h1	:	tds[d].className = l1; break;
+				case h2	:	tds[d].className = l2; break;
+				case h3	:	tds[d].className = l3; break;
+				case h4	:	tds[d].className = l4; break;
+
+			}
+		}
+	}
+	function make_tables_highlightable()
+	{
+		var tables = document.getElementsByTagName('table');
+		for (var tbl=0; tbl<tables.length; tbl++)
+		{
+			if (tables[tbl].className.indexOf('table-highlight') != -1)
+			{
+				var trs = tables[tbl].getElementsByTagName('tr');
+				for(var tr=0; tr<trs.length; tr++)
+				{
+					trs[tr].onmouseover = tr_add_highlight;
+					trs[tr].onmouseout = tr_remove_highlight;
+				}
+			}
+		}
+	}
+	// done with preload code -->
+	</script>
+
+
+</head>
+
+<body  bgcolor="#FFFFFF" leftMargin=0 rightMargin=0 topMargin=0 bottomMargin=0>
+
+<table height=100% width=100% cellpadding=0 cellspacing=0>
+<tr>
+<td align=center>
+
+<table height=100% cellpadding=0 cellspacing=0>
+	<tr>
+		<td height=100% width=31 background="/IMG_SKIN_LEFT_SHADOW" valign=bottom>
+			<img src="/IMG_SKIN_LEFT_SHADOW">
+		</td>
+		<td  valign=top>
+			<table width=100% height=100% cellpadding=0 cellspacing=0>
+				<tr>
+					<td height=120 align=left background="/IMG_SKIN_HEADER_NONAME"><img src="/IMG_SKIN_HEADER"></td>
+				</tr>
+				<tr>
+
+
+
+
+
+					<td height=100% valign=top>
+
+
+
+						<table width="100%" cellspacing="0" cellpadding="0" background="/IMG_SKIN_NAV_BG">
+						<tr>
+							<td><a onMouseOver="navhome.src=home_image.src;" onMouseOut="navhome.src='/IMG_SKIN_NAV_HOME';" href="/"><img name="navhome" border="0" src="/IMG_SKIN_NAV_HOME" width="72" height="78" alt="Home"></a></td>
+							<td><a onMouseOver="navwebmail.src=webmail_image.src;" onMouseOut="navwebmail.src='/IMG_SKIN_NAV_WEBMAIL';" href="http://atlas.medialayer.net/squirrelmail" target=_blank><img name="navwebmail" border="0" src="/IMG_SKIN_NAV_WEBMAIL" width="72" height="78" alt="Webmail"></a></td>
+							<td><a onMouseOver="navpass.src=password_image.src;" onMouseOut="navpass.src='/IMG_SKIN_NAV_PASSWORD';" href="/HTM_PASSWD"><img name="navpass" border="0" src="/IMG_SKIN_NAV_PASSWORD" width="72" height="78" alt="Password"></a></td>
+							<td><a onMouseOver="navhelp.src=help_image.src;"       onMouseOut="navhelp.src='/IMG_SKIN_NAV_HELP';"	target=_blank href="http://www.site-helper.com/email.html#forwarders"><img name="navhelp" border="0" src="/IMG_SKIN_NAV_HELP" width="67" height="78" alt="Help"></a></td>
+							<td><a onMouseOver="navfileman.src=fileman_image.src;" onMouseOut="navfileman.src='/IMG_SKIN_NAV_FILEMAN';" href="/CMD_FILE_MANAGER"><img name="navfileman" border="0" src="/IMG_SKIN_NAV_FILEMAN" width="72" height="78" alt="File Manager"></a></td>
+							<td width="100%" align=right><a onMouseOver="navlogout.src=logout_image2.src;" onMouseOut="navlogout.src='/IMG_SKIN_NAV_LOGOUT2';" href="/CMD_LOGOUT"><img name="navlogout" border="0" src="/IMG_SKIN_NAV_LOGOUT2" width="93" height="78" alt="Logout"></a></td>
+						</tr>
+						</table>
+
+						<table width=100%>
+						<tr><td>
+
+
+
+<a href="HTM_EMAIL_FORWARDER_CREATE?DOMAIN=cvuuf.org">Create new E-Mail Forwarder</a><br>
+
+<table class='list table-highlight'  cellpadding=3 cellspacing=1>
+<script type="text/javascript">
+<!--
+function selectAll(select)
+{
+	with (document.tableform)
+	{
+		var checkval = false;
+		var i=0;
+
+		for (i=0; i< elements.length; i++)
+			if (elements[i].type == 'checkbox' && !elements[i].disabled)
+				if (elements[i].name.substring(0, select.length) == select)
+				{
+					checkval = !(elements[i].checked);	break;
+				}
+
+		for (i=0; i < elements.length; i++)
+			if (elements[i].type == 'checkbox' && !elements[i].disabled)
+				if (elements[i].name.substring(0, select.length) == select)
+					elements[i].checked = checkval;
+	}
+}
+// -->
+</script>
+
+<form name="tableform" action='/CMD_EMAIL_FORWARDER' method='POST'>
+<tr ><td align='right' colspan='5'><a class='toptext' href='?view=advanced&sort1=1&domain=cvuuf%2Eorg'>Advanced Search</a></td ></tr >
+<tr ><td class=listtitle><b><a class=listtitle href='?domain=cvuuf%2Eorg&sort1=-1'>Forwarder</a></b></td >
+<td class=listtitle><a class=listtitle href='?domain=cvuuf%2Eorg&sort1=2'>&nbsp;</a></td >
+<td class=listtitle><a class=listtitle href='?domain=cvuuf%2Eorg&sort1=3'>Value</a></td >
+<td class=listtitle><a class=listtitle href='?domain=cvuuf%2Eorg&sort1=4'>Modify</a></td >
+<td class=listtitle align='center' ><a class=listtitle href="javascript:selectAll('select');">Select</a></td >
+</tr >
+<tr   ><td class=list>abuse@cvuuf.org</td ><td class=list>-></td ><td class=list>michael.talvola&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=abuse'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select0' value="abuse" /></td ></tr >
+<tr   ><td class=list2>admin@cvuuf.org</td ><td class=list2>-></td ><td class=list2>cvuufjill&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=admin'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select1' value="admin" /></td ></tr >
+<tr   ><td class=list>announce@cvuuf.org</td ><td class=list>-></td ><td class=list>michael.talvola&#64gmail.com,<br> dana.ryon&#64gmail.com,<br> admin&#64cvuuf.org</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=announce'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select2' value="announce" /></td ></tr >
+<tr   ><td class=list2>auction@cvuuf.org</td ><td class=list2>-></td ><td class=list2>elearned&#57&#64sbcglobal.net</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=auction'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select3' value="auction" /></td ></tr >
+<tr   ><td class=list>board@cvuuf.org</td ><td class=list>-></td ><td class=list>hessthomas&#64roadrunner.com,<br> lorabrandis&#64gmail.com,<br> David&#64Barker.nu,<br> pjriv&#49&#64gmail.com,<br> michael.teasdale&#49&#64gmail.com,<br> lauremc&#64verizon.net,<br> president&#64cvuuf.org,<br> dvenardos&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=board'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select4' value="board" /></td ></tr >
+<tr   ><td class=list2>calendar@cvuuf.org</td ><td class=list2>-></td ><td class=list2>michael.talvola&#64gmail.com,<br> brian.pletcher&#64gmail.com,<br> andypletcher&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=calendar'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select5' value="calendar" /></td ></tr >
+<tr   ><td class=list>calendarform@cvuuf.org</td ><td class=list>-></td ><td class=list>michael.talvola&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=calendarform'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select6' value="calendarform" /></td ></tr >
+<tr   ><td class=list2>choirdirector@cvuuf.org</td ><td class=list2>-></td ><td class=list2>svendoggy&#64sbcglobal.net</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=choirdirector'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select7' value="choirdirector" /></td ></tr >
+<tr   ><td class=list>choirmembers@cvuuf.org</td ><td class=list>-></td ><td class=list>svendoggy&#64sbcglobal.net,<br> brian.pletcher&#64gmail.com,<br> lorabrandis&#64gmail.com,<br> lindadelorey&#64gmail.com,<br> anne.ewell&#49&#64verizon.net,<br> mmfreed&#64yahoo.com,<br> hessthomas&#64roadrunner.com,<br> johnsong&#48&#52&#64gmail.com,<br> dkramzar&#64embarqmail.com,<br> darceylober&#64gmail.com,<br> pamelajlopez&#64yahoo.com,<br> doctor&#95fabulous&#57&#52&#64yahoo.com,<br> fmmartin&#55&#64sbcglobal.net,<br> mmartin.cvuuf&#64gmail.com,<br> alisonmiddlecamp&#64yahoo.com,<br> fgpardee&#64verizon.net,<br> usbccdlp&#64yahoo.com,<br> lisaesings&#64hotmail.com,<br> thomasbpowers&#64live.com,<br> pjriv&#49&#64gmail.com,<br> cryan&#55&#55&#64yahoo.com,<br> kasidla&#49&#64verizon.net,<br> merlinsnider&#64mac.com,<br> nancysumers&#64gmail.com,<br> vanreenanj&#64juno.com,<br> ez&#52menu&#64earthlink.net,<br> zamanda&#55&#55&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=choirmembers'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select8' value="choirmembers" /></td ></tr >
+<tr   ><td class=list2>communications@cvuuf.org</td ><td class=list2>-></td ><td class=list2>brian.pletcher&#64gmail.com,<br> michael.talvola&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=communications'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select9' value="communications" /></td ></tr >
+<tr   ><td class=list>council@cvuuf.org</td ><td class=list>-></td ><td class=list>president&#64cvuuf.org,<br> mike&#64talvola.com,<br> dana.ryon&#64gmail.com,<br> brian.pletcher&#64gmail.com,<br> lorabrandis&#64gmail.com,<br> j.blades&#64roadrunner.com,<br> thinricher&#64hc&#45llp.com,<br> dre&#64cvuuf.org,<br> maria&#64rasnowpeak.com,<br> cfarrellfnp&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=council'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select10' value="council" /></td ></tr >
+<tr   ><td class=list2>cvuufmember@cvuuf.org</td ><td class=list2>-></td ><td class=list2>michael.talvola&#64gmail.com,<br> brian.pletcher&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=cvuufmember'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select11' value="cvuufmember" /></td ></tr >
+<tr   ><td class=list>dre@cvuuf.org</td ><td class=list>-></td ><td class=list>cvuuf.dre&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=dre'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select12' value="dre" /></td ></tr >
+<tr   ><td class=list2>events@cvuuf.org</td ><td class=list2>-></td ><td class=list2>michael.talvola&#64gmail.com,<br> brian.pletcher&#64gmail.com,<br> andypletcher&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=events'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select13' value="events" /></td ></tr >
+<tr   ><td class=list>facebook@cvuuf.org</td ><td class=list>-></td ><td class=list>brian.pletcher&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=facebook'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select14' value="facebook" /></td ></tr >
+<tr   ><td class=list2>forum@cvuuf.org</td ><td class=list2>-></td ><td class=list2>matthyeww&#64yahoo.com,<br> pamelajlopez&#64yahoo.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=forum'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select15' value="forum" /></td ></tr >
+<tr   ><td class=list>library@cvuuf.org</td ><td class=list>-></td ><td class=list>mike&#64talvola.com,<br> sylviafj&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=library'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select16' value="library" /></td ></tr >
+<tr   ><td class=list2>membership@cvuuf.org</td ><td class=list2>-></td ><td class=list2>Carol&#64landmarkdesign.com,<br> dbenic&#49&#64gmail.com,<br> martin.floyd&#50&#50&#51&#48&#64gmail.com,<br> Unojimbo&#64aol.com,<br> jmkirnig&#64pacbell.net,<br> lorabrandis&#64gmail.com,<br> michael.talvola&#64gmail.com,<br> thomasbpowers&#64live.com,<br> cfarrellfnp&#64gmail.com,<br> barbara&#64barbarariddle.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=membership'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select17' value="membership" /></td ></tr >
+<tr   ><td class=list>minister@cvuuf.org</td ><td class=list>-></td ><td class=list>lorabrandis&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=minister'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select18' value="minister" /></td ></tr >
+<tr   ><td class=list2>music@cvuuf.org</td ><td class=list2>-></td ><td class=list2>svendoggy&#64sbcglobal.net</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=music'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select19' value="music" /></td ></tr >
+<tr   ><td class=list>neighborhood@cvuuf.org</td ><td class=list>-></td ><td class=list>redncurly&#64att.net,<br> michael.talvola&#64gmail.com,<br> admin&#64cvuuf.org</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=neighborhood'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select20' value="neighborhood" /></td ></tr >
+<tr   ><td class=list2>newsandnotes@cvuuf.org</td ><td class=list2>-></td ><td class=list2>lorabrandis&#64gmail.com,<br> admin&#64cvuuf.org</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=newsandnotes'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select21' value="newsandnotes" /></td ></tr >
+<tr   ><td class=list>newsletter@cvuuf.org</td ><td class=list>-></td ><td class=list>ldiniakos&#64yahoo.com,<br> michael.talvola&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=newsletter'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select22' value="newsletter" /></td ></tr >
+<tr   ><td class=list2>office@cvuuf.org</td ><td class=list2>-></td ><td class=list2>admin&#64cvuuf.org</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=office'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select23' value="office" /></td ></tr >
+<tr   ><td class=list>personnel@cvuuf.org</td ><td class=list>-></td ><td class=list>lorabrandis&#64gmail.com.com,<br> assistsupe&#64mac.com,<br> president&#64cvuuf.org</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=personnel'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select24' value="personnel" /></td ></tr >
+<tr   ><td class=list2>security@cvuuf.org</td ><td class=list2>-></td ><td class=list2>michael.talvola&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=security'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select25' value="security" /></td ></tr >
+<tr   ><td class=list>sound@cvuuf.org</td ><td class=list>-></td ><td class=list>pchavez&#64waterrock.org,<br> rick&#64barton&#45designs.net,<br> dana.ryon&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=sound'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select26' value="sound" /></td ></tr >
+<tr   ><td class=list2>staff@cvuuf.org</td ><td class=list2>-></td ><td class=list2>lorabrandis&#64gmail.com,<br> dre&#64cvuuf.org,<br> admin&#64cvuuf.org</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=staff'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select27' value="staff" /></td ></tr >
+<tr   ><td class=list>stewardship@cvuuf.org</td ><td class=list>-></td ><td class=list>hessthomas&#64roadrunner.com,<br> david&#64barker.nu,<br> michael.teasdale&#49&#64verizon.net,<br> michele&#64alloneheart.com,<br> schlausfamily&#64adelphia.net,<br> thinricher&#64hc&#45llp.com,<br> susandixon&#53&#53&#64hotmail.com,<br> jlgdesign&#64socal.rr.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=stewardship'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select28' value="stewardship" /></td ></tr >
+<tr   ><td class=list2>webcrafter@cvuuf.org</td ><td class=list2>-></td ><td class=list2>michael.talvola&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=webcrafter'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select29' value="webcrafter" /></td ></tr >
+<tr   ><td class=list>webmail@cvuuf.org</td ><td class=list>-></td ><td class=list>michael.talvola&#64gmail.com</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=webmail'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select30' value="webmail" /></td ></tr >
+<tr   ><td class=list2>womensweekend@cvuuf.org</td ><td class=list2>-></td ><td class=list2>dana.ryon&#64gmail.com,<br> haleybgood&#64gmail.com,<br> cflanagan&#54&#51&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=womensweekend'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select31' value="womensweekend" /></td ></tr >
+<tr   ><td class=list>worship@cvuuf.org</td ><td class=list>-></td ><td class=list>dukeofunk&#64verizon.net</td ><td class=list><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=worship'>Modify</a></td ><td class=list align='center' ><input type='checkbox' name='select32' value="worship" /></td ></tr >
+<tr   ><td class=list2>worship_proposal@cvuuf.org</td ><td class=list2>-></td ><td class=list2>dukeofunk&#64verizon.net,<br> vanreenanj&#64juno.com,<br> michael.talvola&#64gmail.com,<br> lorabrandis&#64gmail.com</td ><td class=list2><a href='/CMD_EMAIL_FORWARDER_MODIFY?DOMAIN=cvuuf.org&user=worship_proposal'>Modify</a></td ><td class=list2 align='center' ><input type='checkbox' name='select33' value="worship_proposal" /></td ></tr >
+<tr ><td class=listtitle align='right' colspan='5'> <input type='submit' value='Delete Selected' name=delete></td ></tr >
+<input type='hidden' name="domain" value="cvuuf.org" />
+<input type='hidden' name="action" value="delete" />
+</form></table >
+
+
+
+
+						</td></tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 0px; padding-left: 15px;">
+							<font class=tree>cvuuf</font> &raquo; <a class=tree href="/CMD_SHOW_DOMAIN?domain=cvuuf.org">cvuuf.org</a> &raquo; <a class=tree href="/CMD_EMAIL_FORWARDER?DOMAIN=cvuuf.org">Email Forwarders</a>
+					</td>
+				</tr>
+				<tr>
+					<td height=39 colspan=3 align=center valign=bottom background=/IMG_FOOTER_WIDE class=white style="padding-bottom: 8">
+						<a class="white" href="http://www.directadmin.com/">DirectAdmin</a> Web Control Panel &copy; 2012 JBMC Software
+					</td>
+				</tr>
+			</table>
+
+
+		</td>
+		<td width=31 background=/IMG_SKIN_RIGHT_SHADOW>
+		</td>
+	</tr>
+</table>
+
+
+
+</td>
+</tr>
+</table>
+
+	<script type="text/javascript">
+		make_tables_highlightable();
+	</script>
+
+</body>
+</html>
+

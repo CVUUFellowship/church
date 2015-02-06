@@ -1,0 +1,44 @@
+<?php
+      require_once 'EzPDF/class.ezpdf.php';
+      $pdf = new Cezpdf('LETTER', 'portrait');
+      $pdf->selectFont('./fonts/Helvetica.afm');
+
+      $pdf->ezText("<b>CVUUF Small Groups Directory<b>", 24, array('justification'=>'center'));
+      $pdf->ezText(" ");
+      $pdf->ezText("This directory information is for exclusive use by CVUUF Members and Friends and is not to be used for any commercial purposes.", 12, array('justification'=>'center'));
+      $pdf->ezText(" ");
+?>
+
+<?php $headno = 0 ?>
+<?php foreach($this->data as $collection) : ?>
+  <br>
+<?php $pdf->ezText("<b>$collection[0]<b>", 16, array('spacing'=>1.5)) ?>
+
+  <?php foreach($collection[1] as $item)
+        {
+            $group = $item[0];
+            $group = str_replace('<small>', '', $group);
+            $group = str_replace('</small>', '', $group);
+            $group = str_replace('<b>', '', $group);
+            $group = str_replace('</b>', '', $group);
+            $group = filter_var($group, FILTER_SANITIZE_STRING);            
+            while (strlen($group) > 54)
+            {
+                $piece = substr($group, 0, 54); 
+                $pdf->ezText("$piece", 9, array('spacing'=>1));
+                $group = substr($group, 54);
+            }
+            
+            $pdf->ezText("$group", 9, array('spacing'=>1));
+            $pdf->ezText("$item[1]", 9, array('aleft'=>280, 'spacing'=>0));
+            $pdf->ezText("$item[3]", 9, array('aleft'=>374, 'spacing'=>0));
+            $pdf->ezText("$item[4]", 9, array('aleft'=>440, 'spacing'=>0));
+            
+        }
+  ?>
+<?php endforeach ?>
+
+<?php
+      $pdf->ezStream();
+      exit;
+?>

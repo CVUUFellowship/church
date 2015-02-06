@@ -1,0 +1,26 @@
+User-agent: Googlebot
+Disallow: /fonts/
+Disallow: /milonic/
+Disallow: /js/
+Disallow: /webcal/
+
+User-agent: msnbot
+Disallow: /fonts/
+Disallow: /milonic/
+Disallow: /js/
+Disallow: /webcal/
+
+User-agent: Slurp
+Disallow: /fonts/
+Disallow: /milonic/
+Disallow: /js/
+Disallow: /webcal/
+
+User-Agent: bingbot
+Disallow: /fonts/
+Disallow: /milonic/
+Disallow: /js/
+Disallow: /webcal/
+
+User-agent: *
+Disallow: /

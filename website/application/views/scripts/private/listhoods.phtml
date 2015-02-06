@@ -1,0 +1,44 @@
+<?php $this->head = "CVUUF Neighborhood Members" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->hoodForm; ?>
+</fieldset>
+<form method=post>
+<input type="submit" name="pdfbutton" value="PDF"> Create PDF (printable) directory.
+<input type='hidden' name='hood' value='<?php echo $this->hoodid ?>' > 
+</form>
+<br>
+    <?php if (isset($this->data)) : ?>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>Name<th>Phone<th>Address<th>Email<th>Status</tr>
+    <?php $data=$this->data ?>
+    <?php foreach($data as $line) : ?>
+<?php //var_dump($data); exit; ?>
+<tr>
+  <td><?php echo $line['First Name'] ?> <?php echo $line['Last Name'] ?> 
+  <td><?php echo $line['Home Phone'] ?>
+  <td><?php echo $line['Address'] ?>
+  <td><?php echo $line['Email'] ?>
+  <td><?php echo $line['Status'] ?>
+</tr>
+    <?php endforeach ?>
+</table>
+    <?php endif ?>
+

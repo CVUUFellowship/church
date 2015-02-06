@@ -1,0 +1,21 @@
+<?php $this->head = "RELIGIOUS EDUCATION REGISTRATION RECORD" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+    <?php foreach ($this->data as $line) : ?>
+<br>
+<?php echo "<strong>$line[0] : </strong>$line[1]" ?>
+  <?php if (isset($line[2])) : ?>
+<br>&nbsp;<?php echo $line[2] ?>
+  <?php endif ?>
+    <?php endforeach ?>

@@ -1,0 +1,16 @@
+<?php $this->head = "" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<?php $functions = new Cvuuf_functions(); 
+$fullPath = $functions->findFile($this->filename);
+echo file_get_contents($fullPath); ?>

@@ -1,0 +1,126 @@
+<?php echo $this->doctype() ?>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="wot-verification" content="3867564a1b34794e623e"> 
+  <title><?php echo $this->head; ?></title>
+
+<link rel="stylesheet" type="text/css" href="/css/cvuuf.css" > 
+  <?php if (!isset($this->theme)) $this->theme = 'public' ?>
+<link rel="stylesheet" type="text/css" href="/css/<?php echo $this->theme ?>.css" > 
+  <?php if ($this->style <> '') : ?>
+<link rel="stylesheet" type="text/css" href="/css/<?php echo $this->style ?>" > 
+  <?php endif ?>
+
+<META NAME="Description" CONTENT="Online home of the Conejo Valley Unitarian Universalist Fellowship">
+<META NAME="Keywords" CONTENT="Unitarian,Universalist,spiritual,church,pagan,humanist, Conejo Valley, Ventura County, 
+  open minded, buddhism, pantheism, sermon, Newbury Park, Thousand Oaks,Los Angeles,UU,congregation,fellowship">
+
+
+<?php if (isset($this->pickers)) : ?>
+<link rel="stylesheet" type="text/css" href="/datepicker/datepicker.css" > 
+<script type="text/javascript" src="/datepicker/datepicker.js"></script>
+<script type="text/javascript" src="/datepicker/timepicker.js"></script>
+<?php endif ?>
+
+<?php if (isset($this->tinyMCE)) : ?>
+<script type="text/javascript" src="/js/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+tinyMCE.init({
+	theme : "advanced",
+	skin : "default",
+	mode : "textareas",
+	plugins : "fullpage,paste",
+  remove_script_host : false,
+  convert_urls : false,
+
+	theme_advanced_buttons3_add : "fullpage,pastetext,pasteword,selectall"
+});
+</script>
+<?php endif ?>
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+</head>
+<body>
+
+<script type="text/javascript" src="/milonic/milonic_src.js"></script>
+<noscript><a href="http://www.milonic.com/">JavaScript DHTML Menu Powered by Milonic</a></noscript>
+<script type="text/javascript" src="/milonic/mmenudom.js"></script>
+
+  <?php $functions = new Cvuuf_menufunctions(); 
+
+      echo '<script language="JavaScript" type="text/javascript">';
+      echo file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/milonic/menu_data_styles.js"); 
+      echo file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/milonic/menu_data_styles_$this->theme.js");
+      echo '</script>';
+      $functions->menuFile($_SERVER["DOCUMENT_ROOT"] . '/milonic/menu_data_main_' . $this->theme . '.js', $this->level);
+      $functions->menuFile($_SERVER["DOCUMENT_ROOT"] . '/milonic/menu_data_menus_' . $this->theme . '.js', $this->level);
+      echo '<script language="JavaScript" type="text/javascript">drawMenus();</script>';
+  ?> 
+<a href="http://www.cvuuf.org/cash.php"><!-- judge-verdant --></a>
+    <DIV id="header">
+      <DIV id="header-inner">
+        <DIV style="position: absolute; left: 10px;">
+  		  <img src="/media/graphics/theme/<?php echo $this->theme ?>/cvuuf_title_home.png" border="0" width="700" height="112"
+  					alt="CVUUF Logo">
+  		  </DIV>
+      </DIV>
+      <DIV class="missionbox">
+  Our mission is to nurture spiritually courageous people
+  who transform the world through justice and compassion.
+      </DIV>
+    </DIV>
+
+    <div style='position:absolute; top:0px; left:0px; '>
+        <a href='/index'><img src='/media/graphics/spot.gif' width='150' height='120'
+        	style='border:none;' alt='home'></a>
+    </div>
+    <div style='position:absolute; top:156px; left:0px; width:100%;'>
+    </div>
+
+
+  	<div id='body'>
+          <div style="margin:10px;">
+       			<div class="heading" align="center" style="font-size: 18pt">
+      <?php echo $this->head ?>
+      			</div>
+  <?php if (isset($this->theme) && $this->theme != 'public') : ?>
+			<!-- <div align="right" style="font-size: 10pt"><a href="http://www.togetherauction.com/cvuuf">Support the auction</a></div> -->
+  <?php endif ?>
+    
+<?php echo $this->layout()->content ?>
+
+          </div>
+
+  <center><span style="color: gray; font-size: 9pt; text-align:center; ">
+Our site uses the <a style='color:gray;' href="http://www.milonic.com/">JavaScript DHTML Menu Powered by Milonic</a> 
+  </span></center>
+<a href="http://www.cvuuf.org/cash.php"><div style="height: 0px; width: 0px;"></div></a>
+</div>
+<?php if (isset($this->tooltip)) : ?>
+<script language="JavaScript" type="text/javascript" src="/js/wz_tooltip.js"></script>
+<?php endif ?>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2391692-1");
+pageTracker._trackPageview();
+</script></body>
+</html>

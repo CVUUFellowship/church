@@ -1,0 +1,74 @@
+<?php $this->head = "SUNDAY WELCOMING PEOPLE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<form method=post>
+<strong><big>WELCOMING SCHEDULE</big></strong>
+<br><br>
+  <?php $olddates = $this->olddates ?>
+  <?php if (isset($this->table)) : ?>
+    <?php $table = $this->table ?>
+<table  border=2px style="empty-cells: show; background-color:white;" >    
+
+<tr><th><th><?php echo $this->initialsBoxes ?></tr>
+<tr><th><th>Date<?php echo $this->initialsList ?></tr>
+
+    <?php foreach($table as $date) : ?>
+<tr>
+<td><input type="checkbox" name="did[]" value='<?php echo $date[0] ?>'
+  <?php if (in_array( $date[0], $olddates)) echo ' checked' ?>
+ >
+<td><?php echo $date[1] ?>
+      <?php foreach ($date[2] as $col) : ?>
+<td class="centered-cell"><?php echo $col ?>
+      <?php endforeach ?>
+</tr>
+    <?php endforeach ?>
+</table>
+  <?php endif ?>
+
+<br><input TYPE='submit' name='status' VALUE='AWAY'> Set status to 'away' [x] for one person on date(s)<br>
+<input TYPE='submit' name='early' VALUE='EARLY AWAY'> Set early status to 'away' [x] for one person on date(s)<br>
+<input TYPE='submit' name='late' VALUE='LATE AWAY'> Set late status to 'away' [x] for one person on date(s)<br>
+<br><input TYPE='submit' name='status' VALUE='SCHEDULED'> Set status to 'scheduled' [S] for one person on date(s)<br>
+<input TYPE='submit' name='early' VALUE='EARLY SCHEDULED'> Set early status to 'scheduled' [S] for one person on date(s)<br>
+<input TYPE='submit' name='late' VALUE='LATE SCHEDULED'> Set late status to 'scheduled' [S] for one person on date(s)<br>
+<br><input TYPE='submit' name='status' VALUE='CLEAR'> Clear status for one person on date(s)<br>
+<input TYPE='submit' name='early' VALUE='EARLY CLEAR'> Clear early status for one person on date(s)<br>
+<input TYPE='submit' name='late' VALUE='LATE CLEAR'> Clear late status for one person on date(s)<br>
+
+<br><br>
+<hr>
+<br><br>
+<strong><big>WELCOMING PEOPLE</big></strong>
+<br><br>
+<table  border=2px style="empty-cells: show; background-color:white;" >    
+<tr><th><th>Name<th>Initials</tr>
+  <?php foreach($this->people as $person) : ?>
+<tr>
+<td><input type="checkbox" name="wlpid[]" value='<?php echo $person[0] ?>' >
+<td><?php echo $person[1] ?>
+<td><?php echo $person[2] ?>
+</tr>
+  <?php endforeach ?>
+</table>
+
+<br><input type="submit" name="addbutton" value="ADD"> Add new initials for ID#
+<input type="text" name="wlid" value="" size="4"> or Name 
+<input type="text" name="name" value="" size="40">
+<br><br><input TYPE="submit" name='removebutton' VALUE='REMOVE'> Remove selected people - BE CAREFUL!!<br></form>

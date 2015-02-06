@@ -1,0 +1,172 @@
+<?php $this->head = "RELIGIOUS EDUCATION ENROLLMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<strong><big>7. Review and Submit for <?php echo "$this->firstname $this->lastname" ?></big></strong>
+  <?php $data = $this->data ?>
+<br><br><br>
+<form method='post'>
+
+<strong>1. Child Information:</strong><br>
+<span class="label"> Child First Name:</span> <span style='background-color:white;'>
+        <?php echo $data['firstname'] ?></span><br>
+<span class="label"> Child Last Name:</span> <span style='background-color:white;'>
+        <?php echo $data['lastname'] ?></span><br>
+<span class="label"> Date of birth:</span> <span style='background-color:white;'>
+        <?php echo $data['birth'] ?></span><br>
+<span class="label"> Current grade:</span> <span style='background-color:white;'>
+        <?php echo $data['grade'] ?></span><br>
+<span class="label"> Gender:</span> <span style='background-color:white;'>
+        <?php echo $data['gender'] ?></span><br>
+<br>
+<span class="label"> &nbsp; </span><input type="submit" name="s1button" value="CHANGE 1">
+<br><br>
+<hr>
+<br>
+
+<strong>2. Contact Information:</strong><br>
+<br><strong>Primary Contact</strong><br>
+    <?php if (isset($data['ppersonid'])) : ?>
+<span class="label"> Home Phone:</span> <span style='background-color:white;'>
+        <?php echo $data['priphone'] ?></span><br>
+<span class="label"> Personal Phone:</span> <span style='background-color:white;'>
+        <?php echo $data['pripphone'] ?></span><br>
+<span class="label"> Email:</span> <span style='background-color:white;'>
+        <?php echo $data['priemail'] ?></span><br>
+<br>
+    <?php endif ?>
+<br><strong>Alternate Contact</strong><br>
+    <?php if (isset($data['apersonid'])) : ?>
+<span class="label"> Home Phone:</span> <span style='background-color:white;'>
+        <?php echo $data['altphone'] ?></span><br>
+<span class="label"> Personal Phone:</span> <span style='background-color:white;'>
+        <?php echo $data['altpphone'] ?></span><br>
+<span class="label"> Email:</span> <span style='background-color:white;'>
+        <?php echo $data['altemail'] ?></span><br>
+<br>
+    <?php endif ?>
+<span class="label"> &nbsp; </span><input type="submit" name="s2button" value="CHANGE 2">
+<br><br>
+<hr>
+<br>
+<strong>3. Allergies:</strong>
+<br><br>
+  <?php $allergies = $this->allergies ?>
+  <?php foreach($allergies as $key => $value) : ?>
+<span class="label"> <?php echo $key ?>:</span> <span style='background-color:white;'>
+        <?php if ($value == 'checked') echo 'yes'; else echo 'no' ?></span><br>  
+  <?php if ($key == 'Food Allergies' && $value == 'checked') : ?>
+<div style='margin-left: 227px; margin-right: 227px;  background-color:white;'>
+<?php echo $this->foodallergies ?><br>
+</div>
+  <?php endif ?>
+  <?php if ($key == 'Allergy Medications' && $value == 'checked') : ?>
+<div style='margin-left: 227px; margin-right: 227px; background-color:white;'>
+<?php echo $this->allergymeds ?>
+</div>
+<br>
+  <?php endif ?>
+  <?php endforeach ?>
+<br>
+<span class="label"> &nbsp; </span><input type="submit" name="s3button" value="CHANGE 3">
+<br><br>
+<hr>
+<br>
+
+<strong>4. Other Health Issues:</strong>
+<br><br>
+
+  <?php $issues = $this->issues ?>
+  <?php $issuenames = $this->issuenames ?>
+  <?php $issuevalues = $this->issuevalues ?>
+
+  <?php $i = 0; ?>
+  <?php foreach($issues as $key => $value) : ?>
+<span class="label"> <?php echo $issuenames[$i++] ?>:</span> <span style='background-color:white;'>
+        <?php if ($value == 'checked') echo 'yes'; else echo 'no' ?></span><br>  
+    <?php if ($value == 'checked') : ?>
+<div style='margin-left: 227px; margin-right: 227px; background-color:white;'>
+<?php echo $issuevalues[$key] ?><br>
+</div>
+    <?php endif ?>
+  <?php endforeach ?>
+
+<br>
+<span class="label"> &nbsp; </span><input type="submit" name="s4button" value="CHANGE 4">
+<br><br>
+<hr>
+<br>
+
+<strong>5. Description:</strong>
+<br><br>
+  <?php $characteristics = $this->characteristics ?>
+
+  <?php $i = 0; ?>
+  <?php foreach($characteristics as $key => $value) : ?>
+<span class="label"> <?php echo $key ?>:</span> <span style='background-color:white;'>
+      <?php if ($value == 'checked') echo 'yes'; else echo 'no' ?></span><br>  
+  <?php endforeach ?>
+    <?php if (isset($this->othertext)) : ?>
+<div style='margin-left: 227px; margin-right: 227px; background-color:white;'>
+<?php echo $this->othertext ?><br>
+</div>
+    <?php endif ?>
+
+<br>
+<span class="label"> &nbsp; </span><input type="submit" name="s5button" value="CHANGE 5">
+<br><br>
+<hr>
+<br>
+
+<strong>6. Finishing items:</strong>
+<br><br>
+
+  <?php $items = $this->items ?>
+What would you like your child to receive from this faith experience?
+<div style='margin-left: 80px; margin-right: 227px; background-color:white;'>
+<?php echo stripslashes($items[0]) ?><br>
+</div>
+<br>May we contact you to discuss your responses? <span style='background-color:white;'><?php echo $items[1] ?></span>
+<br><br>
+I have read the <a href='re_policies.html' target='policywindow'>CVUUF RE Policies</a> available
+<a href='re_policies.html' target='policywindow'>here</a> to read, and I agree to those
+policies.<br>
+<br>
+I understand RE groups occasionally visit the park.  I give my permission for
+my child to participate in a park activity.  In case of emergency, I authorize the
+adult in charge of the RE activity to obtain emergency medical care for my child.<br>
+<br><br>
+Health Insurance Provider:
+<div style='margin-left: 80px; margin-right: 227px; background-color:white;'>
+<?php echo stripslashes($items[2]) ?><br>
+</div>
+Policy/Group #: <span style='background-color:white;'><?php echo stripslashes($items[3]) ?></span>
+<br><br>
+Signature: <span style='background-color:white;'><b><i>
+<?php echo $items[4] ?></i></b></span>
+<br><br>
+<span class="label"> &nbsp; </span><input type="submit" name="s6button" value="CHANGE 6">
+
+<input type='hidden' name='keys' value='<?php echo $this->nextform->getValue('keys') ?>' >
+<input type='hidden' name='values' value="<?php echo $this->nextform->getValue('values') ?>" >
+
+</form>
+<br><br>
+<hr>
+<br>
+
+<strong>Final submission:</strong>
+    <?php if (isset($this->nextform)) : ?>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->nextform; ?>
+</fieldset>
+    <?php endif ?>

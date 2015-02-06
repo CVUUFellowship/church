@@ -1,0 +1,17 @@
+<strong><big>Change Password</big></strong><br><br>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b>
+<hr>
+    <?php endif ?>
+
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->changeForm; ?>
+</fieldset>

@@ -1,0 +1,47 @@
+<span style='font-size:120%; font-weight:bold;'><?php echo "Menu list" ?></span><br><br><br>
+    <?php if (isset($this->message)) echo "<hr><i><b>Notice:</b></i> ", $this->message, '<hr>' ?>
+    <?php $page = $this->page; $name = $this->name; $old = $this->old ?>
+<fieldset style="border:none; ">
+    <?php echo $this->selForm; ?>
+</fieldset>
+<fieldset style="border:none;">
+Menu name: <?php echo $name ?><br>
+<form action='/menus/show?page=<?php echo $page ?>&amp;name=<?php echo $name ?>' method=post>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>X<th>Page<th>Position<th>Level<th>Text<th>Type<th>Item</tr>
+    <?php $menus=$this->menus ?>
+    <?php foreach($menus as $menu) : ?>
+
+		<?php $showitem = ($menu->type == 'menu' ? 
+         '<a href="show?name='.$menu->item.
+			   '&page='.$page.'&old='.$name.'">'.htmlspecialchars($menu->item).'</a><br>'
+			: htmlspecialchars($menu->item)) ?>
+
+<tr>
+<td><?php echo $menu->id ?><td>
+<input type="checkbox" name="id[]" value='<?php echo $menu->id ?>' >
+<td><?php echo $menu->page ?><td> <?php echo $menu->position ?><td><?php echo $menu->level ?><td><?php echo $menu->text ?> 
+<td><?php echo $menu->type ?><td><?php echo $showitem ?>
+</tr>
+
+    <?php endforeach ?>
+</table>
+If type is menu, click on item to select it.<br><br>
+<input type="hidden" name="page" id="page" value="<?php echo $page ?>" >
+<input type="hidden" name="name" id="name" value="<?php echo $name ?>" >
+<input type="hidden" name="old" id="old" value="<?php echo $old ?>" >
+<br>
+<input type="submit" name="edit" id="edit" value="CHANGE">
+Change <i>first</i> selected 'X' record
+<br><br><input type="submit" name="drop" id="drop" value="REMOVE">
+Remove all selected 'X' records - BE SURE!
+<br><br><br>
+<INPUT type="submit"  name="newpagebutton" value="NEW">  Add a menu page with name 
+<INPUT type="text" name="newpage" size=10 value="">
+</form>
+</fieldset>
+
+    <?php echo $this->pageForm; ?>
+<form method=POST>
+

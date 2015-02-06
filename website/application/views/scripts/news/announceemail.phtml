@@ -1,0 +1,28 @@
+<?php $this->head = "EMAIL SEND WEEKLY ANNOUNCEMENTS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+    <?php $data=$this->data ?>
+    <?php foreach($data as $row) : ?>
+<p><b><?php echo $row['date'], $row['time'] ?> </b><span style='font-size:50%;'>[<?php echo $row['id'] ?>]
+</span><blockquote style='background-color:white;'><b><?php echo $row['title'] ?></b> - <?php echo $row['contact'], $row['location'], $row['link'] ?>
+<br><?php echo $row['desc'] ?><br></blockquote>
+    <?php endforeach ?>
+<br>
+<FORM ID="AnnounceEmail" METHOD=POST>
+<fieldset style="border:none; ">
+<INPUT name='todo' TYPE=SUBMIT VALUE="SEND">
+Send the announcement emails now.
+</fieldset>
+  <input type=hidden name='etext' value="<?PHP echo htmlspecialchars($this->etext) ?>" >
+
+</form>

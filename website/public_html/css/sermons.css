@@ -1,0 +1,25 @@
+body {font-size: 12pt; font-family:verdana,helvetica,sans-serif;}
+
+.above {font-size:smaller;background-color:#B5ACA5;padding:1em;margin-bottom:1em;}
+
+.rsstitle {font-size:larger;font-weight:bold;}
+
+.rssdesc {font-style:italic;margin-top:.5em;}
+
+.rsspubdate {font-style:italic;}
+
+.item {font-size: 14pt; padding:0px 1em .5em 1em;}
+
+.itemtitle {font-weight:bold;margin-bottom:1em;}
+
+.itemdesc {margin:0px 0px 1em 2em;font-size:smaller;}
+
+.itempubdate {font-style:italic;margin:0px 0px .5em 2em;font-size:smaller;}
+
+.below {font-size:smaller;border-top:1px solid black;padding:.25em 1em 0px 1em;margin-top:.5em;}
+
+.note {font-size:smaller;margin-top:1em;}
+
+-->
+
+</style>

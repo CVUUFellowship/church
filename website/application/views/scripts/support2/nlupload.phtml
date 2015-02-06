@@ -1,0 +1,29 @@
+<?php $this->head = "NEWSLETTER UPLOAD" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+
+
+<br><br>
+<strong>Next Newsletter file name suggestion is '<?php echo $this->filename ?>' - use it?</strong><br>
+<form method=post>
+<br><input type="radio" style="border-style:none;" name="yesno" value="YES" checked> OK 
+<input type="radio" style="border-style:none;" name="yesno" value="NO" >
+NO, instead use file name 
+<INPUT type="text" name="newName" size=20 value="">
+<br><br><input type="submit"  name="todo" value="NAME">
+<input type="hidden" name="filename" value="<?php echo $this->filename ?>"><br>
+</form>

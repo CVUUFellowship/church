@@ -1,0 +1,45 @@
+<?php $this->head = "Calendar Approvers Admin" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+
+<FORM ID="CalGroupsAdmin" METHOD=POST>
+
+
+<br><br>
+
+<form method=post>
+
+<table  border=2px style="empty-cells: show; background-color:#F4F3EE;" >
+<tr><th>ID<th>X<th>Position<th>Approver<th>Code<th>Non-User Cal</tr>
+    <?php $table = $this->data ?>
+    <?php foreach($table as $row) : ?>
+
+<tr>
+<td><?php echo $row[0] ?><td>
+<input type="checkbox" name="id[]" value='<?php echo $row[0] ?>' >
+<td><?php echo $row[1] ?><td> <?php echo $row[2] ?>
+<td> <?php echo $row[3] ?><td> <?php echo $row[4] ?>
+</tr>
+
+    <?php endforeach ?>
+</table>
+
+<br><input TYPE=SUBMIT name='graction' VALUE='NAME'> Change approver name to  
+			<INPUT type='text' name='newGroupName' size=25> [removes code also]
+<br><input TYPE=SUBMIT name='graction' VALUE='CODE'> Change approver code to  
+			<INPUT type='text' name='newGroupCode' size=2><br>
+<br><br><input TYPE=SUBMIT name='graction' VALUE='ADD'> ADD Position titled
+			<INPUT type='text' name='newTitle' size=50><br><br>
+<input TYPE=SUBMIT name='graction' VALUE='DROP'> Remove selected Position - BE CAREFUL!!<br>
+
+</FORM><br>

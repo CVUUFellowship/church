@@ -1,0 +1,16 @@
+  #header
+  {
+    background: #FFEBE2;
+  }
+	
+  #header-inner
+  {
+    background: url(/media/graphics/theme/data/header_cvuuf.jpg) top left repeat-x ;
+  }
+
+  #body
+  {
+  background: url(/media/graphics/theme/data/content_bg.jpg) repeat ; 
+  }
+
+

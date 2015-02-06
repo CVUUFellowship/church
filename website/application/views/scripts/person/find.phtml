@@ -1,0 +1,101 @@
+<?php $this->head = "Find a Person" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+    <?php if (!isset($this->emails)) : ?>
+<span style='font-size:120%; font-weight:bold;'><?php echo "Select by name" ?></span><br>
+<fieldset style="border:none; ">
+    <?php echo $this->personForm; ?>
+</fieldset>
+    <?php endif ?>
+
+
+    <?php if (isset($this->names)) : ?>
+<br><hr><br>
+
+    <?php if (count($this->names) == 0) : ?>
+<strong>No match found for name.</strong>
+
+    <?php else : ?>
+    <form method=post action='/person/show?theme=<?php echo $this->theme?>'>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>X<th>ID<th>Name<th>Status<th>Presence</tr>
+    <?php foreach ($this->names as $name) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $name[0] ?>' >
+<td><?php echo $name[0] ?>
+<td><?php echo $name[1] ?> 
+<td><?php echo $name[2] ?> 
+<td><?php echo ($name[3] === "no") ? "Active" : (($name[3] === "yes") ? "Inactive" : "Inactive(".$name[3].")") ?> 
+</tr>
+    <?php endforeach ?>
+</table>
+<br>
+<input type="hidden" name="first" value="<?php echo $this->first ?>">
+<input type="hidden" name="last" value="<?php echo $this->last ?>">
+<input type="submit" name="personbutton" value="PERSON">
+Show details of first 'X' person
+    </form>    
+    <?php endif ?>
+
+    <?php endif ?>
+
+    <?php if (!isset($this->names)) : ?>
+<span style='font-size:120%; font-weight:bold;'><?php echo "Select by email" ?></span><br>
+<fieldset style="border:none; ">
+    <?php echo $this->emailForm; ?>
+</fieldset>
+    <?php endif ?>
+    
+    <?php if (isset($this->emails)) : ?>
+<br><hr><br>
+
+    <?php if (count($this->emails) == 0) : ?>
+<strong>No match found for email.</strong>
+
+    <?php else : ?>
+    <form method=post action='/person/show?theme=<?php echo $this->theme?>'>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>X<th>ID<th>Name<th>Status<th>Presence</tr>
+    <?php foreach ($this->emails as $name) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $name[0] ?>' >
+<td><?php echo $name[0] ?>
+<td><?php echo $name[1] ?> 
+<td><?php echo $name[2] ?> 
+<td><?php echo ($name[3] === "no") ? "Active" : (($name[3] === "yes") ? "Inactive" : "Inactive(".$name[3].")") ?> 
+</tr>
+    <?php endforeach ?>
+</table>
+<br>
+<input type="hidden" name="email" value="<?php echo $this->email ?>">
+<input type="submit" name="personbutton" value="PERSON">
+Show details of first 'X' person
+    </form>    
+    <?php endif ?>
+
+    <?php endif ?>
+
+    <?php if (!isset($this->emails) && !isset($this->names)) : ?>
+        <?php if ($this->permmembership || $this->permadmin) : ?>
+<span style='font-size:120%; font-weight:bold;'><?php echo "Select by ID" ?></span><br>
+<fieldset style="border:none; ">
+    <?php echo $this->idForm; ?>
+</fieldset>
+    <?php endif ?>
+    <?php endif ?>

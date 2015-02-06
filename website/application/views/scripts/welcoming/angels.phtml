@@ -1,0 +1,46 @@
+<?php $this->head = "ANGELS NEEDED" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<br>
+<form method=post>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>ID<th>Name<th>First Date<th>Status<th>Status Date</tr>
+
+    <?php foreach ($this->table as $person) : ?>
+<tr>
+		<?php $link = '<a href="/person/showperson?id=' . 
+      $person["ID"] . '">' . $person["ID"] . '</a><br>'
+			?>
+
+
+<td><input type="checkbox" name="id[]" value='<?php echo $person['ID'] ?>' >
+<td><?php echo $link ?>
+<td><?php echo $person['Name'] ?>
+<td><?php  if ($person['Date'] <> '') echo substr($person['Date'], 5, 2) . "/" . substr($person['Date'], 8, 2)
+                 . "/" . substr($person['Date'], 0, 4); else echo '' ?>
+<td><?php echo $person['Status'] ?>
+<td><?php  if ($person['StatusDate'] <> '') echo substr($person['StatusDate'], 5, 2) . "/" . substr($person['StatusDate'], 8, 2)
+                 . "/" . substr($person['StatusDate'], 0, 4) ; else echo '' ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+<br><input type="submit"  name="assignbutton" value="ASSIGN"> Assign angel as person id# 
+<input type="text" name="angel" value="" size="4"> or <b>yourself</b> if left blank.
+</form>

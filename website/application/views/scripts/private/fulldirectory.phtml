@@ -1,0 +1,26 @@
+<?php $this->head = "MEMBERS AND FRIENDS DIRECTORY" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<form method=post>
+<br><input type="submit" name="pdfbutton" value="PDF"> Create PDF (printable) directory.
+<input type='hidden' name='directory' value="<?php echo $this->directory ?>" >
+<br><input type="submit" name="csvbutton" value="CSV"> Create CSV (import to address book) directory.
+<input type='hidden' name='directory' value="<?php echo $this->directory ?>" >
+</form>

@@ -1,0 +1,7 @@
+<?php $this->head = "ANNOUNCEMENT DISPLAY" ?>
+
+    <?php $row = $this->anc ?>
+<p><b><?php echo $row['date'], $row['time'] ?> </b><span style='font-size:50%;'>[<?php echo $row['id'] ?>]
+</span><blockquote><b><?php echo $row['title'] ?></b> - <?php echo $row['contact'], $row['location'], $row['link'] ?>
+<br><?php echo $row['desc'] ?><br></blockquote>
+

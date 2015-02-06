@@ -1,0 +1,25 @@
+<?php $this->head = "POLICY CHOOSE FILE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<strong>Choose policy <?php echo $this->filetype ?> file to upload</strong>
+<form enctype='multipart/form-data' method=post>
+<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+<input type="hidden" name="todo" value="upload">
+<input name="THEPDF" type="file" size=100><br>
+<input type="hidden" name="PDFFILE" value="<?php echo $this->filename ?>">
+<input type="hidden" name="recid" value="<?php echo $this->recid ?>">
+<input type="hidden" name="filetype" value="<?php echo $this->filetype ?>">
+<br>
+<input type=submit value="SEND NOW">
+</form>

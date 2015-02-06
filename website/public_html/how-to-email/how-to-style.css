@@ -1,0 +1,36 @@
+/* started out from:
+ * http://jsfiddle.net/27Syr/1206/
+ * http://stackoverflow.com/questions/15757036/creating-a-zoom-effect-on-an-image-on-hover-using-css
+ *
+ * Then I had some trouble with the zooming and realized I shouldn't get hung up on it, and took it out.
+ */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.screenshot {
+    position: relative;
+    top: 0%;
+
+    width: 75%;
+    margin: 1.5em 5% 1.5em 5%
+}
+
+.image {
+    width: 100%;
+    height: 100%;    
+}
+
+.intro {
+	margin: 1em 5% 1em 5%;
+}
+
+.conclusion {
+	margin: 1em 5% 1em 5%;
+}
+
+.instruction {
+	margin: 1em 10% 1em 10%;
+}

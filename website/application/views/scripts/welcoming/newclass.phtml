@@ -1,0 +1,48 @@
+<?php $this->head = "NEW PEOPLE CLASS SELECTION" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<br>
+<form method=post>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>ID<th>Name<th>Status<th>Friend Date<th>Class<th>Email<th>Home Phone</tr>
+
+    <?php foreach ($this->table as $person) : ?>
+<tr>
+		<?php $link = '<a href="/person/showperson?id=' . 
+      $person["ID"] . '">' . $person["ID"] . '</a><br>'
+			?>
+
+<td><input type="checkbox" name="id[]" value='<?php echo $person['ID'] ?>' >
+<td><?php echo $link ?>
+<td><?php echo $person['Name'] ?>
+<td><?php echo $person['Status'] ?>
+<td><?php  if ($person['Date'] <> '') echo substr($person['Date'], 5, 2) . "/" . substr($person['Date'], 8, 2)
+                 . "/" . substr($person['Date'], 0, 4); else echo '' ?>
+<td><?php  if ($person['Class'] <> '') echo substr($person['Class'], 5, 2) . "/" . substr($person['Class'], 8, 2)
+                 . "/" . substr($person['Class'], 0, 4) ; else echo '' ?>
+<td><?php echo $person['Email'] ?>
+<td><?php echo $person['Phone'] ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+<br><input type="submit"  name="marku" value="Mark Attended">  on class date
+<input type='text' name='when' value='' size='10'> [many formats are OK, but year is 4 digits]
+<br><input type="submit"  name="remu" value="Remove Attended">
+</form>

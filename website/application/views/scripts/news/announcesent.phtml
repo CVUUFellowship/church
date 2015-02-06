@@ -1,0 +1,30 @@
+<?php $this->head = "WEEKLY ANNOUNCEMENTS EMAIL RESULTS" ?>
+    <?php if (isset($this->results)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->results) == 'array') : ?>
+            <?php foreach ($this->results as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->results ?>
+        <?php endif ?>
+    <?php endif ?>
+</b><hr><br>
+
+<?php echo "$this->sent emails sent." ?>
+<br><br>
+    <?php if ((count($this->unsub)) > 0) : ?>
+<strong>Unsubscribed addresses</strong>
+      <?php foreach ($this->unsub as $unsub) : ?>
+<br><?php echo $unsub ?>
+      <?php endforeach ?>
+    <?php endif ?>
+
+<br><br>    
+
+    <?php if ((count($this->invalid)) > 0) : ?>
+<strong>Invalid addresses</strong>
+      <?php foreach ($this->invalid as $invalid) : ?>
+<br><?php echo $invalid ?>
+      <?php endforeach ?>
+    <?php endif ?>

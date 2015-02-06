@@ -1,0 +1,134 @@
+  <?php if ($this->newold == 'old') : ?>
+<?php $this->head = "POLICY EDIT" ?>
+  <?php else : ?>
+<?php $this->head = "POLICY CREATE" ?>
+  <?php endif ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<form method='post'>
+  <?php $policy = $this->policy ?>
+  <?php if ($this->newold == 'old') : ?>
+<strong>Policy number <?php echo $policy->id ?>: <?php echo $policy->name ?></strong>
+<br>
+
+<fieldset style="border:none;">
+<dt>Last change date and time</dt><dd><?php echo $policy->submitdate ?></dd>
+<dt>Approval date and time</dt><dd>
+<?php if ($policy->approvaldate == '0000-00-00 00:00:00') echo " none ";
+      else echo $policy->approvaldate ?>
+</fieldset>
+
+  <?php else : ?>
+<strong>New policy</strong>
+<br>
+  <?php endif ?>
+
+<fieldset style="border:none;">
+<br>If you do not want to work with this policy, use the CANCEL button now.
+<br><br>
+<dt><input class='submit' TYPE=SUBMIT name='todo' value='CANCEL'></dt>
+<dd> Cancel this update (does not undo any changes already made).</dd>
+</fieldset>
+<br><hr><br>
+<strong>Policy index update</strong>
+  <?php if ($policy->status == 'Current') : ?>
+<br>If any changes are made to a <strong>Current</strong> status policy, the status will be changed to <strong>Updating</strong> until approval signoff.  A <strong>Current</strong> status
+policy will not accept a manually set revision number but the revision will count up and status will be
+set to <strong>Updating</strong>.
+  <?php endif ?>
+<br><br>
+<fieldset style="border:none;">
+<dt>Policy index id</dt>
+<dd><input type="text" name="number" value="<?PHP echo $policy->id ?>" size="3" disabled ></dd>
+<dt>Policy number</dt>
+<dd><input type="text" name="number" value="<?PHP echo $policy->number ?>" size="3" disabled ></dd>
+<dt>Revision</dt>
+<dd><input type="text" name="revision" value="<?PHP echo $policy->revision ?>" size="3" 
+<?php if ($policy->status == 'Current') echo "disabled" ?>></dd>
+
+<dt>Status</dt>
+<dd><input type="text" name="status" value="<?PHP echo $policy->status ?>" size="15" disabled></dd>
+<dt>Policy name</dt>
+<dd><input type="text" name="policyname" value="<?PHP echo $policy->name ?>" size="40"></dd>
+<dt>Policy type</dt>
+<dd><select name="type">
+  <option value='C' <?php if (isset($this->type['C'])) echo 'selected' ?> >Council Limitations</option>
+  <option value='B' <?php if (isset($this->type['B'])) echo 'selected' ?> >Board-Council Linkage</option>
+  <option value='O' <?php if (isset($this->type['O'])) echo 'selected' ?> >Organizational Documents</option>
+  <option value='E' <?php if (isset($this->type['E'])) echo 'selected' ?> >Ends Policies</option>
+  <option value='G' <?php if (isset($this->type['G'])) echo 'selected' ?> >Governance Process</option>
+  <option value='X' <?php if (isset($this->type['X'])) echo 'selected' ?> >Other</option>
+</select>
+</dd>
+<dt>Policy level</dt>
+<dd><input type="text" name="level" value="<?PHP echo $policy->level ?>" size="3"></dd>
+<dt>Next higher policy number</dt>
+<dd><input type="text" name="below" value="<?PHP echo $policy->belowpolicy ?>" size="3"></dd>
+</fieldset>
+<fieldset style="border:none; ">
+<dt>Description</dt>
+<dd><textarea name="description" COLS=50 ROWS=5>
+<?php echo $policy->description ?></textarea></dd>
+</fieldset>
+
+<fieldset style="border:none; ">
+  <?php if ($this->newold == 'old') : ?>
+<dt><input class='submit' TYPE=SUBMIT name='todo' value='UPDATE'></dt><dd> Update this policy index entry.</dd>
+  <?php else : ?>
+<dt><input class='submit' TYPE=SUBMIT name='todo' value='CREATE'></dt><dd> Create this new policy index entry.</dd>
+  <?php endif ?>
+</fieldset>
+
+<br><hr><br>
+
+<strong>Policy files update</strong>
+<br>Changing the actual policy text is done here. You cannot directly change the server file name which is set by
+the policy number and revision. Here you can upload the RTF (editable) and PDF (printable) versions of the file text. Both must
+be uploaded before a revision can be approved.  
+
+  <?php if ($policy->status == 'Current') : ?>
+The same revision rules apply as for index update.
+  <?php endif ?>
+<br><br>
+<fieldset style="border:none;">
+<dt>Current pdf file (if any)</dt>
+<dd><input type="text" name="pdffile" value="<?PHP echo $policy->pdffile ?>" size="20"></dd>
+<dt><input class='submit' TYPE=SUBMIT name='todo' value='NEW PDF'></dt><dd> Upload new pdf file.</dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt>Current rtf file (if any)</dt>
+<dd><input type="text" name="rtffile" value="<?PHP echo $policy->rtffile ?>" size="20"></dd>
+<dt><input class='submit' TYPE=SUBMIT name='todo' value='NEW RTF'></dt><dd> Upload new rtf file.</dd>
+</fieldset>
+
+<br><hr><br>
+
+<strong>Approval sign off</strong>
+<br> If the policy revision is now complete, use the APPROVE button. Approval date and time will be stamped with the current time. Be sure the index information is correct and that both PDF and RTF files are correct 
+before completing the approval. Once approval has been entered, this policy revision status will be changed to <strong>Current</strong>.
+<br><br>
+<fieldset style="border:none;">
+<dt><input class='submit' TYPE=SUBMIT name='todo' value='APPROVE'></dt><dd> Approve the policy and make policy status <strong>Current</strong>.</dd>
+</fieldset>
+
+<br><hr><br>
+
+If there will be further review and work done on the policy before it will be approved, use the EXIT 
+button.
+<br><br>
+<fieldset style="border:none;">
+<dt><input class='submit' TYPE=SUBMIT name='todo' value='EXIT'></dt><dd> Exit editing and leave policy status set to <strong><?php echo $policy->status ?></strong>.</dd>
+</fieldset>
+<input type='hidden' name='recid' value=<?php echo $policy->id ?>>
+</form>

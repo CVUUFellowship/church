@@ -1,0 +1,57 @@
+<?php $this->head = "UPLOAD AUDIO SERMONS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<big><strong>Sermon audio files online now:</strong></big>
+<br><br>
+<fieldset style="border:none; ">
+<form enctype='multipart/form-data' method=post>
+  <?php $oldest = $this->files[0] ?>
+<table border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>File</tr>
+    <?php $count = count($this->files) - 2 ?>
+    <?php foreach($this->files as $file) : ?>
+      <?php if (strpos($file, '.mp3') <> false) :?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $file ?>' 
+    <?php if ($file == $oldest) echo ' checked ' ?>  >
+<td><?php echo $file ?>
+      <?php endif ?>
+    <?php endforeach ?>
+</table>  
+  <?php if ($count > 9) : ?>
+<br>Suggest removing oldest file '<?php echo $oldest?>' to make room for new sermon.
+Check a different sermon if another should be removed instead.
+  <?php endif ?>
+
+<br><br>
+<strong>Choose .mp3 sermon file to upload:</strong>
+<input type="hidden" name="MAX_FILE_SIZE" value="7000000">
+<input type="hidden" name="todo" value="upload">
+<input name="mp3file" type="file" size=60><br>
+<input type="hidden" name="theName" value="newfile" >
+<br><br>
+<input type=submit name='sendbutton' value="SEND NOW"> Upload new sermon file and delete first selected old sermon file.
+<br><br>
+<input type=submit name='deletebutton' value="DELETE"> Delete first selected old sermon file.
+</fieldset>
+
+<br><br><hr><br><br>
+<big><strong>Upload Listgarden .xml and .html files:</strong></big>
+<br><br>
+<fieldset style="border:none; ">
+<input type=submit name='mlbutton' value="*ML"> Upload .xml and .html files.
+</fieldset>
+
+</form>
+
+</form>

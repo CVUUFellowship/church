@@ -1,0 +1,40 @@
+<?php $this->head = "LIBRARY CATALOG MAINTENANCE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<?php echo $this->count ?> items currently in catalog.
+<br><br>
+<hr>
+<br>
+<strong><big>Select Catalog Records to Edit</big></strong>
+
+<form method=post>
+
+<br><input type="submit" name="findbutton" value="FIND"> Choose an existing number to change 
+<input type="text" name="findnumber" value="" size="4">
+<br><input TYPE='submit' name='addbutton' VALUE='ADD'> Add a catalog item.
+
+<br><br>
+<hr>
+<br>
+<strong><big>Create Catalog Listings</big></strong>
+<br>
+<br><input TYPE='submit' name='printbutton' VALUE='TITLE'> Create pdf title order. 
+<br><input TYPE='submit' name='printbutton' VALUE='AUTHOR'> Create pdf author order. 
+<br><input TYPE='submit' name='printbutton' VALUE='CALL'> Create pdf call number order. 
+<br><br><input TYPE='submit' name='printbutton' VALUE='RECENT'> Create pdf one page of the most recent. 
+<br><input TYPE='submit' name='checkbutton' VALUE='TABLE'> Create table of most recent 100. 
+
+<br><br><input type="submit" name="printbutton" value="PRINT"> Create pdf to print call numbers 
+<input type="text" name="call#s" value="" size="60">
+<br>Enter numbers separated by spaces or a range of numbers as lownumber-highnumber.

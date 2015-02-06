@@ -1,0 +1,54 @@
+<?php $this->head = "Calendar Event Outstanding Approvals" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+An empty cell means approval is not needed any more for that entry. 
+Once final approval has been recorded, the entry will disappear from this list.
+
+
+<br><br>
+
+<form method=post>
+
+<table border=2px empty-cells: show >
+<tr><th>Event<th>Requester<th>Description<th>Approver<th>Position<th>Rooms<th>Public<th>Comments</TH>
+    <?php $table = $this->data ?>
+    <?php foreach($table as $row) : ?>
+
+
+<tr>
+<td>
+<a href='<?php echo $row['evurl'] ?> '> <?php echo $row['id'] ?> </a>
+<td><?php echo $row['reqname'] ?>
+<td><?php echo $row['evname'] ?>
+<td><?php echo $row['aprname'] ?>
+<td><a href='<?php echo $row['aprurl'] ?> '> 
+  <?php echo $row['approver'] ?></a>
+
+<td>
+  <?php if (null <> $row['rooms']) : ?>
+    <?php foreach ($row['rooms'] as $room) : ?>
+      <a href='<?php echo $room[0] ?>'>
+      <?php echo $room[1] ?></a>
+    <?php endforeach ?>
+  <?php endif ?>
+
+<td>
+  <?php if (null <> $row['public']) : ?>
+<a href='<?php echo $row['evurl'] ?>'>Wait</a>
+  <?php endif ?>
+
+    <?php endforeach ?>
+</table>
+
+</form><br>

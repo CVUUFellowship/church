@@ -1,0 +1,30 @@
+<?php $this->head = "NEWS AND NOTES CHOOSE FILE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+
+
+<br><br>
+
+<strong>Choose PDF News and Notes file to upload as <?php echo $this->filename ?> </strong>
+<form enctype='multipart/form-data' method=post>
+<input type="hidden" name="MAX_FILE_SIZE" value="12000000">
+<input type="hidden" name="todo" value="upload">
+<input name="THEPDF" type="file" size=100><br>
+<input type="hidden" name="theName" value="<?php echo $this->filename ?>"" >
+<br>
+<input type=submit value="SEND NOW">
+</form>

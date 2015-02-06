@@ -1,0 +1,52 @@
+<?php $this->head = "CVUUF LIBRARY CATALOG" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<center>
+  <?php foreach($this->headlines as $headline) : ?>
+<br><?php echo $headline ?>
+  <?php endforeach ?>
+</center>
+<br>  
+<?php echo $this->AlphaList ?>
+
+<center>
+<form method = 'post' >
+Search by author (first name first), title, subject or keyword for <br>
+<input type='text' name='Searchterm' size='60'>
+<input type='submit' value="FIND IT">
+<hr size=.5>
+</form>
+</center>
+
+<?php //var_dump($this->titles) ?>
+
+<?php $selection = $this->titles ?>
+
+<center><strong><?php echo count($selection) ?> titles found</strong></center>
+<br><br>
+    <?php if (isset($selection)) : ?>
+<div style='margin-left:20px;'>
+    <?php foreach ($selection as $book) : ?>
+<br><br>
+      <?php foreach ($this->fields as $field) : ?>
+<?php $info = $book->$field ?>
+<?php if (isset($info) && $info <> '') : ?>
+<li><b><?php echo $field ?>: </b><?php echo $book->$field ?>
+<?php endif ?>
+      <?php endforeach ?>
+    <?php endforeach ?>
+</div>
+    <?php endif ?>
+            
+

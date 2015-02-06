@@ -1,0 +1,53 @@
+<?php $this->head = "NEIGHBORHOOD EMAIL COMPOSITION" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<?php $this->tinyMCE = true ?>
+<br><br>
+
+<form method='post'>
+<fieldset style="border:none;">
+<dt>Neighborhood:</dt>
+<dd>
+<select name="hood" id="hood" size="7">
+    <option value="0" label=""></option>
+    <option value="1" label="Newbury Neighbors">Newbury Neighbors</option>
+    <option value="3" label="Eastenders">Eastenders</option>
+    <option value="5" label="10 Degrees Cooler">10 Degrees Cooler</option>
+    <option value="13" label="Wild West">Wild West</option>
+    <option value="14" label="Suddenly Seymour">Suddenly Seymour</option>
+    <option value="15" label="Meadowood">Meadowood</option>
+</select>
+</dd></dl>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt>From:</dt>
+<dd><input type="text" name="FROM" size="30" value="<?php echo $this->email ?>"></dd>
+<dt>Subject:</dt>
+<dd><input type="text" name="SUBJECT" size="40"></dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt>Your message:</dt>
+<dd><TEXTAREA NAME="TEXT" COLS=70 ROWS=15></TEXTAREA></dd>
+</fieldset>
+<fieldset style="border:none;">
+<dt> &nbsp; </dt>
+<dd><small>Need help with entering data? <a href='http://www.freemasons-web.com/thirdParty/tiny_mce/themes/advanced/tinyMceHelp.html'>
+tinyMCE help</a></small></dd>
+<br><br>
+
+<dt><INPUT TYPE=SUBMIT name='doit' VALUE="SUBMIT"></dt>
+<dd>Expect a minute or two so silent delay after <b>Submit</b> while emails are sent.</dd>
+</fieldset>
+
+</FORM>

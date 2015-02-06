@@ -1,0 +1,35 @@
+<?php $this->head = "Calendar Council Approval Admin" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+
+<FORM ID="CalCouncilAdmin" METHOD=POST>
+
+
+<br><br>
+
+<form method=post>
+
+<table  border=2px style="empty-cells: show; background-color:#F4F3EE;" >
+<tr><th>Group Name<th>Approver</tr>
+    <?php $table = $this->data ?>
+    <?php foreach($table as $row) : ?>
+
+<tr>
+<td><?php echo $row[0] ?><td> <?php echo $row[1] ?>
+</tr>
+
+    <?php endforeach ?>
+</table>
+<br><input TYPE=SUBMIT name='coaction' VALUE='LOGINS'> Create all logins and/or synchronize passwords for positions<br>
+
+</form>

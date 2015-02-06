@@ -1,0 +1,27 @@
+<?php $this->head = "Change Person" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php if (count($this->message) > 0) : ?>
+          <?php echo "<hr><b><i>Notice:</i><br> " ?>
+          <?php if (gettype($this->message) == 'array') : ?>
+              <?php foreach ($this->message as $line) : ?>
+                  <?php echo $line, '<br>' ?>
+              <?php endforeach ?>
+          <?php else : ?>
+              <?php echo $this->message ?>
+          <?php endif ?>
+</b><hr><br>
+        <?php endif ?>
+    <?php endif ?>
+    <?php if ($this->explain <> '') : ?>
+<br><br>
+<?php echo $this->explain ?>
+<br>
+    <?php endif ?>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->changeForm; ?>
+</fieldset>
+
+<dl>
+<dd>ENTER submits the form for data validation.</dd>
+<dd>CLEAR resets form values to original values.</dd>
+<dd>COMMIT enters the form values into the database.</dd>

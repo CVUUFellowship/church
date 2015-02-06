@@ -1,0 +1,42 @@
+<?php $this->head = "ANNOUNCEMENTS MAINTENANCE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<fieldset style="border:none;">
+<form method='post'>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>ID<th>Status<th>Date<th>Time<th>Title<th>Contact</tr>
+    <?php foreach($this->announcements as $anc) : ?>
+<tr>
+  <td><input type='checkbox' name='id[]' value='<?php echo $anc->id ?>' >
+  <td><?php echo $anc->id ?>
+  <td><?php echo $anc->status ?>
+  <td><?php echo date("D F j, Y", mktime(0,0,0,substr($anc->xdate, 4, 2), substr($anc->xdate, 6, 2), substr($anc->xdate, 0, 4)))?>
+  <td><?php echo $anc->time ?>
+  <td><?php echo $anc->title ?>
+  <td><?php echo $anc->contact ?>
+  
+  
+    <?php endforeach ?>
+</table>
+<br>
+<br><dt><input TYPE=SUBMIT name='todo' VALUE='SHOW'></dt><dd> Show the first selected announcement.</dd>
+<br>
+<br><dt><input TYPE=SUBMIT name='todo' VALUE='EDIT'></dt><dd> Edit the first selected announcement.</dd>
+<br><dt><input TYPE=SUBMIT name='todo' VALUE='DELETE'></dt><dd> Mark the selected announcements deleted.</dd>
+<br><dt><input TYPE=SUBMIT name='todo' VALUE='APPROVE'></dt><dd> Mark the selected announcements approved.</dd>
+<br><dt><input TYPE=SUBMIT name='todo' VALUE='REJECT'></dt><dd> Mark the selected announcements rejected.</dd>
+
+</form>
+</fieldset>

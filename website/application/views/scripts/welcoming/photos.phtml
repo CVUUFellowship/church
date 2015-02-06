@@ -1,0 +1,52 @@
+<?php $this->head = "DATABASE PHOTOS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<?php $counts = $this->counts ?>
+<br><b><?php echo $counts[0] ?> entries with photos.
+<br><?php echo $counts[1] ?> Members with photos.
+<br><br><?php echo $counts[2] ?> entries without photos.
+<br><?php echo $counts[3] ?> members without photos.</b>
+<br><br>
+<form method=post>
+<input type="submit"  name="listbutton" value="LIST"> PDF listing of people without photos
+<br>
+<br><br>
+<hr>
+<br><br>
+<b>Upload a photo</b>
+<br><br><input type="submit" name="selectbutton" value="SELECT"> Select a person ID#
+<input type="text" name="id" value="" size="4"> or Name 
+<input type="text" name="name" value="" size="40">
+</form>
+
+<br><br>
+<?php if (isset($this->photolink)) : ?>
+  <img src='/media/photos/members/<?php echo $this->photolink ?>' border=2>
+  <br><?php echo $this->name ?>
+  <br><br>
+  <b>Choose jpg photo file [70px wide, 25KB max file size] to upload:</b><br>	
+  <form enctype="multipart/form-data" method=post>
+    <input type="hidden" name="MAX_FILE_SIZE" value="25000">
+    <input type="hidden" name="action" value="reupload">
+    <input name="THEPHOTO" type="file" size=70><br>
+    <input type=submit name='upbutton' value="UPLOAD">
+    <input type=hidden name='pid' value=<?php echo $this->pid ?> >
+  </form>
+  <br><br>
+<?php endif ?>

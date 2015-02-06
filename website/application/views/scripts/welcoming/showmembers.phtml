@@ -1,0 +1,35 @@
+<?php $this->head = "MEMBERS BY DATE" ?>
+    <?php if (isset($this->message)) echo "<hr><i><b>Notice:</b></i> ", $this->message, '<hr>' ?>
+    <?php $page = $this->page; $name = $this->name; $old = $this->old ?>
+<fieldset style="border:none; ">
+    <?php echo $this->selForm; ?>
+</fieldset>
+<fieldset style="border:none;">
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<form method='get'>
+<br><input TYPE='submit' name='Format' VALUE='PDF'> Generate PDF file to print
+</form>
+<br><br>
+<br>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>ID<th>Name<th>Date</tr>
+    <?php $num = 0; ?>
+    <?php foreach ($this->table as $person) : ?>
+<tr>
+
+		<?php $link = '<a href="/person/showperson?id=' . 
+      $person["ID"] . '">' . $person["ID"] . '</a><br>'
+			?>
+
+<td><?php echo $num++ ?><td><?php echo $link ?>
+<td><?php echo $person['Name'] ?>
+<td><?php echo $person['Date'] ?>
+</tr>
+    <?php endforeach ?>
+</table>

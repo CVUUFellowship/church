@@ -1,0 +1,71 @@
+<?php $this->head = "$this->CalType CALENDAR $this->date" ?>
+    <?php if (isset($this->message)) echo "<hr><i><b>Notice:</b></i> ", $this->message, '<hr>' ?>
+    <?php $page = $this->page; $name = $this->name; $old = $this->old ?>
+<fieldset style="border:none; ">
+    <?php echo $this->selForm; ?>
+</fieldset>
+<fieldset style="border:none;">
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+
+  <?php if ($this->Status=='Visitor') : ?>
+<form method=post>
+
+<br><input TYPE='submit' name='Format' VALUE='PDF'> Generate PDF file to print
+<br><br>
+<br>If >3 months since first visit, name is <b>Bold</b>.
+<br>If a date is last year it is in <i>Italics</i>.
+<br>
+  <?php else : ?>
+<br>If 4-6 months after Friend Date, date is <u>Underlined</u>.
+<br>If 6-12 months after Friend Date, date is in <i>Italics</i>.
+<br>If >12 months after Friend Date, date is in <b>Bold</b>.
+<br><br>
+  <?php endif ?>
+<br>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+
+<tr><th><th>ID
+	<?php if ($this->CalType == 'VISITOR') : ?>
+<th>1<th>2<th>Name<th>Miss<th>First<th>Visits<th>UU<th>Comments<th>Miss</tr>
+	<?php else : ?>
+<th>Name<th>Friend Date<th>UU<th>Comments</tr>
+  <?php endif ?>
+
+    <?php $num = 0; ?>
+    <?php foreach ($this->table as $person) : ?>
+<tr>
+
+		<?php $link = '<a href="/person/showperson?id=' . 
+      $person["ID"] . '">' . $person["ID"] . '</a><br>'
+			?>
+
+	<?php if ($this->CalType == 'VISITOR') : ?>
+<td><?php echo ++$num ?><td><?php echo $link ?>
+<td><input type="checkbox" name="id1[]" value='<?php echo $person["ID"] ?>'> 
+<td><input type="checkbox" name="id2[]" value='<?php echo $person["ID"] ?>'> 
+<td><?php echo $person['Name'] ?>
+<td><?php echo $person['Miss']?>
+<td><?php echo $person['First'] ?><td><?php echo $person['Visits']?><td><?php echo $person['UU']?>
+<td><?php echo $person['Comments'] ?>
+<td><?php echo $person['Miss']?>
+	<?php	else : ?>
+<td><?php echo $num++ ?><td><?php echo $link ?>
+<td><?php echo $person['Name']?><td><?php echo $person['Friend Date']?><td><?php echo $person['UU']?>
+<td><?php echo $person['Comments']?>
+  <?php endif ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+	<?php if ($this->CalType=="VISITOR") : ?>
+<br><br><input TYPE=SUBMIT name='Action' VALUE='Log'> Log marked visits on <?php echo $this->date ?>
+<br>
+<input TYPE=hidden name='Status' VALUE='<?php echo $this->Status ?>'>
+  <?php endif ?>
+</form>

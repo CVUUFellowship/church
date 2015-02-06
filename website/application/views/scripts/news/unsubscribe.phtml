@@ -1,0 +1,42 @@
+<?php $this->head = "UNSUBSCRIBE MAINTENANCE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+
+<FORM ID="Unsubscribe" METHOD=POST>
+
+
+<br><br>
+
+<form method=post>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>First<th>Last<th>ALL<th>WEEK<th>NEWS<th>HOOD<th>BULK</tr>
+    <?php $table = $this->unsubs ?>
+    <?php foreach($table as $row) : ?>
+
+<tr>
+<td><?php echo $row['id'] ?>
+<td><?php echo $row['firstname'] ?><td> <?php echo $row['lastname'] ?>
+<td> <?php echo $row['all'] ?><td> <?php echo $row['week'] ?>
+<td> <?php echo $row['news'] ?><td> <?php echo $row['hood'] ?>
+<td> <?php echo $row['bulk'] ?>
+</tr>
+
+    <?php endforeach ?>
+</table>
+
+<br>
+<br><input type="submit" name="unsubbutton" value="UNSUB"> Add or change unsubscribe info for ID#
+<input type="text" name="unsubid" value="" size="4"> or Name 
+<input type="text" name="unsubname" value="" size="40">
+</form><br>

@@ -1,0 +1,200 @@
+<?php $this->head = "REQUEST AN ANNOUNCEMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+
+<FORM ID="AnnounceRequest" METHOD=POST>
+
+
+<br><br>
+<fieldset style="border:none; ">
+<dt>Your first name:</dt>
+<dd>
+<input type="text" readonly name="first_name" value="<?PHP echo $this->firstname; ?>" size="30" disabled>
+</dd>
+<br><dt>Your last name:</dt>
+<dd>
+<input type="text" readonly name="last_name" value="<?PHP echo $this->lastname ?>" size="30" disabled>
+</dd>
+<br><dt>Your email address:</dt>
+<dd>
+<input type="text" readonly name="email" value="<?PHP echo $this->email ?>" size="40" disabled>
+</dd>
+<br><strong><big>
+<blockquote style="background: transparent;">If this is not you, please inform our <a href='/index/contact'>webcrafter</a>.
+</big></strong>
+</blockquote>
+<br>
+<dd>
+<input type=hidden id='submitid' name='submitid' value='<?php echo $this->id ?>'>
+</dd>
+</fieldset>
+<hr><br>
+
+
+<fieldset style="border:none; ">
+<div class="heading">Changing an announcement</div>
+<br>
+To change an announcement, send email to announce@cvuuf.org indentifying the announcement and what you want to change.
+
+<br><br>
+</fieldset>
+<br><hr><br><br>
+
+<?php if (0) : ?>
+
+<fieldset style="border:none; ">
+<dt>Is this new or a change?</dt>
+<dd>
+  <select name="ischange">
+    <option value="change">change</option>
+    <option selected value="new">new</option>
+  </select>
+</dd>
+</fieldset>
+<br><br>
+<fieldset style="border:none; ">
+<div class="heading">Change Announcement</div>
+<br>
+<dt>Announcement ID to change</dt>
+<dd>  
+  <input type="text" name="anmtold" size="4">
+</dd>
+
+<dt>Describe the change</dt>
+<dd>
+  <textarea name="changedesc" cols=50 rows=5></textarea>
+</dd>
+<br><br><br><br>
+<dt>Submit your change request</dt>
+<dd>
+  <INPUT class='submit' TYPE=SUBMIT VALUE="SUBMIT" ID='submitbutton'>
+</dd>
+</fieldset>
+
+<br><hr><br><br>
+
+<?php endif; ?>
+
+<fieldset style="border:none; ">
+<div class="heading">New Announcement</div>
+
+<br>
+<strong>Be aware that announcements are viewable by the public.  Phone numbers or email addresses could be read
+by anyone.  A recommended alternative is to use your name alone and members can look up details on our private site.
+</strong>
+<br><br>
+
+<dt><span style='color:red;'>*</span>Title</dt>
+<dd>
+  <input type="text" name="anmtname" size="50">
+</dd>
+
+<dt><span style='color:red;'>*</span>Announce Expiration</dt>
+<dd>
+
+<input id='start_dt' name="anmtdate" value='DD-Mon-YYYY' class='datepicker'><small>Click image for calendar</small>
+
+
+</dd>
+
+<dt>Event Date if not same</dt>
+<dd>
+
+<input id='event_dt' name="eventdate" value='DD-Mon-YYYY' class='datepicker'><small>Click image for calendar</small>
+
+
+</dd>
+
+<dt><span style='color:red;'>*</span>Starting Time</dt>
+<dd>
+
+  <select name="eventtimehour">
+  <?php
+  echo "\n<option value=\"" . 0 . '">' . '12a' . '</option>';	
+  for($i=1;$i<12;++$i) {
+    echo "\n<option value=\"" . $i . '">' . $i .'a' . '</option>';
+  }
+  echo "\n<option selected value=\"" . 12 . '">' . '12p' . '</option> ';	
+  for($i=1;$i<12;++$i) {
+    echo "\n<option value=\"" . ($i+12) . '">' . $i.'p' . '</option>';
+  }
+  ?>
+  </select>
+</dd>
+<dd>
+  <select name="eventtimeminute">
+  <?php
+  for($i=0;$i<10;$i+=5) {
+    echo '<option value="' . $i . '">' . '0' . $i . '</option>';
+  }	
+  for($i=10;$i<60;$i+=5) {
+    echo '<option value="' . $i . '">' . $i . '</option>';
+  }
+  ?>
+  </select>    
+</dd>
+
+
+<dt>Contact</dt>
+<dd>
+<input type="text" name="anmtcon" size="50">
+</dd>
+
+<dt>Description</dt>
+<dd>
+  <textarea name="anmtdesc" cols=50 rows=5></textarea>
+</dd>
+
+
+<dt><span style='color:red;'>*</span>Location</dt>
+<dd>
+<input type="text" name="anmtloc" size="50">
+</dd>
+</fieldset>
+<dt><span style='color:red;'>* items are required</span></dt>
+<br>
+<br><hr><br>
+
+</fieldset>
+
+<fieldset style="border:none; ">
+
+<dt>Link</dt>
+<dd>
+<input type="text" name="anmtlink" size="50">
+</dd>
+
+
+<dt>Text for link</dt>
+<dd>
+<input type="text" name="anmtlinktext" size="50">
+</dd>
+</fieldset>
+
+<br><hr><br>
+
+<fieldset style="border:none; ">
+<dt>Comments to the approvers</dt>
+<dd>
+<textarea name="anmtcoms" cols=50 rows=5></textarea>
+</dd>
+</fieldset>
+
+<br><hr><br>
+<span style='font-size:120%; font-weight:bold;'>Submit your completed form: </span>    
+<INPUT class='submit' TYPE=SUBMIT VALUE="SUBMIT" ID='submitbutton'>
+
+
+</form>
+
+<?php $this->pickers = true; ?>

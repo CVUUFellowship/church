@@ -1,0 +1,176 @@
+<?php $this->head = "ORGANIZATION CHARTER" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br>
+<?php $charter = $this->charter;
+      $label = $this->label;
+//var_dump($charter); exit;
+?>
+<form method='post'>
+
+
+<p>
+<fieldset style="border:none;">
+<dt><?php echo $label['name']?></dt>
+<dd>
+<input type="text" name="name" value='<?PHP echo $charter->name ?>' size="50"  <?php echo $this->disabled?>>
+</dd>
+</fieldset>
+
+<?php 
+  $disabled = $this->disabled;
+  $readonly = $this->readonly;
+  $label = $this->label;
+
+  $GroupTypeStr = $this->type;
+	$gtypes_s['Committee'] = $gtypes_s['Group'] = $gtypes_s['Officer'] = '';
+  $gtypes = explode(",", $GroupTypeStr);
+	foreach ($gtypes as $gtype)
+		$gtypes_s[$gtype]='checked';
+?>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['type']?></dt>
+<dd>
+<input type='checkbox' name='type[]' value='Committee' <?php echo $disabled ?>,
+   <?php echo $gtypes_s['Committee'] ?>><span>Committee</span>
+<input type='checkbox' name='type[]' value='Group' <?php echo $disabled ?>,
+   <?php echo $gtypes_s['Group'] ?>><span>Group</span>
+<input type='checkbox' name='type[]' value='Officer' <?php echo $disabled ?>,
+   <?php echo $gtypes_s['Officer'] ?>><span>Officer</span>
+</dd>
+</fieldset>
+
+
+<fieldset style="border:none;">
+<dt><?php echo $label['purp']?></dt>
+<dd>
+<textarea name="purp" cols=50 rows=10 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->purpose?>
+</textarea>
+</dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['orgn']?></dt>
+<dd>
+<textarea name="orgn" cols=50 rows=10 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->organization?>
+</textarea>
+</dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['lsel']?></dt>
+<dd>
+<textarea name="lsel" cols=50 rows=10 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->leaderselection?>
+</textarea>
+</dd>
+</fieldset>
+
+
+
+<fieldset style="border:none;">
+<dt><?php echo $label['ltrm']?></dt>
+<dd>
+<textarea name="ltrm" cols=50 rows=5 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->leaderterm?>
+</textarea>
+</dd>
+</fieldset>
+
+
+<fieldset style="border:none;">
+<dt><?php echo $label['mtrm']?></dt>
+<dd>
+<textarea name="mtrm" cols=50 rows=5 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->memberterm?>
+</textarea>
+</dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['nmem']?></dt>
+<dd>
+<input type="text" name="nmem" value='<?PHP echo $this->charter->numbermembers ?>' size="100" <?php echo $readonly?>>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['rpto']?></dt>
+<dd>
+<textarea name="rept" cols=50 rows=10 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->reportto?>
+</textarea>
+</dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['meet']?></dt>
+<dd>
+<textarea name="meet" cols=50 rows=10 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->meetings?>
+</textarea>
+</dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['dtes']?></dt>
+<dd>
+<textarea name="dtes" cols=50 rows=20 <?php echo $readonly?>  <?php echo $this->textstyle?>>
+<?PHP echo $this->charter->duties?>
+</textarea>
+</dd>
+</fieldset>
+
+<fieldset style="border:none;">
+<dt><?php echo $label['appr']?></dt>
+<dd>
+<input type="text" name="appr" value='<?PHP echo $this->charter->approvaldate ?>' size="10" <?php echo $readonly?>>
+</dd>
+</fieldset>
+
+
+  <input TYPE=HIDDEN name='recid' value="<?php echo $this->recid?>">
+  <input TYPE=HIDDEN name='lock' value="<?php echo $this->lock?>">
+  <input TYPE=HIDDEN name='newold' value="<?php echo $this->newold?>">
+<br><br>
+
+<fieldset style="border:none;">
+  <?php if ($this->newold == 'new') : ?>
+<dt>&nbsp;</dt>
+<dd>
+<input class='submit' TYPE=SUBMIT name='todo' value='NEW'> Create new charter.
+</dd>
+  <?php else : ?>
+    <?php if ($this->readonly == '') : ?>
+<dt>&nbsp;</dt>
+<dd>
+<input class='submit' TYPE=SUBMIT name='todo' value='FILE'> File this charter.
+</dd>
+    <?php else : ?>
+<dt>&nbsp;</dt>
+<dd>
+<input class='submit' TYPE=SUBMIT name='todo' value='UNLOCK'> Unlock charter for editing.
+</dd>
+    <?php endif ?>
+  <?php endif ?>
+
+<br><br>    
+<dt>&nbsp;</dt>
+<dd>
+<input class='submit' TYPE=SUBMIT name='todo' value='DIR'> Go to charter directory.
+</dd>
+</fieldset>
+
+</form>
+<br><br>

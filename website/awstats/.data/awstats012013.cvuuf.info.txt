@@ -1,0 +1,456 @@
+AWSTATS DATA FILE 6.9 (build 1.925)
+# If you remove this file, all statistics for date 201301 will be lost/reset.
+
+# Position (offset in bytes) in this file of beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1864                
+POS_TIME 2547                
+POS_VISITOR 8948                
+POS_DAY 10458               
+POS_DOMAIN 3386                
+POS_LOGIN 3619                
+POS_ROBOT 3774                
+POS_WORMS 4215                
+POS_EMAILSENDER 4346                
+POS_EMAILRECEIVER 4489                
+POS_SESSION 11083               
+POS_SIDER 11292               
+POS_FILETYPES 4624                
+POS_OS 4846                
+POS_BROWSER 4949                
+POS_SCREENSIZE 5147                
+POS_UNKNOWNREFERER 5221                
+POS_UNKNOWNREFERERBROWSER 5570                
+POS_ORIGIN 5755                
+POS_SEREFERRALS 5894                
+POS_PAGEREFS 6038                
+POS_SEARCHWORDS 6186                
+POS_KEYWORDS 6338                
+POS_MISC 2211                
+POS_ERRORS 6397                
+POS_CLUSTER 3475                
+POS_SIDER_404 6541                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20130125002218 681 149192 14053944103464
+FirstTime 20130101012051
+LastTime 20130125002218
+LastUpdate 20130125002844 681 0 681 0 0
+TotalVisits 83                  
+TotalUnique 33                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 35                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 5 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 75 158 1463036 99 105 651300
+1 117 285 1827838 115 201 733895
+2 132 387 2062807 151 254 775102
+3 30 103 721213 47 55 260187
+4 12 12 738637 40 40 286661
+5 24 24 432754 48 48 383568
+6 19 19 12197 73 73 564233
+7 23 30 572028 80 81 584910
+8 9 9 5773 58 59 442724
+9 6 6 3808 54 54 412176
+10 20 20 154625 34 37 272164
+11 26 63 1101498 49 50 424063
+12 17 114 1154555 50 61 505436
+13 61 400 2621322 88 121 405668
+14 57 170 3562236 51 82 366849
+15 56 176 976522 58 91 367941
+16 51 216 2247325 40 43 193456
+17 51 235 1994732 50 60 231082
+18 80 288 2930853 55 56 213064
+19 115 386 3935475 93 127 434318
+20 5 6 23466 43 44 271917
+21 43 153 1500277 54 88 361506
+22 78 191 2058853 97 134 537422
+23 37 76 449268 73 88 542545
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 1144 3527 32551098
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 9
+yandex 28 121729 20130123131214 6
+googlebot 11 21431 20130123210422 1
+bot[+:,\.\;\/\\-] 6 16981 20130124041822 1
+crawl 3 28836 20130111150606 0
+surveybot 2 7422 20130117191715 0
+python 1 9612 20130108194156 0
+unknown 1 319 20130119130802 1
+mnogosearch 1 9568 20130112231507 0
+netcraft 1 9479 20130107125406 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+css 478 267359 0 0
+png 492 7292215 0 0
+pdf 1 6527 0 0
+php 181 2143683 0 0
+html 132 551593 0 0
+js 717 7626242 0 0
+jpg 637 5631373 0 0
+Unknown 830 8955085 0 0
+gif 59 77021 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 6
+macosx 96
+winxp 373
+win2003 8
+Unknown 19
+linux 250
+win2008 2781
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 12
+msie6.0 17
+firefox17.0 2558
+chrome 88
+firefox14.0.1 3
+msie7.0 281
+msie10.0 49
+firefox16.0 70
+firefox18.0 85
+msie9.0 72
+lynx 3
+Unknown 1
+safari 300
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 3
+Mozilla/5.0_(Android;_Mobile;_rv:18.0)_Gecko/18.0_Firefox/18.0 20130123170203
+BlackBerry9000/4.6.0.167_Profile/MIDP-2.0_Configuration/CLDC-1.1_VendorID/102_ips-agent 20130103074515
+Lynx/2.8.5rel.1_libwww-FM/2.15FC_SSL-MM/1.4.1c_OpenSSL/0.9.7e-dev 20130124023656
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+BlackBerry9000/4.6.0.167_Profile/MIDP-2.0_Configuration/CLDC-1.1_VendorID/102_ips-agent 20130103074515
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 334 381
+From1 0 0
+From2 0 0
+From3 0 0
+From4 810 3146
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+403 397 247285
+302 62 20642
+500 14 48848
+301 8 5128
+404 1517 9674907
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 44
+/wp-conf.php 5 -
+/w23201601n.php 5 -
+/robots.txt 20 -
+/cal 2 -
+/wp-sample.php 12 -
+/testsanitize.php 1 -
+/media/graphics/theme/Admin/cvuuf_title_home.png 8 http://cvuuf.info/auth/change
+/worship/datepicker.css 7 http://cvuuf.info/worship/sermons
+/admin/datepicker.css 12 http://cvuuf.info/admin/permperson
+/w50111243n.php 407 -
+/css/zform.css.css 1 http://cvuuf.info/support2/minutesmanage
+/webcal/includes/menu/icons/chalice.png 7 http://cvuuf.info/webcal/month.php
+/about/datepicker.css 4 http://cvuuf.info/about/leadership
+/private/datepicker.css 2 http://cvuuf.info/private/fulldirectory
+/visitors/principles 1 -
+/library/datepicker.css 3 http://cvuuf.info/library/newbooks
+/visitors/datepicker.css 15 http://cvuuf.info/visitors/links
+/person/datepicker.css 1 http://cvuuf.info/person/find
+/news/files/att_F_2011-01_1.pdf 3 http://cvuuf.info/private/showminutes
+/support/bogus 1 -
+/info/datepicker.css 3 http://cvuuf.info/info/chartersgroups
+/reaux/datepicker.css 2 http://cvuuf.info/reaux/maintain
+/support2/nlemail 1 http://cvuuf.info/data
+/auth/datepicker.css 35 http://cvuuf.info/auth/login
+/menus/datepicker.css 36 http://cvuuf.info/menus/select
+/news/files/att_F_2011-01_2.pdf 1 http://cvuuf.info/private/showminutes
+/css/zformnodt.css.css 2 http://cvuuf.info/menus/select
+/css/Admin.css 4 http://cvuuf.info/auth/change
+/re/datepicker.css 26 http://cvuuf.info/re/enroll
+/support/datepicker.css 3 http://cvuuf.info/support/bogus
+/datepicker.css 163 http://cvuuf.info/
+/news/files/att_2009-05-13_6.pdf 1 http://cvuuf.info/private/showminutes
+/news/newsandnotes 1 http://cvuuf.info/about/history
+/thenewsletter.php 2 -
+/redirect.htm 2 -
+/forwarding.htm 611 -
+/news/announcements 2 http://cvuuf.info/news/newsandnotes
+/visitors/images/CVUUF_UULinks_Photo0.jpg 3 http://cvuuf.info/visitors/links
+/wp-login.php 2 -
+/news/datepicker.css 92 http://cvuuf.info/news/announcements
+/calendar/datepicker.css 1 http://cvuuf.info/calendar/approvals
+/support2/nlupload 1 http://cvuuf.info/data
+/media/photos/CVUUF_Congregation_photos.jpg 1 http://cvuuf.info/visitors/intro
+/webcal/install/index.php 5 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 35
+108.210.28.76 817 2616 21951027 20130125002218 20130125002121 /webcal/install/index.php
+31.133.34.149 67 67 1584073 20130101075147
+173.55.183.247 59 160 2617052 20130124111517
+108.23.64.133 44 118 1337534 20130120132650
+70.197.136.252 42 120 1614056 20130123181716
+31.133.33.200 37 37 165493 20130101105059
+171.159.192.10 15 54 403394 20130124193107
+76.175.71.151 10 29 295517 20130110230447
+199.19.249.196 7 7 139017 20130124193107
+31.133.34.193 6 6 3895 20130101123412
+150.70.172.101 1 3 50434 20130117041208
+131.253.24.34 1 10 94007 20130114132252
+65.55.215.251 1 8 92105 20130110073546
+150.70.75.38 2 3 27445 20130110225835
+150.70.64.208 0 2 12240 
+31.133.35.180 5 5 34867 20130105140806
+150.70.75.35 1 3 78885 20130110195839
+69.58.178.58 4 4 35173 20130103074515
+70.197.138.91 4 21 199687 20130123143409
+150.70.64.214 1 1 9556 20130110195725
+216.38.216.101 3 13 196615 20130108181258
+198.134.135.134 1 16 205301 20130114211956
+150.70.172.207 0 1 6587 
+150.70.172.109 1 2 10936 20130110225820
+150.70.195.138 1 1 9556 20130110233507
+96.229.155.26 3 17 15601 20130101122320
+70.197.136.73 1 14 196427 20130123125257
+199.16.140.24 1 14 196398 20130123135508
+65.52.111.33 1 8 92105 20130109182821
+76.94.75.227 1 15 204215 20130109130329
+71.165.221.162 1 14 196427 20130123131213
+108.178.121.133 1 133 438242 20130108133328
+70.197.138.169 1 1 3404 20130124134941
+150.70.97.41 1 1 9556 20130110230836
+78.158.11.226 3 3 24271 20130124023656
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 23
+20130101 147 266 2766093 5
+20130102 38 116 1199090 3
+20130103 4 4 35173 1
+20130104 1 15 204182 1
+20130105 5 5 34867 2
+20130106 4 31 386333 1
+20130108 97 432 3427612 5
+20130109 5 58 762785 4
+20130110 74 182 1481297 11
+20130111 122 224 1352042 6
+20130112 115 218 1445224 3
+20130113 6 26 536319 1
+20130114 2 26 299308 2
+20130116 0 11 145643 0
+20130117 3 29 216987 2
+20130118 96 362 2626776 2
+20130119 40 161 686556 2
+20130120 29 100 1175428 3
+20130121 18 68 514168 2
+20130122 66 208 1922305 4
+20130123 110 387 7285319 12
+20130124 153 583 4016694 10
+20130125 9 15 30897 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 12
+5mn-15mn 12
+2mn-5mn 3
+0s-30s 32
+15mn-30mn 6
+30s-2mn 6
+30mn-1h 11
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 90
+/ 131 546753 51 18
+/w50111243n.php 110 1753461 3 3
+/private 110 357970 13 8
+/news/announceemail 75 299024 1 4
+/news/bulkemail 62 149256 1 0
+/data 44 119715 1 0
+/menus/select 35 128104 0 0
+/person/find 27 88350 0 0
+/news/announcereq 26 110927 0 3
+/auth/index 24 95193 5 3
+/wp-conf.php 2 17691 1 1
+/private/listpositions 3 17274 0 1
+/support2/minutesmanage 9 32631 0 0
+/about/history 7 25929 0 0
+/info/fixpolicies2 2 628 0 0
+/support/sextons 1 3809 0 0
+/webcal/install/ 1 4840 0 0
+/webcal/month.php 8 153918 0 0
+/re/track 2 5852 0 1
+/private/listhoods 6 23693 0 0
+/info/chartersgroups 2 6116 0 0
+/news/files/att_2009-06-03_3.pdf 1 6527 0 0
+/visitors/principles 4 13796 0 0
+/admin/permspecial 7 24329 0 0
+/calendar/approvals 11 37197 0 0
+/library 1 3103 0 0
+/re/assign 2 8460 0 0
+/private/showfile 20 1514014 0 0
+/webcal/js_cacher.php 13 40430 0 1
+/visitors/voices 1 2725 0 0
+/worship/showsermon 2 35703 0 2
+/visitors/intro 17 60237 0 0
+/library/wishlist 1 6246 0 1
+/auth/pass 6 13221 0 1
+/support2/nlsend 22 42500 1 0
+/about/leadership 11 37444 1 3
+/admin/permperson 4 11168 0 0
+/info/policies 20 230947 0 2
+/support2/nnupload 7 20477 0 0
+/person/show 3 9869 0 0
+/private/fulldirectory 10 201678 0 0
+/about/minister 3 14529 0 0
+/library/newbooks 2 9243 0 0
+/news/announcemaint 9 26921 0 0
+/support2/nlannounce 11 30983 0 1
+/webcal/login.php 1 1373 1 0
+/worship/archive 1 2687 0 0
+/re/enroll 13 41438 0 1
+/news/newsandnotes 1 205 0 1
+/reaux/listparents 1 6994 0 0
+/welcoming/createcalendar 2 9145 0 1
+/menus/show 12 41985 0 0
+/news/test 15 4380 0 1
+/re/attendance 1 3135 0 0
+/reaux/showregpages 1 48208 0 1
+/phpinfo.php 1 10032 0 0
+/support2/nlupload 1 3029 0 0
+/webcal/install/index.php 18 64973 0 2
+/w23201601n.php 2 17034 1 0
+/auth/change 5 10620 0 0
+/private/showminutes 20 86013 0 3
+/wp-sample.php 1 142 0 1
+/info/chartersorg 8 25059 0 1
+/webcal/view_entry.php 10 32350 0 0
+/visitors/links 8 23859 1 4
+/testsanitize.php 2 644 0 0
+/webcal/css_cacher.php 11 47259 0 2
+/visitors/answers 11 71544 0 0
+/calendar/request 2 11276 0 0
+/auth/logout 5 13206 0 0
+/admin/permissions 1 2423 0 0
+/support/av 1 3521 0 0
+/public/announcements 8 29369 0 2
+/worship/sermons 7 21274 1 2
+/public/newsandnotes 15 1430250 0 0
+/webcal/testsanitize.php 1 321 0 0
+/re/admin 6 12989 0 0
+/info/fixpolicies1 4 3367 0 0
+/worship/upcoming 2 6041 0 0
+/admin 19 44444 0 0
+/webcal/day.php 1 4055 0 0
+/reaux/maintain 1 5189 0 0
+/support/librarycatalog 16 293466 0 2
+/index/contact 4 26103 0 1
+/re 5 15741 0 0
+/index 1 3626 0 0
+/news/announcements 9 49184 1 3
+/auth/login 8 20930 0 0
+/public/newsletter 6 2748770 0 1
+/worship/sundaysyear 1 16354 0 0
+END_SIDER

@@ -1,0 +1,56 @@
+<?php $this->head = "RELIGIOUS EDUCATION ENROLLMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<strong><big>1. Child Information</big></strong>
+
+<br><br>
+<hr>
+    
+<strong><big>Existing Entry</big></strong>
+    <?php if (isset($this->names)) : ?>
+      <?php $names = $this->names ?>
+<br><br>
+
+<fieldset style="border:none; font-size:80%; margin-left: 204px;">
+<form method=post>
+<table  border=1px style="empty-cells: show; background-color:white;" >    
+<tr><th><th>Name</tr>
+        <?php foreach ($names as $name) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $name[0] ?>' >
+<td><?php echo $name[1] ?>
+</tr>
+        <?php endforeach ?>
+</table>
+<input type='hidden' name='keys' value='<?php echo $this->newform->keys->value ?>' >
+<input type='hidden' name='values' value='<?php echo $this->newform->values->value ?>' >
+<br><input type="submit" name="selectbutton" value="SELECT">
+</form>
+</fieldset>
+    <?php endif ?>
+
+    <?php if ($this->childid == 0) : ?>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->existform; ?>
+</fieldset>
+<hr>
+<strong><big>New Entry</big></strong>
+    <?php endif ?>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->newform; ?>
+</fieldset>
+    <?php if (isset($this->nextform)) : ?>
+<fieldset style="border:none; font-size:80%;">
+    <?php echo $this->nextform; ?>
+</fieldset>
+    <?php endif ?>

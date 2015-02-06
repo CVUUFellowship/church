@@ -1,0 +1,53 @@
+<?php $this->head = "RELIGIOUS EDUCATION REGISTRATION MAINTENANCE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<form method='post'>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>Type
+  <?php foreach ($this->shows as $show) : ?>
+<tr>
+<td><input type='radio' name='show' value='<?php echo $show ?>' ", <?php if(isset($this->theshow[$show])) echo 'checked' ?> > 
+<td> <?php echo $show ?>
+  <?php endforeach ?>
+</table>
+<br><input class='submit' TYPE=SUBMIT name='action' value='SHOW'> Show selected type
+</form>
+<br><br>
+<hr>
+<br>
+
+<strong><big><?php echo count($this->data) ?> Children</big></strong>
+<br>
+<strong><big><?php echo $this->what ?></big></strong>
+<form method='post'>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr>
+<th><th>ID<th>Name<th>Signed<th>Registered
+</tr>
+  <?php foreach($this->data as $reg) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $reg['id'] ?>'>
+<td><a href="/reaux/showreg?id=<?php echo $reg['id'] ?>"><?php echo $reg['id'] ?></a>
+<td><?php echo $reg['name'] ?>
+<td><?php echo $reg['signed'] ?>
+<td><?php echo $reg['registered'] ?>
+</tr>
+  <?php endforeach ?>
+</table>
+<br><INPUT type="submit"  name="todo" value="ACTIVE"> set selected to Active.
+<br><INPUT type="submit"  name="todo" value="INACTIVE"> set selected to Inactive.
+<br><INPUT type="submit"  name="todo" value="ENROLL"> set signature.
+<br><INPUT type="submit"  name="todo" value="UNENROLL"> clear signature.
+</form>

@@ -1,0 +1,55 @@
+<?php $this->head = "POLICIES INDEX" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<fieldset style="border:none;">
+<form method='post'>
+<strong><big><?php echo $this->select ?> Policies</big></strong>
+<br><br>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>ID<th>Number<th>Rev<th>Type<th>Level<th>Below<th>Status<th>Name<th>Last Change</tr>
+    <?php foreach($this->policies as $policy) : ?>
+<tr>
+  <td><input type='checkbox' name='id[]' value='<?php echo $policy->id ?>' >
+  <td><?php echo $policy->id ?>
+  <td style='text-align: center;'><?php echo $policy->number ?>
+  <td><?php echo $policy->revision ?>
+  <td><?php echo $policy->policytype ?>
+  <td><?php echo $policy->level ?>
+  <td><?php echo $policy->belowpolicy ?>
+  <td><?php echo $policy->status ?>
+  <td><?php echo $policy->name ?>
+  <td><?php echo substr($policy->submitdate, 0, 10) ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+  <?php if ($this->boardauth) : ?>
+<br><dt><input class='submit' TYPE=SUBMIT name='todo' value='CURRENT'></dt><dd> Show only current policies. </dd>
+<br><dt><input class='submit' TYPE=SUBMIT name='todo' value='PROPOSED'></dt><dd> Show only proposed policies. </dd>
+<br><dt><input class='submit' TYPE=SUBMIT name='todo' value='UPDATING'></dt><dd> Show only policies being updated. </dd>
+<br><dt><input class='submit' TYPE=SUBMIT name='todo' value='ALL'></dt><dd> Show all policies.</dd> <br>
+<br>
+
+<br><dt><input class='submit' TYPE=SUBMIT name='todo' value='CHANGE'></dt><dd> Change index entry (not the policy text) for first selected policy.</dd> 
+
+  <?php endif ?>
+<br><br><dt><input class='submit' TYPE=SUBMIT name='todo' value='PDF'></dt><dd> Download PDF file for first selected policy.</dd> 
+  <?php if ($this->boardauth) : ?>
+<br><dt><input class='submit' TYPE=SUBMIT name='todo' value='RTF'></dt><dd> Download RTF editable file for first selected policy.</dd> 
+
+<br><br><dt><input class='submit' TYPE=SUBMIT name='todo' value='NEW'></dt><dd> Create a new policy.</dd> <br>
+<br><dt><input class='submit' TYPE=SUBMIT name='todo' value='DELETE'></dt><dd> Mark first selected policy deleted.</dd>
+  <?php endif ?>
+
+</form>
+</fieldset>

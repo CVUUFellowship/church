@@ -1,0 +1,8 @@
+<?php $this->head = "CVUUF SERMONS" ?>
+
+<br><br>Each date displayed is a link to the sermon text.<br><br>
+  <?php foreach($this->sermons as $sermon) : ?>
+<br><a href='/worship/showsermon?which=<?php echo $sermon[0] ?>'>
+<?php echo $sermon[1] ?></a>
+<?php echo $sermon[2] ?>
+    <?php endforeach ?>

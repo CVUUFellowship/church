@@ -1,0 +1,115 @@
+<?php $this->head = "RELIGIOUS EDUCATION ATTENDANCE REPORT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+    <?php $class = $this->class ?>
+    <?php $classes = $this->classes ?>
+    <?php $theclass = $this->theclass ?>
+    <?php $attendance = $this->attendance ?>
+<?php if ($class <> 'All') : ?>
+<form method='post'>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>Class
+  <?php foreach ($classes as $aclass) : ?>
+<tr>
+<td><input type='radio' name='class' value='<?php echo $aclass ?>' ", <?php if(isset($theclass[$aclass])) echo 'checked' ?> > 
+<td> <?php echo $aclass ?>
+  <?php endforeach ?>
+</table>
+<br><input class='submit' TYPE=SUBMIT name='action' value='SHOW'> Show selected class
+</form>
+<br><br>
+<hr>
+<br><strong><big>Class - <?php echo $class ?></big></strong>
+<br><br>
+  <?php endif ?>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>Name
+  <?php $dates = $this->dates ?>
+  <?php foreach($dates as $date) : ?>
+<th><?php echo substr($date, 5, 2), "<br>", substr($date, 8, 2)?>
+  <?php endforeach ?>
+</tr>
+
+<?php //exit ?>
+  <?php $data = $this->data ?>
+  <?php $attend = $this->attend ?>
+  <?php foreach($data as $child) : ?>
+
+<?php //var_dump($child); exit; ?>
+
+    <?php $chid = $child[0] ?>
+<tr>
+<td><?php echo $chid ?><td><?php echo $child[1] . ' ' . $child[2] ?>
+		  <?php $attChild = isset($attend[$chid]) ? $attend[$chid] : '' ?>
+		  <?php $d = 0 ?>
+      
+      <?php foreach($dates as $date) : ?>
+<?php //echo "Date $date <br>"; ?>
+        <?php if (count($attChild) > 0) 
+        {
+//echo count($attChild), '<br>' ;
+            $found = FALSE;
+            if ($attChild <> '') 
+                foreach ($attChild as $chDate)
+                {
+                    if ($chDate == $date)
+                    {
+                        $found = TRUE;
+                        echo "<td> X";
+                        $attendance[$d]++;
+                        break;
+                    }
+                }
+            if ($found <> TRUE)
+              echo "<td> ";
+          }  
+          else
+            echo "<td> ";
+            $d++;
+       ?>
+          
+       <?php endforeach ?>  
+</tr>
+    <?php endforeach ?>
+
+<tr><td><td>Total
+   
+    <?php $good = 0;
+          $d = 0; 
+          $totalAtt = 0;
+          foreach ($dates as $date)
+          {
+              $att = $attendance[$d];
+              if ($att > 5)
+              {
+                  $totalAtt += $att;
+                  $good++;
+              }
+              $d++;
+              if ($att > 5)
+                  echo "<td>$att";
+              elseif ($att > 0)
+                  echo "<td><small>$att</small>";
+              else
+                  echo "<td>";
+          }
+    ?>                                                    
+</tr>    
+
+</table>
+    <?php	if ($good > 0) :?>
+    <?php $averageAtt = sprintf("%.1f", $totalAtt / $good) ?>
+<br>Average attendance (where total for the date was greater than 5) was <?php echo "$averageAtt <br>" ?>
+    <?php endif ?>

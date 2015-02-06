@@ -1,0 +1,134 @@
+<?php $this->head = "ONLINE PLEDGE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<?php $months = array('', 'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December');
+  
+  $month = date('n'); 
+   $sched = array('', 'Weekly', 'Monthly', 'Quarterly', 'Annually', 'Other'); ?>
+
+<FORM ID="OnlinePledge" METHOD=POST>
+
+
+<br><br>
+<fieldset style="border:none; ">
+<dt>Your first name:</dt>
+<dd>
+<input type="text" readonly name="first_name" value="<?PHP echo $this->firstname; ?>" size="30" disabled>
+</dd>
+<br><dt>Your last name:</dt>
+<dd>
+<input type="text" readonly name="last_name" value="<?PHP echo $this->lastname ?>" size="30" disabled>
+</dd>
+<br><dt>Your email address:</dt>
+<dd>
+<input type="text" readonly name="email" value="<?PHP echo $this->email ?>" size="40" disabled>
+</dd>
+<br><strong><big>
+<blockquote style="background: transparent;">If this is not you, please inform our <a href='/index/contact'>webcrafter</a>.
+</big></strong>
+</blockquote>
+
+<br><dt>This is the online pledge for:</dt>
+<dd>
+<input type="text" readonly name="housename" value="<?PHP echo $this->housename ?>" size="40" disabled>
+</dd>
+
+<dd>
+<input type=hidden id='submitid' name='submitid' value='<?php echo $this->id ?>'>
+</dd>
+</fieldset>
+<hr><br>
+
+
+<fieldset style="border:none; ">
+<div class="heading">Setup your online pledge</div>
+
+<br>
+<b>Enter the month that you would like your pledge to start. 
+  <i>(Your pledge will be for one year starting this month.)</i> 
+  </b>
+
+<fieldset style="border:none; ">
+<dt><span style='color:red;'>*</span>Starting month
+  </dt>
+<dd>
+  <select name="startmonth">
+  <?php
+ 
+  for($i=0;$i<13;++$i) {
+    $sel = '';
+//    if ($month == $i) $sel='selected';
+    echo "\n<option value=$i $sel> $months[$i] </option>";
+  }
+  ?>
+  </select>
+</dd>
+
+</fieldset>
+<br>
+<b>Enter the dollar amount that you would like to pledge per month or per year. 
+  </b>
+<fieldset style="border:none; ">
+
+<dt><span style='color:red;'>*</span>Amount: 
+  </dt>
+<dt>per Month</dt>
+<dd>
+<input type="text" name="permonth" size="5">
+</dd>
+<dt>or per Year</dt>
+<dd>
+<input type="text" name="peryear" size="5">
+</dd>
+</fieldset>
+
+<br>
+<b>Select a time payment schedule. 
+  </b>
+<fieldset style="border:none; ">
+
+<dt><span style='color:red;'>*</span>Schedule
+  </dt>
+
+<dd>
+  <select name="schedule">
+
+  <?php
+  
+  for($i=0;$i<6;++$i) {
+    $sel = '';
+    echo "\n<option value=$i $sel> $sched[$i] </option>";
+  }
+  ?>
+  </select>
+</dd>
+<dt>If 'Other', specify</dt>
+<dd>
+<input type="text" name="schedother" size="15">
+</dd>
+
+</fieldset>
+
+<br>
+<dt><span style='color:red;'>* items are required</span></dt>
+<br>
+</fieldset>
+
+<hr><br>
+
+<span style='font-size:120%; font-weight:bold;'>Submit your pledge: </span>    
+<INPUT class='submit' TYPE=SUBMIT VALUE="SUBMIT" ID='submitbutton'>
+
+
+</form>

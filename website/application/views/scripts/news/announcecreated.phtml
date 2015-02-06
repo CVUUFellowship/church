@@ -1,0 +1,19 @@
+<?php $this->head = "ANNOUNCEMENT CREATED" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<strong><big>Your announcement has been created.  It will appear in the list of announcements once it has been approved.</big></strong>
+<br><br>
+    <?php $row = $this->anc ?>
+<p><b><?php echo $row['date'], $row['time'] ?> </b><span style='font-size:50%;'>[<?php echo $row['id'] ?>]
+</span><blockquote><b><?php echo $row['title'] ?></b> - <?php echo $row['contact'], $row['location'], $row['link'] ?>
+<br><?php echo $row['desc'] ?><br></blockquote>
+

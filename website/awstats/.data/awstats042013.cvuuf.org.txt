@@ -1,0 +1,2015 @@
+AWSTATS DATA FILE 6.9 (build 1.925)
+# If you remove this file, all statistics for date 201304 will be lost/reset.
+
+# Position (offset in bytes) in this file of beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1864                
+POS_TIME 2552                
+POS_VISITOR 44296               
+POS_DAY 66454               
+POS_DOMAIN 3586                
+POS_LOGIN 3821                
+POS_ROBOT 3976                
+POS_WORMS 5311                
+POS_EMAILSENDER 5442                
+POS_EMAILRECEIVER 5585                
+POS_SESSION 67382               
+POS_SIDER 67597               
+POS_FILETYPES 5720                
+POS_OS 5986                
+POS_BROWSER 6226                
+POS_SCREENSIZE 6908                
+POS_UNKNOWNREFERER 6982                
+POS_UNKNOWNREFERERBROWSER 8625                
+POS_ORIGIN 9694                
+POS_SEREFERRALS 9845                
+POS_PAGEREFS 10059               
+POS_SEARCHWORDS 12485               
+POS_KEYWORDS 14386               
+POS_MISC 2214                
+POS_ERRORS 14909               
+POS_CLUSTER 3677                
+POS_SIDER_404 15062               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20130501000007 1644 365266 14277068569860
+FirstTime 20130401000019
+LastTime 20130430235855
+LastUpdate 20130501004250 1644 0 1643 0 0
+TotalVisits 1189                
+TotalUnique 529                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 550                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 128 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 317 1094 18829029 1938 1997 3305708
+1 297 1169 18001140 1966 2015 2950661
+2 167 842 8274276 1855 1903 4333684
+3 97 536 2528637 1834 1884 2651642
+4 104 479 3480290 1741 1782 3459479
+5 52 260 2238209 1491 1545 1810485
+6 65 230 3711333 1365 1398 1614907
+7 56 200 4251532 1500 1548 2675622
+8 162 514 4411004 1714 1775 2998072
+9 288 637 27478321 1784 1836 4367471
+10 397 1226 16222472 1719 1759 1692515
+11 325 1169 18840841 1675 1727 3057340
+12 351 1298 21309758 1732 1781 2243440
+13 381 1584 22649509 1856 1913 2436116
+14 373 1648 25051435 1781 1816 2456035
+15 391 1670 20778483 1841 1887 2123444
+16 471 1768 28062052 1893 1947 2336871
+17 591 1741 20290354 1810 1847 2267997
+18 472 1835 33444144 1812 1887 2375034
+19 466 1892 52312178 1784 1853 1516856
+20 463 1814 40916165 1793 1857 2362119
+21 372 1322 25034429 1758 1804 1556031
+22 320 1168 21137638 2009 2070 5096826
+23 494 1671 47395791 1903 1966 2398688
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 7472 27767 486649020
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 34
+feedfetcher\-google 521 1798160 20130430231158 0
+bot[+:,\.\;\/\\-] 441 2220313 20130430235840 247
+googlebot 372 23060525 20130430231110 63
+slurp 344 4132861 20130430072315 1
+sogou 305 1145275 20130425054734 3
+[+:,\.\;\/\\-]bot 90 54240 20130427234609 86
+java 59 893768 20130429183533 0
+baiduspider 44 220457 20130424165659 0
+python 35 319078 20130430030844 2
+msnbot\-media 28 70903 20130427191524 15
+no_user_agent 11 66349 20130424223742 0
+spider 12 52613 20130428131823 4
+msnbot 2 352668 20130404112058 1
+mail\.ru 1 9652 20130430021326 0
+syndic8 6 20748 20130429070944 0
+surveybot 3 1684 20130428124854 3
+cfnetwork 4 48824 20130429192825 0
+mnogosearch 1 9652 20130425125056 0
+linkbot 1 9812 20130421202225 0
+w3c_validator 1 3930 20130404181744 0
+docomo 4 2192 20130428070115 4
+voila 1 508 20130407000815 1
+crawl 16 25950 20130428024546 3
+nutch 10 4394 20130430073146 10
+bspider 11 43869 20130424195354 0
+core 5 2416290 20130425095533 0
+exabot 1 3955 20130424133437 0
+ia_archiver 3 1844 20130427192030 3
+mojeekbot 1 508 20130408142940 1
+unknown 19 9713 20130429212330 19
+robot 5 3020 20130425075354 5
+mj12bot 25 14780 20130430202822 25
+yandex 13 8684 20130430082348 13
+netcraft 1 9602 20130410063606 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+mp3 33 69986222 0 0
+css 3188 2521354 0 0
+png 7260 64329375 0 0
+php 2360 13513539 0 0
+html 1165 5302233 0 0
+xml 129 541769 0 0
+js 3920 58346531 0 0
+jpg 3778 43559780 0 0
+Unknown 3914 227381265 0 0
+gif 2020 1166952 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 18
+winlong 580
+macintosh 16
+winxp 2964
+win2000 7
+linuxfedora 1
+winvista 217
+winunknown 24
+win2003 9
+irix 1
+unix 42
+winnt 18
+win98 1
+linuxubuntu 25
+linux 950
+winme 4
+macosx 8560
+Unknown 916
+win2008 13432
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 47
+msie6.0 56
+firefox15.0 3
+firefox20.0 2607
+firefox4.0.1 2
+firefox10.0 1
+chrome 3141
+firefox3.6.11 1
+firefox5.02 1
+firefox3.0.1 2
+firefox1.0.2 2
+firefox4.0 17
+netscape4 1
+curl 1
+lotus\-notes 9
+msie8.0 1335
+firefox6.0.2 12
+firefox3.6.1 2
+msie7.0 292
+firefox16.0 125
+firefox9.0.1 1
+wget 2
+msie9.0 7272
+Unknown 297
+firefox11.0 1
+msie5.01 1
+firefox17.0 349
+lwp 32
+libwww 6
+opera 158
+nsplayer 2
+firefox3.5.2 5
+firefox2.0.0.6 1
+firefox7.0.1 86
+msie6.1 5
+firefox12.0 323
+itunes 51
+mozilla 105
+netscape5.0 6
+firefox3.0.6 3
+msie10.0 863
+firefox3.6.28 86
+firefox6.0 17
+netscape4.0 1
+firefox2.0.0.16 2
+firefox4.2 1
+firefox19.0 4177
+safari 6304
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 31
+Zend_Http_Client 20130424125216
+checks.panopta.com 20130425230330
+Mozilla/5.0_(compatible;_SiteExplorer/1.0b;__http://siteexplorer.info/) 20130424224915
+Xenu_Link_Sleuth/1.3.8 20130410090126
+Opera/9.80_(iPad;_Opera_Mini/7.0.5/29.3271;_U;_en)_Presto/2.8.119_Version/11.10 20130412203234
+libwww-perl/5.831 20130428064020
+libwww-perl/5.805 20130425163052
+libwww-perl/5.830 20130402123814
+AndroidDownloadManager 20130413235738
+Mozilla/4.0_(compatible;_Blog_Search;) 20130425234217
+Apple-PubSub/65.28 20130430224105
+Stagefright 20130429223848
+Mozilla/3.0_(compatible;_Indy_Library) 20130428204144
+Podcasts/1.2.1 20130422162614
+Internet_Explorer 20130410094056
+Banshee/2.6.0_(http://banshee-project.org/) 20130428205712
+CastRoller_(1_Subscribers) 20130426032422
+LWP::Simple/5.805 20130430135741
+Wget/1.11.4 20130420073049
+BlackBerry9360/7.0.0.586_Profile/MIDP-2.1_Configuration/CLDC-1.1_VendorID/102 20130421151226
+Toplistbot 20130409034746
+Mozilla/4.0 20130405192348
+Mozzila/4.2 20130424222622
+NSPlayer/12.00.7601.17514_WMFSDK/12.00.7601.17514 20130428164921
+Mozilla/5.0 20130402032248
+Mozilla/5.0_(BlackBerry;_U;_BlackBerry_9360;_en-US)_AppleWebKit/534.11__(KHTML,_like_Gecko)_Version/7.0.0.586_Mobile_Safari/534.11_ 20130430215107
+facebookexternalhit/1.1_(_http://www.facebook.com/externalhit_uatext.php) 20130411201126
+unused/0_(cayman_GRK39F);_gzip 20130414155953
+Opera/9.80_(iPhone;_Opera_Mini/7.0.5/29.3271;_U;_en)_Presto/2.8.119_Version/11.10 20130412223246
+Mozilla/5.0_(compatible;_news_bot_/2.1) 20130426104832
+ListGarden_Program_1.3.1 20130428232933
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 20
+Microsoft_Windows_Network_Diagnostics 20130407125846
+Dalvik/1.6.0_(Linux;_U;_Android_4.1.2;_DROID_RAZR_Build/9.8.2O-72_VZW-16) 20130430195229
+Zend_Http_Client 20130424125216
+checks.panopta.com 20130425230330
+AndroidDownloadManager/4.1.2_(Linux;_U;_Android_4.1.2;_DROID_RAZR_Build/9.8.2O-72_VZW-16) 20130408061737
+Xenu_Link_Sleuth/1.3.8 20130410090126
+AndroidDownloadManager 20130413235738
+Apple-PubSub/65.28 20130430224105
+Stagefright 20130429223848
+Internet_Explorer 20130410094056
+Podcasts/1.2.1 20130422162614
+Banshee/2.6.0_(http://banshee-project.org/) 20130428205712
+CastRoller_(1_Subscribers) 20130426032422
+BlackBerry9360/7.0.0.586_Profile/MIDP-2.1_Configuration/CLDC-1.1_VendorID/102 20130421151226
+Microsoft_Office_Protocol_Discovery 20130421232155
+Toplistbot 20130409034746
+Mozzila/4.2 20130424222622
+facebookexternalhit/1.1_(_http://www.facebook.com/externalhit_uatext.php) 20130411201126
+unused/0_(cayman_GRK39F);_gzip 20130414155953
+ListGarden_Program_1.3.1 20130428232933
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 1763 2703
+From1 0 0
+From2 213 213
+From3 141 163
+From4 5355 24688
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 6
+google 192 192
+search 4 4
+mywebsearch 1 1
+aol 4 4
+ask 1 1
+yahoo 11 11
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 58
+http://www.bing.com/search 11 11
+http://www.uua.org/directory/congregations/results.php 7 7
+http://uusca.cust.he.net 7 7
+http://us-mg5.mail.yahoo.com/neo/launch 6 6
+http://us-mg6.mail.yahoo.com/neo/launch 5 5
+http://salonmatrix.ru 5 5
+http://test.mannaconejo.org/supporters 4 4
+http://castroller.com/podcasts/ConejoValleyUnitarian/3300443 4 4
+http://splavmed.ru 3 3
+http://mail.verizon.com/webmail/driver 3 3
+http://prlog.ru/analysis/cvuuf.org 1 11
+http://safebrowsing.lavasoft.com/wsearch.php 2 2
+http://cvuufcommunityforum.wordpress.com 1 1
+http://us.mc1649.mail.yahoo.com/mc/showFolder 2 2
+http://disforex.ru 1 1
+http://web.archive.org/web/20120626073647/http://cvuuf.org/ 1 1
+http://www.youtube.com/user/CVUUF 2 2
+http://cvuufcommunityforum.wordpress.com/this-land-is-our-land/ 1 1
+http://www.airsla.org/conejovuu.asp 3 3
+http://www.traders-co.ru 1 1
+http://bestdizajn.ru 3 3
+http://www.pacificunitarian.org/links.html 1 1
+http://www.reformed-druids.org 2 2
+http://mnetcrm/index.php 1 1
+http://uuism.net/uuwiki/index.php 0 2
+http://webcache.googleusercontent.com/search 1 11
+http://mskinweb.ru 2 2
+http://cvuufcommunityforum.wordpress.com/previous-community-forums/ 1 1
+http://us.mc1817.mail.yahoo.com/mc/welcome 1 1
+https://m.facebook.com 1 1
+http://en.m.wikipedia.org/wiki/Air_pollution 1 1
+http://siteexplorer.info 1 1
+http://posevogorod.ru/gerbarii.html 2 2
+http://f7ss.com 2 2
+http://www.prostitutki-chelyabinska.org 3 3
+http://www.facebook.com/l.php 3 3
+http://searchresults.verizon.com/search/ 2 2
+http://www.onlinetur.ru 3 3
+http://us.mc1630.mail.yahoo.com/mc/welcome 1 1
+http://us.mg201.mail.yahoo.com/dc/launch 1 1
+http://best-hoster.ru 3 3
+http://www.odeialo.ru 3 3
+http://yobero.ru 3 3
+http://renkele.net 2 2
+http://free-online-dating-club.blogspot.com 1 1
+http://www.yellowpages.com/thousand-oaks-ca/unitarian-church 1 1
+http://us.mc1810.mail.yahoo.com/mc/welcome 2 2
+http://worldbranding.ru 3 3
+http://www.pswduua.org/pages/congregations/congdisplay.php 1 1
+http://proficomp.net 3 3
+http://avtogury.ru 3 3
+http://www.at-la.com/@la-god/ 3 3
+http://webmail.nyc.rr.com/do/redirect 1 1
+http://finaneinvest.net 2 2
+http://pronekut.com/news.php 2 2
+http://uusca.cust.he.net/index.html 2 2
+http://webmail.earthlink.net/wam/msg.jsp 1 1
+http://vk.com/music_vk_ios 3 3
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 54
+cvuuf 19
+conejo+valley+unitarian+universalist+fellowship 16
+unitarian+universalist+conejo+valley 9
+unitarian+church+newbury+park 6
+cvuuf.org 5
+cvuuf+members 4
+cvuuf+calendar 4
+unitarian 3
+unitarian+universalist 3
+cvuuf+website 3
+cvuuf+old+conejo+road+newbury+park+ca 1
+unitarian+universalist+fellowship+of+the+conejo+valley 1
+unitarian+universal+church+conejo 1
+unitarian+universalist+westlake+village+ca 1
+conejo+valley+uu 1
+unitarian+universalist+westlake+village 1
+universal+unitarian+near+thousand+oaks 2
+unitarian+church+in+westlake+village 1
+universal+unitarian+thousand+oaks 1
+unitarian+thousand+oaks 2
+uu+church+camarillo 1
+canejo+valley+unitarian+universalist+church 1
+cvuuuf.org 2
+conejo+valley+unitarian+fellowship 2
+unitarian+church+ventura+county 2
+simi+valley+unitarian 1
+unitarian+universalists+conejo 1
+uu+newberry+park 1
+unitarian+universalist+thousand+oaks 2
+fellowship+riders+%40verizon.net 1
+universalist+unitarian 1
+cvuuf+members+directory 1
+universal+unitarian+conejo+valley 2
+unitarian+universalist+camarillo 1
+dir 1
+thousand+oaks+unitarian+universalists 2
+unitarian+church 3
+unitarian+universalist+church+newbury+park+ca 2
+conejo+valley+unitarian+universalist+fellowship+newbury+park 1
+unitarian+universalist+near+camarillo+ca 1
+unitarian+universalist+church+of+conejo+valley 1
+unitarian+universalist+calabasas 1
+unitarian+universalist+newbury+park 1
+forum.cvuuf.org 1
+cvuuf+thousand+oaks 1
+cvuuf+community+forum 1
+conejo+valley+unitarian+universalist+church 1
+thousand+oaks+unitarian+church 1
+unitarian+universalist+thousand+oaks+ca 1
+conejo+valley+uu+fellowship+thousand+oaks 1
+unitarian+church+thousand+oaks 2
+unitarian+universalist+church+thousand+oaks 1
+unitarian+church+camarillo 1
+steve+goodman+heart+of+compassion 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 46
+unitarian 79
+universalist 46
+conejo 38
+valley 37
+cvuuf 34
+church 24
+fellowship 22
+oaks 16
+thousand 16
+park 12
+universal 6
+the 1
+website 3
+goodman 1
+directory 1
+riders 1
+westlake 3
+community 1
+in 1
+universalists 3
+near 3
+calendar 4
+old 1
+cvuuuf.org 2
+%40verizon.net 1
+uu 4
+village 3
+county 2
+ventura 2
+newberry 1
+calabasas 1
+of 3
+cvuuf.org 5
+forum 1
+dir 1
+steve 1
+compassion 1
+simi 1
+heart 1
+forum.cvuuf.org 1
+ca 6
+members 5
+newbury 11
+camarillo 4
+road 1
+canejo 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+403 39186 22276118
+302 772 344046
+500 22 71430
+301 145 93008
+404 1276 4265620
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 757
+/chalet-proche-uzech-46310-5.html 1 -
+/chalet-proche-epizon-52230-5.html 1 -
+/auction 6 -
+/chambre-hote-proche-pierrefontaine-les-blamon-25310-2.html 1 -
+/siteback.tar 2 -
+/bungalow-proche-oisy-le-verger-62860-7.html 1 -
+/bungalow-proche-brin-sur-seille-54280-7.html 1 -
+/bungalow-proche-fretterans-71270-7.html 1 -
+/chalet-proche-angivillers-60130-5.html 1 -
+/chambre-hote-near-avelesges-80270-2.html 1 -
+/chambre-hote-proche-vauquois-55270-2.html 1 -
+/chalet-near-aubigne-sur-layon-49540-5.html 1 -
+/chambre-hote-near-endoufielle-32600-2.html 1 -
+/bungalow-proche-les-michels-13790-7.html 1 -
+/images/05val02.jpg 1 -
+/chambre-hote-near-mignovillard-39250-2.html 1 -
+/chambre-hote-near-sainte-marguerite-d-elle-14330-2.html 1 -
+/www_data.tar.gz 1 -
+/bungalow-proche-claveyson-26240-7.html 1 -
+/wwwroot.tar 2 -
+/bungalow-proche-dampierre-52360-7.html 1 -
+//phm_ireq.php 1 -
+/chambre-hote-near-avrille-49240-2.html 1 -
+/bungalow-near-senones-88210-7.html 1 -
+/request-info.htm 1 -
+/chalet-proche-la-roche-69620-5.html 1 -
+/media/sermons/sermon121111.mp3 2 http://www.airsla.org/conejovuu.asp
+/chambre-hote-proche-letanne-08210-2.html 1 -
+/backup.rar 1 -
+/bungalow-proche-liernais-21430-7.html 1 -
+/bungalow-near-le-manoir-27460-7.html 1 -
+/aceofcuups/contents.php 1 -
+/images/zaca01.jpg 1 -
+/wwwroot.rar 1 -
+/bungalow-proche-jallanges-21250-7.html 1 -
+/www.cvuuf.org.tar.gz 1 -
+/chambre-hote-proche-banize-23120-2.html 1 -
+/wwwroot_data.zip 1 -
+/chalet-near-tremeheuc-35270-5.html 1 -
+/roulotte-near-saint-aubin-du-cormier-35140-8.html 2 -
+/www_data.tar 2 -
+/config.sql 1 -
+/bungalow-proche-tauxieres-mutry-51150-7.html 1 -
+/links.php 2 -
+/siteback.zip 1 -
+/chalet-near-eourres-26560-5.html 1 -
+/bungalow-near-saint-andre-de-l-50680-7.html 1 -
+/public/register.php 6 http://www.cvuuf.org/public/
+/chalet-near-rosieres-81400-5.html 1 -
+/sinkford.php 2 -
+/site.tar 2 -
+/web.tar.gz 1 -
+/cvuuf.tar 2 -
+/bungalow-proche-chezeneuve-38300-7.html 1 -
+/iw_events.php 4 -
+/nextsundays.php 8 -
+/chalet-near-sarp-65370-5.html 1 -
+/index.htm 2 -
+/chambre-hote-near-sainte-cecile-les-vignes-84290-2.html 1 -
+/chambre-hote-proche-castelnau-d-arbieu-32500-2.html 1 -
+/bungalow-proche-la-poterie-cap-d-76280-7.html 1 -
+/website.gz 1 -
+/bungalow-near-gindou-46250-7.html 1 -
+/blog.rar 1 -
+/backup.sql 1 -
+/chalet-near-chassigny-52190-5.html 1 -
+/www.zip 1 -
+/chambre-hote-audinghen-at-pas-calais-chambres-hotes-rentals-n_3502.html 1 -
+/chambre-hote-proche-cours-de-pile-24520-2.html 1 -
+/chalet-near-montreuil-sur-breche-60480-5.html 1 -
+/chalet-proche-saint-mards-76730-5.html 1 -
+/bungalow-proche-chamberia-39270-7.html 1 -
+/chambre-hote-proche-moutiers-saint-jean-21500-2.html 1 -
+/website.zip 1 -
+/bungalow-proche-les-verchers-sur-layon-49700-7.html 1 -
+/chambre-hote-near-courdemanche-72150-2.html 1 -
+/chalet-proche-diebolsheim-67230-5.html 1 -
+/chambre-hote-proche-grenay-38540-2.html 1 -
+/wwwroot.tar.gz 1 -
+/robots.txt/.php 1 -
+/chambre-hote-proche-ecuelles-71350-2.html 1 -
+/chambre-hote-proche-barthe-65230-2.html 1 -
+/roulotte-near-saint-denis-11310-8.html 1 -
+/images/council/WillieLubka_big.jpg 9 -
+/chambre-hote-near-saint-pol-sur-ternoise-62130-2.html 1 -
+/%22%20+%20gaJsHost%20+%20%22google-analytics.com/ga.js 1 -
+/bungalow-pays-de-la-loire-recherche-region-52.html 1 -
+/chambre-hote-proche-les-fougerets-56200-2.html 1 -
+/librarycatalog.php 88 -
+/audiosermons.php+%28%22powered+by+%22++%27simple%27%29+ACCEPTED 4 http://cvuuf.org/audiosermons.php+%28%22powered+by+%22++%27simple%27%29+ACCEPTED
+/chalet-near-gaudechart-60210-5.html 1 -
+/images/05val08.jpg 1 -
+/wp-conf.php 3 -
+/chalet-proche-gorze-57680-5.html 1 -
+/chambre-hote-near-lancon-08250-2.html 1 -
+/bungalow-near-saint-sauveur-marville-28170-7.html 1 -
+/bungalow-proche-la-roche-vineuse-71960-7.html 1 -
+/din04script.html 2 -
+/bungalow-proche-raymond-18130-7.html 1 -
+/www_data.gz 1 -
+/requestinfo.php 1 -
+/wp-admin/ 8 -
+/private/private.php 1 -
+/chalet-proche-saorge-06540-5.html 1 -
+/chambre-hote-near-sardan-30260-2.html 1 -
+/chambre-hote-proche-amerey-88220-2.html 1 -
+/images/boxinn02.jpg 1 -
+/chambre-hote-proche-jaignes-77440-2.html 1 -
+/bungalow-proche-courcy-50200-7.html 1 -
+/chalet-proche-villebarou-41000-5.html 1 -
+/phpmyadmin.rar 1 -
+/databackup.sql 1 -
+/drecov.php 1 -
+/www.cvuuf.org.tar 2 -
+/chambre-hote-benet-at-vendee-marienne-rentals-n_1695.html 1 -
+/website.rar 1 -
+/chalet-proche-chanes-01120-5.html 1 -
+/chambre-hote-near-gresse-en-vercors-38650-2.html 1 -
+/backup.zip 1 -
+/bungalow-proche-vergoncey-50240-7.html 1 -
+/bungalow-near-latronquiere-46210-7.html 1 -
+/bungalow-near-grange-le-bocage-89260-7.html 1 -
+/stylecss.php 2 -
+/images/council/DennisWeiher.jpg 1 -
+/newsite.php 1 -
+/bungalow-proche-vitry-aux-loges-45530-7.html 1 -
+/iw_main.php 13 -
+/chambre-hote-rouvre-deux-sevres-cle-champs-location-n_2104.html 1 -
+/chambre-hote-proche-sermiers-51500-2.html 1 -
+/chalet-bretagne-seek-region-53.html 1 -
+/forum/member/register 2 http://www.cvuuf.org/
+/milonic/"+_I[24]+" 6 -
+/chambre-hote-near-mensignac-24350-2.html 1 -
+/images/2003din/din2003-01.JPG 1 -
+/chalet-near-roche-38090-5.html 1 -
+/chambre-hote-near-le-villard-48230-2.html 1 -
+/blog.tar.gz 1 -
+/addons/lightbox/confgic.php 2 -
+/chalet-near-seynes-30580-5.html 1 -
+/siteback.gz 1 -
+/bungalow-proche-charencey-21690-7.html 1 -
+/chambre-hote-proche-chouzelot-25440-2.html 1 -
+/chambre-hote-near-saint-germain-07170-2.html 1 -
+/chambre-hote-proche-auchel-62260-2.html 1 -
+/apple-touch-icon.png 1 -
+/chalet-near-miribel-01700-5.html 1 -
+/bungalow-near-fay-le-clos-26240-7.html 1 -
+/principles.php 12 -
+/images/council/DennisWeiher_big.jpg 1 -
+/root.sql 1 -
+/images/council/JimBray_big.jpg 4 -
+/administrator/confgic.php 2 -
+/data.tar.gz 1 -
+/chambre-hote-proche-pompejac-33730-2.html 2 -
+/wwwroot_data.sql 1 -
+/chambre-hote-proche-buironfosse-02620-2.html 1 -
+/root.rar 1 -
+/bungalow-near-chardogne-55000-7.html 1 -
+/chambre-hote-proche-ernolsheim-bruche-67120-2.html 1 -
+/chalet-near-liposthey-40410-5.html 1 -
+/chambre-hote-near-bellac-87300-2.html 1 -
+/chambre-hote-proche-saint-martin-en-gatinois-71350-2.html 1 -
+/chalet-proche-sainte-austreberthe-62140-5.html 1 -
+/media/sermons.html/wp-trackback.php 1 -
+/sundays5.php 4 http://www.cvuuf.org/sundays5.php
+/public/YaBB.pl/ 2 -
+/mysite.tar.gz 1 -
+/addons/lightbox/inedx.php 2 -
+/bungalow-proche-neuvy-deux-clochers-18250-7.html 1 -
+/chambre-hote-near-passavant-en-argonne-51800-2.html 1 -
+/bungalow-near-prignac-en-medoc-33340-7.html 1 -
+/apple-touch-icon-precomposed.png 4 -
+/bungalow-near-luneau-03130-7.html 1 -
+/chalet-near-neuilh-65200-5.html 1 -
+/bungalow-near-saint-michel-de-livet-14140-7.html 1 -
+/chambre-hote-near-oppy-62580-2.html 1 -
+/chambre-hote-near-creton-27240-2.html 1 -
+/sundays2.php 2 -
+/bungalow-saint-leu-reunion-kreol-inns-location-n_620.html 1 -
+/forum.tar.gz 1 -
+/chalet-near-boyardville-17190-5.html 1 -
+/www.gz 1 -
+/bungalow-proche-villereau-45170-7.html 1 -
+/chalet-near-bassan-34290-5.html 1 -
+/bungalow-proche-romain-39350-7.html 1 -
+/www_data.rar 1 -
+/artistsway.php 2 -
+/chambre-hote-proche-messe-79120-2.html 1 -
+/chalet-proche-wagnon-08270-5.html 1 -
+/images/zaca04.jpg 1 -
+/bungalow-near-mirecourt-88500-7.html 1 -
+/chalet-proche-breban-51320-5.html 1 -
+/root.zip 1 -
+/chalet-proche-ergue-gaberic-29500-5.html 1 -
+/bungalow-proche-montfaucon-30150-7.html 1 -
+/chalet-near-lascelle-15590-5.html 1 -
+/milonic/"+_I[29]+" 6 -
+/chalet-proche-nogaret-31540-5.html 1 -
+/bungalow-proche-bouniagues-24560-7.html 1 -
+/images/2003din/din2003-11.JPG 1 -
+/sacal.php 3 -
+/site.zip 1 -
+/bungalow-proche-champs-romain-24470-7.html 1 -
+/bungalow-near-patay-45310-7.html 1 -
+/chalet-near-pessans-25440-5.html 1 -
+/bungalow-near-cholet-49280-7.html 1 -
+/chalet-near-rossfeld-67230-5.html 1 -
+/aceofcuups/principles.php 1 -
+/bungalow-near-le-compeix-23460-7.html 1 -
+/uu-links.htm 1 -
+/chalet-near-treguennec-29720-5.html 1 -
+/bungalow-near-gannes-60120-7.html 1 -
+/chalet-near-taurize-11220-5.html 1 -
+/villa-near-virignin-01300-3.html 3 -
+/site.gz 1 -
+/chalet-proche-sainte-alauzie-46170-5.html 1 -
+/hsh.mdb 1 -
+/chalet-near-tavaux-et-pontsericourt-02250-5.html 1 -
+/files/BCT.pdf 2 -
+/www.sql 1 -
+/siteback.tar.gz 1 -
+/bungalow-near-ploudalmezeau-29830-7.html 1 -
+/images/aw-f01.jpg 1 -
+/bungalow-proche-maisons-du-bois-lievremon-25650-7.html 1 -
+/bungalow-proche-saint-michel-de-riviere-24490-7.html 1 -
+/bungalow-near-saint-sulpice-de-favieres-91910-7.html 1 -
+/chalet-near-chevigny-39290-5.html 1 -
+/programs.php 4 -
+/chalet-proche-neuvic-19160-5.html 1 -
+/chalet-proche-labastidette-31600-5.html 1 -
+/config.tar 2 -
+/chalet-near-ousse-64320-5.html 1 -
+/bungalow-proche-gravelines-59820-7.html 1 -
+/cvuuf.tar.gz 1 -
+/wwwroot_data.tar 2 -
+/web_data.tar.gz 1 -
+/chalet-near-plovan-29720-5.html 1 -
+/chambre-hote-near-voisins-le-bretonneux-78960-2.html 1 -
+/chambre-hote-proche-beaumont-en-diois-26310-2.html 1 -
+/chambre-hote-near-saint-martin-des-puits-11220-2.html 1 -
+/chalet-near-broglie-27270-5.html 1 -
+/chalet-proche-moyencourt-les-poix-80290-5.html 1 -
+/files/CW%20calendar.pdf 2 -
+/bungalow-proche-sainte-paule-69620-7.html 1 -
+/backup.tar 2 -
+/bungalow-near-maclaunay-51210-7.html 1 -
+/wp/wp-admin/ 3 -
+/www_data.sql 1 -
+/chalet-near-montory-64470-5.html 1 -
+/images/board/PaulChavez_big.jpg 2 -
+/chalet-near-taverny-95150-5.html 1 -
+/chambre-hote-near-colombiers-17460-2.html 1 -
+/chalet-proche-rosny-sous-bois-93110-5.html 1 -
+/mysite.sql 1 -
+/data.sql 1 -
+/wwwroot_data.gz 1 -
+/chambre-hote-proche-maizicourt-80370-2.html 1 -
+/chambre-hote-near-saint-jeoire-prieure-73190-2.html 1 -
+/chambre-hote-near-preignac-33210-2.html 1 -
+/newsletter 1 -
+/bungalow-proche-sainte-croix-en-jarez-42800-7.html 1 -
+/bungalow-near-fondettes-37230-7.html 1 -
+/chambre-hote-proche-villers-sous-pareid-55160-2.html 1 -
+/bungalow-proche-malemort-du-comtat-84570-7.html 1 -
+/answers.php 3 -
+/auction/ 1 -
+/chalet-near-le-buisson-72610-5.html 1 -
+/chalet-proche-blot-l-eglise-63440-5.html 1 -
+/images/coacmp07.jpg 1 -
+/chambre-hote-near-saint-pancrace-73300-2.html 1 -
+/private/minutes_manage.php 1 -
+/chambre-hote-proche-saint-bazile-de-la-roche-19320-2.html 1 -
+/images/ebowl2.jpg 1 -
+/bbs.rar 1 -
+/chambre-hote-near-flaucourt-80200-2.html 1 -
+/private/cal_approval.php 1 http://cvuuf.org/webcal/month.php
+/public/registration_rules.asp 2 http://www.cvuuf.org/public/registration_rules.asp
+/aceofcuups/answers.php 1 -
+/bungalow-near-cleder-29233-7.html 1 -
+/sermon0526.php 2 -
+/cvuuf.sql 1 -
+/chalet-proche-precy-sous-thil-21390-5.html 1 -
+/chambre-hote-near-saint-geours-de-maremne-40230-2.html 1 -
+/chambre-hote-near-neuville-sur-brenne-37110-2.html 1 -
+/bungalow-near-lez-31440-7.html 1 -
+/aceofcuups/index.php 1 -
+/chambre-hote-proche-pontchateau-44160-2.html 1 -
+/web_data.gz 1 -
+/faqs.htm 1 -
+/bungalow-proche-fayssac-81150-7.html 1 -
+/wordpress/wp-admin/ 7 -
+/databackup.tar.gz 1 -
+/bungalow-proche-soulomes-46240-7.html 1 -
+/chambre-hote-proche-les-gets-74260-2.html 1 -
+/chambre-hote-proche-leojac-82230-2.html 1 -
+/chambre-hote-near-theneuille-03350-2.html 1 -
+/aceofcuups/re_main.php 1 -
+/chambre-hote-near-montregard-43290-2.html 1 -
+/images/2003din/din2003-07.JPG 1 -
+/b-and-b-a-proximite-aigre-16140-2.html 2 -
+/chambre-hote-proche-archamps-74160-2.html 1 -
+/chambre-hote-near-fouquereuil-62232-2.html 1 -
+/chalet-proche-perouges-01800-5.html 1 -
+/site.tar.gz 1 -
+/images/aw-p01.jpg 1 -
+/chambre-hote-issarles-at-ardeche-maison-kopp-rentals-n_4289.html 1 -
+/sitemap.xml 1 -
+/chambre-hote-proche-pleaux-15700-2.html 1 -
+/chalet-near-mordelles-35310-5.html 1 -
+/images/05val01.jpg 1 -
+/www.tar.gz 1 -
+/images/05val06.jpg 1 -
+/bungalow-near-lacalm-12210-7.html 1 -
+/bungalow-near-trelins-42130-7.html 1 -
+/chalet-near-saint-julien-en-beauchene-05140-5.html 1 -
+/web_data.tar 2 -
+/private/ygsignup.php 1 -
+/chalet-near-saint-julien-de-la-nef-30440-5.html 1 -
+/cvuuf.zip 1 -
+/images/drecgroup.jpg 1 -
+/chalet-proche-cahus-46130-5.html 1 -
+/chambre-hote-proche-oltingue-68480-2.html 1 -
+/chalet-proche-francin-73800-5.html 1 -
+/bungalow-near-neuffontaines-58190-7.html 1 -
+/files/brandispressrelease.pdf 4 -
+/gite-etape-proche-canenx-et-reaut-40090-10.html 1 -
+/bungalow-proche-haveluy-59255-7.html 1 -
+/chalet-proche-saint-mamet-31110-5.html 1 -
+/calhelp.php 1 -
+/chambre-hote-near-saint-aubin-en-charollais-71430-2.html 1 -
+/chalet-proche-montseveroux-38122-5.html 1 -
+/files/FAQs%20for%20MSC.pdf 2 -
+/mysite.zip 1 -
+/chambre-hote-proche-besny-et-loizy-02870-2.html 1 -
+/chalet-proche-saint-pierre-des-jonquieres-76660-5.html 1 -
+/media/sermons/sermon130224.mp3 3 http://127.0.0.1:6555/
+/wwwroot.gz 1 -
+/media/sermons/sermon060528.mp3 1 -
+/databackup.rar 1 -
+/chambre-hote-near-saint-martin-de-valamas-07310-2.html 1 -
+/mysite.rar 1 -
+/mysite.gz 1 -
+/bungalow-proche-jungholtz-68500-7.html 1 -
+/images/nnbbq6.jpg 1 -
+/config.gz 1 -
+/bungalow-proche-haudrecy-08090-7.html 1 -
+/chalet-proche-boisset-saint-priest-42560-5.html 1 -
+/2010/plugins/system/dvmessages.php 2 -
+/blog/wp-admin/ 6 -
+/phpmyadmin.gz 1 -
+/bungalow-near-villiers-en-lieu-52100-7.html 1 -
+/chambre-hote-near-barreme-04330-2.html 1 -
+/forum.zip 1 -
+/bungalow-proche-val-de-mercy-89580-7.html 1 -
+/images/childd6.jpg 1 -
+/front.php 3 -
+/chambre-hote-proche-repentigny-14340-2.html 1 -
+/wwwroot.sql 1 -
+/bungalow-proche-vidai-61360-7.html 1 -
+/phpmyadmin.sql 1 -
+/chalet-proche-jaulnes-77480-5.html 1 -
+/cf_main.php 6 -
+/va_index.php 5 http://cvuuf.org/va_index.php
+/chambre-hote-near-chatignac-16480-2.html 1 -
+/bbs.zip 1 -
+/images/boxinn04.jpg 1 -
+/old/wp-admin/ 3 -
+/bungalow-proche-villard-leger-73390-7.html 1 -
+/chalet-near-oisseau-53300-5.html 1 -
+/aceofcuups/cf_main.php 1 -
+/chambre-hote-proche-bouessay-53290-2.html 1 -
+/chambre-hote-proche-meudon-92190-2.html 1 -
+/web.sql 1 -
+/config.zip 1 -
+/bungalow-proche-bouville-28800-7.html 1 -
+/chalet-proche-beauvoir-en-royans-38160-5.html 1 -
+/web.gz 1 -
+/chambre-hote-proche-la-jaille-yvon-49220-2.html 1 -
+/bungalow-near-lievans-70240-7.html 1 -
+/chalet-proche-montord-03500-5.html 1 -
+/chambre-hote-proche-rocquencourt-60120-2.html 1 -
+/chambre-hote-proche-chappes-08220-2.html 1 -
+/chambre-hote-proche-saint-martin-de-brehal-50290-2.html 1 -
+/blog.gz 1 -
+/chambre-hote-proche-bucy-les-cerny-02870-2.html 1 -
+/chambre-hote-proche-port-lesney-39600-2.html 1 -
+/sermons.php 4 -
+/images/boxinn06.jpg 1 -
+/files/ 2 -
+/chambre-hote-near-les-barils-27130-2.html 1 -
+/files/Brandis%20bio%20for%20CW.pdf 4 -
+/chambre-hote-saint-didier-au-mont-at-rhone-chambre-hotes-lyon-autrefois-saint-didier-au-m-rentals-n_4200.html 1 -
+/chambre-hote-near-chasselay-69380-2.html 1 -
+/web_data.zip 1 -
+/chalet-proche-montaigu-le-blin-03150-5.html 1 -
+/chalet-proche-precilhon-64400-5.html 1 -
+/admin.php 1 -
+/bungalow-proche-seynod-74600-7.html 1 -
+/media/sermons/sermon060319.mp3 1 -
+/chambre-hote-proche-marce-49140-2.html 1 -
+/chambre-hote-proche-barbaggio-20253-2.html 1 -
+/chambre-hote-near-blanchefosse-et-bay-08290-2.html 1 -
+/chambre-hote-proche-pouzioux-la-jarrie-86580-2.html 1 -
+/root.gz 1 -
+/chalet-proche-francoules-46090-5.html 1 -
+/chambre-hote-near-saint-michel-de-vax-81140-2.html 1 -
+/chalet-proche-avon-77210-5.html 1 -
+/chambre-hote-proche-port-villez-78270-2.html 1 -
+/chalet-proche-treslon-51140-5.html 1 -
+/data.tar 2 -
+/uu-voices.htm 1 -
+/chambre-hote-near-nieulle-sur-seudre-17600-2.html 1 -
+/bungalow-proche-singrist-67440-7.html 1 -
+/sundays6.php 5 -
+/blog.sql 1 -
+/chambre-hote-near-richelieu-37120-2.html 1 -
+/chalet-proche-blussans-25250-5.html 1 -
+/chambre-hote-proche-vicq-exemplet-36400-2.html 1 -
+/chambre-hote-proche-gruchet-le-valasse-76210-2.html 1 -
+/chambre-hote-near-cayres-43510-2.html 1 -
+/chalet-near-plabennec-29860-5.html 1 -
+/chalet-bussang-at-vosges-chalet-grande-capacite-vosges-ardennes-rentals-n_1423.html 1 -
+/chalet-near-rouvenac-11260-5.html 1 -
+/media/sermons/sermon121021.mp3 1 http://www.airsla.org/conejovuu.asp
+/chambre-hote-proche-brevillers-80600-2.html 1 -
+/private/charters_org.php 1 -
+/phm_feed.php 1 -
+/our-principles.htm 3 -
+/library.php 5 -
+/childded.php 2 -
+/bungalow-proche-offin-62990-7.html 1 -
+/bungalow-near-saint-urbain-maconcourt-52300-7.html 1 -
+/chalet-near-neuvillette-80600-5.html 1 -
+/newsandnotes.php 3 -
+/web_data.rar 1 -
+/chambre-hote-near-ourouer-les-bourdelins-18350-2.html 1 -
+/images/board/ClaudiaBarton_big.jpg 3 -
+/chalet-proche-saint-jean-de-ceyrargues-30360-5.html 1 -
+/wp-login.php 5 -
+/chalet-near-chalais-36370-5.html 1 -
+/chambre-hote-proche-picherande-63113-2.html 1 -
+/chalet-near-dompcevrin-55300-5.html 1 -
+/media/sermons.html 1 -
+/addons/lightbox/indx.php 2 -
+/bungalow-proche-juicq-17770-7.html 1 -
+/++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Result:+it+is+not+a+forum+/+guestbook+%28or+no+connection+to+internet%29 2 http://cvuuf.org/++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Result:+it+is+not+a+forum+/+guestbook+%28or+no+connection+to+internet%29
+/chambre-hote-near-saint-laurent-de-la-pree-17450-2.html 1 -
+/www.cvuuf.org.sql 1 -
+/member/register 2 http://www.cvuuf.org/
+/chalet-near-baneins-01990-5.html 1 -
+/chambre-hote-near-saint-parres-les-vaudes-10260-2.html 1 -
+/bungalow-proche-dorres-66760-7.html 1 -
+/bungalow-near-chaville-92370-7.html 1 -
+/chambre-hote-near-ceyssac-43000-2.html 1 -
+/siteback.rar 1 -
+/root.tar 2 -
+/chambre-hote-near-les-souhesmes-rampont-55220-2.html 1 -
+/chambre-hote-proche-furdenheim-67117-2.html 1 -
+/forum.sql 1 -
+/databackup.tar 2 -
+/chalet-proche-auge-08380-5.html 1 -
+/bungalow-near-roubaix-59100-7.html 1 -
+/chalet-proche-ancourteville-sur-hericou-76560-5.html 1 -
+/chalet-near-gaudies-09700-5.html 1 -
+/config.tar.gz 1 -
+/chalet-proche-buleon-56420-5.html 1 -
+/chambre-hote-proche-montreuil-en-caux-76850-2.html 1 -
+/chalet-near-barville-61170-5.html 1 -
+/bungalow-near-le-givre-85540-7.html 1 -
+/chalet-proche-kirrwiller-bosselshausen-67330-5.html 1 -
+/chalet-near-birac-sur-trec-47200-5.html 1 -
+/bungalow-proche-petit-failly-54260-7.html 1 -
+/public/index.php 10 http://www.cvuuf.org/public/
+/config.rar 1 -
+/sermon20040905.php 1 -
+/bungalow-near-estipouy-32300-7.html 1 -
+/phm_ireq.php 1 -
+/bbs.gz 1 -
+/bbs.tar 2 -
+/chambre-hote-near-prats-du-perigord-24550-2.html 1 -
+/chalet-proche-saint-aignan-le-jaillard-45600-5.html 1 -
+/bungalow-proche-vias-34450-7.html 1 -
+/website.tar 2 -
+/bungalow-near-saint-martin-lys-11500-7.html 1 -
+/chambre-hote-proche-saint-aventin-31110-2.html 1 -
+/root.tar.gz 1 -
+/media/sermons/sermon060514.mp3 1 -
+/chambre-hote-near-meschers-sur-gironde-17132-2.html 1 -
+/chambre-hote-near-pargny-80190-2.html 1 -
+/chambre-hote-near-saint-sauveur-lalande-24700-2.html 1 -
+/chalet-near-miramont-de-comminges-31800-5.html 1 -
+/index.php/forums/member/register 2 http://www.cvuuf.org/
+/chalet-proche-chantenay-saint-imbert-58240-5.html 1 -
+/wwwroot_data.tar.gz 1 -
+/www.cvuuf.org.rar 1 -
+/chalet-near-la-creuse-70240-5.html 1 -
+/chambre-hote-proche-cantois-33760-2.html 1 -
+/chambre-hote-near-menilles-27120-2.html 1 -
+/chalet-near-le-breuil-en-auge-14130-5.html 1 -
+/forum.rar 1 -
+/chalet-proche-saint-christophe-16420-5.html 1 -
+/chambre-hote-anduze-at-gard-magnanerie-rentals-n_44.html 1 -
+/chambre-hote-proche-nages-81320-2.html 1 -
+/site.rar 1 -
+/chaliceplayers 5 -
+/chambre-hote-proche-hordain-59111-2.html 1 -
+/bungalow-proche-chene-arnoult-89120-7.html 1 -
+/siteback.sql 1 -
+/coa.php 2 -
+/images/nnbbq5.jpg 1 -
+/chalet-near-monthoiron-86210-5.html 1 -
+/bungalow-proche-saint-sulpice-73160-7.html 1 -
+/chambre-hote-near-chissay-en-touraine-41400-2.html 1 -
+/chambre-hote-telgruc-sur-mer-finistere-chambres-hotes-heron-presqu-ile-cro-location-n_2979.html 1 -
+/++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Result:+%ED%E5+%ED%E0%F8%EB%EE%F1%FC+%F4%EE%F0%EC%FB+%E4%EB%FF+%EE%F2%EF%F0%E0%E2%EA%E8 1 http://www.cvuuf.org/++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Result:+%ED%E5+%ED%E0%F8%EB%EE%F1%FC+%F4%EE%F0%EC%FB+%E4%EB%FF+%EE%F2%EF%F0%E0%E2%EA%E8
+/bungalow-near-saint-germain-de-fresney-27220-7.html 1 -
+/iw_socialaction.php 3 -
+/backup.tar.gz 1 -
+/showsermon.php 31 -
+/forum.gz 1 -
+/chalet-proche-combloux-74920-5.html 1 -
+/chambre-hote-near-saint-colomban-des-villards-73130-2.html 1 -
+/www_data.zip 1 -
+/wwwroot_data.rar 1 -
+/phpmyadmin.tar.gz 1 -
+/bungalow-near-saint-andre-le-gaz-38490-7.html 1 -
+/saareas.php 2 -
+/HYTop.mdb 1 -
+//phm_feed.php 1 -
+/administrator/erorlog.php 2 -
+/data.gz 1 -
+/cvuuf.rar 1 -
+/gite-etape-proche-tavel-30126-10.html 1 -
+/chalet-near-saint-leger-sous-margerie-10330-5.html 1 -
+/bungalow-proche-marizy-71220-7.html 1 -
+/studio-appartement-proche-buissy-62860-4.html 1 -
+/chalet-near-usclades-et-rieutord-07510-5.html 1 -
+/phpmyadmin.tar 2 -
+/chambre-hote-near-druy-parigny-58160-2.html 1 -
+/images/aw-f07.jpg 1 -
+/images/nnbbq2.jpg 1 -
+/chambre-hote-proche-harcanville-76560-2.html 1 -
+/files/Poster_1-12-12.pdf 1 -
+/chalet-near-arrigny-51290-5.html 1 -
+/chalet-proche-lacadee-64300-5.html 1 -
+/bungalow-proche-autheuil-authouillet-27490-7.html 1 -
+/images/library002.jpg 2 http://cvuuf.org/about
+/announcement 1 -
+/chalet-near-freulleville-76510-5.html 1 -
+/va_login.php 8 -
+/phpmyadmin.zip 1 -
+/bungalow-near-rontignon-64110-7.html 1 -
+/bungalow-proche-compains-63610-7.html 1 -
+/chambre-hote-near-dissay-86130-2.html 1 -
+/boxproject.php 3 -
+/chambre-hote-near-saint-martin-de-la-49160-2.html 1 -
+/chalet-near-baccarat-54120-5.html 1 -
+/bungalow-proche-saint-gervais-en-valliere-71350-7.html 1 -
+/aceofcuups/worship.php 1 -
+/chambre-hote-near-froeningen-68720-2.html 1 -
+/forms/ 1 -
+/mysite.tar 2 -
+/media/sermons/sermon060326.mp3 1 -
+/minister.php 3 -
+/sermon1209.php 1 -
+/chambre-hote-near-la-courbe-61150-2.html 1 -
+/bungalow-proche-saint-dalmas-le-selvage-06660-7.html 1 -
+/bungalow-near-laverriere-60210-7.html 1 -
+/midyear.html 2 -
+/site.sql 1 -
+/chaliceplayers/ 2 -
+/contents.html 4 -
+/bungalow-proche-kernascleden-56540-7.html 1 -
+/bungalow-near-fourmagnac-46100-7.html 1 -
+/chambre-hote-saint-andre-bohon-at-manche-rentals-n_3499.html 1 -
+/re_main.php 4 -
+/bungalow-near-gigneville-88320-7.html 1 -
+/chalet-near-gramond-12160-5.html 1 -
+/chalet-proche-prendeignes-46270-5.html 1 -
+/chalet-proche-bergeres-les-vertus-51130-5.html 1 -
+/chambre-hote-near-chatillon-sur-indre-36700-2.html 1 -
+/backup.gz 1 -
+/www.cvuuf.org.zip 1 -
+/bungalow-near-saint-germain-chassenay-58300-7.html 2 -
+/bungalow-near-le-gratteris-25620-7.html 1 -
+/chambre-hote-near-saint-aubin-des-bois-14380-2.html 1 -
+/chambre-hote-proche-bidache-64520-2.html 1 -
+/chambre-hote-proche-mittelhausbergen-67206-2.html 1 -
+/forum.tar 2 -
+/data.rar 1 -
+/chambre-hote-proche-la-brulatte-53410-2.html 1 -
+/web.rar 1 -
+/data.zip 1 -
+/chambre-hote-near-saint-mards-de-fresne-27230-2.html 1 -
+/public/profile.php 2 http://www.cvuuf.org/public/profile.php
+/website.sql 1 -
+/++liker.profile_URL++ 3 http://cvuuf.org/++liker.profile_URL++
+/chambre-hote-proche-sonac-46320-2.html 1 -
+/audiosermons.php 6 -
+/chambre-hote-near-combres-sous-les-cotes-55160-2.html 1 -
+/bungalow-near-mialos-64410-7.html 1 -
+/chambre-hote-proche-courson-monteloup-91680-2.html 1 -
+/www.rar 1 -
+/chambre-hote-proche-noailles-60430-2.html 1 -
+/chalet-near-monchy-lagache-80200-5.html 1 -
+/sundays3.php 7 -
+/chambre-hote-proche-saint-martin-de-nigelles-28130-2.html 1 -
+/chalet-near-oppedette-04110-5.html 1 -
+/forms/request_for_funds.pdf 2 -
+/2004camping.php 1 -
+/bungalow-proche-aspremont-06790-7.html 1 -
+/aceofcuups/wwsaltar.jpg 1 -
+/images/GovernanceChart3-16-04.pdf 1 -
+/forms/I6WjTueLmkU/el%2520libro%2520del%2520kama%2520sutra.html 4 -
+/chalet-near-palluel-62860-5.html 1 -
+/files/Lora%20B%20announcement%20-%203.19.2011.pdf 4 -
+/wwwroot.zip 1 -
+/chalet-near-saint-christophe-du-luat-53150-5.html 1 -
+/public/site/signup.php 2 http://www.cvuuf.org/public/
+/bbs.sql 1 -
+/bbs.tar.gz 1 -
+/chalet-near-bailly-78870-5.html 1 -
+/images/aw-f02.jpg 1 -
+/chalet-near-taillebourg-17350-5.html 1 -
+/databackup.zip 1 -
+/bungalow-near-tostat-65140-7.html 1 -
+/media/sermons/sermon121104.mp3 1 http://www.airsla.org/conejovuu.asp
+/chambre-hote-near-labergement-les-seurre-21820-2.html 1 -
+/chalet-proche-saint-lactencin-36500-5.html 1 -
+/chalet-proche-saint-marcel-du-perigord-24510-5.html 1 -
+/chambre-hote-proche-cervon-58800-2.html 1 -
+/images/council/JimBray.jpg 1 -
+/web.zip 1 -
+/chambre-hote-near-saint-gervasy-30320-2.html 1 -
+/www.cvuuf.org.gz 1 -
+/files/Auction_catalog.pdf 2 -
+/administrator/index.php 3 -
+/chalet-near-cuebris-06910-5.html 1 -
+/chambre-hote-proche-molinchart-02000-2.html 1 -
+/chalet-near-bellavilliers-61360-5.html 1 -
+/chalet-near-clairefougere-61800-5.html 1 -
+/chalet-near-montsec-55300-5.html 1 -
+/aceofcuups/ 7 -
+/chalet-proche-soustons-40140-5.html 1 -
+/chambre-hote-near-chanzeaux-49750-2.html 1 -
+/bungalow-proche-les-croix-22440-7.html 1 -
+/chalet-proche-blainville-sur-mer-50560-5.html 1 -
+/cvuuf.gz 1 -
+/bungalow-near-fau-de-peyre-48130-7.html 1 -
+/bungalow-near-moita-20270-7.html 1 -
+/chambre-hote-near-frepillon-95740-2.html 1 -
+/chambre-hote-proche-lescherolles-77320-2.html 1 -
+/board.php 1 -
+/chambre-hote-wallis-et-futuna-recherche-departement-7-986.html 1 -
+/chambre-hote-near-vaunaveys-la-rochette-26400-2.html 1 -
+/bungalow-near-chappes-63720-7.html 1 -
+/chalet-proche-aucelon-26340-5.html 1 -
+/blog.zip 1 -
+/chalet-near-chapelle-guillaume-28330-5.html 1 -
+/bungalow-proche-torcy-en-valois-02810-7.html 1 -
+/chambre-hote-proche-tancoigne-49310-2.html 1 -
+/bungalow-near-grateloup-47400-7.html 1 -
+/media/sermons.xml 36 -
+/chalet-near-bermering-57340-5.html 1 -
+/chambre-hote-near-manteyer-05400-2.html 1 -
+/chambre-hote-proche-poey-de-lescar-64230-2.html 1 -
+/bungalow-near-chavanoz-38230-7.html 1 -
+/bungalow-near-chateauvieux-les-fosses-25840-7.html 1 -
+/chambre-hote-near-tazilly-58170-2.html 1 -
+/chalet-near-goux-39100-5.html 1 -
+/chalet-near-bransles-77620-5.html 1 -
+/images/council/WillieLubka.jpg 1 -
+/contents.php 33 -
+/chambre-hote-proche-buais-50640-2.html 1 -
+/bungalow-proche-bourg-le-roi-72610-7.html 1 -
+/chambre-hote-cabestany-at-pyrenees-orientales-mas-orfila-rentals-n_4396.html 1 -
+/web.tar 2 -
+/emtbowls.php 1 -
+/chalet-proche-arjuzanx-40110-5.html 1 -
+/chalet-near-sabran-30200-5.html 1 -
+/chalet-near-montgradail-11240-5.html 1 -
+/chalet-proche-saix-81710-5.html 1 -
+/bungalow-proche-les-nans-39300-7.html 1 -
+/chalet-near-tourtour-83690-5.html 1 -
+/bungalow-proche-belbese-82500-7.html 1 -
+/chambre-hote-proche-torfou-49660-2.html 1 -
+/bungalow-proche-mortzwiller-68780-7.html 1 -
+/bungalow-proche-uchon-71190-7.html 1 -
+/voices.php 2 -
+/bungalow-near-saint-michel-d-euzet-30200-7.html 1 -
+/chalet-near-pernand-vergelesse-21420-5.html 1 -
+/public/ucp.php 2 http://www.cvuuf.org/public/
+/chambre-hote-near-montapas-58110-2.html 1 -
+/images/revbet.jpg 1 -
+/bungalow-proche-aiserey-21110-7.html 1 -
+/gite-etape-near-ajain-23380-10.html 1 -
+/chalet-near-montigny-la-resle-89230-5.html 1 -
+/chalet-proche-ronchamp-70250-5.html 1 -
+/public/signup.php 2 http://www.cvuuf.org/public/
+/council.php 1 -
+/images/board/LauraMcLean_big.jpg 4 -
+/sundays4.php 27 http://cvuuf.org/sundays4.php
+/images/pswgroup.jpg 1 -
+/website.tar.gz 1 -
+/chalet-proche-neuville-day-08130-5.html 1 -
+/chalet-near-chagnon-42800-5.html 1 -
+/public/YaBB.cgi/ 2 -
+/images/aw-group.jpg 1 -
+/images/arrow.plain.up.gif 1 -
+/chalet-proche-souillac-46200-5.html 1 -
+/bungalow-near-vacheresses-les-basses-28210-7.html 1 -
+/bungalow-proche-dampierre-en-bresse-71310-7.html 1 -
+/saguide.php 5 -
+/bungalow-near-loeuilly-80160-7.html 1 -
+/chalet-near-cerqueux-sous-passavant-49310-5.html 1 -
+/images/aw-p02.jpg 1 -
+/bungalow-proche-anais-16560-7.html 1 -
+/sm.xml 1 -
+/bungalow-proche-leffard-14700-7.html 1 -
+/public_lists.php 1 -
+/private/calrequest.php 2 http://cvuuf.org/webcal/month.php
+/chalet-proche-aubigny-03460-5.html 1 -
+/bungalow-proche-villeneuve-du-bosc-09000-7.html 1 -
+/databackup.gz 1 -
+/chambre-hote-proche-crezieres-79110-2.html 1 -
+/chalet-proche-beaune-la-rolande-45340-5.html 1 -
+/worship.php 2 -
+/chambre-hote-proche-ambricourt-62310-2.html 1 -
+/chambre-hote-proche-melamare-76170-2.html 1 -
+/bungalow-proche-ardoix-07290-7.html 1 -
+/bungalow-near-oraas-64390-7.html 1 -
+/visitors.php 6 -
+/chambre-hote-near-les-charmontois-51330-2.html 1 -
+/blog.tar 2 -
+/chalet-proche-veuilly-la-poterie-02810-5.html 1 -
+/chalet-proche-taillant-17350-5.html 1 -
+/chalet-near-willeman-62770-5.html 1 -
+/chambre-hote-near-roquedur-30440-2.html 1 -
+/chambre-hote-near-la-bastide-sur-l-09600-2.html 1 -
+/chambre-hote-near-gauriaguet-33240-2.html 1 -
+/bungalow-near-la-batie-montsaleon-05700-7.html 1 -
+/chalet-near-arguel-80140-5.html 1 -
+/chalet-proche-mouterre-sur-blourde-86430-5.html 1 -
+/favicon.ico/.php 1 -
+/www.tar 2 -
+/web_data.sql 1 -
+/chalet-near-belmont-sainte-foi-46230-5.html 1 -
+/chambre-hote-near-tracy-sur-loire-58150-2.html 1 -
+/images/aw-f06.jpg 1 -
+/chambre-hote-proche-fouilloy-60220-2.html 1 -
+/chalet-near-estirac-65700-5.html 1 -
+/bungalow-proche-clemensat-63320-7.html 1 -
+/chambre-hote-proche-ladoix-serrigny-21550-2.html 1 -
+/bungalow-near-santilly-71460-7.html 1 -
+/thenewsletter.php 21 -
+/sermon0331.php 2 -
+/congregation.php 5 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 550
+71.118.70.97 930 4512 59381488 20130430194341
+74.111.193.73 882 1242 12696415 20130430213049
+173.55.183.247 612 2185 10893105 20130430201839
+108.210.28.76 490 1382 24386148 20130430222446
+108.23.64.133 489 1901 20714952 20130428114729
+98.119.106.76 252 1821 2234296 20130412222031
+198.105.219.59 188 188 89314 20130425230330
+76.175.71.151 161 457 1181394 20130430233510
+64.236.138.1 145 508 6059520 20130426171722
+76.93.119.1 127 990 11835276 20130420165532
+75.82.229.32 7 26 968048 20130409112536
+216.52.226.90 1 11 147288 20130424152619
+75.83.202.206 5 16 180734 20130417140941
+91.238.134.234 1 1 705373 20130415172841
+70.197.69.89 7 43 324115 20130403180236
+76.167.219.255 2 12 852661 20130427205239
+199.30.24.130 0 7 43689 
+166.137.209.26 1 11 147234 20130402190253
+99.120.88.119 0 8 27664 
+71.165.79.203 1 11 147288 20130424181227
+95.79.90.54 1 1 9602 20130411052151
+124.205.145.229 1 1 9756 20130420073049
+209.129.115.6 9 54 451979 20130430185233
+173.60.27.114 7 43 326357 20130412165800
+41.206.90.17 1 1 295194 20130430130844
+76.255.196.115 4 15 159391 20130407105309
+71.110.124.207 1 11 147263 20130409012017
+108.38.23.28 1 11 147263 20130414003722
+46.235.12.36 1 1 9658 20130414095846
+74.100.56.233 12 56 760110 20130426133408
+64.134.230.165 27 228 2142532 20130424210236
+96.229.108.56 5 16 2311089 20130409212839
+157.145.220.102 4 20 229690 20130423110537
+24.245.54.233 2 12 852636 20130404193352
+70.197.78.77 8 64 610680 20130412204013
+46.119.114.21 11 11 107724 20130424221518
+71.109.156.166 18 57 4255791 20130408185629
+94.244.157.172 1 1 9602 20130409075231
+173.173.110.221 1 1 705373 20130428215836
+173.54.121.118 0 22 76076 
+198.27.80.99 1 11 147263 20130402170300
+76.175.96.173 10 42 361520 20130411174801
+76.167.69.86 3 24 349894 20130421220400
+71.109.103.69 16 72 1313959 20130412123441
+208.54.4.132 1 1 3926 20130430153956
+166.137.209.149 5 20 163512 20130421231818
+174.251.176.126 2 12 852661 20130426000656
+208.127.223.159 3 44 2759625 20130428234625
+99.4.180.239 0 4 9343 
+65.204.229.11 7 25 248594 20130409123950
+172.19.131.154 13 59 539864 20130411005504
+209.190.20.234 2 2 236 20130425072250
+76.167.214.226 4 24 1705272 20130411201138
+74.82.64.144 31 195 12567283 20130429132637
+99.51.144.238 16 48 485533 20130404165115
+27.1.73.115 1 1 9708 20130425162118
+198.228.228.169 1 11 147288 20130429191725
+71.109.147.100 1 11 147288 20130428000031
+176.74.192.81 2 22 294576 20130425025550
+166.137.209.154 1 11 147263 20130413205736
+142.129.141.131 73 210 1674132 20130427154620
+192.210.57.242 2 2 19204 20130413163531
+118.20.65.126 0 1 3458 
+185.5.45.42 1 1 9652 20130428040652
+123.62.6.15 2 2 13559 20130417110540
+174.251.176.8 2 12 852632 20130426194514
+71.109.100.211 2 2 1410746 20130421191108
+128.73.58.206 3 3 9894 20130401073404
+76.19.108.128 2 13 176193 20130408131152
+71.108.53.202 27 48 379148 20130428142248
+24.20.160.198 9 21 1588365 20130401125613
+94.153.64.11 6 6 57941 20130401173055
+71.110.124.14 37 116 1991664 20130416000710
+66.209.120.154 2 11 805936 20130426181501
+62.24.181.134 1 2 40866 20130426045945
+64.236.138.2 1 10 106393 20130429131759
+77.248.88.222 2 2 1410746 20130422073858
+71.165.120.149 4 26 965514 20130426113631
+58.22.51.24 2 2 19204 20130409070128
+166.137.209.171 6 13 325514 20130424001105
+76.89.163.228 7 46 326804 20130411193446
+123.62.6.3 3 3 11790 20130409004102
+216.52.219.150 1 1 9708 20130428064020
+76.95.67.61 1 1 705373 20130403081711
+173.51.81.140 6 42 608787 20130428022829
+74.82.64.161 1 3 37983 20130428185112
+99.126.165.31 23 58 2605367 20130420205435
+207.98.181.148 1 11 147288 20130424163346
+71.160.120.103 26 74 630550 20130416174449
+66.55.152.251 1 1 9658 20130402032248
+174.240.64.209 5 15 1048246 20130427161406
+70.197.74.32 4 18 210364 20130407130437
+64.34.170.56 8 8 1206005 20130415042849
+76.218.81.203 14 35 329993 20130419190834
+76.94.3.196 2 12 852661 20130428113559
+67.100.33.100 1 1 705373 20130405144404
+166.137.210.25 1 11 147288 20130428112336
+80.72.37.158 1 1 9602 20130409161237
+71.119.182.238 19 91 1267217 20130430173052
+198.228.216.162 12 53 204042 20130430145415
+166.137.191.32 1 11 143507 20130427131046
+173.49.139.226 2 2 19316 20130406133426
+76.213.224.240 2 13 151819 20130426011659
+75.85.10.205 1 1 3955 20130429210232
+71.104.61.69 1 1 97820 20130402232452
+5.63.145.70 2 2 236 20130425061229
+76.91.71.150 3 13 443287 20130419210748
+42.62.37.60 1 1 18980 20130409192457
+70.197.76.181 3 16 191600 20130427193347
+76.166.187.54 2 2 1410746 20130404182754
+173.55.235.57 8 44 1727191 20130404131418
+173.55.19.152 3 13 155266 20130424155218
+98.119.199.230 6 17 215034 20130406161146
+5.254.129.72 1 1 9602 20130414162327
+129.228.192.124 25 165 427146 20130430165957
+71.165.79.121 13 85 1626152 20130414030451
+212.150.62.145 1 1 9658 20130416041004
+173.55.9.34 5 18 969674 20130412213107
+142.129.135.150 2 13 163463 20130402225201
+202.101.149.181 1 1 9602 20130410054507
+96.248.227.218 1 1 705373 20130425153155
+76.79.168.138 2 12 1479396 20130401164821
+173.55.237.49 2 12 150505 20130417132343
+71.110.114.175 1 1 705373 20130402202652
+76.166.189.131 26 114 982937 20130414193228
+174.47.19.226 14 34 1224039 20130430182123
+72.87.163.9 5 41 312940 20130412210328
+174.251.193.191 5 12 36606 20130424135423
+67.58.142.198 23 136 407496 20130419223015
+213.41.72.26 1 11 153937 20130408130226
+207.112.36.27 1 11 147263 20130414181118
+129.228.195.159 17 73 625460 20130419185742
+213.110.133.221 2 2 19416 20130425234217
+173.60.235.198 1 11 147234 20130406191056
+173.55.9.200 63 182 3644837 20130426131254
+108.178.168.72 2 2 1410746 20130403064306
+76.166.185.112 2 12 852636 20130414110414
+173.51.20.243 1 1 705373 20130403193325
+108.161.131.134 1 1 118 20130425061228
+123.156.188.250 1 1 705373 20130411071315
+74.100.158.222 8 54 468236 20130410004059
+166.137.209.148 1 1 292094 20130414003837
+71.110.124.133 14 47 887648 20130421202033
+142.136.155.80 1 11 147288 20130424190428
+108.184.150.167 8 19 176369 20130427232011
+166.137.208.48 1 1 705373 20130403151210
+108.210.28.11 2 12 852636 20130418182101
+71.165.221.2 33 95 2860863 20130428193736
+98.119.29.97 28 126 1400071 20130429103733
+74.1.130.212 3 15 198928 20130425153535
+96.229.155.136 1 11 147234 20130403165028
+173.60.27.133 6 27 1299295 20130422221914
+71.109.149.231 1 1 705373 20130403095143
+108.231.164.129 7 24 252323 20130422213015
+76.174.159.236 2 12 151193 20130408001143
+50.46.189.99 8 46 368340 20130404025309
+75.82.229.93 11 51 1751913 20130426074618
+71.110.114.24 5 16 169958 20130403133122
+76.94.72.78 5 26 624635 20130421132800
+10.20.72.25 8 18 5084874 20130409192745
+108.95.80.77 2 22 294526 20130401112147
+159.83.4.1 3 15 856566 20130414162319
+71.108.53.87 21 57 1046696 20130414220358
+71.103.255.164 1 1 705373 20130402223619
+173.55.183.197 1 1 705373 20130402231032
+99.9.157.242 33 112 956441 20130422225603
+89.241.238.223 1 11 147288 20130426045913
+64.31.106.35 1 11 147288 20130423164716
+173.55.234.244 1 1 705373 20130412211453
+31.6.71.20 1 1 705373 20130406164154
+174.251.192.4 1 11 147288 20130424152243
+174.254.65.54 1 1 4038 20130416172357
+24.43.128.182 6 6 4232238 20130428125954
+99.7.8.98 1 1 705373 20130403214105
+67.101.51.37 17 34 288463 20130427222246
+189.237.124.1 1 11 147263 20130409211459
+98.112.27.193 14 45 434811 20130422213108
+70.190.200.208 2 2 1410746 20130416193221
+144.76.62.77 1 11 147288 20130425041009
+66.87.68.68 3 14 217707 20130413143506
+173.60.86.167 1 1 705373 20130403232916
+199.107.215.39 4 14 159347 20130414021631
+101.66.226.25 1 1 705373 20130402231651
+142.129.140.193 1 11 147263 20130406111755
+66.249.84.87 1 1 3926 20130428014542
+12.165.172.4 11 23 225857 20130417111433
+173.60.225.150 2 2 1410746 20130403010953
+24.24.235.110 1 11 147288 20130424121634
+64.134.232.196 7 36 1089502 20130428014107
+108.38.165.219 2 2 1410746 20130403191008
+174.234.129.181 1 11 147288 20130424175757
+176.213.40.164 1 1 9602 20130412074503
+174.127.43.90 5 22 232644 20130411143005
+173.55.9.69 2 12 852636 20130407195442
+108.184.156.192 6 46 597033 20130429204456
+76.255.128.57 23 72 512270 20130416141118
+69.234.96.183 2 12 151193 20130401150752
+202.105.89.45 1 1 292094 20130415174658
+91.232.96.7 1 1 191260 20130403233850
+211.167.112.17 1 1 413180 20130406095121
+173.51.100.82 9 28 295721 20130414130431
+31.6.71.21 1 1 705373 20130405221405
+27.109.115.77 1 9 109505 20130421193846
+76.175.155.112 1 11 147288 20130429210434
+76.166.191.112 10 41 1170424 20130427170424
+85.176.116.101 1 1 9658 20130409034746
+199.30.228.149 0 2 32324 
+74.92.63.202 2 13 176163 20130401113925
+76.79.83.107 5 17 224020 20130423123623
+166.147.88.19 2 13 151562 20130421184033
+71.160.179.26 7 24 947433 20130421150019
+42.62.37.239 1 1 18980 20130409041550
+101.63.137.52 1 1 9658 20130419131842
+198.176.189.201 27 115 1218524 20130426174029
+75.82.224.198 1 11 147320 20130420232926
+76.94.4.175 9 37 1519479 20130422121926
+69.232.34.114 38 133 652218 20130407114936
+208.90.57.196 2 2 19624 20130421165114
+46.165.230.206 1 1 9658 20130404143822
+46.118.119.252 9 9 86901 20130404073413
+71.107.187.148 7 25 245488 20130421162627
+97.94.106.136 7 29 1024498 20130428031014
+173.55.19.86 2 2 798813 20130402193741
+31.11.220.63 1 1 9658 20130408025235
+178.73.212.231 1 1 9602 20130410141750
+71.108.53.84 7 32 1057200 20130429211918
+70.197.69.90 0 3 12206 
+37.150.197.154 1 1 9658 20130416213255
+216.244.78.70 1 1 705373 20130422234018
+206.176.254.52 5 22 234040 20130411233934
+98.119.36.102 9 35 397589 20130430232359
+76.93.114.104 10 66 622340 20130428124015
+107.211.204.122 1 1 4836278 20130429223848
+99.93.38.218 3 14 154578 20130429190843
+76.94.75.74 11 53 549660 20130415154427
+71.177.216.65 6 27 329011 20130409114228
+99.105.104.89 2 2 721312 20130402185821
+165.30.52.86 2 12 859310 20130411012253
+68.120.163.11 6 43 358924 20130407105828
+12.69.101.250 0 1 3458 
+74.100.56.155 6 22 956207 20130412120055
+76.206.8.50 24 110 1079693 20130430214833
+76.95.49.140 8 45 343807 20130417192053
+199.116.127.39 9 30 1675977 20130427234855
+173.55.45.13 1 1 705373 20130402200733
+166.137.209.162 1 11 107778 20130421172029
+173.60.232.209 8 27 263888 20130408222637
+95.211.234.20 1 1 3955 20130428153949
+108.184.146.100 2 12 151301 20130406230401
+72.45.34.98 1 1 291315 20130401071849
+140.32.164.100 6 25 285924 20130429143736
+85.10.246.235 1 11 147263 20130402165713
+108.242.235.117 15 75 4397386 20130429114257
+173.55.239.94 2 12 852661 20130429103655
+198.136.53.234 1 11 147263 20130416225807
+59.61.46.42 1 1 9756 20130421033919
+76.227.180.17 2 2 997467 20130415094354
+174.254.51.0 4 11 24528 20130422191726
+24.43.3.232 4 49 76792 20130428160037
+108.184.151.193 6 43 335986 20130419111231
+108.71.39.159 6 44 343451 20130406104356
+12.219.163.146 2 12 151193 20130412113345
+91.203.97.254 2 22 294608 20130423160957
+49.14.210.16 1 11 147263 20130419035808
+173.245.77.50 1 1 9602 20130412070405
+84.95.88.100 1 1 9658 20130414155953
+50.16.174.25 1 5 50146 20130404181640
+98.206.101.252 1 11 147288 20130425234632
+198.228.228.177 2 10 7881 20130429193605
+67.101.51.13 1 1 705373 20130403003705
+166.137.209.176 9 23 33883 20130428140919
+71.177.6.219 4 26 229772 20130421150706
+142.136.32.21 2 12 852661 20130426154736
+24.171.157.5 1 1 705373 20130406211652
+108.184.230.224 9 32 365221 20130422160254
+66.209.120.62 4 25 301742 20130406085810
+107.17.45.155 1 11 147259 20130426143939
+206.248.170.88 3 3 27140 20130401000859
+42.62.37.62 1 1 3910 20130424160413
+80.72.37.156 1 1 9602 20130406232924
+37.221.174.111 7 7 63840 20130420043755
+173.55.238.143 4 15 159048 20130416120907
+112.193.91.35 1 1 9602 20130401005431
+128.111.173.2 1 1 705373 20130404122600
+27.154.76.102 1 1 9602 20130408065807
+69.232.34.136 2 13 176164 20130406013734
+71.165.192.198 13 69 2064194 20130402001545
+24.149.197.34 1 4 59260 20130429205218
+96.249.194.113 11 11 42144 20130417182033
+209.190.41.6 1 11 147218 20130404090801
+115.241.140.223 1 1 296917 20130423014426
+174.251.193.246 2 12 152420 20130428112355
+95.211.99.69 1 1 118 20130428204144
+37.139.52.23 2 2 19416 20130429150714
+108.184.152.146 10 42 554614 20130414143051
+76.166.193.66 49 125 5809003 20130426015107
+88.135.213.39 1 1 118 20130410090126
+91.236.75.41 1 1 1332133 20130402181222
+71.110.114.101 23 59 1013231 20130405141627
+69.171.247.116 0 1 409 
+71.118.241.159 2 12 852636 20130413155436
+142.129.129.134 44 178 2421084 20130430181311
+72.67.183.169 2 12 852636 20130413182044
+216.175.116.120 2 2 1410746 20130408191129
+91.236.75.40 1 1 1332133 20130402145513
+173.60.226.39 73 210 5588631 20130423202253
+75.25.57.226 4 33 370381 20130403150857
+71.119.225.223 1 1 705373 20130404183314
+64.56.252.32 0 1 3458 
+144.204.16.1 4 30 166132 20130419074036
+175.44.17.151 1 1 9658 20130417112015
+70.197.66.47 8 21 1644718 20130408202223
+108.38.23.124 15 82 1106408 20130428122511
+5.135.125.180 2 2 18499 20130424215639
+174.234.193.55 2 12 151011 20130403165054
+166.137.209.172 2 2 7860 20130414004512
+166.137.208.24 4 15 144934 20130414144548
+153.31.113.21 2 14 853601 20130410170100
+67.49.100.98 8 47 454293 20130404031421
+108.202.248.154 6 18 209635 20130419022852
+74.4.138.150 1 1 9652 20130429221435
+108.231.21.17 3 15 180608 20130422175358
+65.254.224.56 3 3 28974 20130402123814
+199.107.205.145 2 2 1410746 20130402204319
+76.166.185.208 58 165 4133314 20130424125523
+173.206.6.75 0 1 3458 
+71.110.109.11 5 17 202186 20130415233931
+70.197.75.212 3 13 118571 20130430193622
+174.234.130.211 2 12 852636 20130409201141
+183.110.231.23 1 1 9658 20130418003323
+166.137.191.37 1 1 3955 20130428194735
+175.44.12.38 1 1 9658 20130404234923
+76.94.5.154 3 14 155513 20130429193321
+198.71.58.113 1 1 9602 20130413071225
+5.39.33.188 2 2 19204 20130403234013
+108.23.64.137 39 128 3179881 20130425215150
+184.82.179.136 1 1 9602 20130403071300
+42.62.37.26 2 2 7770 20130401183437
+70.197.69.213 14 84 619078 20130426225001
+184.106.166.21 0 1 9343 
+166.216.226.92 1 1 14356 20130421151226
+76.255.129.150 7 43 1723565 20130411233549
+64.87.27.130 0 1 9343 
+74.201.16.75 1 11 147263 20130410195122
+68.164.129.90 9 20 175123 20130401221357
+66.74.202.187 6 42 1019002 20130429220324
+166.137.208.44 1 1 705373 20130408172344
+216.152.251.66 1 1 9602 20130402132435
+173.206.66.155 0 1 3458 
+209.129.115.37 4 16 264038 20130425143544
+76.89.170.152 12 55 566915 20130425173247
+62.149.1.75 1 1 3930 20130410014555
+74.82.68.144 17 102 1653992 20130430215105
+71.104.193.80 11 50 259297 20130406115443
+71.177.129.171 43 207 2073343 20130430235855
+166.137.209.159 1 1 3238 20130424171511
+74.82.64.160 19 149 3575853 20130428224206
+71.107.187.177 3 13 856286 20130426022807
+166.137.209.175 1 9 3955 20130423212043
+67.53.223.2 0 1 3458 
+216.244.73.250 1 1 9602 20130409182752
+206.123.17.17 20 71 742464 20130419202922
+174.234.193.125 9 76 759705 20130412223245
+173.192.235.226 2 2 7913 20130424224915
+108.66.129.85 3 14 154508 20130419132915
+108.23.196.114 6 21 267553 20130414184918
+92.249.127.111 3 3 29124 20130426104832
+68.49.253.121 1 11 147234 20130417150722
+166.137.209.46 2 12 438549 20130402191041
+64.134.220.172 1 1 705373 20130402221653
+171.159.64.10 2 9 159734 20130409163003
+108.13.72.27 3 13 893771 20130414123312
+70.197.68.11 2 2 1410746 20130403055522
+173.60.235.232 17 40 70894 20130422194127
+71.104.196.195 7 34 241365 20130418083325
+98.119.36.183 1 11 147263 20130406182842
+89.141.93.17 1 1 4375 20130430201204
+184.60.36.210 0 2 6916 
+166.137.209.173 4 8 777996 20130426010709
+76.90.6.68 3 15 236402 20130403220017
+166.137.208.43 2 12 151316 20130403140152
+199.125.14.2 2 2 19416 20130425163052
+98.119.204.84 1 1 705373 20130405154328
+5.39.94.63 2 2 19316 20130410094056
+72.87.147.172 1 1 705373 20130405141034
+171.161.160.10 15 55 496722 20130425154817
+98.25.184.138 2 13 151513 20130409185117
+76.174.156.39 14 57 1475326 20130421022900
+80.82.66.227 1 1 9602 20130418042239
+208.29.163.248 34 119 832947 20130405134657
+46.229.167.149 2 2 13634 20130424125219
+72.18.50.141 1 11 147288 20130423214837
+117.26.116.190 1 1 9652 20130424213531
+68.6.38.7 8 45 1051982 20130424185121
+98.119.199.31 20 40 1032729 20130408064002
+220.65.166.223 10 23 320204 20130426034010
+207.178.233.2 12 30 284337 20130408200754
+71.119.224.22 2 12 151411 20130421102656
+71.104.61.197 23 78 2668747 20130428004312
+186.86.240.147 1 1 118 20130402212652
+120.43.7.61 1 1 705373 20130430011946
+175.118.112.74 1 1 705373 20130407205435
+199.30.228.156 1 9 114964 20130425113017
+144.76.13.77 3 3 1288782 20130416172735
+71.118.122.160 4 25 218734 20130406150832
+68.67.100.235 8 27 438861 20130405190404
+222.76.95.165 1 1 9602 20130409212932
+166.137.209.158 2 12 151301 20130410181511
+91.236.75.34 1 1 1332133 20130402130939
+76.91.70.32 3 13 1147855 20130427232020
+75.82.233.234 2 13 454688 20130427100239
+66.134.210.243 4 30 24571 20130430173839
+107.196.197.137 3 18 211902 20130428153241
+171.159.192.10 3 11 123134 20130408182205
+198.228.228.148 2 2 5634 20130402072226
+76.174.70.139 8 44 470394 20130420212619
+70.197.66.29 2 2 36088 20130402205440
+24.43.129.106 8 8 3636365 20130428130203
+70.225.33.233 1 11 147234 20130419032724
+108.185.174.70 13 77 244591 20130401121942
+2.89.178.177 1 11 147263 20130406110722
+71.177.58.3 15 113 794528 20130413011959
+142.129.129.151 6 18 1581204 20130407232034
+173.55.233.208 30 86 2892234 20130421234027
+64.134.234.238 1 1 3020 20130429215325
+66.249.84.58 12 12 47288 20130429192808
+70.197.67.230 3 3 741461 20130402213429
+142.136.146.60 3 13 161112 20130412234611
+198.228.228.154 1 9 117588 20130401203152
+108.13.167.74 1 1 705373 20130402204927
+166.137.209.169 1 2 4535 20130410182306
+75.82.237.142 6 19 169324 20130414111900
+96.249.192.175 1 1 705373 20130407114654
+108.13.167.116 24 65 4070336 20130427232034
+71.129.52.210 1 11 147320 20130421121709
+99.190.113.67 28 169 1598697 20130426014125
+67.175.160.178 1 11 147288 20130425195559
+174.234.132.217 4 11 24528 20130422150911
+46.229.170.196 1 11 147320 20130421083727
+217.225.176.99 3 3 28956 20130427205129
+173.252.103.2 0 1 46650 
+108.13.72.126 4 14 865251 20130429225535
+69.171.247.118 1 1 3930 20130411201125
+76.218.82.122 6 42 316510 20130407134534
+198.228.216.149 3 12 106365 20130428140157
+76.89.162.45 1 11 147259 20130425185751
+67.101.51.82 6 6 20444 20130405174329
+120.33.242.35 1 1 9602 20130406145553
+76.79.241.218 3 15 180413 20130403155405
+76.168.248.80 4 14 1473349 20130428222701
+70.197.64.185 5 16 1926931 20130407140355
+71.109.219.206 24 86 1772454 20130416175050
+98.112.27.237 5 22 240733 20130428153857
+74.100.206.207 2 2 1410746 20130407100922
+107.22.37.12 1 1 3930 20130401205035
+108.184.201.34 0 30 3458 
+194.44.170.105 3 8 51818 20130414191321
+173.60.235.199 1 1 705373 20130402223024
+65.49.14.154 1 1 292094 20130408014839
+69.3.58.47 6 6 20415 20130402141631
+108.23.129.77 9 46 367864 20130423122807
+98.221.89.159 4 4 18452500 20130417092441
+169.234.18.238 1 11 147263 20130418143049
+166.137.209.24 1 1 705373 20130402184457
+76.173.12.32 3 14 197645 20130407093125
+178.140.172.164 1 1 9708 20130424172019
+67.101.51.189 12 69 592874 20130409141047
+173.55.45.17 3 14 180172 20130413231152
+63.227.126.109 1 1 9658 20130405192348
+72.23.93.5 2 15 176193 20130410143005
+74.113.134.99 5 41 312805 20130410142210
+50.22.42.250 1 1 9812 20130421150609
+75.82.236.74 7 17 1233371 20130427025303
+59.96.193.97 1 1 93720 20130423041313
+5.63.145.69 1 1 118 20130425213314
+71.167.184.67 3 14 207944 20130404220352
+74.3.4.112 4 15 159109 20130423043108
+76.166.191.126 2 12 151164 20130414120941
+76.206.14.8 1 11 147263 20130404191039
+76.166.192.218 1 1 705373 20130402204216
+117.213.50.36 1 1 36920 20130423063450
+208.54.4.245 2 2 20046 20130430180216
+27.159.228.167 1 1 9602 20130401160445
+166.137.209.153 6 50 317270 20130426194810
+99.162.89.229 1 1 705373 20130403221329
+50.23.254.99 1 1 118 20130428182736
+71.246.42.224 35 56 863964 20130406114230
+131.253.24.23 1 11 147291 20130421111909
+94.41.141.253 1 1 9652 20130426173812
+75.217.177.245 1 11 147263 20130414124147
+190.33.83.110 2 22 294583 20130421205400
+108.23.239.54 6 42 316402 20130404191855
+173.60.25.88 2 13 151558 20130425171755
+166.137.209.48 2 12 151301 20130416175146
+98.182.18.209 10 43 586419 20130419024140
+91.207.6.34 3 3 29117 20130424195908
+98.119.32.117 4 4 14953 20130416174249
+199.83.90.27 2 2 19204 20130402000811
+71.165.79.78 1 1 705373 20130407121436
+99.189.5.19 2 13 169958 20130417011343
+108.193.34.179 0 3 10374 
+60.169.77.119 1 1 9658 20130415013102
+71.104.199.216 13 71 422587 20130429084147
+209.203.73.75 1 11 130942 20130415190206
+174.240.65.136 2 10 805277 20130414152010
+121.115.115.220 0 9 31122 
+71.119.112.96 2 2 1410746 20130406142450
+174.24.3.31 4 14 158412 20130415142448
+50.115.169.231 1 1 705373 20130427134146
+64.203.63.178 9 9 55349 20130426201002
+174.234.129.83 2 14 114150 20130421140133
+108.95.53.110 11 30 303462 20130430144629
+76.172.41.35 1 1 705373 20130404100852
+67.59.90.126 13 58 672024 20130416193704
+75.53.81.189 0 8 96003 
+76.87.127.134 6 30 485209 20130412164217
+91.207.4.186 4 4 38818 20130424062140
+76.89.163.71 12 27 2622230 20130413235942
+12.157.145.2 1 11 147263 20130418143135
+91.207.9.226 6 6 58241 20130424044826
+166.137.209.168 4 14 122565 20130407194022
+69.36.85.210 3 14 162026 20130407165234
+166.137.209.152 3 4 14118 20130425192816
+75.82.236.69 1 8 143402 20130412212813
+98.222.240.95 3 14 856857 20130412161454
+108.184.144.84 8 8 4947269 20130407130322
+108.38.141.228 2 30 342149 20130416122959
+96.249.196.144 20 43 7112397 20130428164921
+75.63.30.27 6 44 347770 20130412004219
+76.89.199.9 2 12 852661 20130426201952
+69.234.102.81 16 84 871282 20130401102355
+209.191.87.218 1 1 9602 20130406144304
+46.105.54.116 1 1 9602 20130414024801
+72.87.209.130 13 51 1093987 20130403083202
+83.103.189.110 2 2 18499 20130429141234
+94.153.64.197 3 3 29124 20130424220029
+110.86.167.30 3 3 29268 20130422075452
+184.95.52.220 3 3 354 20130425213312
+76.206.12.243 3 32 371154 20130423150826
+173.55.238.167 1 11 147234 20130409134457
+75.63.29.189 6 43 336283 20130424122014
+108.184.226.24 22 117 2004299 20130418145155
+108.23.64.102 21 158 1084631 20130412193801
+46.229.168.50 1 11 147263 20130408040746
+89.209.7.86 1 1 118 20130402134535
+76.173.10.106 25 89 2170244 20130429110124
+66.249.85.81 4 4 15687 20130427003013
+87.246.138.244 1 1 9652 20130429025252
+108.13.72.189 105 172 3454576 20130429001430
+74.82.68.160 8 74 706743 20130430214945
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 30
+20130401 214 762 16415453 43
+20130402 234 976 42493245 64
+20130403 342 1794 28426441 58
+20130404 230 1060 18800459 46
+20130405 183 729 14112660 32
+20130406 280 1164 15676650 40
+20130407 385 1263 26188329 41
+20130408 194 565 17985867 40
+20130409 266 1057 19773525 46
+20130410 251 1404 9315867 41
+20130411 277 1195 15574880 33
+20130412 275 1080 14045325 39
+20130413 115 356 8173000 26
+20130414 404 1259 14882550 46
+20130415 177 555 7105262 27
+20130416 241 1032 14306021 28
+20130417 481 1654 30979817 37
+20130418 127 575 5498675 24
+20130419 213 761 9604973 35
+20130420 152 541 5853349 23
+20130421 378 1244 15518113 53
+20130422 162 655 8172985 34
+20130423 311 815 8877453 41
+20130424 371 999 9928413 49
+20130425 194 450 5268760 39
+20130426 220 759 13923334 47
+20130427 123 442 9888915 28
+20130428 302 1117 58136073 50
+20130429 140 572 13681897 41
+20130430 230 932 8040729 38
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 52
+5mn-15mn 89
+30s-2mn 177
+2mn-5mn 101
+15mn-30mn 57
+0s-30s 662
+30mn-1h 51
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 130
+/ 1124 4293867 624 279
+/webcal/js_cacher.php 984 2905693 1 47
+/webcal/month.php 626 7262455 26 3
+/person/find 485 1833321 47 67
+/webcal/css_cacher.php 364 1573780 0 52
+/private 362 1346838 29 7
+/public/newsletter 288 186447612 122 170
+/index.php 201 989340 131 51
+/auth/index 198 704364 47 14
+/worship/audiosermons 137 802267 37 43
+/index/pageconstruction 71 200680 2 12
+/private/listpositions 20 121902 0 5
+/private/listgroups 18 114035 1 3
+/support2/minutesmanage 20 86874 1 4
+/private/worshipservice 20 71738 0 0
+/about/history 19 76100 0 5
+/webcal/edit_entry.php 10 109722 0 0
+/welcoming/showfriends 19 82382 0 1
+/support/sextons 24 97774 0 13
+/welcoming/recentfriends 12 66820 0 2
+/private/listhoods 3 13734 0 0
+/calendar/process 20 68803 2 0
+/public/newsandnotes/ 3 875503 3 0
+/info/chartersgroups 11 42393 0 0
+/data/analyzevisits 20 66306 0 1
+/visitors/principles 22 83432 0 7
+/admin/permspecial 4 12882 0 1
+/worship 1 2804 0 0
+/calendar/approvals 16 58905 0 3
+/re/children 18 67730 2 6
+/library 1 3449 0 0
+/private/showfile 33 2022031 0 9
+/media/sermons/sermon130324.mp3 4 4572974 1 0
+/visitors/voices 8 24355 0 1
+/webcal/search_handler.php 1 4760 0 0
+/worship/showsermon 13 131695 2 4
+/visitors/intro 43 169880 4 9
+/library/wishlist 2 13210 0 1
+/support2/sermonaudioupload 29 108843 0 2
+/auth/pass 16 35291 1 4
+/media/sermons/sermon130224.mp3 9 22676177 0 3
+/support2/nlsend 2 5828 0 0
+/data/groups 5 24254 0 0
+http://www.cvuuf.org/public/newsletter 1 413180 1 1
+/welcoming/showmembers 10 86780 0 2
+/about/leadership 27 101121 0 7
+/admin/permperson 9 28048 0 0
+/data/personentry 2 8096 0 0
+/cash.php 2 13570 1 0
+/info/policies 34 342658 1 4
+/support2/nnupload 11 36159 0 1
+/data/maintvisits 21 74128 2 0
+/media/sermons/sermon121223.mp3 8 22092280 1 1
+/person/show 118 438450 2 42
+/private/phonelist 35 459103 1 15
+/index/ 1 9812 0 0
+/private/fulldirectory 32 631691 0 3
+/about/minister 42 175641 1 13
+/news/announcemaint 88 342084 2 8
+/media/sermons/sermon130331.mp3 5 9239892 1 1
+/support2/nlannounce 2 5774 0 1
+/webcal/login.php 8 12998 0 0
+/private/worshipplans 6 21559 0 0
+/worship/archive 15 44676 0 0
+/calendar 2 0 0 0
+/webcal/reject_entry.php 5 19686 0 1
+/welcoming/createcalendar 56 273810 1 8
+/media/sermons/sermon121125.mp3 1 874540 0 1
+/data/positions 9 42587 0 1
+/menus/show 11 42506 0 0
+/re/attendance 9 41801 0 0
+/re/adults 15 48749 0 2
+/news/announcereq 43 178108 1 6
+/library/catalog 34 160198 3 1
+/person/showperson 68 242952 0 1
+/index/formthanks 11 41239 1 7
+/support2/nlupload 3 9175 0 0
+/auth/change 8 27740 0 0
+/private/showminutes 55 245453 2 1
+/info/chartersorg 88 364302 3 9
+/webcal/view_entry.php 127 488954 7 13
+/visitors/links 17 57140 0 3
+/visitors/answers 29 196564 0 7
+/data/ 29 93003 20 1
+/welcoming/showvisitors 28 141890 0 0
+/support/welcoming 21 88355 1 2
+/data 109 333039 9 1
+/news/hoodemail 1 3562 0 0
+/calendar/request 28 161960 0 3
+/public/newsandnotes/++++++++++++++++++++++++++++++++++++++++Result:+%ED%E5+%ED%E0%F8%EB%EE%F1%FC+%F4%EE%F0%EC%FB+%E4%EB%FF+%EE%F2%EF%F0%E0%E2%EA%E8 1 292094 1 0
+/data/personchange 79 405433 0 1
+/welcoming/newclass 11 43077 0 1
+/auth/logout 7 20349 0 3
+/admin/unsub 1 252 0 1
+/news/bulkemail 1 3799 0 1
+/support/av 21 82581 2 8
+/public/announcements 40 241699 3 13
+/private/worshipgrid 74 446630 4 12
+/support/librarycatchange 21 81207 0 0
+/private/WorshipGrid 46 269976 0 6
+/worship/sermons 22 81647 0 3
+/welcoming/angels 6 21897 0 1
+/support/memberstats 11 37519 0 3
+/private/ 8 30048 6 2
+/public/newsandnotes 78 20288265 13 37
+/re/admin 2 4974 0 0
+/support2/emailforwards 6 21851 1 1
+/webcal/week.php 1 7182 0 1
+/support/nametags 36 2518425 0 1
+/media/sermons/sermon130113.mp3 4 6760639 0 1
+/worship/upcoming 78 323582 7 43
+/news/announceemail 12 69463 0 4
+/welcoming/recentmembers 2 7358 0 0
+/admin 9 23545 0 0
+/data/visitorsentry 36 159709 0 0
+/webcal/edit_entry_handler.php 7 33751 0 0
+/webcal/day.php 3 8187 0 0
+/media/sermons/sermon130106.mp3 2 3769720 0 0
+/menus/select 8 31694 0 0
+/about 2 6848 2 0
+/support/librarycatalog 35 132622 0 2
+/reaux/maintain 2 11094 0 0
+/welcoming/induction 3 12834 0 0
+/index/contact 47 200886 2 20
+/re 8 27906 0 2
+/index 59 241166 2 7
+/auth/login 76 219873 2 14
+/worship/sundaysyear 13 120937 0 4
+/library/audiocatalog 3 11263 0 1
+/webcal/approve_entry.php 21 83461 0 0
+END_SIDER

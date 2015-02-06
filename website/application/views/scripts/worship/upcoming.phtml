@@ -1,0 +1,27 @@
+<?php $this->head = "Sunday Services at 9:15 and 11 AM" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+  
+    <?php foreach ($this->sundays as $sunday) : ?>
+<center>
+<h2>
+  <?php echo date('F', mktime(0, 0, 0, substr($sunday->sunday, 5, 2), 1, 2013)) ?>
+  <?php echo sprintf("%01d", substr($sunday->sunday, 8, 2)) ?>
+</h2>
+<h3><?php echo $sunday->title ?>
+<br><?php echo $sunday->presenter ?>
+</h3>
+</center>
+<p><?php echo $sunday->summary ?>
+<br><br>
+    <?php endforeach ?>

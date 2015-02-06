@@ -1,0 +1,34 @@
+<?php $this->head = "SMALL GROUPS CHARTERS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+<form method='post'>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>Number<th>Type<th>Name</tr>
+    <?php foreach($this->charters as $charter) : ?>
+<tr>
+  <td><input type='checkbox' name='id[]' value='<?php echo $charter->id ?>' >
+  <td><?php echo $charter->id ?>
+  <td><?php echo $charter->grouptype ?>
+  <td><?php echo $charter->groupname ?>
+</tr>
+    <?php endforeach ?>
+</table>
+
+<br><input class='submit' TYPE=SUBMIT name='todo' value='GET'> View or Edit first selected charter. <br>
+<input class='submit' TYPE=SUBMIT name='todo' value='PRINT'> Download PDF print file for first selected charter. <br>
+<br><input class='submit' TYPE=SUBMIT name='todo' value='NEW'> Create a new charter. <br>
+<br><input class='submit' TYPE=SUBMIT name='todo' value='REMOVE'> Remove first selected charter - BE CAREFUL!! <br>
+
+</form>

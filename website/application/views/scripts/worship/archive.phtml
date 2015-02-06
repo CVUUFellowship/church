@@ -1,0 +1,20 @@
+<?php $this->head = "CVUUF SUNDAY SERVICES ARCHIVE" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+
+Years from 2007 through <?php echo $this->year ?> are available.
+<br><br>
+<form method='post'>
+<input type="submit" name="indexbutton" value="YEAR"> Select the year 
+<input type="text" name="year" size=4 value="<?php echo $this->year ?>">
+</form>

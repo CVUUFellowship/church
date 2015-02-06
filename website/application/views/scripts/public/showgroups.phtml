@@ -1,0 +1,52 @@
+<?php $this->head = "CVUUF Small Groups Directory" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+Touch the <img src='/media/graphics/smile.gif'> to show the person's photo.  If it doesn't show correctly, touch it again.
+<br><br>
+<p id="index"><strong><big>Index</big></strong></p>
+<p><big>Come back to this Index by clicking the
+	<span onClick="parent.location='#index'" onMouseOver="document.body.style.cursor='pointer'"
+		onMouseOut="document.body.style.cursor='auto'"><img src="/media/graphics/arrow.plain.up.gif"></span> symbol:
+<br>
+<blockquote>
+
+<?php $headno = 0 ?>
+<?php foreach($this->heads as $head) : ?>
+	<a href="#head<?php echo $headno++ ?>"><?php echo $head ?></a><br>
+<?php endforeach ?>
+</blockquote>
+</big>
+
+<?php $headno = 0 ?>
+<?php foreach($this->data as $collection) : ?>
+  <br>
+  <p id="head<?php echo $headno++ ?>">
+		<span onClick="parent.location='#index'" onMouseOver="document.body.style.cursor='pointer'"
+			onMouseOut="document.body.style.cursor='auto'"><img src="/media/graphics/arrow.plain.up.gif"></span>
+
+  <strong><big><?php echo $collection[0] ?></big></strong><br>
+  
+  <?php if (isset($collection[1])) : ?>
+    <table width=100% style='background-color: lightgray;'>
+    <?php foreach($collection[1] as $item) : ?>
+      <tr>
+      <td width=25%><?php echo $item[0] ?>
+      <td width=15%><?php echo $item[1] ?>
+      <?php if ($item[2] <> '') : ?>
+        <span onmouseover="Tip('<img width=\'70\' src=\'/media/photos/members/<?php echo $item[2]?>\'>')" onmouseout="UnTip()"> <img src='/media/graphics/smile.gif'></span>    
+      <?php endif ?>
+    <?php endforeach ?>
+    </table>
+  <?php endif ?>
+<?php endforeach ?>
+<?php $this->tooltip = TRUE; ?>

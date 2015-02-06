@@ -1,0 +1,38 @@
+<?php $this->head = "RELIGIOUS EDUCATION CLASS ASSIGNMENT" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<form method='post'>
+
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th><th>Name  
+  <?php foreach($this->classes as $class) : ?>
+<th><?php echo substr($class, 0, 3) ?>  
+  <?php endforeach ?>
+</tr>
+
+  <?php $data = $this->data ?>
+  <?php foreach($data as $child) : ?>
+<tr>
+<td><input type="checkbox" name="id[]" value='<?php echo $child[0] ?>'>
+<td><?php echo $child[1] ?>
+      <?php foreach($child[2] as $X) : ?>
+<td><?php echo $X ?>
+      <?php endforeach ?>      
+    <?php endforeach ?> 
+</table> 
+
+<?php foreach($this->classes as $class) : ?>
+<br><span class='label'><input class='submit' TYPE=SUBMIT name='class' value='<?php echo $class ?>'> </span>Set class to <?php echo $class ?> for selected children.
+<br><?php endforeach ?>
+</form>
+<br> 

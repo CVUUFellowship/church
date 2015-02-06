@@ -1,0 +1,85 @@
+<?php $this->head = "NAME TAGS" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+<br><br>
+<center>
+<strong><big>This directory information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br><br>
+
+<form method=post>
+    <?php if (count($this->table) > 0) : ?>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>ID<th>Name<th>Status<th>Title</tr>
+    <?php $row = array();
+          $tablestr = '';
+          $counts = array('Member' => 0, 'Visitor' => 0, 'NewFriend' => 0, 'Guest' => 0, 'Spouse' => 0, 'Staff' => 0);
+      foreach ($this->table as $person) : ?>
+        <?php if ($person[0] <> '') : ?>
+<tr>
+		<?php $link = '<a href="/person/showperson?id=' . 
+      $person[0] . '">' . $person[0] . '</a><br>'
+			?>
+      <?php unset($row) ?>
+
+<td><?php echo $link ?>
+<td><?php echo $name = $person[1] . ' ' . $person[2] ?>
+    <?php $status = $person[3] ?>
+<td><?php echo $status ?>
+      <?php $counts[$status]++ ?>
+<td><?php echo $person[4] ?>
+</tr>
+    <?php $row = implode(',', $person) ?>
+    <?php if ($tablestr <> '') 
+            $break = ';';
+          else 
+            $break = '';
+          $rowstr =$tablestr .= $break . $row ?>
+      <?php endif ?>
+    <?php endforeach ?>
+</table>
+
+    <?php endif ?>
+
+<br><input type="submit" name="addbutton" value="ADD"> Add new name tag for ID#
+<input type="text" name="pid" value="" size="4"> or Name 
+<input type="text" name="name" value="" size="40">
+<br><br><input type="submit" name="newbutton" value="NEW"> Add recent visitors.
+<br><br><input type="submit" name="blankbutton" value="BLANK"> Get page of blank visitor tags.
+
+    <?php if (isset($tablestr)) : ?>
+<br><br><input type="submit" name="trimbutton" value="TRIM"> Trim off ID#
+<input type="text" name="tid" value="" size="4">
+<br><input type="submit" name="clearbutton" value="CLEAR"> Clear the list of tags.
+<br>
+  <?php if ($counts['Visitor'] > 0) : ?>
+<br><input type="submit" name="printvbutton" value="VISITORS"> Print Visitor tags.
+  <?php endif ?>
+  <?php if ($counts['NewFriend'] > 0) : ?>
+<br><input type="submit" name="printfbutton" value="FRIENDS"> Print NewFriend tags.
+  <?php endif ?>
+  <?php if ($counts['Member'] > 0) : ?>
+<br><input type="submit" name="printmbutton" value="MEMBERS"> Print Member tags.
+  <?php endif ?>
+  <?php if ($counts['Guest'] > 0) : ?>
+<br><input type="submit" name="printgbutton" value="GUESTS"> Print Guest tags.
+  <?php endif ?>
+  <?php if ($counts['Staff'] > 0) : ?>
+<br><input type="submit" name="printobutton" value="STAFF"> Print Staff tags.
+  <?php endif ?>
+  <?php if ($counts['Spouse'] > 0) : ?>
+<br><input type="submit" name="printsbutton" value="SPOUSE"> Print Spouse tags.
+  <?php endif ?>
+<input type='hidden' name='tablestr' value="<?php echo $tablestr ?>" >
+    <?php endif ?>
+</form>

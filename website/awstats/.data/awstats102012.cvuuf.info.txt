@@ -1,0 +1,431 @@
+AWSTATS DATA FILE 6.9 (build 1.925)
+# If you remove this file, all statistics for date 201210 will be lost/reset.
+
+# Position (offset in bytes) in this file of beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1864                
+POS_TIME 2546                
+POS_VISITOR 10514               
+POS_DAY 12061               
+POS_DOMAIN 3405                
+POS_LOGIN 3637                
+POS_ROBOT 3792                
+POS_WORMS 4223                
+POS_EMAILSENDER 4354                
+POS_EMAILRECEIVER 4497                
+POS_SESSION 12607               
+POS_SIDER 12813               
+POS_FILETYPES 4632                
+POS_OS 4838                
+POS_BROWSER 4963                
+POS_SCREENSIZE 5206                
+POS_UNKNOWNREFERER 5280                
+POS_UNKNOWNREFERERBROWSER 5470                
+POS_ORIGIN 5655                
+POS_SEREFERRALS 5794                
+POS_PAGEREFS 5959                
+POS_SEARCHWORDS 6154                
+POS_KEYWORDS 6306                
+POS_MISC 2209                
+POS_ERRORS 6365                
+POS_CLUSTER 3493                
+POS_SIDER_404 6509                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20121101000219 119 11575 4928200986285
+FirstTime 20121001005023
+LastTime 20121031173117
+LastUpdate 20121101002455 119 0 118 0 0
+TotalVisits 75                  
+TotalUnique 37                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 38                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 16 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 12 87 742460 676 681 687043
+1 92 404 1969940 705 755 792429
+2 59 532 2154940 569 598 553866
+3 34 152 552390 549 549 645256
+4 4 4 12892 505 506 720935
+5 1 1 2472 496 496 639054
+6 0 0 0 404 404 716173
+7 0 0 0 516 516 905279
+8 5 27 87402 666 666 841613
+9 18 34 199391 775 775 874768
+10 13 13 18946 821 821 923793
+11 15 63 208439 951 951 1065073
+12 39 292 1209524 975 984 1173447
+13 34 117 597801 994 1016 1133665
+14 44 160 534481 994 1021 1074500
+15 32 123 612225 1071 1091 1336947
+16 9 85 622617 850 860 1173443
+17 44 164 503029 940 945 1133350
+18 37 242 1080980 747 794 1180200
+19 65 231 1071910 603 603 924204
+20 6 31 217265 652 652 883092
+21 5 79 291804 752 754 783772
+22 8 66 586107 537 538 704939
+23 3 47 384025 635 640 613369
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 579 2954 13661040
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 8
+no_user_agent 14470 2700206 20121026173607 0
+googlebot 24 112217 20121030082009 0
+w3c_validator 19 47948 20121001140137 0
+surveybot 2 5483 20121022000019 0
+msnbot 2 4333 20121004095423 0
+bot[+:,\.\;\/\\-] 2 5483 20121026123838 0
+mnogosearch 2 14870 20121027094712 0
+ng\/1\. 1 46586 20121003121516 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 8
+css 279 152172 0 0
+php 152 526518 0 0
+png 397 4417214 0 0
+html 144 378854 0 0
+jpg 1086 3631649 0 0
+js 549 3845716 0 0
+Unknown 283 671518 0 0
+gif 64 37399 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 8
+macosx 47
+winlong 5
+winxp 89
+win2003 7
+Unknown 1
+linux 107
+linuxfedora 3
+win2008 2695
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 15
+msie6.0 1
+msie8.0 27
+chrome 137
+msie7.0 64
+opera 1
+firefox16.0 1577
+firefox8.0 1
+msie9.0 142
+firefox12.0 1
+firefox3.5.3 3
+Unknown 1
+safari 132
+firefox15.0.1 859
+firefox3.0.8 7
+firefox3.6.13 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 1
+BlackBerry9000/4.6.0.167_Profile/MIDP-2.0_Configuration/CLDC-1.1_VendorID/102_ips-agent 20121002045945
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+BlackBerry9000/4.6.0.167_Profile/MIDP-2.0_Configuration/CLDC-1.1_VendorID/102_ips-agent 20121002045945
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 250 336
+From1 0 0
+From2 3 3
+From3 1 1
+From4 325 2614
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+live 2 2
+netease 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+http://us.mc1111.mail.yahoo.com/mc/welcome 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+403 296 184926
+302 46 18552
+500 21 61987
+301 1 641
+404 2730 18276978
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 63
+/wp-conf.php 17 -
+/robots.txt 35 -
+/media/graphics/theme/public/header_cvuuf.jpg 1 http://cvuuf.info/css/public.css
+/media/photos/members/th_mikiet.jpg 2 http://cvuuf.info/about/leadership
+/about/arrow.gif 11 http://cvuuf.info/about/history
+/media/photos/members/MichaelTeasdale.jpg 1 http://cvuuf.info/about/leadership
+/webcal/arrow.gif 2 http://cvuuf.info/webcal/month.php
+/media/graphics/theme/public/header_top_middle.jpg 1 http://cvuuf.info/css/public.css
+/media/graphics/theme/public/header_top_left.jpg 1 http://cvuuf.info/css/public.css
+/media/graphics/theme/Admin/cvuuf_title_home.png 3 http://cvuuf.info/auth/change
+/media/photos/members/Phoebe%20Rivera.jpg 1 http://cvuuf.info/about/leadership
+/media/photos/members/JustineFischer.jpg 1 http://cvuuf.info/about/leadership
+/menus/arrow.gif 23 http://cvuuf.info/menus/select
+/webcal/month.php 2 -
+/milonic/menu_data_main_public.js 2 http://cvuuf.info/
+/media/graphics/theme/public/left_shadow_cvuuf.jpg 1 http://cvuuf.info/css/public.css
+/media/photos/members/BarryBlades.jpg 1 http://cvuuf.info/about/leadership
+/webcal/includes/menu/icons/chalice.png 2 http://cvuuf.info/webcal/month.php
+/js/wz_tooltip.js 4 http://cvuuf.info/private
+/media/photos/members/DavidBarker.jpg 1 http://cvuuf.info/about/leadership
+/media/photos/Justine%20Fischer.jpg 1 http://cvuuf.info/re
+/media/photos/members/brianp.jpg 1 http://cvuuf.info/about/leadership
+/media/photos/members/Maria%20Ornelas.jpg 1 http://cvuuf.info/about/leadership
+/auth/menus/select 1 -
+/css/public.css 1 http://cvuuf.info/
+/media/graphics/theme/public/footer_m_bg.jpg 1 http://cvuuf.info/css/public.css
+/media/photos/members/JillFulton.jpg 1 http://cvuuf.info/about/leadership
+/auth/menus/arrow.gif 1 http://cvuuf.info/auth/menus/select
+/media/photos/members/Wlubka_thumb.jpg 3 http://cvuuf.info/about/leadership
+/media/photos/LoraBrandis1.png 3 -
+/media/photos/LoraBrandis3.png 1 http://cvuuf.info/about/minister
+/media/graphics/theme/public/header_top_right.jpg 1 http://cvuuf.info/css/public.css
+/configiaC.php 2435 -
+/media/graphics/theme/public/right_shadow_cvuuf.jpg 1 http://cvuuf.info/css/public.css
+/media/graphics/theme/public/cvuuf_title_home.png 3 http://cvuuf.info/
+/media/photos/members/RobinSwenson.jpg 1 http://cvuuf.info/about/leadership
+/aau73.html 3 -
+/css/private.css 1 http://cvuuf.info/private
+/media/photos/members/LaureMcKinnon.jpg 1 http://cvuuf.info/about/leadership
+/css/Admin.css 2 http://cvuuf.info/auth/change
+/menu/arrow.gif 1 http://cvuuf.info/menu/select
+/arrow.gif 85 http://cvuuf.info/re
+/media/photos/members/ToddHess.jpg 2 http://cvuuf.info/about/leadership
+/media/graphics/theme/public/content_bg.jpg 1 http://cvuuf.info/css/public.css
+/media/graphics/theme/public/footer_l_bg.jpg 1 http://cvuuf.info/css/public.css
+/media/photos/LoraBrandis2.png 2 http://cvuuf.info/about/minister
+/index/arrow.gif 27 http://cvuuf.info/index/formthanks
+/media/photos/members/DanaRyon.jpg 1 http://cvuuf.info/about/leadership
+/Vxpopup.php 1 -
+/media/photos/members/Don%20Venardos.jpg 1 http://cvuuf.info/about/leadership
+/media/photos/members/Terry%20Hinricher.jpg 1 http://cvuuf.info/about/leadership
+/re 1 -
+/media/photos/members/lorabrandis.jpg 1 http://cvuuf.info/about/leadership
+/media/graphics/theme/public/footer_r_bg.jpg 1 http://cvuuf.info/css/public.css
+/milonic/menu_data_menus_public.js 2 http://cvuuf.info/
+/auth/arrow.gif 16 http://cvuuf.info/auth/login
+/auth/login 2 -
+/auth 2 -
+/media/graphics/theme/private/cvuuf_title_home.png 1 http://cvuuf.info/private
+/menu/select 1 -
+/media/graphics/theme/blankbutton.png 2 http://cvuuf.info/
+/milonic/menu_data_styles_public.js 2 http://cvuuf.info/
+/index/formthanks 1 http://cvuuf.info/index/contact
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 38
+108.210.28.76 450 2453 11036890 20121029012655
+31.133.43.174 39 39 46392 20121027191943
+173.55.183.247 16 189 1036688 20121018033549
+81.163.142.21 11 11 32360 20121021021803
+88.198.219.83 7 7 25186 20121019092013
+92.60.177.241 6 6 21893 20121019113236
+98.119.106.35 4 29 216409 20121023204520
+69.58.178.56 4 4 22895 20121006101915
+216.38.216.101 3 19 167125 20121021095409
+31.133.35.137 3 3 15654 20121031173117
+70.197.147.141 1 19 2472 20121003213920
+109.58.31.114 1 1 428 20121020035237
+38.99.82.230 1 1 2472 20121010000329
+89.248.164.227 1 1 325 20121019131509
+98.112.230.174 1 23 78583 20121001082248
+218.246.84.253 1 1 428 20121021201537
+81.163.136.225 2 2 666 20121021045917
+203.91.119.99 1 1 428 20121021232303
+65.52.111.208 1 7 44184 20121021001911
+38.99.82.192 3 3 6194 20121010031820
+66.249.17.105 1 1 2472 20121003053424
+205.186.155.78 1 1 6113 20121002023349
+67.52.102.26 3 27 213414 20121023220557
+70.197.145.188 1 22 2472 20121005215316
+31.133.47.242 2 2 312 20121015105512
+74.125.178.27 1 1 428 20121019180926
+62.157.63.237 1 1 7640 20121019180820
+76.94.75.227 3 30 337046 20121002180524
+110.142.220.56 1 1 428 20121021121621
+89.145.108.207 1 1 620 20121021190418
+108.23.64.133 1 22 173042 20121017223527
+76.122.131.224 0 19 149173 
+142.165.255.108 1 1 428 20121021205407
+217.216.18.199 1 1 428 20121021210112
+98.193.68.190 2 2 856 20121020184035
+93.159.230.39 1 1 7640 20121019181047
+138.217.90.19 1 1 428 20121019181213
+24.113.10.176 1 1 428 20121020143306
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 21
+20121001 26 366 1690680 7
+20121002 108 549 2394992 6
+20121003 8 90 367841 3
+20121005 1 22 2472 1
+20121006 2 2 10669 1
+20121010 4 4 8666 4
+20121015 2 2 312 1
+20121016 1 1 6164 1
+20121017 16 84 493688 2
+20121018 144 763 2817799 6
+20121019 48 144 800776 9
+20121020 23 106 742787 5
+20121021 17 39 216267 10
+20121022 7 130 539089 2
+20121023 50 149 848432 5
+20121024 6 53 431478 3
+20121025 1 1 3011 1
+20121026 48 222 885098 3
+20121027 39 139 782684 2
+20121029 26 86 611243 2
+20121031 2 2 6892 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 5
+5mn-15mn 9
+0s-30s 43
+30s-2mn 5
+2mn-5mn 4
+15mn-30mn 4
+30mn-1h 5
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 41
+/ 128 368024 41 27
+/wp-conf.php 53 87060 6 4
+/menus/show 47 130520 0 0
+/menus/select 40 115491 0 1
+/webcal/install/index.php 37 144613 1 0
+/private 33 67968 1 1
+/auth/index 21 51635 0 0
+/index.php 19 53730 9 9
+/auth/login 19 37018 0 3
+/webcal/js_cacher.php 18 51702 0 2
+/private/listgroups 2 682 0 0
+/auth/change 3 6146 0 0
+/private/showminutes 7 23687 0 1
+/about/history 1 2488 0 1
+/webcal/css_cacher.php 6 25674 0 1
+/menus/ 1 1326 0 0
+/data 7 13750 0 2
+/webcal/month.php 12 146990 3 0
+/private/listhoods 2 7379 0 0
+/auth/logout 1 2354 0 0
+/admin/permissions 2 3874 0 0
+/admin/permspecial 9 25419 0 0
+/admin/perminvalid 1 2648 0 1
+/index/test 12 14103 0 0
+/person/find 8 22236 0 1
+/auth/pass 4 6857 0 0
+/configiaC.php 1 241 0 0
+/aau73.html 13 5756 11 12
+/about/leadership 4 8756 0 0
+/admin/permperson 8 16848 0 0
+/person/show 1 2451 0 0
+/admin 18 35870 0 0
+/contact/formmail.php 2 1326 0 0
+/about/minister 6 21558 0 0
+/Vxpopup.php 2 8732 0 1
+/index/contact 9 19929 2 4
+/re 11 21443 1 4
+/webcal/view_v.php 1 5638 0 0
+/phpinfo.php 1 812 0 0
+/index/formthanks 7 10408 0 0
+/auth/ 2 3748 0 0
+END_SIDER
