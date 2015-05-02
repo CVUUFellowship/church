@@ -9,7 +9,6 @@ with(milonic=new menuname("News")){
 style=menuStyle;
 aI("text=Calendar of Events;url=/calendar;");
 aI("text=News and Notes;url=/public/newsandnotes;");
-aI("text=Announcements;url=/public/announcements;");
 aI("text=Newsletter;url=/public/newsletter;");
 }
 with(milonic=new menuname("Worship")){

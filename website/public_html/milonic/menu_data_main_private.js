@@ -15,5 +15,4 @@ aI("text=Meeting Minutes;showmenu=Minutes;");
 aI("text=Worship;showmenu=Worship;");
 aI("text=Information;showmenu=/private/info;");
 aI("text=Calendar;showmenu=Calendar;");
-aI("text=Announcements;showmenu=PrivateAnnouncements;");
 }

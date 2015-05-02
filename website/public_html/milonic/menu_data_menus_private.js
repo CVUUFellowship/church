@@ -62,11 +62,6 @@ aI("text=Submit an Event;url=/calendar/request;");
 aI("text=Approvals;url=/calendar/approvals;");
 aI("text=Show calendar;url=/calendar;");
 }
-with(milonic=new menuname("PrivateAnnouncements")){
-style=menuStyle;
-aI("text=Request an announcement;url=/news/announcereq;");
-aI("text=View announcements;url=/public/announcements?theme=private;");
-}
 with(milonic=new menuname("PrivateForms")){
 style=menuStyle;
 aI("text=Artist's agreement;url=/artist_agreement_cvuuf.pdf;");

@@ -1,10 +1,10 @@
 <?php
-$FM_VERS = "9.09"; // script version
+$FM_VERS = "9.10"; // script version
 
 /* ex:set ts=4 sw=4 et:
  * FormMail PHP script from Tectite.com.  This script requires PHP 5 or later.
  * Versions of Tectite FormMail are available for PHP 4 (look for versions 8 and below).
- * Copyright (c) 2001-2014 Open Concepts (Vic) Pty Ltd
+ * Copyright (c) 2001-2015 Open Concepts (Vic) Pty Ltd
  * (ABN 12 130 429 248), Melbourne, Australia.
  * This script is free for all use as described in the "Copying and Use" and
  * "Warranty and Disclaimer" sections below.
@@ -13,7 +13,7 @@ $FM_VERS = "9.09"; // script version
  *
  *** If you use Tectite FormMail, please support its development and other
  *** freeware products by putting the following link on your website:
- ***  Visit www.tectite.com for free <a href="http://www.tectite.com/">php form</a>.
+ ***  Visit www.tectite.com for free <a href="http://www.tectite.com/">FormMail</a>.
  *
  * Author: Russell Robinson
  * First released: 2nd October 2001 
@@ -395,11 +395,11 @@ if (!$ExecEnv->IsPHPAtLeast("5.3.0")) {
 // We set references to the appropriate arrays to handle PHP version differences
 // Session vars are selected after we start the session.
 //
-$aServerVars = & $_SERVER;
-$aGetVars    = & $_GET;
-$aFormVars   = & $_POST;
-$aFileVars   = & $_FILES;
-$aEnvVars    = & $_ENV;
+$aServerVars = &$_SERVER;
+$aGetVars    = &$_GET;
+$aFormVars   = &$_POST;
+$aFileVars   = &$_FILES;
+$aEnvVars    = &$_ENV;
 
 $bIsGetMethod = false;
 $bHasGetData  = false;
@@ -444,7 +444,8 @@ if (isset($aServerVars['SERVER_NAME']) && $aServerVars['SERVER_NAME'] !== "") {
 $EMAIL_NAME = "^[-a-z0-9._]+"; /* the '^' is an important security feature! */
 
 /* Help: http://www.tectite.com/fmdoc/target_email.php */
-$TARGET_EMAIL = array($EMAIL_NAME."@cvuuf\.org$");
+ $TARGET_EMAIL = array($EMAIL_NAME."@cvuuf\.org$");
+
 
 /* Help: http://www.tectite.com/fmdoc/def_alert.php */
 $DEF_ALERT ="michael.talvola@gmail.com";
@@ -467,33 +468,33 @@ if (isset($SET_REAL_DOCUMENT_ROOT) && $SET_REAL_DOCUMENT_ROOT !== "") {
 $CONFIG_CHECK = array("TARGET_EMAIL");
 
 /* Help: http://www.tectite.com/fmdoc/at_mangle.php */
-$AT_MANGLE ="";
+$AT_MANGLE = "";
 
 /* Help: http://www.tectite.com/fmdoc/target_urls.php */
 $TARGET_URLS = array(); /* default; no URLs allowed */
 
 /* Help: http://www.tectite.com/fmdoc/head_crlf.php */
-$HEAD_CRLF ="\r\n";
+$HEAD_CRLF = "\r\n";
 
 /* Help: http://www.tectite.com/fmdoc/body_lf.php */
-$BODY_LF ="\r\n"; /* the new default: use this for CR+LF */
+$BODY_LF = "\r\n"; /* the new default: use this for CR+LF */
 //$BODY_LF = "\n";       /* the old default: just LF */
 
 /* Help: http://www.tectite.com/fmdoc/from_user.php */
 $FROM_USER = ""; /* the default - setting not used */
 
 /* Help: http://www.tectite.com/fmdoc/sendmail_f_option.php */
-$SENDMAIL_F_OPTION      =false;
-$SENDMAIL_F_OPTION_LINE =__LINE__-1; /* don't modify this line! */
+$SENDMAIL_F_OPTION      = false;
+$SENDMAIL_F_OPTION_LINE = __LINE__ - 1; /* don't modify this line! */
 
 /* Help: http://www.tectite.com/fmdoc/fixed_sender.php */
 $FIXED_SENDER = "";
 
 /* Help: http://www.tectite.com/fmdoc/set_sender_from_email.php */
-$SET_SENDER_FROM_EMAIL =false;
+$SET_SENDER_FROM_EMAIL = false;
 
 /* Help: http://www.tectite.com/fmdoc/ini_set_from.php */
-$INI_SET_FROM =false;
+$INI_SET_FROM = false;
 
 /* Help: http://www.tectite.com/fmdoc/logdir.php */
 $LOGDIR = ""; /* directory for log files; empty string to disallow log files */
@@ -528,22 +529,26 @@ $MULTIFORMURL = ""; /* default; no multi-forms templates URL */
 
 /* Help: http://www.tectite.com/fmdoc/text_subs.php */
 $TEXT_SUBS = array(
-    array("srch"=>"/\\\\r\\\\n/","repl"=>"\r\n",),
-    array("srch"=>"/\\\\n/","repl"=>"\n",),
-    array("srch"=>"/\\\\t/","repl"=>"\t",),
-    array("srch"=>"/\\[NL\\]/","repl"=>"\n",),
-    array("srch"=>"/\\[TAB\\]/","repl"=>"\t",),
-    array("srch"=>"/\\[NBSP\\]/","repl"=>"&nbsp;",),
-    array("srch"=>"/\\[DQUOT\\]/","repl"=>'"',),
-    array("srch"=>"/\\[SQUOT\\]/","repl"=>"'",),
-    array("srch"=>"/\\[COLON\\]/","repl"=>":",),
-    array("srch"=>"/\\[SLOSH\\]/","repl"=>"\\",),
-    array("srch"=>"/\\[OPCURL\\]/","repl"=>"{",),
-    array("srch"=>"/\\[CLCURL\\]/","repl"=>"}",),
-    array("srch"=>"/(on[a-z]*|href|src)\\s*=\\s*/i","repl"=>""),/* strip html attributes that could be unsafe */
-    array("srch"=>"/<\\s*(table|tr|td|th|p|ul|ol|li|b|i|u|strong|pre|h[1-6]|em|dl|dd|dt|hr|span|br)(\\b[^>]*?)>/i","repl"=>"<\$1\$2>",),
-    array("srch"=>"#<\\s*/\\s*(table|tr|td|th|p|ul|ol|li|b|i|u|strong|pre|h[1-6]|em|dl|dd|dt|hr|span|br)\\s*>#i","repl"=>"</\$1>",),
-    );
+	array("srch" => "/\\\\r\\\\n/","repl" => "\r\n",),
+	array("srch" => "/\\\\n/","repl" => "\n",),
+	array("srch" => "/\\\\t/","repl" => "\t",),
+	array("srch" => "/\\[NL\\]/","repl" => "\n",),
+	array("srch" => "/\\[TAB\\]/","repl" => "\t",),
+	array("srch" => "/\\[NBSP\\]/","repl" => "&nbsp;",),
+	array("srch" => "/\\[DQUOT\\]/","repl" => '"',),
+	array("srch" => "/\\[SQUOT\\]/","repl" => "'",),
+	array("srch" => "/\\[COLON\\]/","repl" => ":",),
+	array("srch" => "/\\[SLOSH\\]/","repl" => "\\",),
+	array("srch" => "/\\[OPCURL\\]/","repl" => "{",),
+	array("srch" => "/\\[CLCURL\\]/","repl" => "}",),
+	array("srch" => "/(on[a-z]*|href|src)\\s*=\\s*/i","repl" => ""), /* strip html attributes that could be unsafe */
+	array("srch" => "/<\\s*(table|tr|td|th|p|ul|ol|li|b|i|u|strong|pre|h[1-6]|em|dl|dd|dt|hr|span|br)(\\b[^>]*?)>/i",
+	      "repl" => "<\$1\$2>",
+	),
+	array("srch" => "#<\\s*/\\s*(table|tr|td|th|p|ul|ol|li|b|i|u|strong|pre|h[1-6]|em|dl|dd|dt|hr|span|br)\\s*>#i",
+	      "repl" => "</\$1>",
+	),
+);
 
 /* Help: http://www.tectite.com/fmdoc/authentication_settings.php */
 $AUTHENTICATE = "";
@@ -564,20 +569,21 @@ $FMCOMPUTE = "fmcompute.php";
 $FMGEOIP = "fmgeoip.php";
 
 /* Help: http://www.tectite.com/fmdoc/advanced_templates.php */
-$ADVANCED_TEMPLATES =false; /* set to true for advanced templates */
+$ADVANCED_TEMPLATES = false; /* set to true for advanced templates */
 
 /* Help: http://www.tectite.com/fmdoc/limited_import.php */
-$LIMITED_IMPORT =true; /* set to true if your database cannot handle escaped quotes or newlines within imported data.  Microsoft Access is one example. */
+$LIMITED_IMPORT = true; /* set to true if your database cannot handle escaped quotes or newlines within imported data.  Microsoft Access is one example. */
 
 /* Help: http://www.tectite.com/fmdoc/valid_env.php */
 $VALID_ENV = array('HTTP_REFERER','REMOTE_HOST','REMOTE_ADDR','REMOTE_USER',
-                'HTTP_USER_AGENT');
+                   'HTTP_USER_AGENT'
+);
 
 /* Help: http://www.tectite.com/fmdoc/fileuploads.php */
-$FILEUPLOADS =false; /* set to true to allow file attachments */
+$FILEUPLOADS = false; /* set to true to allow file attachments */
 
 /* Help: http://www.tectite.com/fmdoc/max_file_upload_size.php */
-$MAX_FILE_UPLOAD_SIZE =0; /* default of 0 means that other software */
+$MAX_FILE_UPLOAD_SIZE = 0; /* default of 0 means that other software */
 // controls the maximum file upload size
 // (FormMail doesn't test the file size)
 
@@ -585,29 +591,29 @@ $MAX_FILE_UPLOAD_SIZE =0; /* default of 0 means that other software */
 $FILE_REPOSITORY = "";
 
 /* Help: http://www.tectite.com/fmdoc/file_mode.php */
-$FILE_MODE =0664; /* always precede with 0 to specify octal! */
+$FILE_MODE = 0664; /* always precede with 0 to specify octal! */
 
 /* Help: http://www.tectite.com/fmdoc/file_overwrite.php */
-$FILE_OVERWRITE =true;
+$FILE_OVERWRITE = true;
 
 /* Help: http://www.tectite.com/fmdoc/next_num_file.php */
 $NEXT_NUM_FILE = "";
 
 /* Help: http://www.tectite.com/fmdoc/put_data_in_url.php */
-$PUT_DATA_IN_URL =true; /* set to true to place data in the URL */
+$PUT_DATA_IN_URL = true; /* set to true to place data in the URL */
 // for bad_url redirects
 
 /* Help: http://www.tectite.com/fmdoc/allow_get_method.php */
 $ALLOW_GET_METHOD = false;
 
 /* Help: http://www.tectite.com/fmdoc/db_see_input.php */
-$DB_SEE_INPUT =false; /* set to true to just see the input values */
+$DB_SEE_INPUT = false; /* set to true to just see the input values */
 
 /* Help: http://www.tectite.com/fmdoc/db_see_ini.php */
-$DB_SEE_INI =false; /* set to true to just see the ini file */
+$DB_SEE_INI = false; /* set to true to just see the ini file */
 
 /* Help: http://www.tectite.com/fmdoc/maxstring.php */
-$MAXSTRING =1024; /* maximum string length for a value */
+$MAXSTRING = 1024; /* maximum string length for a value */
 
 /* Help: http://www.tectite.com/fmdoc/require_captcha.php */
 $REQUIRE_CAPTCHA = ""; /* set to a message string if your forms */
@@ -623,33 +629,41 @@ $bShowMesgNumbers = false;
 /* Note for Tectite personnel: the upgrade Wizard will merge new values
  * but be careful of $var usage and quoting in new entries.
  */
-$FILTERS = array("encode"=>"$REAL_DOCUMENT_ROOT/cgi-bin/fmencoder -kpubkey.txt",
-                "null"=>"null",
-                "csv"=>"csv");
+$FILTERS = array("encode" => "$REAL_DOCUMENT_ROOT/cgi-bin/fmencoder -kpubkey.txt",
+                 "null"   => "null",
+                 "csv"    => "csv"
+);
 
 /* Help: http://www.tectite.com/fmdoc/socket_filters.php */
 $SOCKET_FILTERS = array(
-                 "httpencode"=>array("site"=>"YourSiteHere",
-                    "port"=>80,
-                    "path"=>"/cgi-bin/fmencoder",
-                    "params"=>array(array("name"=>"key",
-                            "file"=>"$REAL_DOCUMENT_ROOT/cgi-bin/pubkey.txt"))),
-                 "sslencode"=>array("site"=>"ssl://YourSecureSiteHere",
-                    "port"=>443,
-                    "path"=>"/cgi-bin/fmencoder",
-                    "params"=>array(array("name"=>"key",
-                            "file"=>"$REAL_DOCUMENT_ROOT/cgi-bin/pubkey.txt"))),
-                );
+	"httpencode" => array("site"   => "YourSiteHere",
+	                      "port"   => 80,
+	                      "path"   => "/cgi-bin/fmencoder",
+	                      "params" => array(array("name" => "key",
+	                                              "file" => "$REAL_DOCUMENT_ROOT/cgi-bin/pubkey.txt"
+	                                        )
+	                      )
+	),
+	"sslencode"  => array("site"   => "ssl://YourSecureSiteHere",
+	                      "port"   => 443,
+	                      "path"   => "/cgi-bin/fmencoder",
+	                      "params" => array(array("name" => "key",
+	                                              "file" => "$REAL_DOCUMENT_ROOT/cgi-bin/pubkey.txt"
+	                                        )
+	                      )
+	),
+);
 
 /* Help: http://www.tectite.com/fmdoc/filter_attribs.php */
-$FILTER_ATTRIBS = array("encode"=>"Strips,MIME=application/vnd.fmencoded,Encrypts",
-                        "httpencode"=>"Strips,MIME=application/vnd.fmencoded,Encrypts",
-                        "sslencode"=>"Strips,MIME=application/vnd.fmencoded,Encrypts",
-                        "csv"=>"Strips,MIME=text/csv",);
+$FILTER_ATTRIBS = array("encode"     => "Strips,MIME=application/vnd.fmencoded,Encrypts",
+                        "httpencode" => "Strips,MIME=application/vnd.fmencoded,Encrypts",
+                        "sslencode"  => "Strips,MIME=application/vnd.fmencoded,Encrypts",
+                        "csv"        => "Strips,MIME=text/csv",
+);
 
 /* Help: http://www.tectite.com/fmdoc/check_for_new_version.php */
-$CHECK_FOR_NEW_VERSION =true;
-$CHECK_DAYS            =30;
+$CHECK_FOR_NEW_VERSION = true;
+$CHECK_DAYS            = 30;
 
 /* Help: http://www.tectite.com/fmdoc/scratch_pad.php */
 $SCRATCH_PAD = "";
@@ -667,85 +681,97 @@ $PEAR_SMTP_USER = "";
 $PEAR_SMTP_PWD  = "";
 
 /* Help: http://www.tectite.com/fmdoc/alert_on_user_error.php */
-$ALERT_ON_USER_ERROR =true;
+$ALERT_ON_USER_ERROR = true;
 
 /* Help: http://www.tectite.com/fmdoc/enable_attack_detection.php */
-$ENABLE_ATTACK_DETECTION =true;
+$ENABLE_ATTACK_DETECTION = true;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_url.php */
-$ATTACK_DETECTION_URL ="";
+$ATTACK_DETECTION_URL = "";
 
 /* Help: http://www.tectite.com/fmdoc/alert_on_attack_detection.php */
-$ALERT_ON_ATTACK_DETECTION =false;
+$ALERT_ON_ATTACK_DETECTION = false;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_mime.php */
-$ATTACK_DETECTION_MIME =true;
+$ATTACK_DETECTION_MIME = true;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_junk.php */
-$ATTACK_DETECTION_JUNK                   =false;
-$ATTACK_DETECTION_JUNK_CONSONANTS        ="bcdfghjklmnpqrstvwxz";
-$ATTACK_DETECTION_JUNK_VOWELS            ="aeiouy";
-$ATTACK_DETECTION_JUNK_CONSEC_CONSONANTS =5;
-$ATTACK_DETECTION_JUNK_CONSEC_VOWELS     =4;
-$ATTACK_DETECTION_JUNK_TRIGGER           =2;
+$ATTACK_DETECTION_JUNK                   = false;
+$ATTACK_DETECTION_JUNK_CONSONANTS        = "bcdfghjklmnpqrstvwxz";
+$ATTACK_DETECTION_JUNK_VOWELS            = "aeiouy";
+$ATTACK_DETECTION_JUNK_CONSEC_CONSONANTS = 5;
+$ATTACK_DETECTION_JUNK_CONSEC_VOWELS     = 4;
+$ATTACK_DETECTION_JUNK_TRIGGER           = 2;
 $ATTACK_DETECTION_JUNK_LANG_STRIP        = array(
-    "aiia",  /* Hawaiian */
-    "aeoa",  /* palaeoanthropic */
-    "aeoe",  /* palaeoethnic */
-    "ooee",  /* cooee */
-    "oeia",  /* pharmacopoeia */
-    "ioau",  /* radioautograph */
-    "uaia",  /* guaiac */
-    "ueou",  /* aqueous */
-    "uiou",  /* obsequious */
-    "queue", /* queue, queueing */
-    "earth", /* earthquake, earthslide */
-    "cks",   /* jockstrap, backscratcher */
-    "ngth",  /* strengths, length */
-    "ndths", /* thousandths */
-    "ght",   /* nightclub, knightsbridge */
-    "phth",  /* ophthalmology */
-    "sch",   /* rothschild */
-    "shch",  /* borshch */
-    "scr",   /* corkscrew */
-    "spr",   /* wingspread, offspring */
-    "str",   /* armstrong, songstress */
-    "sts",   /* bursts, postscript */
-    "tch",   /* catchphrase, scratchproof */
-    "thst",  /* northstar, birthstone */
-    "http",  /* https, http */
-    "html",  /* HTML, XHTML */
-    );
+	"aiia", /* Hawaiian */
+	"aeoa", /* palaeoanthropic */
+	"aeoe", /* palaeoethnic */
+	"ayou", /* layout */
+	"ayee", /* payee */
+	"buyout", /* buyout */
+	"clayey", /* clayey */
+	"hooey", /* hooey */
+	"ioau", /* radioautograph */
+	"opoeia", /* pharmacopoeia, onomatopoeia */
+	"ooee", /* cooee */
+	"oyee", /* employee */
+	"ioau", /* radioautograph */
+	"uaia", /* guaiac */
+	"uaya", /* uruguayan */
+	"ueou", /* aqueous */
+	"uiou", /* obsequious */
+	"uoya", /* buoyant */
+	"queue", /* queue, queueing */
+	"earth", /* earthquake, earthslide */
+	"cks", /* jockstrap, backscratcher */
+	"ngth", /* strengths, length */
+	"ndths", /* thousandths */
+	"ght", /* nightclub, knightsbridge */
+	"phth", /* ophthalmology */
+	"sch", /* rothschild */
+	"shch", /* borshch */
+	"scr", /* corkscrew */
+	"spr", /* wingspread, offspring */
+	"str", /* armstrong, songstress */
+	"sts", /* bursts, postscript */
+	"tch", /* catchphrase, scratchproof */
+	"thst", /* northstar, birthstone */
+	"http", /* https, http */
+	"html", /* HTML, XHTML */
+);
 $ATTACK_DETECTION_JUNK_IGNORE_FIELDS     = array();
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_dups.php */
 $ATTACK_DETECTION_DUPS = array("realname","address1","address2","country","zip",
-                                "phone","postcode","state","email");
+                               "phone","postcode","state","email"
+);
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_specials.php */
-$ATTACK_DETECTION_SPECIALS =true;
+$ATTACK_DETECTION_SPECIALS = true;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_specials.php */
 $ATTACK_DETECTION_SPECIALS_ONLY_EMAIL = array("derive_fields","required",
-                    "mail_options","good_url","bad_url","good_template",
-                    "bad_template");
+                                              "mail_options","good_url","bad_url","good_template",
+                                              "bad_template"
+);
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_specials.php */
 $ATTACK_DETECTION_SPECIALS_ANY_EMAIL = array("subject");
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_many_urls.php */
-$ATTACK_DETECTION_MANY_URLS =0;
+$ATTACK_DETECTION_MANY_URLS = 0;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_many_url_fields.php */
-$ATTACK_DETECTION_MANY_URL_FIELDS =0;
+$ATTACK_DETECTION_MANY_URL_FIELDS = 0;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_url_patterns.php */
 $ATTACK_DETECTION_URL_PATTERNS = array(
-            '(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com|org|net|biz|info|name|pro|tel|asia|cat)\b',
-            '(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com{0,1}|org|net)\.[a-z][a-z]\b');
+	'(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com|org|net|biz|info|name|pro|tel|asia|cat)\b',
+	'(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com{0,1}|org|net)\.[a-z][a-z]\b'
+);
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_ignore_errors.php */
-$ATTACK_DETECTION_IGNORE_ERRORS =false;
+$ATTACK_DETECTION_IGNORE_ERRORS = false;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_reverse_captcha.php */
 $ATTACK_DETECTION_REVERSE_CAPTCHA = array();
@@ -754,7 +780,7 @@ $ATTACK_DETECTION_REVERSE_CAPTCHA = array();
 $GEOIP_LIC = ""; /* default - no GeoIP */
 
 /* Help: http://www.tectite.com/fmdoc/zero_is_empty.php */
-$ZERO_IS_EMPTY =false;
+$ZERO_IS_EMPTY = false;
 
 /* Help: http://www.tectite.com/fmdoc/session_name.php */
 $SESSION_NAME = "";
@@ -763,7 +789,7 @@ $SESSION_NAME = "";
 $SESSION_ACCESS = array();
 
 /* Help: http://www.tectite.com/fmdoc/destroy_session.php */
-$DESTROY_SESSION =true;
+$DESTROY_SESSION = true;
 
 /* Help: http://www.tectite.com/fmdoc/hook_dir.php */
 $HOOK_DIR = "";
@@ -2624,7 +2650,7 @@ function LoadBuiltinLanguage()
 if (isset($aServerVars["REQUEST_METHOD"]) && $aServerVars["REQUEST_METHOD"] === "GET") {
 	$bIsGetMethod = true;
 	if (Settings::get('ALLOW_GET_METHOD')) {
-		$aFormVars = & $_GET;
+		$aFormVars = &$_GET;
 	} elseif (count($_GET) > 0) {
 		$bHasGetData = true;
 	}
@@ -3044,6 +3070,10 @@ $SPECIAL_FIELDS = array(
 	//
 	"recaptcha_response_field", // verification field to allow submission
 	"recaptcha_challenge_field", // challenge field
+	//
+	// reCaptcha version 2
+	//
+	"g-recaptcha-response",
 );
 
 //
@@ -3241,61 +3271,141 @@ $BuiltinFunctions = new BuiltinFunctions();
 
 $reCaptchaProcessor = null;
 if (Settings::get('RECAPTCHA_PRIVATE_KEY') !== "") {
-	require_once("recaptchalib.php");
-
-	/*
-	 * Class:       reCaptchaWrapper
-	 * Description:     
-	 *  Wraps processing of reCaptcha.
-	 */
-
-	class   reCaptchaWrapper
-	{
-		var $_sPrivate; // the private key
-		var $_bDone; // true when done
-		var $_Resp; // the response from reCaptcha
-
-		/*
-		 * Method:      reCaptchaWrapper ctor
-		 * Parameters:  $s_priv     the private key
-		 * Returns:     n/a
-		 * Description: 
-		 *  Initializes the wrapper ready to process reCaptcha.
-		 */
-		function    reCaptchaWrapper($s_priv)
-		{
-			$this->_sPrivate = $s_priv;
-			$this->_bDone    = false;
-		}
-
-		/*
-		 * Method:      reCaptchaWrapper::Check
-		 * Parameters:  $s_response the reCaptcha respone value
-		 *              $a_values   field values
-		 *              $s_error    returns the reCaptcha error code
-		 * Returns:     bool        true on success, otherwise false
-		 * Description: 
-		 *  Performs the reCaptcha check and caches the result so it's
-		 *  only done once.
-		 */
-		function    Check($s_response,$a_values,&$s_error)
-		{
-			if (!$this->_bDone) {
-				$this->_Resp = recaptcha_check_answer($this->_sPrivate,
-				                                      $_SERVER["REMOTE_ADDR"],
-				                                      $a_values["recaptcha_challenge_field"],
-				                                      $s_response);
-			}
-			$this->_bDone = true;
-			$s_error      = "";
-			if (!$this->_Resp->is_valid) {
-				$s_error = $this->_Resp->error;
-			}
-			return ($this->_Resp->is_valid);
-		}
+	//
+	// Assume version 1 unless g-recaptcha-response is found in the form data.
+	// If we cannot load recaptchalib, then we assume it's version 2.
+	//
+	$bRecaptchaVersion = 1;
+	if (isset($aFormVars['g-recaptcha-response']) && $aFormVars['g-recaptcha-response'] != '') {
+		$bRecaptchaVersion = 2;
+	}
+	if ($bRecaptchaVersion == 1 && !include_once("recaptchalib.php")) {
+		$bRecaptchaVersion = 2;
 	}
 
-	$reCaptchaProcessor = new reCaptchaWrapper(Settings::get('RECAPTCHA_PRIVATE_KEY'));
+	if ($bRecaptchaVersion == 2) {
+		if (!function_exists('json_decode')) {
+			SendAlert("reCaptcha version 2 requires PHP version 5.2.0 or later",false,false);
+		}
+
+		/*
+		 * Class:       reCaptchaWrapper
+		 * Description:
+			 *  Wraps processing of reCaptcha version 2.
+		 */
+
+		class   reCaptchaWrapperV2
+		{
+			var $_sPrivate; // the private key
+			var $_bDone; // true when done
+			var $_Resp; // the response from reCaptcha
+
+			/*
+			 * Method:      reCaptchaWrapperV2 ctor
+			 * Parameters:  $s_priv     the private key
+			 * Returns:     n/a
+			 * Description:
+			 *  Initializes the wrapper ready to process reCaptcha.
+			 */
+			function    __construct($s_priv)
+			{
+				$this->_sPrivate = $s_priv;
+				$this->_bDone    = false;
+			}
+
+			/*
+			 * Method:      reCaptchaWrapper::Check
+			 * Parameters:  $s_response the reCaptcha response value
+			 *              $a_values   field values
+			 *              $s_error    returns the reCaptcha error code
+			 * Returns:     bool        true on success, otherwise false
+			 * Description:
+			 *  Performs the reCaptcha check and caches the result so it's
+			 *  only done once.
+			 */
+			function    Check($s_response,$a_values,&$s_error)
+			{
+				if (!$this->_bDone) {
+					$s_url     = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $this->_sPrivate .
+					             "&response=$s_response";
+					$recaptcha = new HTTPGet($s_url);
+					$s_resp    = $recaptcha->Read();
+					if ($s_resp === false) {
+						$s_resp = '{"success":false,"error_codes":["reCaptcha failed"]}';
+					} else {
+						$s_resp = implode('',$s_resp);
+					}
+					$this->_Resp = json_decode($s_resp,true);
+				}
+				$this->_bDone = true;
+				$s_error      = "";
+				if (!$this->_Resp['success']) {
+					$s_error = $this->_Resp->error_codes[0];
+					if (!isset($this->_Resp['error_codes']) || count($this->_Resp['error_codes']) == 0 ||
+					    !$this->_Resp['error_codes'][0]
+					) {
+						$s_error = 'verification failed';
+					}
+				}
+				return ($this->_Resp['success']);
+			}
+		}
+		$reCaptchaProcessor = new reCaptchaWrapperV2(Settings::get('RECAPTCHA_PRIVATE_KEY'));
+	} else {
+
+		/*
+		 * Class:       reCaptchaWrapper
+		 * Description:
+		 *  Wraps processing of reCaptcha version 1.
+		 */
+
+		class   reCaptchaWrapper
+		{
+			var $_sPrivate; // the private key
+			var $_bDone; // true when done
+			var $_Resp; // the response from reCaptcha
+
+			/*
+			 * Method:      reCaptchaWrapper ctor
+			 * Parameters:  $s_priv     the private key
+			 * Returns:     n/a
+			 * Description:
+			 *  Initializes the wrapper ready to process reCaptcha.
+			 */
+			function    __construct($s_priv)
+			{
+				$this->_sPrivate = $s_priv;
+				$this->_bDone    = false;
+			}
+
+			/*
+			 * Method:      reCaptchaWrapper::Check
+				 * Parameters:  $s_response the reCaptcha response value
+			 *              $a_values   field values
+			 *              $s_error    returns the reCaptcha error code
+			 * Returns:     bool        true on success, otherwise false
+			 * Description:
+			 *  Performs the reCaptcha check and caches the result so it's
+			 *  only done once.
+			 */
+			function    Check($s_response,$a_values,&$s_error)
+			{
+				if (!$this->_bDone) {
+					$this->_Resp = recaptcha_check_answer($this->_sPrivate,
+					                                      $_SERVER["REMOTE_ADDR"],
+					                                      $a_values["recaptcha_challenge_field"],
+					                                      $s_response);
+				}
+				$this->_bDone = true;
+				$s_error      = "";
+				if (!$this->_Resp->is_valid) {
+					$s_error = $this->_Resp->error;
+				}
+				return ($this->_Resp->is_valid);
+			}
+		}
+		$reCaptchaProcessor = new reCaptchaWrapper(Settings::get('RECAPTCHA_PRIVATE_KEY'));
+	}
 }
 
 /**
@@ -3997,10 +4107,10 @@ function CheckVersion()
 		FMDebug("CheckVersion: vers=$s_version");
 		if ((float)$s_version > (float)$FM_VERS) {
 			SendAlert(GetMessage(MSG_VERS_CHK,array(
-					"TECTITE" => "www.tectite.com",
-					"FM_VERS" => "$FM_VERS",
-					"NEWVERS" => $s_version,
-				)) .
+				                                      "TECTITE" => "www.tectite.com",
+				                                      "FM_VERS" => "$FM_VERS",
+				                                      "NEWVERS" => $s_version,
+			                                      )) .
 			          "\n$s_message\n$s_stop_mesg",true,true);
 		}
 	}
@@ -8604,7 +8714,7 @@ function CheckRequired($s_reqd,$a_vars,&$s_missing,&$a_missing_list)
 		if ($SPECIAL_VALUES["imgverify"] === "") {
 			$s_missing .= Settings::get('REQUIRE_CAPTCHA') . "\n";
 			$a_missing_list['imgverify'] = Settings::get('REQUIRE_CAPTCHA');
-			$b_bad            = true;
+			$b_bad                       = true;
 		}
 	}
 	return (!$b_bad);
@@ -8955,11 +9065,11 @@ function SocketFilter($filter,$a_filter_info,$m_data)
 	@   $f_sock = fsockopen($s_site,$i_port,$i_errno,$s_errstr,30);
 	if ($f_sock === false) {
 		Error("filter_connect",GetMessage(MSG_FILTER_CONNECT,array(
-				"FILTER" => $filter,
-				"SITE"   => $s_site,
-				"ERRNUM" => $i_errno,
-				"ERRSTR" => "$s_errstr (" . CheckString($php_errormsg) . ")"
-			)),
+			"FILTER" => $filter,
+			"SITE"   => $s_site,
+			"ERRNUM" => $i_errno,
+			"ERRSTR" => "$s_errstr (" . CheckString($php_errormsg) . ")"
+		)),
 		      false,false);
 		exit;
 	}
@@ -11125,7 +11235,7 @@ function SaveAllUploadedFiles(&$a_file_vars)
 	CleanScratchPad($s_prefix);
 
 	foreach (array_keys($a_file_vars) as $m_file_key) {
-		$a_upload = & $a_file_vars[$m_file_key];
+		$a_upload = &$a_file_vars[$m_file_key];
 		//
 		// One customer reported:
 		//  Possible file upload attack detected: name='' temp name='none'
@@ -13011,8 +13121,8 @@ function    CheckCaptchaSubmit()
 				if (strtoupper(str_replace(" ","",$SPECIAL_VALUES["imgverify"])) !==
 				    strtoupper(GetSession("VerifyImgString"))
 				) {
-						$s_error_mesg = GetMessage(MSG_VERIFY_MATCH);
-						UserError("img_verify",$s_error_mesg,array(),array('imgverify' => $s_error_mesg));
+					$s_error_mesg = GetMessage(MSG_VERIFY_MATCH);
+					UserError("img_verify",$s_error_mesg,array(),array('imgverify' => $s_error_mesg));
 				}
 			} else {
 				if (strtoupper(str_replace(" ","",$SPECIAL_VALUES["imgverify"])) !==

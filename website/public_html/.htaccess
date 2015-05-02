@@ -1031,7 +1031,7 @@ deny from 88.230.62.0/24 # wp hack Turkey
 deny from 8.35.201.149 # scraper US
 deny from 88.71.69.0/24 # funky Germany
 
-deny from 88.231.164.244.0/24 # wp hack Turkey
+deny from 88.231.164.0/24 # wp hack Turkey
 deny from 50.22.0.0/15 # softlayer
 deny from 50.97.0.0/16 # softlayer
 deny from 66.228.112.0/20 # softlayer
@@ -1043,7 +1043,7 @@ deny from 208.43.0.0/16 # softlayer
 deny from 46.21.147.0/24 # funky Netherlands
 
 deny from 93.182.128.0/18 # blacklist VPN
-deny from 31.202.212.80.0/24 # funky Ukraine
+deny from 31.202.212.0/24 # funky Ukraine
 deny from 37.9.53.0/24 # wp hack Russia
 deny from 176.8.88.0/24 # blacklist Ukraine
 deny from 46.165.230.0/24 # funky Germany
@@ -1141,7 +1141,7 @@ deny from 124.160.0.0/16 # funky China
 deny from 216.151.130.179 # Xeex junk
 deny from 79.135.0.0/16 # funky Russia
 deny from 37.157.33.162 # funky UK
-deny from 58.251.150.174.0.0/16 # funky China
+deny from 58.251.0.0/16 # funky China
 deny from 124.89.0.0/16 # funky China
 deny from 62.75.181.0/24 # funky Germany
 deny from 72.20.5.10 # attempted hack US
@@ -1164,8 +1164,6 @@ deny from 174.120.103.202 # funky US
 deny from 37.115.0.0/16 # Ukraine vulnerability scanner
 deny from 46.118.0.0/16 # Blacklist Ukraine
 deny from 78.46.0.0/16 # Blacklist Germany
-User-agent: 008
-Disallow: / 
 deny from 175.44.0.0/16 # funky China
 deny from 71.235.206.0/24 # wp hack Hartford
 deny from 74.71.102.0/24 # wp hack Syracuse
@@ -1325,7 +1323,7 @@ deny from 49.212.0.0/16 # funky Japan
 deny from 82.71.0.0/16 # funky UK
 deny from 182.48.0.0/16 # funky Japan
 deny from 192.185.33.55 # funky US
-deny from 210.172.0/16 # funky Japan
+deny from 210.172.0.0/16 # funky Japan
 deny from 23.81.0.0/16 # wp hack Germany
 deny from 54.207.107.0/24 # wp hack Amazon cloud
 deny from 64.69.91.210 # hack checking
@@ -1381,7 +1379,28 @@ deny from 67.86.97.93 # funky US
 deny from 108.61.209.137 # bad behavior US
 deny from 173.208.177.59 # funky US
 deny from 185.13.0.0/16 # blacklist Russia
+deny from 37.57.0.0/16 # wp hack Ukraine
+deny from 27.131.0.0/16 # wp hack Australia
+deny from 54.93.0.0/16 # wp hack amazon cloud
+deny from 78.129.0.0/16 # wp hack UK
+deny from 85.95.0.0/16 # wp hack Turkey
+deny from 184.168.152.70 # wp hack US
+deny from 198.55.103.185 # fckedit US
+deny from 46.246.0.0/16 # wp hack Sweden
+deny from 62.210.0.0/16  # blacklisted Russia
+deny from 89.234.0.0/16  # funky Ireland
+deny from 27.158.0.0/16  # funky China
+deny from 54.205.0.0/16  # funky aws
+deny from 61.219.0.0/16  # blacklist Taiwan
+deny from 93.115.0.0/16  # funky Romania
+deny from 54.198.83.32 # ams crawler
+deny from 141.136.0.0/16  # moodle hack attempt
+deny from 94.131.14.10 # ip cloud blacklist
+deny from 23.251.55.227 # China based spam
+deny from 177.4.0.0/16  # blacklist Brazil
+deny from 109.108.0.0/16 # wp hack Ukraine
+deny from 194.31.0.0/16 # wp hack Netherlands
+deny from 210.48.0.0/16 # wp hack New Zealand
+deny from 212.90.0.0/16 # cloud blacklist
 # End Custom Blocks. Add a couple line breaks below this as well.
 php_value magic_quotes_gpc off
-
-AddType application/x-httpd-php53 php
