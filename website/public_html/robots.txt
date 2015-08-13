@@ -1,26 +1,15 @@
 User-agent: Googlebot
-Disallow: /fonts/
-Disallow: /milonic/
-Disallow: /js/
-Disallow: /webcal/
+Disallow: /private/
 
 User-agent: msnbot
-Disallow: /fonts/
-Disallow: /milonic/
-Disallow: /js/
-Disallow: /webcal/
+Disallow: /private/
 
 User-agent: Slurp
-Disallow: /fonts/
-Disallow: /milonic/
-Disallow: /js/
-Disallow: /webcal/
+Disallow: /private/
 
 User-Agent: bingbot
-Disallow: /fonts/
-Disallow: /milonic/
-Disallow: /js/
-Disallow: /webcal/
+Disallow: /private/
 
 User-agent: *
-Disallow: /
+Disallow: /private/
+

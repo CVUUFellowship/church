@@ -103,8 +103,8 @@ $menuExtras[7] =  array ( 'item', 'home.png', '', 'http://www.home.com', '_blank
 $menuExtras[1] =  array ('menu', 'CVUUF', '',
   array ( 
     array ( 'item', 'chalice.png', 'Home', '/index', '' ),
-    array ( 'item', 'edit2.png', 'Request Event', 'http://cvuuf.org/calendar/request', '' ),
-    array ( 'item', 'todo.png', 'Check Approval', 'http://cvuuf.org/calendar/approvals', '' )
+    array ( 'item', 'edit2.png', 'Request Event', '/calendar/request', '' ),
+    array ( 'item', 'todo.png', 'Check Approval', '/calendar/approvals', '' )
     )
 );
 $menuExtras[4] =  array ( 'menu', 'Rooms', '',

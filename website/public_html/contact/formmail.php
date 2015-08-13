@@ -448,7 +448,7 @@ $EMAIL_NAME = "^[-a-z0-9._]+"; /* the '^' is an important security feature! */
 
 
 /* Help: http://www.tectite.com/fmdoc/def_alert.php */
-$DEF_ALERT ="michael.talvola@gmail.com";
+$DEF_ALERT ="communications@cvuuf.org";
 
 /* Help: http://www.tectite.com/fmdoc/site_domain.php */
 $SITE_DOMAIN = ""; /* your website domain name */
@@ -481,14 +481,16 @@ $BODY_LF = "\r\n"; /* the new default: use this for CR+LF */
 //$BODY_LF = "\n";       /* the old default: just LF */
 
 /* Help: http://www.tectite.com/fmdoc/from_user.php */
-$FROM_USER = ""; /* the default - setting not used */
+// $FROM_USER = ""; /* the default - setting not used */
+$FROM_USER = "website@members.cvuuf.org"; /* the default - setting not used */
 
 /* Help: http://www.tectite.com/fmdoc/sendmail_f_option.php */
 $SENDMAIL_F_OPTION      = false;
 $SENDMAIL_F_OPTION_LINE = __LINE__ - 1; /* don't modify this line! */
 
 /* Help: http://www.tectite.com/fmdoc/fixed_sender.php */
-$FIXED_SENDER = "";
+// $FIXED_SENDER = "cvuuf_org@bilbo.dreamhost.com";
+$FIXED_SENDER = "website@members.cvuuf.org";
 
 /* Help: http://www.tectite.com/fmdoc/set_sender_from_email.php */
 $SET_SENDER_FROM_EMAIL = false;
@@ -557,7 +559,8 @@ $AUTH_USER = "";
 $AUTH_PW   = "";
 
 /* Help: http://www.tectite.com/fmdoc/form_ini_file.php */
-$FORM_INI_FILE = "/home/cvuuf/domains/cvuuf.org/private/formireq.ini";
+#$FORM_INI_FILE = "/home/cvuuf/domains/cvuuf.org/private/formireq.ini";
+$FORM_INI_FILE = $_SERVER["DOCUMENT_ROOT"]."/../private/formireq.ini";
 
 /* Help: http://www.tectite.com/fmdoc/moduledir.php */
 $MODULEDIR = ".";
@@ -666,7 +669,7 @@ $CHECK_FOR_NEW_VERSION = true;
 $CHECK_DAYS            = 30;
 
 /* Help: http://www.tectite.com/fmdoc/scratch_pad.php */
-$SCRATCH_PAD = "";
+$SCRATCH_PAD = "/home/cvuuf_org/fmscratchpad";
 
 /* Help: http://www.tectite.com/fmdoc/cleanup_time.php */
 $CLEANUP_TIME = 60; /* cleanup time in minutes */

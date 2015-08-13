@@ -253,7 +253,7 @@ $SEND='YES';
 
                     $etext = "The monthly CVUUF newsletter is now available on our website for downloading.<br><br>";
                     $etext=$etext . "There is a link on our home page, or you may go directly to <br>";
-                    $etext=$etext . "<a href='http://cvuuf.org/public/newsletter'>http://cvuuf.org/public/newsletter</a>";
+                    $etext=$etext . "<a href='/public/newsletter'>/public/newsletter</a>";
                     $etext=$etext . "<br><br><small>To unsubscribe from newsletter announcements DO NOT REPLY, please click ";
                     $etext=$etext . "<a href='mailto:unsubscribe@cvuuf.org?subject=newsletter'>here.</a><br>";
                     $etext=$etext . "Or, to unsubscribe from ALL CVUUF announcements, please click ";

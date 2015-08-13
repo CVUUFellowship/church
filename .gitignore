@@ -1,4 +1,5 @@
 website/logs/*
+website/awstats/*
 website/public_html/google*.html
 website/public_html/media/sermons/sermon*.mp3
 website/public_html/reports/fwd.txt

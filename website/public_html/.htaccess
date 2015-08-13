@@ -5,6 +5,9 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 RewriteRule ^.*$ index.php [NC,L]
 
+<IfModule headers_module>
+    header set X-Clacks-Overhead "GNU Terry Pratchett"
+</IfModule>
 #SecFilter redirect.htm
 
 # Added by HackRepair.com, for Bad Bot protection
@@ -1402,5 +1405,9 @@ deny from 109.108.0.0/16 # wp hack Ukraine
 deny from 194.31.0.0/16 # wp hack Netherlands
 deny from 210.48.0.0/16 # wp hack New Zealand
 deny from 212.90.0.0/16 # cloud blacklist
+deny from 86.123.0.0/16 # blacklisted
+deny from 50.57.224.96 # wp suspicious
+deny from 54.183.153.209 # bogus behavior
+deny from 131.111.184.92 # suspicious
 # End Custom Blocks. Add a couple line breaks below this as well.
 php_value magic_quotes_gpc off
