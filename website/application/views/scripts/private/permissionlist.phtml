@@ -1,0 +1,46 @@
+<?php $this->head = "CVUUF Members and Friends" ?>
+    <?php if (isset($this->message)) : ?>
+        <?php echo "<hr><b><i>Notice:</i><br> " ?>
+        <?php if (gettype($this->message) == 'array') : ?>
+            <?php foreach ($this->message as $line) : ?>
+                <?php echo $line, '<br>' ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <?php echo $this->message ?>
+        <?php endif ?>
+</b><hr><br>
+    <?php endif ?>
+
+<br><br>
+<center>
+<strong><big>This information is for exclusive use by CVUUF Members and Friends
+and is not to be used for any commercial purposes.</big></strong>
+</center>
+<br>
+
+<b>Members</b> names are <b>bold.</b>
+<br><br>
+    <?php if (isset($this->data)) : ?>
+<table  border=2px style="empty-cells: show; background-color:white;" >
+<tr><th>Photo<th>Name<th>Permissions</tr>
+    <?php $data=$this->data ?>
+<tr>
+
+
+    <?php foreach($data as $line) : ?>
+<?php //var_dump($line[1]); exit; ?>
+    <?php $boldon = $boldoff = $asterisk = '';
+        if ($line['Status'] == 'Member') : 
+            $boldon = "<b>"; $boldoff = "</b>";
+        elseif ($line['Status'] == 'Child') :
+            $asterisk = '**';
+        endif; ?>
+        <tr> 
+        <td><?php echo "<img src='/media/photos/members/".$line['Photolink']."' />" ?>
+        <td><?php echo $boldon . $asterisk . $line['First Name']  ." " . $line['Last Name'] . $boldoff ?>
+        <td><?php echo $line['Photoform'] ?>
+        </tr>
+    <?php endforeach ?>
+</table>
+    <?php endif ?>
+
