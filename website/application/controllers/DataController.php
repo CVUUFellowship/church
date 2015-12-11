@@ -481,6 +481,10 @@ class DataController extends Zend_Controller_Action
     /* enter button */
                 if (isset($formData['ebutton']))
                 {
+                    if (in_array($formData['status'], array('Resigned', 'Deceased')))
+                    {
+                        $formData['inactive'] = 'yes';
+                    }
                     $pid = $formData['pid'];
                     $formData['hid'] = $formData['householdid'];
                     $changeForm->hid->setAttrib('disabled', true);
