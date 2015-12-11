@@ -40,6 +40,10 @@
                 'Phone'   => $household->getPhone(),
                 'TimeStamp' => $household->getTimestamp(),
             );
+
+            if (!isset($data['TimeStamp'])) {
+                $data['TimeStamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $household->getId())) {
                 /* handle non-null requirements */

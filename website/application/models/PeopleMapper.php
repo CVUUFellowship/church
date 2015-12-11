@@ -47,6 +47,10 @@
                 'Email'   => $people->getEmail(),
                 'TimeStamp' => $people->getTimestamp(),
             );
+
+            if (!isset($data['TimeStamp'])) {
+                $data['TimeStamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $people->getId())) {
                 unset($data['RecordID']);

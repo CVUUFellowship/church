@@ -53,9 +53,8 @@
                 $id = $this->getDbTable()->insert($data);
                 $auth->setId($id);
 
-
-                unset($data['id']);
-                $this->getDbTable()->insert($data);
+                // unset($data['id']);
+                // $this->getDbTable()->insert($data);
             } else {
                 $this->getDbTable()->update($data, array('id = ?' => $id));
             }

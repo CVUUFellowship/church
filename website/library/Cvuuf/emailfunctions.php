@@ -17,8 +17,10 @@ class Cvuuf_emailfunctions
         $reply = 'communicationsdirector@cvuuf.org'; // current(array_keys($FROM));
         $sentcount = 0;
         $message = $TEXT;
-        $header = "From: ".$from."\r\n";
+        $header = "From: Cvuuf Website <".$from.">\r\n";
         $header .= "Reply-To: ".$reply."\r\n";
+        $header .= "MIME-Version: 1.0" . "\r\n";
+        $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $debug=0;
         if ($debug) {
             $myfile=fopen("/home/cvuuf_org/jakedebug.txt", "a");

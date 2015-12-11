@@ -45,6 +45,10 @@
                 'Late'   => $wstatus->getLate(),
                 'Timestamp' => $wstatus->getTimestamp(),
             );
+
+            if (!isset($data['Timestamp'])) {
+                $data['Timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $wstatus->getId())) {
                 unset($data['RecordID']);

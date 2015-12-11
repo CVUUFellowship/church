@@ -1,15 +1,4 @@
-User-agent: Googlebot
-Disallow: /private/
-
-User-agent: msnbot
-Disallow: /private/
-
-User-agent: Slurp
-Disallow: /private/
-
-User-Agent: bingbot
-Disallow: /private/
-
 User-agent: *
 Disallow: /private/
+Disallow: /webcal/
 

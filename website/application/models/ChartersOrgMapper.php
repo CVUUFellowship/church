@@ -46,6 +46,10 @@
                 'ApprovalDate'   => $people->getApprovaldate(),
                 'Timestamp' => $people->getTimestamp(),
             );
+
+            if (!isset($data['Timestamp'])) {
+                $data['Timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $people->getId())) {
                 unset($data['RecordID']);

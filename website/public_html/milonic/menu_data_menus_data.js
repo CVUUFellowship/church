@@ -50,6 +50,8 @@ aI("text=A/V People;url=/support/av;");
 aI("text=Sextons;url=/support/sextons;");
 !8
 aI("text=Welcoming people;url=/support/welcoming;");
+!1768
+aI("text=NewsAndNotes;url=/supporttest/em;");
 }
 with(milonic=new menuname("REAdmin")){
 style=menuStyle;

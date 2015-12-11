@@ -1,5 +1,6 @@
 with(milonic=new menuname("About")){
 style=menuStyle;
+aI("text=Main Website;url=http://cvuuf.org/;");
 aI("text=Welcome;url=/;");
 aI("text=Minister;url=/about/minister;");
 aI("text=Leadership;url=/about/leadership;");

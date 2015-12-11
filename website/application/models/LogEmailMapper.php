@@ -40,7 +40,11 @@
                 'unsub' => $cat->getunsub(),
                 'timestamp' => $cat->gettimestamp(),
             );
-     
+
+            if (!isset($data['timestamp'])) {
+                $data['timestamp'] = date('Y-m-d H:i:s', time());
+            }
+
             if (null === ($id = $cat->getid())) {
                 unset($data['id']);
                 /* handle non-null requirements */

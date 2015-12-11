@@ -34,6 +34,10 @@
                 'Dot'   => $hood->getDot(),
                 'Timestamp' => $hood->getTimestamp(),
             );
+
+            if (!isset($data['Timestamp'])) {
+                $data['Timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $household->getId())) {
                 unset($data['ConnectID']);

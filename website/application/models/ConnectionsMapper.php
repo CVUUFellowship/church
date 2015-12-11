@@ -40,6 +40,9 @@
                 'TimeStamp' => $connection->getTimestamp(),
             );
 //var_dump($data);
+            if (!isset($data['TimeStamp'])) {
+                $data['TimeStamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $connection->getId())) {
 //echo "NEW CONNECTION in save()<br>";

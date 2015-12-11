@@ -1,5 +1,10 @@
 <?php
 
+function startsWith($haystack, $needle) {
+    // search backwards starting from haystack length characters from the end
+    return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
+}
+
 class PrivateController extends Zend_Controller_Action
 {
 
@@ -373,6 +378,68 @@ class PrivateController extends Zend_Controller_Action
         $this->view->style = 'zform.css';
 
 
+    }
+
+    public function permissionlistAction()
+    {
+        $request = $this->getRequest();
+        $setUser = 0;
+        if ($this->getRequest()->isPost()) 
+        {
+            $getvalues = $request->getParams();
+            foreach (array_keys($getvalues) as $key) {
+                if (startsWith($key, 'user_')) {
+                    $setUser = substr($key, 5);
+                }
+            }
+// var_dump($getvalues); 
+        }
+
+        $peoplemap = new Application_Model_PeopleMapper();
+        $where = array(
+            array('inactive', ' <> ', 'yes'),
+            array('status', ' IN ', "('member', 'newfriend', 'friend', 'staff', 'child')"),
+            );
+        $order = array("lastname", "firstname");
+        $people = $peoplemap->fetchWhere($where, $order);
+        $data = array();
+        $line = array();
+        $this->view->permtypes = ['unknown','internal','congregation','uu'];
+        foreach ($people as $person)
+        {
+            unset($line);
+            $line['First Name'] = $person->firstname;
+            $line['Last Name'] = $person->lastname;
+            $line['Status'] = $person->status;
+            $line['Id'] = $person->id;
+            $line['Photolink'] = $person->photolink;
+            $photoopt = 'unknown';
+            $photoextra = '';
+            if ($person->lastname=='Holland') {
+                $photoopt = 'uu';
+                $photoextra = 'jake test of extra info';
+            }
+            $save='Save';
+            if ($person->id == $setUser) {
+                $save = 'Saved';
+            }
+
+            $form = '<form method="post"><select name="photooption">';
+            foreach (['unknown','internal','congregation','uu'] as $permtype) {
+               $sel = '';
+               if ($permtype == $photoopt) {
+                   $sel = ' selected';
+               }
+	       $form = $form.'<option value="'.$permtype.'"'.$sel.'>'.$permtype.'</option>';
+            }
+            $form = $form.'<input type="hidden" name="user_'.$person->id.'" /><br/><input name="photoextra" type="text" value="'.$photoextra.'" /><br/><input type="submit" value="'.$save.'" /></form>';
+            $line['Photoform'] = $form;
+
+            $data[] = $line;
+        }
+        $this->view->data = $data;
+
+        $this->view->style = 'zform.css';
     }
 
 
@@ -822,7 +889,7 @@ class PrivateController extends Zend_Controller_Action
                 $pdf->ezSetDy(-20);
                 $pdf->ezText($theDate,24,array('justification'=>'center'));
                 $pdf->ezSetDy(-240);
-                $pdf->ezText("We meet Sundays at 9:15 and 11 A.M.\n3327 Old Conejo Road in Newbury Park / Thousand Oaks, CA\nOur phone number is 805-492-8751"
+                $pdf->ezText("We meet Sundays at 9:15 and 11 A.M.\n3327 Old Conejo Road in Newbury Park / Thousand Oaks, CA\nOur phone number is 805-498-9548"
                 ,10,array('justification'=>'center'));
                 $pdf->ezNewPage();
 
@@ -1047,7 +1114,14 @@ class PrivateController extends Zend_Controller_Action
                             	.$dir[Child1].','.$dir[Child2].','.$dir[Child3].','.$dir[Child4].','.$dir[Child5].",,CVUUF\n";
                           	fwrite ($fp, $record);
                         }
-    			
+    			if ($dir[LastNameAdult3] == $dir[LastNameAdult1]) 
+                        {
+                        $record = '"'.$dir[LastNameAdult3].'","'.$dir[FirstNameAdult3].'",,,,'.$dir[PhoneNumber].',,,'
+                            .$dir[EmailAdult3].',"' 
+                                .$dir[Street].'","'.$city.'",'.$state.','.$zip.',,'
+                                .$dir[Child1].','.$dir[Child2].','.$dir[Child3].','.$dir[Child4].','.$dir[Child5].",,CVUUF\n";
+                              fwrite ($fp, $record);
+                        }
                     }
                     fclose($fp);
     

@@ -34,6 +34,10 @@
                 'RoomCode'   => $room->getRoomcode(),
                 'Timestamp' => $room->getTimestamp(),
             );
+
+            if (!isset($data['Timestamp'])) {
+                $data['Timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $room->getId())) {
                 unset($data['RecordID']);

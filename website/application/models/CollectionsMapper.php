@@ -54,6 +54,10 @@
                 'PublicPage'   => $collection->getPublicpage(),
                 'TimeStamp' => $collection->getTimestamp(),
             );
+
+            if (!isset($data['TimeStamp'])) {
+                $data['TimeStamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $collection->getId())) {
                 unset($data['RecordID']);

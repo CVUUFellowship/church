@@ -46,6 +46,10 @@
                 'RTFFile'   => $people->getRTFFile(),
                 'Times' => $people->getTimestamp(),
             );
+
+            if (!isset($data['Times'])) {
+                $data['Times'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $people->getId())) {
                 unset($data['RecordID']);

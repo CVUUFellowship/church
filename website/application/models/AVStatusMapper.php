@@ -45,6 +45,11 @@
                 'Late'   => $avstatus->getLate(),
                 'Timestamp' => $avstatus->getTimestamp(),
             );
+
+
+            if (!isset($data['Timestamp'])) {
+                $data['Timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $avstatus->getId())) {
                 unset($data['RecordID']);

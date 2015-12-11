@@ -38,7 +38,7 @@
             $data = array(
                 'PeopleID'  => $avp->getID(),
             );
-     
+
             if ($new == 'new') {
                 $id = $avp->getID();
                 $this->getDbTable()->insert($data);

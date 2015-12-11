@@ -482,10 +482,10 @@ $BODY_LF = "\r\n"; /* the new default: use this for CR+LF */
 
 /* Help: http://www.tectite.com/fmdoc/from_user.php */
 // $FROM_USER = ""; /* the default - setting not used */
-$FROM_USER = "website@members.cvuuf.org"; /* the default - setting not used */
+$FROM_USER = "website@members.cvuuf.org";
 
 /* Help: http://www.tectite.com/fmdoc/sendmail_f_option.php */
-$SENDMAIL_F_OPTION      = false;
+$SENDMAIL_F_OPTION      = true;
 $SENDMAIL_F_OPTION_LINE = __LINE__ - 1; /* don't modify this line! */
 
 /* Help: http://www.tectite.com/fmdoc/fixed_sender.php */
@@ -13466,6 +13466,10 @@ class   AutoResponder
 
 		if (!empty($s_from_addr)) {
 			$a_headers['From'] = SafeHeader($s_from_addr);
+		}
+		if (!Settings::isEmpty('FIXED_SENDER')) {
+			$a_headers['From'] = SafeHeader(Settings::get('FIXED_SENDER'));
+                        $s_from_addr = Settings::get('FIXED_SENDER');
 		}
 
 		$s_type = "";

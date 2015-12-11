@@ -37,6 +37,10 @@
                 'sequence'   => $sequence->getSequence(),
                 'timestamp' => $sequence->getTimestamp(),
             );
+
+            if (!isset($data['timestamp'])) {
+                $data['timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $household->getId())) {
                 unset($data['RecordID']);

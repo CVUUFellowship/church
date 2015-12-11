@@ -5,7 +5,7 @@ import mailchimp_lists
 import itertools
 
 def pull_db_list():
-    p = subprocess.Popen(['mysql', '-u', 'cvuuf_cvuuf', '-D', 'cvuuf_cvuufinfo', '-p' + secrets.mysql_pword, '-e',
+    p = subprocess.Popen(['mysql', '-h', 'mysql.cvuuf.net', '-u', 'cvuuf_cvuuf', '-D', 'cvuuf_cvuufinfo', '-p' + secrets.mysql_pword, '-e',
         'select people.Email, people.FirstName, people.LastName, people.Status from people left join unsub on people.recordid=unsub.personid where (unsub.personid is null or unsub.all=0) and people.inactive <> "yes" and people.email <> "" order by people.email;'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, outerr = p.communicate()
     if outerr:
@@ -31,7 +31,7 @@ def pull_db_list():
     return entries
 
 def filter_inactive(emails):
-    p = subprocess.Popen(['mysql', '-u', 'cvuuf_cvuuf', '-D', 'cvuuf_cvuufinfo', '-p' + secrets.mysql_pword, '-e',
+    p = subprocess.Popen(['mysql', '-h', 'mysql.cvuuf.net', '-u', 'cvuuf_cvuuf', '-D', 'cvuuf_cvuufinfo', '-p' + secrets.mysql_pword, '-e',
         'select people.Email, people.Inactive from people where people.email in (%s);' % (','.join(['"%s"' % e for e in emails]))], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, outerr = p.communicate()
     if outerr:

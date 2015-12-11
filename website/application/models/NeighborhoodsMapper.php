@@ -38,6 +38,10 @@
                 'TimeStamp' => $neighborhood->getTimestamp(),
             );
      
+            if (!isset($data['TimeStamp'])) {
+                $data['TimeStamp'] = date('Y-m-d H:i:s', time());
+            }
+     
             if (null === ($id = $neighborhood->getId())) {
                 unset($data['RecordID']);
                 /* handle non-null requirements */

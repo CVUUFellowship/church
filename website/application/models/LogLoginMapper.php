@@ -36,6 +36,10 @@
                 'memberid'  => $log->getmemberid(),
                 'timestamp' => $log->gettimestamp(),
             );
+
+            if (!isset($data['timestamp'])) {
+                $data['timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $log->getid())) {
                 unset($data['id']);

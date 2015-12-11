@@ -544,7 +544,6 @@ class DataController extends Zend_Controller_Action
                     $angelid = $formData['angelid'];
                     if ($angelid == 0)
                         $formData['angelid'] = '';
-                    
                        
                 }
 
@@ -556,7 +555,6 @@ class DataController extends Zend_Controller_Action
                     $pid = $formData['pid'];
                     unset($formData);
                 }
-                    
                 
 
     /* commit button */
@@ -613,11 +611,13 @@ class DataController extends Zend_Controller_Action
                         {
                             $connobj = new Application_Model_Connections();
                             $connobj->peopleid = $pid;
+                            $connobj->timestamp = date('Y-m-d H:i:s', time());
                             $connmap->save($connobj);
                         }
                         $cid = $connobj->id;
                         $conn = $connmap->find($cid);
-                        $columns = array('angelid', 'inducted', 'frienddate', 'comments');
+                        $columns = array('angelid', 'inducted', 'frienddate', 'comments', 'timestamp');
+                        $connobj->timestamp = date('Y-m-d H:i:s', time());
                         foreach($columns as $key)
                         {
                             if (isset($formData[$key]))

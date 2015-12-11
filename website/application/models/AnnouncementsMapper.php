@@ -46,6 +46,10 @@
                 'Status'   => $cat->getStatus(),
                 'Timestamp' => $cat->getTimestamp(),
             );
+
+            if (!isset($data['Timestamp'])) {
+                $data['Timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($number = $cat->getId())) {
                 unset($data['RecordID']);

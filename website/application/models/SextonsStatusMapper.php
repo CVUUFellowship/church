@@ -44,6 +44,10 @@
                 'Status'   => $Sextonsstatus->getStatus(),
                 'Timestamp' => $Sextonsstatus->getTimestamp(),
             );
+
+            if (!isset($data['Timestamp'])) {
+                $data['Timestamp'] = date('Y-m-d H:i:s', time());
+            }
      
             if (null === ($id = $Sextonsstatus->getId())) {
                 unset($data['RecordID']);

@@ -67,6 +67,9 @@ class Cvuuf_functions
     {
         $publicdir = $_SERVER["DOCUMENT_ROOT"];
         $filedir = substr($publicdir, 0, strrpos($publicdir, 'public_html')) . 'private/';
+        // if ($filedir == 'private/') {
+        //     $filedir = '/home/cvuuf_org/'.$filedir;
+        // }
 
         switch ($filetype)
         {
