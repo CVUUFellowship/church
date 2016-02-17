@@ -136,24 +136,24 @@ class PersonController extends Zend_Controller_Action
         {
             $this->view->permprivate = true;
             $this->view->level = $auth->level;
+            if ($functions->hasPermission('membership', $auth))
+                $this->view->permmembership = true;     
+            else
+                $this->view->permmembership = false;
+
+            if ($functions->hasPermission('admin', $auth) == true)
+                $this->view->permadmin = true;
+             else
+                $this->view->permadmin = false;
+
+            if ($functions->hasPermission('change', $auth) == true)
+                $this->view->permchange = true;
+            else
+                $this->view->permchange = false;
         }
         else
             $this->view->permprivate = false;
 
-        if ($functions->hasPermission('membership', $auth))
-            $this->view->permmembership = true;     
-        else
-            $this->view->permmembership = false;
-
-        if ($functions->hasPermission('admin', $auth) == true)
-            $this->view->permadmin = true;
-         else
-            $this->view->permadmin = false;
-
-        if ($functions->hasPermission('change', $auth) == true)
-            $this->view->permchange = true;
-        else
-            $this->view->permchange = false;
     }
 
 

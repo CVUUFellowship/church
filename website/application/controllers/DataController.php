@@ -666,17 +666,29 @@ class DataController extends Zend_Controller_Action
                                 $nhname = $newhood['hoodname'];                 
                                 
     // send email to neighborhood coordinator here                            
+                                $nbrs2email = array(
+                                   "10 Degrees Cooler" => "tendegreescooler",
+                                   "Suddenly Seymour" => "suddenlyseymour",
+                                   "Eastenders" => "eastenders",
+                                   "Newbury Neighbors" => "newburyneighbors",
+                                   "Wild West" => "wildwest",
+                                   "Meadowood" => "meadowood",
+                                );
+                                $emaddr = $person['email'];
                                 $now = date("m/d/Y", mktime(date('H'), date('i'), 0, date('m'), date('d'),date('Y')));
-                                $subj = "Neighborhood change for " . $person['firstname'] . " " . $person['lastname'] . " on " . $now;
-                                $et = $subj . "\n<br>Now $nhname changed from $ohname";
+                                $subj = "Neighborhood change for " . $person['firstname'] . " " . $person['lastname'] . " (" . $person['email'] . ") on " . $now;
+                                $olink = "https://groups.google.com/a/cvuuf.org/forum/#!managemembers/".$nbrs2email[$ohname]."/members/active";
+                                $nlink = "https://groups.google.com/a/cvuuf.org/forum/#!managemembers/".$nbrs2email[$nhname]."/members/active";
+                                $et = $subj . "<br/>\nNew neighborhood is $nhname, changed from $ohname.<br/>\n<br/>\nThis email is your cue to go update the group email lists.<br/>\nIf you are the group leader of $ohname, please go to <a href=\"$olink\">$olink</a>, check the box for $emaddr if present, and select \"Remove from group\" under the \"Actions\" button at the top.<br/>\n<br/>\nIf you are the group leader of $nhname, please go to <a href=\"$nlink\">$nlink</a>, select \"Invite members\" on the left, and send an appropriate invitation to $emaddr.<br/>\n(If they run into trouble but do want to be in the email group, then use \"Direct add members\". If you do, please be extra cautious about typos or miscommunications so that we don't get in trouble for spamming.)<br/>\n<br/>\nWhen you've taken care of it, please send a followup email to neighborhood@cvuuf.org to let everyone know. If you run into any trouble, please tell Katie so she can help sort it out.";
+//"<br/>\n<br/>\nPS: Please do not change the settings for Jake. If you see this message for his email, it is either just a test or he will do it.";
     //echo $et;
     //var_dump($hoodobj);
     //var_dump($person); exit;            
                                 
                             		$TEXT=$et;
                                 $SUBJECT=$subj;
-//                                $TO_array=array('neighborhoods@cvuuf.org', 'mike@talvola.com');
                                 $TO_array=array('neighborhood@cvuuf.org', 'mike@talvola.com');
+                                #$TO_array=array('jakeholland.net@gmail.com');
     //                            $LOG_array=array('security@cvuuf.org', 'michael.talvola@gmail.com');
                             
                                 $efunctions = new Cvuuf_emailfunctions();

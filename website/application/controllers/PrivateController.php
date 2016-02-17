@@ -33,13 +33,13 @@ class PrivateController extends Zend_Controller_Action
           
           $housemap = new Application_Model_HouseholdsMapper();
           $house = $housemap->find($person['householdid']);
-          if ($house['phone'] <> '')
+          if ($person['pphone'] <> '')
           {
-              $line[] = $this->formatPhoneNumber($house['phone'], '-');
+              $line[] = $this->formatPhoneNumber($person['pphone'], '-');
           }
           else
           {
-              $line[] = $this->formatPhoneNumber($person['pphone'], '-');
+              $line[] = $this->formatPhoneNumber($house['phone'], '-');
           }
           $line[] = $person['email'];
           return($line);
@@ -63,6 +63,10 @@ class PrivateController extends Zend_Controller_Action
         // action body
     }
 
+    public function syncAction()
+    {
+        // action body
+    }
 
     public function listpositionsAction()
     {

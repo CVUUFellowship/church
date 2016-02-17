@@ -5,3 +5,4 @@ website/public_html/media/sermons/sermon*.mp3
 website/public_html/reports/fwd.txt
 website/public_html/media/photos/members/*
 scripts/secrets.*
+*.pyc

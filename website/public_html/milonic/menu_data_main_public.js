@@ -8,11 +8,13 @@ itemwidth="120px";
 itemheight="30px";
 alwaysvisible=1;
 orientation="horizontal";
+/*
 aI("text=About;showmenu=About;");
 aI("text=News & Events;showmenu=News;");
 aI("text=Worship;showmenu=Worship;");
 aI("text=Religious Education;showmenu=RE;");
 aI("text=Programs;showmenu=Programs;");
 aI("text=Visitors;showmenu=New;");
+*/
 }
 drawMenus();

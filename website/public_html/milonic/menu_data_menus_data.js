@@ -1,7 +1,9 @@
 with(milonic=new menuname("DataNav")){
 style=menuStyle;
-aI("text=Public Welcome;url=/;");
+aI("text=Public Welcome;url=http://cvuuf.org/;");
 aI("text=Private;url=/private;");
+!1024
+aI("text=RE Admin;url=/re/admin;");
 !512
 aI("text=System Admin;url=/admin;");
 }

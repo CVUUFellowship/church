@@ -1,8 +1,10 @@
 with(milonic=new menuname("RENav")){
 style=menuStyle;
-aI("text=Public Welcome;url=/;");
+aI("text=Public Welcome;url=http://cvuuf.org/;");
 aI("text=Private;url=/private;");
 aI("text=Database;url=/data;");
+!512
+aI("text=System Admin;url=/admin;");
 }
 with(milonic=new menuname("REEnroll")){
 style=menuStyle;
