@@ -11,6 +11,5 @@ orientation="horizontal";
 aI("text=Navigation;showmenu=DataNav;");
 !64
 aI("text=Membership;showmenu=DataPeople;");
-aI("text=People and Tasks;showmenu=Tasks;");
 aI("text=Misc. Admin;showmenu=DataAdmin;");
 }

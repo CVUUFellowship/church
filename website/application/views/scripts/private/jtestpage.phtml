@@ -1,0 +1,53 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$('body').on('click', '#rebuildbutton', function(event) {
+	var request = $.ajax({
+		url: "jtestscript",
+		type: "POST",
+		dataType: "html"
+	});
+	request.done(function(msg) {
+		var start_status = $(msg).find("#script_start_result")
+		$("#status").html(start_status);
+		function poll(prior, same_limit) {
+			setTimeout(function() {
+				var pollReq = $.ajax({
+					url: "jteststatus",
+					type: "GET",
+					dataType: "html"});
+				pollReq.done(function(data) {
+					var out = $(data).find("#script_status").text();
+					if (out != prior) {
+						poll(out, 15);
+					} else {
+						if (same_limit <= 0) {
+							out += "\n...polling stopped";
+						} else {
+							poll(out, same_limit - 1);
+						}
+					}
+					$("#status").html(out.replace(/(?:\r\n|\r|\n)/g, '<br />'));
+				});
+			}, 2000);
+		};
+		poll("", 15);
+	});
+	request.fail(function(jqXHR, textStatus) {
+		$("#status").html("Failed: " + textStatus);
+	});
+});
+</script>
+<meta charset="utf-8" />
+<input type="submit" id="rebuildbutton" name="jtestscript" value="Rebuild" /><br/>
+<style type="text/css">
+	#status {
+		width: 300px;
+		height: 250px;
+		border: 1px solid #999;
+	}
+</style>
+The following div should get updated:<br/>
+<div id="status">
+</div>
+
+

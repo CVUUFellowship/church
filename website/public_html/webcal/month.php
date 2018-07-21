@@ -95,6 +95,12 @@ print_header ( array ( 'js/popups.php/true', 'js/visible.php' ), $HeadX,
 '', false, false, false, false );
 
 echo <<<EOT
+    <div style="color:red; font-size:200%;">
+    <br/>
+    This Calendar is out of date, and is only here for Andy's reference.<br/>
+    Please use <a href="http://cvuuf.org/blog/events/">http://cvuuf.org/blog/events/</a> instead.<br/>
+    <br/>
+    </div>
     <table border="0" width="100%" cellpadding="1">
       <tr>
         <td id="printarea" valign="top" width="{$tableWidth}" rowspan="2">

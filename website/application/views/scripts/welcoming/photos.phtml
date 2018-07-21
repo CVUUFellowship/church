@@ -40,9 +40,9 @@ and is not to be used for any commercial purposes.</big></strong>
   <img src='/media/photos/members/<?php echo $this->photolink ?>' border=2>
   <br><?php echo $this->name ?>
   <br><br>
-  <b>Choose jpg photo file [70px wide, 25KB max file size] to upload:</b><br>	
+  <b>Choose jpg photo file [70px wide, 100KB max file size] to upload:</b><br>	
   <form enctype="multipart/form-data" method=post>
-    <input type="hidden" name="MAX_FILE_SIZE" value="25000">
+    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
     <input type="hidden" name="action" value="reupload">
     <input name="THEPHOTO" type="file" size=70><br>
     <input type=submit name='upbutton' value="UPLOAD">

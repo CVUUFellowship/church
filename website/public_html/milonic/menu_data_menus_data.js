@@ -45,15 +45,8 @@ aI("text=Membership Statistics;url=/support/memberstats;");
 aI("text=Print name tags;url=/support/nametags;");
 !8
 aI("text=Directory Photos;url=/welcoming/photos;");
-}
-with(milonic=new menuname("Tasks")){
-style=menuStyle;
-aI("text=A/V People;url=/support/av;");
-aI("text=Sextons;url=/support/sextons;");
 !8
-aI("text=Welcoming people;url=/support/welcoming;");
-!1768
-aI("text=NewsAndNotes;url=/supporttest/em;");
+aI("text=Examine email issues;url=/private/sync;");
 }
 with(milonic=new menuname("REAdmin")){
 style=menuStyle;
@@ -81,7 +74,7 @@ aI("text=Send neighborhood emails;url=/news/hoodemail;");
 aI("text=Newsletter Admin;showmenu=NLAdmin;");
 aI("text=News and Notes Upload;url=/support2/nnupload;");
 aI("text=Minutes Management;url=/support2/minutesmanage;");
-aI("text=Show email forwarders;url=/support2/emailforwards;");
+aI("text=Show email forwarders;url=/private/group;");
 !8
 aI("text=Maintain unsubscribes;url=/news/unsubscribe;");
 }

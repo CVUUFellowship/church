@@ -60,7 +60,7 @@ with(milonic=new menuname("Calendar")){
 style=menuStyle;
 aI("text=Submit an Event;url=/calendar/request;");
 aI("text=Approvals;url=/calendar/approvals;");
-aI("text=Show calendar;url=/calendar;");
+aI("text=Show OLDcalendar;url=/calendar;");
 }
 with(milonic=new menuname("PrivateForms")){
 style=menuStyle;

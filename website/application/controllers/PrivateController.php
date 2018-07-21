@@ -5,6 +5,43 @@ function startsWith($haystack, $needle) {
     return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
 }
 
+/* My preferred way to launch external scripts is to always log the
+   output to a file, always launch in background, and only if the output
+   file is not "too young", indicating another instance of this executable
+   might be in progress or recently run.
+   I intend to use this to re-build slow sync-up kinds of pages that pull
+   from external sources such as google groups and mailchimp on demand
+   (but not each time a page is loaded or something).
+*/
+function launchExternal($cmd, $outfname, $stableOutfSeconds) {
+	$launch = 0;
+	$rel = '..'; // $_SERVER["DOCUMENTROOT"];
+	$flockName = $rel.'/application/controllers/launch.lockf';
+	$fp = fopen($flockName, "w+");
+	if (flock($fp, LOCK_EX)) {
+		if (!file_exists($outfname) || filemtime($outfname) + $stableOutfSeconds < time()) {
+			// when output doesn't exist or it's old enough, wipe out and launch
+			$fout = fopen($outfname, "w");
+			fclose($fout);
+			$launch = 1;
+		} else {
+			// when output is young enough, don't launch.
+			$launch = 0;
+		}
+		fflush($fp);
+		flock($fp, LOCK_UN);
+	} else {
+		$launch = 0;
+	}
+	fclose($fp);
+
+	if ($launch) {
+		// exec("nohup " . $cmd . " 2>&1 > '" . $outfname . "' &");
+		exec($cmd . " > '" . $outfname . "' 2>&1 &");
+	}
+	return $launch;
+}
+
 class PrivateController extends Zend_Controller_Action
 {
 
@@ -63,7 +100,91 @@ class PrivateController extends Zend_Controller_Action
         // action body
     }
 
+    /*
+     this jtest pattern seems pretty ugly, but I'm not clear on how
+     else to get the login guard to work under this Zend Framework
+     setup.
+     The idea is that we have this jtestpageAction and the associated
+     application/views/scripts/private/jtestpage.phtml, which is hit
+     by going to members.cvuuf.org/private/jtestpage.
+     That has a button in it that will POST to jtestscript, and on
+     successful response, will poll jteststatus.
+     The script output is sent to a file that is pulled in by
+     jteststatus.
+     */
+    public function jtestpageAction()
+    {
+        // action body
+    }
+
+    public function jtestscriptAction()
+    {
+        // action body
+	$rel = '..'; // $_SERVER["DOCUMENTROOT"];
+	if (launchExternal($rel."/test_fn.sh", $rel."/application/views/scripts/private/jtestscriptoutput.txt", 5)) {
+		echo "launched";
+	} else {
+		echo "not launched";
+	}
+    }
+
+    public function jteststatusAction()
+    {
+        // action body
+    }
+
+    /* sync rebuild flow is copied from the jtest one. I hate it, but not
+       as much as not having a button. One day I should learn how to do this
+       for real. */
     public function syncAction()
+    {
+        // action body
+    }
+
+    public function syncscriptAction()
+    {
+        // action body
+	$rel = '..'; // $_SERVER["DOCUMENTROOT"];
+	$dump_to = $rel."/application/views/scripts/private/sync_contents.html";
+	$out = $rel."/application/views/scripts/private/syncscriptoutput.txt";
+	echo '<div id="script_start_result">';
+	if (launchExternal("PYTHONPATH=".$rel."/secrets python ".$rel."/script/sync_email/dump_sync_page.py ".$dump_to, $out, 120)) {
+		echo "rebuild launched: ".date("Y-m-d H:i:s");
+	} else {
+		echo "rebuild NOT launched, wait 2 minutes between rebuilds: ".date("Y-m-d H:i:s");
+	}
+	echo '</div>';
+    }
+
+    public function syncstatusAction()
+    {
+        // action body
+    }
+
+    /* group rebuild flow is copied from the jtest one. I hate it, but not
+       as much as not having a button. One day I should learn how to do this
+       for real. */
+    public function groupAction()
+    {
+        // action body
+    }
+
+    public function groupscriptAction()
+    {
+        // action body
+	$rel = '..'; // $_SERVER["DOCUMENTROOT"];
+	$dump_to = $rel."/application/views/scripts/private/group_contents.html";
+	$out = $rel."/application/views/scripts/private/groupscriptoutput.txt";
+	echo '<div id="script_start_result">';
+	if (launchExternal("PYTHONPATH=".$rel."/secrets python ".$rel."/script/sync_email/dump_groups_page.py ".$dump_to, $out, 120)) {
+		echo "rebuild launched: ".date("Y-m-d H:i:s");
+	} else {
+		echo "rebuild NOT launched, wait 2 minutes between rebuilds: ".date("Y-m-d H:i:s");
+	}
+	echo '</div>';
+    }
+
+    public function groupstatusAction()
     {
         // action body
     }
@@ -241,7 +362,15 @@ class PrivateController extends Zend_Controller_Action
                             unset($line);
                             $line['First Name'] = $person->firstname;
                             $line['Last Name'] = $person->lastname;
-                            $line['Home Phone'] = $this->formatPhoneNumber($house['phone'], '-');
+                            if ($person->pphone == '') {
+                                if ($house['phone'] == '') {
+                                    $line['Phone'] = '';
+                                } else {
+                                    $line['Phone'] = $this->formatPhoneNumber($house['phone'], '-') . ' (home)';
+                                }
+                            } else {
+                                $line['Phone'] = $this->formatPhoneNumber($person->pphone, '-') . ' (cell)';
+                            }
                             $line['Address'] = $house['street'] . ', ' . $house['city'] . ', ' . $house['state'] . ' ' . $house['zip'];
                             $line['Email'] = $person->email;
                             $line['Status'] = $person->status;
@@ -266,7 +395,7 @@ class PrivateController extends Zend_Controller_Action
                     {
                         unset($line);
                         $line['Name'] = $row['First Name'] . ' ' . $row['Last Name'];
-                        $line['Home Phone'] = $row['Home Phone'];
+                        $line['Phone'] = $row['Phone'];
                         $line['Address'] = $row['Address'];
                         $line['Email'] = $row['Email'];
                         $line['Status'] = $row['Status'];

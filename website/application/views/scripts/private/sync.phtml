@@ -1,0 +1,94 @@
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/table_theme/blue/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="/jquery.tablesorter.min.js"></script>
+<div class="container">
+  <h2>Email Synchronization</h2>
+  <p>Tabs are (rows with problems/total rows). So click "eastenders" to see just the eastenders, etc.<br/>
+  Rebuild button at bottom of page.
+  </p>
+<style type="text/css">
+	.nav-tabs li {
+		border: 1px solid #999;
+	}
+</style>
+<div id="generated_content">
+<? include 'sync_contents.html' ?>
+</div> <!-- generated_content -->
+  <p>Data sources:
+  <ul>
+    <li>Mailchimp list</li>
+    <li>Google group neighborhood lists</li>
+    <li>Database for any email appearing in the other lists, plus active Member, NewFriend, Friend, Visitor</li>
+  </ul>
+  </p>
+  <p>Problem meanings:
+  <style>td { padding: 0pt 1em 0pt 1em; }</style>
+  <table>
+    <tr><td>db:missing</td><td>Not in db with this name or email</td></tr>
+    <tr><td>db:dup_email</td><td>Email appears multiple times in db</td></tr>
+    <tr><td>chimp:missing</td><td>Not receiving any mailchimp</td></tr>
+    <tr><td>db_chimp:name_mismatch</td><td>Name is different between db and mailchimp.</td></tr>
+    <tr><td>db_chimp:email_mismatch</td><td>Email is different between db and mailchimp.</td></tr>
+    <tr><td>chimp:announcements</td><td>Member who is not receiving mailchimp announcements</td></tr>
+    <tr><td>db:no_neighborhood</td><td>Member, Friend, or NewFriend with no neighborhood in db</td></tr>
+    <tr><td>group:name</td><td>Neighborhood in db says "name", but not in that email list</td></tr>
+  </table><br/>
+  If it's in the groups column, they're on that email list with at least one of their emails, even if it's not their neighborhood. That's not counted as a problem, as long as they're in their neighborhood group.
+  </p>
+<script>
+$('body').on('click', '#rebuildbutton', function(event) {
+        var request = $.ajax({
+                url: "syncscript",
+                type: "POST",
+                dataType: "html"
+        });
+        request.done(function(msg) {
+                var start_status = $(msg).find("#script_start_result")
+                $("#status").html(start_status);
+                function poll(prior, same_limit) {
+                        setTimeout(function() {
+                                var pollReq = $.ajax({
+                                        url: "syncstatus",
+                                        type: "GET",
+                                        dataType: "html"});
+                                pollReq.done(function(data) {
+                                        var out = $(data).find("#script_status").text();
+                                        if (out != prior) {
+                                                poll(out, 15);
+                                        } else {
+						if (out.indexOf('cleanly finished') != -1) {
+							window.location.reload(true);
+							return;
+						}
+                                                if (same_limit <= 0) {
+                                                        out += "\n...polling stopped";
+                                                } else {
+                                                        poll(out, same_limit - 1);
+                                                }
+                                        }
+                                        $("#status").html(out.replace(/(?:\r\n|\r|\n)/g, '<br />'));
+                                });
+                        }, 2000);
+                };
+		if (start_status.text().indexOf('NOT') == -1) {
+                  poll("", 15);
+		}
+        });
+        request.fail(function(jqXHR, textStatus) {
+                $("#status").html("Failed: " + textStatus);
+        });
+});
+</script>
+<meta charset="utf-8" />
+<input type="submit" id="rebuildbutton" name="syncscript" value="Rebuild" /><br/>
+<p>
+<br/>
+<div id="status">
+</div>
+</p>
+
