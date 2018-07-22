@@ -19,3 +19,4 @@ ptmp*
 old.*
 tmp*
 bak.*
+.*.sw?

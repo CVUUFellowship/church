@@ -594,7 +594,7 @@ class DataController extends Zend_Controller_Action
                     if ($house['zip'] <> $formData['zip'])
                         $zipchanged = true;
                     else
-                        $zipchanged = false;                    
+                        $zipchanged = false;
                     $columns = array('householdname', 'street', 'city', 'state', 'zip',
                       'phone');
                     foreach($columns as $key)
@@ -646,63 +646,65 @@ class DataController extends Zend_Controller_Action
 //echo "Zip changed? $zipchanged";
 //var_dump($hoodobj); 
 
-                        if ($hoodobj == false  ||  $zipchanged)
-                        {
-                            $neighborhood = $this->getHood($house);
-                            if ($hoodobj == false)
-                                $hoodobj = new Application_Model_Neighborhoods();
-                            $oldhid = $hoodobj->hoodid;
-                            $hoodobj->hoodid = $neighborhood;
+                        if ($hoodobj == false) {
+                            $hoodobj = new Application_Model_Neighborhoods();
                             $hoodobj->householdid = $hid;
+                        }
+                        $oldhid = $hoodobj->hoodid;
+#echo "<br/>formData['hood']=".$formData['hood']."<br/>";
+                        if (isset($formData['hood'])) {
+#echo "<br/>formData was set, old value=".$hoodobj->hoodid."<br/>";
+                            $hoodobj->hoodid = $formData['hood'];
+                        }
+                        if ($hoodobj->hoodid == false)
+                        {
+                            $hoodobj->hoodid = $this->getHood($house);
+#echo "<br/>empty hoodid, zip lookup set to=".$hoodobj->hoodid."<br/>";
+                        }
+
+                        if ($hoodobj->hoodid <> $oldhid) {
                             $hoodmap->save($hoodobj);
-
-                            if ($oldhid <> $neighborhood) {
-                                $hoodsmap = new Application_Model_HoodsMapper();
-                                $oldhood = $hoodsmap->find($oldhid);
-    //var_dump($oldhood);
-                                $ohname = $oldhood['hoodname'];
-                                $newhood = $hoodsmap->find($neighborhood);
-    //var_dump($newhood);         
-                                $nhname = $newhood['hoodname'];                 
-                                
-    // send email to neighborhood coordinator here                            
-                                $nbrs2email = array(
-                                   "10 Degrees Cooler" => "tendegreescooler",
-                                   "Suddenly Seymour" => "suddenlyseymour",
-                                   "Eastenders" => "eastenders",
-                                   "Newbury Neighbors" => "newburyneighbors",
-                                   "Wild West" => "wildwest",
-                                   "Meadowood" => "meadowood",
-                                );
-                                $emaddr = $person['email'];
-                                $now = date("m/d/Y", mktime(date('H'), date('i'), 0, date('m'), date('d'),date('Y')));
-                                $subj = "Neighborhood change for " . $person['firstname'] . " " . $person['lastname'] . " (" . $person['email'] . ") on " . $now;
-                                $olink = "https://groups.google.com/a/cvuuf.org/forum/#!managemembers/".$nbrs2email[$ohname]."/members/active";
-                                $nlink = "https://groups.google.com/a/cvuuf.org/forum/#!managemembers/".$nbrs2email[$nhname]."/members/active";
-                                $et = $subj . "<br/>\nNew neighborhood is $nhname, changed from $ohname.<br/>\n<br/>\nThis email is your cue to go update the group email lists.<br/>\nIf you are the group leader of $ohname, please go to <a href=\"$olink\">$olink</a>, check the box for $emaddr if present, and select \"Remove from group\" under the \"Actions\" button at the top.<br/>\n<br/>\nIf you are the group leader of $nhname, please go to <a href=\"$nlink\">$nlink</a>, select \"Invite members\" on the left, and send an appropriate invitation to $emaddr.<br/>\n(If they run into trouble but do want to be in the email group, then use \"Direct add members\". If you do, please be extra cautious about typos or miscommunications so that we don't get in trouble for spamming.)<br/>\n<br/>\nWhen you've taken care of it, please send a followup email to neighborhood@cvuuf.org to let everyone know. If you run into any trouble, please tell Katie so she can help sort it out.";
+                            $hoodsmap = new Application_Model_HoodsMapper();
+                            $oldhood = $hoodsmap->find($oldhid);
+//var_dump($oldhood);
+                            $ohname = $oldhood['hoodname'];
+                            $newhood = $hoodsmap->find($hoodobj->hoodid);
+//var_dump($newhood);         
+                            $nhname = $newhood['hoodname'];                 
+                            
+// send email to neighborhood coordinator here                            
+                            $nbrs2email = array(
+                               "10 Degrees Cooler" => "tendegreescooler",
+                               "Suddenly Seymour" => "suddenlyseymour",
+                               "Eastenders" => "eastenders",
+                               "Newbury Neighbors" => "newburyneighbors",
+                               "Wild West" => "wildwest",
+                               "Meadowood" => "meadowood",
+                            );
+                            $emaddr = $person['email'];
+                            $now = date("m/d/Y", mktime(date('H'), date('i'), 0, date('m'), date('d'),date('Y')));
+                            $subj = "Neighborhood change for " . $person['firstname'] . " " . $person['lastname'] . " (" . $person['email'] . ") on " . $now;
+                            $olink = "https://groups.google.com/a/cvuuf.org/forum/#!managemembers/".$nbrs2email[$ohname]."/members/active";
+                            $nlink = "https://groups.google.com/a/cvuuf.org/forum/#!managemembers/".$nbrs2email[$nhname]."/members/active";
+                            $et = $subj . "<br/>\nNew neighborhood is $nhname, changed from $ohname.<br/>\n<br/>\nThis email is your cue to go update the group email lists.<br/>\nIf you are the group leader of $ohname, please go to <a href=\"$olink\">$olink</a>, check the box for $emaddr if present, and select \"Remove from group\" under the \"Actions\" button at the top.<br/>\n<br/>\nIf you are the group leader of $nhname, please go to <a href=\"$nlink\">$nlink</a>, select \"Invite members\" on the left, and send an appropriate invitation to $emaddr.<br/>\n(If they run into trouble but do want to be in the email group, then use \"Direct add members\". If you do, please be extra cautious about typos or miscommunications so that we don't get in trouble for spamming.)<br/>\n<br/>\nWhen you've taken care of it, please send a followup email to neighborhood@cvuuf.org to let everyone know. If you run into any trouble, please tell Katie so she can help sort it out.";
 //"<br/>\n<br/>\nPS: Please do not change the settings for Jake. If you see this message for his email, it is either just a test or he will do it.";
-    //echo $et;
-    //var_dump($hoodobj);
-    //var_dump($person); exit;            
-                                
-                            		$TEXT=$et;
-                                $SUBJECT=$subj;
-                                $TO_array=array('neighborhood@cvuuf.org', 'mike@talvola.com');
-                                #$TO_array=array('jakeholland.net@gmail.com');
-    //                            $LOG_array=array('security@cvuuf.org', 'michael.talvola@gmail.com');
+//echo $et;
+//var_dump($hoodobj);
+//var_dump($person); exit;            
                             
-                                $efunctions = new Cvuuf_emailfunctions();
-                                $totalsent = $efunctions->sendEmail($SUBJECT, $TO_array, $TEXT, $this, array('webmail@cvuuf.org' => "CVUUF Database"));
-                                $log = $efunctions->log_email($this, 1, $totalsent, 0, 0);
-                                
-                                $this->view->message = $et;
-                            }
-            
-
+                                $TEXT=$et;
+                            $SUBJECT=$subj;
+                            $TO_array=array('neighborhood@cvuuf.org', 'mike@talvola.com');
+                            #$TO_array=array('jakeholland.net@gmail.com');
+//                            $LOG_array=array('security@cvuuf.org', 'michael.talvola@gmail.com');
+                        
+                            $efunctions = new Cvuuf_emailfunctions();
+                            $totalsent = $efunctions->sendEmail($SUBJECT, $TO_array, $TEXT, $this, array('webmail@cvuuf.org' => "CVUUF Database"));
+                            $log = $efunctions->log_email($this, 1, $totalsent, 0, 0);
+                            
+                            $this->view->message = $et;
+                        }
 //var_dump($hoodobj); 
-                            
-                        }                      
-    
                     }
                     elseif ($person['status'] == 'Visitor')
                     {
