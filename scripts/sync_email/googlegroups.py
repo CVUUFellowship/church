@@ -51,8 +51,10 @@ except ImportError:
   pass
 
 class GoogleUser(object):
-  def __init__(self, email):
+  def __init__(self, email, hood_group):
     self.email = email.lower()
+    self.hood_group = hood_group
+
   def __str__(self):
     return self.email
 
@@ -90,6 +92,9 @@ with information from the APIs Console <https://code.google.com/apis/console>.
       # poorly documented api. Found in this sample.
       # without sub you get a 403. smh
       # https://github.com/alfasin/Google-Admin-Directory-API/blob/master/group_members_using_sdk.py
+      # later: found out that the real problem was not adding apis to authentication for the service accounts:
+      # https://developers.google.com/+/domains/authentication/delegation
+      # later: found that was wrong--you do need sub, i just had storage.
       credentials = SignedJwtAssertionCredentials(
           service_account_name=service_account_name(),
           private_key=key_data(),
@@ -107,18 +112,18 @@ with information from the APIs Console <https://code.google.com/apis/console>.
   while True:
     resp, content = http.request('https://www.googleapis.com/admin/directory/v1/groups/{0}/members?{1}'.format(urllib.quote(groupEmail), urllib.urlencode(params)))
     data = json.loads(content)
-    members = data.get('members')
-    if members is None:
-      print 'no members entry found. Response:'
-      print resp
-      print content
-      raise BadResponse('no members found')
+    members = data.get('members', [])
+    #if members is None:
+    #  print 'no members entry found. Response:'
+    #  print resp
+    #  print content
+    #  raise BadResponse('no members found')
 
     # print 'got {0} members'.format(len(members))
     for member in members:
       email = member.get('email')
       if email:
-        emails.append(GoogleUser(email))
+        emails.append(GoogleUser(email, groupEmail))
     nextPageToken = data.get('nextPageToken')
     if not nextPageToken:
       break

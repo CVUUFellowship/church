@@ -29,10 +29,10 @@ def cvuuf_members(email_list=None):
     more = True
     while more:
         if not email_list:
-            sql = 'select people.Email, people.FirstName, people.LastName, people.Status, hoods.hoodname from people left join neighborhoods on people.householdid=neighborhoods.householdid left join hoods on neighborhoods.hoodid=hoods.recordid where people.inactive <> "yes" and people.email <> "" and people.status in ("Member","NewFriend","Friend","Visitor");'
+            sql = 'select people.Email, people.FirstName, people.LastName, people.Status, people.inactive, hoods.hoodname from people left join neighborhoods on people.householdid=neighborhoods.householdid left join hoods on neighborhoods.hoodid=hoods.recordid where people.inactive <> "yes" and people.email <> "" and people.status in ("Member","NewFriend","Friend","Visitor");'
             more = False
         else:
-            sql = 'select people.Email, people.FirstName, people.LastName, people.Status, hoods.hoodname from people left join neighborhoods on people.householdid=neighborhoods.householdid left join hoods on neighborhoods.hoodid=hoods.recordid where people.email in ({0});'.format(','.join('"{0}"'.format(em) for em in email_list[offset:offset+step]))
+            sql = 'select people.Email, people.FirstName, people.LastName, people.Status, people.inactive, hoods.hoodname from people left join neighborhoods on people.householdid=neighborhoods.householdid left join hoods on neighborhoods.hoodid=hoods.recordid where people.email in ({0});'.format(','.join('"{0}"'.format(em) for em in email_list[offset:offset+step]))
             offset += step
             more = (offset < len(email_list))
 
@@ -51,8 +51,10 @@ def cvuuf_members(email_list=None):
             ])
         for line in out.rstrip('\n').split('\n')[1:]:
             try:
-                email, fname, lname, status, hoodname = [x.strip() for x in line.split('\t')]
-                member = CvuufMember(email, fname, lname, status, hoodname, hood_mails.get(hoodname))
+                email, fname, lname, status, inactive, hoodname = [x.strip() for x in line.split('\t')]
+                if inactive == 'yes':
+                    status = status + ' (inactive)'
+                member = CvuufMember(email, fname, lname, status, hoodname, hood_mails.get(hoodname, 'unassigned'))
                 if member.email not in expected_anomalies:
                     entries.append(member)
             except:

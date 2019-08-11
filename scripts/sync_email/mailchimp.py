@@ -27,7 +27,7 @@ class MailchimpReceiver(object):
     self.lname = lname
     self.mail_segments = mail_segments
 
-    self.seg_sum = ','.join(MailchimpReceiver.seg_map[seg] for seg in mail_segments)
+    self.seg_sum = ','.join(MailchimpReceiver.seg_map.get(seg, 'uk') for seg in mail_segments)
 
   def __str__(self):
     return self.email
@@ -85,6 +85,7 @@ def get_list_id():
     return list_id
 
 def mailchimp_receivers():
+    # https://developer.mailchimp.com/documentation/mailchimp/guides/how-to-use-the-export-api/
     # https://<dc>.api.mailchimp.com/export/1.0/list/
     '''
     Here's what the response looks like if it has 2 entries:
@@ -104,7 +105,7 @@ def mailchimp_receivers():
     for line in lines[1:]:
         line_data = json.loads(line)
         email, fname, lname, mail_lists = line_data[0:4]
-        objs.append(MailchimpReceiver(email, fname, lname, mail_lists.split(', ')))
+        objs.append(MailchimpReceiver(email, fname, lname, mail_lists.split(', ') if mail_lists else []))
 
     return objs
     '''

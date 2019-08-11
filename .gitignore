@@ -4,5 +4,6 @@ website/public_html/google*.html
 website/public_html/media/sermons/sermon*.mp3
 website/public_html/reports/fwd.txt
 website/public_html/media/photos/members/*
-scripts/secrets.*
+secrets/*
+-secrets/__init__.py
 *.pyc
