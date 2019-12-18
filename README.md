@@ -2,7 +2,7 @@
 
 This repository is for the website maintenance team for the Chalice UU Fellowship.
 
-The issues list here will be used to track issues both for the [member's site](https://members.cvuuf.org) and for the [public page](https://www.chaliceuu.org).
+The [issues list](https://github.com/CVUUFellowship/church/issues) here will be used to track issues both for the [member's site](https://members.cvuuf.org) and for the [public page](https://www.chaliceuu.org).
 
 # Getting Started
 
