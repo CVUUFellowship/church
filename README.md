@@ -8,7 +8,7 @@ The issues list here will be used to track issues both for the [member's site](h
 
 If you're going to be helping with website maintenance, you'll need to:
 
- 1. [create a github account](https://github.com › join), if you don't have one
+ 1. [create a github account](https://github.com/join), if you don't have one
  2. [open a new issue](https://github.com/CVUUFellowship/church/issues) requesting an invitation to the CVUUFellowship organization.
  3. [ask to join](https://groups.google.com/a/cvuuf.org/forum/#!forum/webcrafter) the webcrafter@chaliceuu.org group (if you're logged into a google account hopefully you have an "Apply to join" button there, else [check how to join](https://support.google.com/groups/answer/1067205?hl=en) and send an email to webcrafters if you can't find it).  
   Please include a link to the issue you created and your name, in case it's not obvious from your email.
