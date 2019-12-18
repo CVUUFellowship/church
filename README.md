@@ -1,10 +1,10 @@
-#Introduction
+# Introduction
 
 This repository is for the website maintenance team for the Chalice UU Fellowship.
 
 The issues list here will be used to track issues both for the [member's site](https://members.cvuuf.org) and for the [public page](https://www.chaliceuu.org).
 
-#Getting Started
+# Getting Started
 
 If you're going to be helping with website maintenance, you'll need to:
 
@@ -15,7 +15,7 @@ If you're going to be helping with website maintenance, you'll need to:
 
 Also, if you'll be logging into the hosting servers or checking in code, you'll need to [generate an SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and send your public key to webcrafter@chaliceuu.org (where someone will follow up with login instructions, and also add an account for you on the wordpress site).
 
-#Process
+# Process
 
 We meet weekly online.  Assuming you've joined the webcrafter's group, you should get a link to a google hangouts emailed to you shortly before the meeting begins.
 
