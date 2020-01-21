@@ -2,6 +2,7 @@
 import subprocess
 import itertools
 from cvuufdb_secrets import mysql_host, mysql_uname, mysql_pword, mysql_db
+from io import StringIO
 
 class CvuufMember(object):
     def __init__(self, email, fname, lname, status, hood_name, hood_group):
@@ -39,7 +40,7 @@ def cvuuf_members(email_list=None):
         p = subprocess.Popen(['mysql', '-h', mysql_host, '-u', mysql_uname, '-D', mysql_db, '-p' + mysql_pword, '-e', sql], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, outerr = p.communicate()
         if outerr:
-            print 'stderr from mysql: %s' % (outerr)
+            print('stderr from mysql: %s' % (outerr))
         expected_anomalies = set([
             'admin@cvuuf.org',
             'brian_pletcher@hotmail.com',
@@ -49,16 +50,18 @@ def cvuuf_members(email_list=None):
             'holland@alumni.caltech.edu',
             'sample@email.tst',
             ])
-        for line in out.rstrip('\n').split('\n')[1:]:
+        output=StringIO(out.decode("utf-8"))
+        #for line in out.rstrip('\n').split('\n')[1:]:
+        for line in output:
             try:
                 email, fname, lname, status, inactive, hoodname = [x.strip() for x in line.split('\t')]
                 if inactive == 'yes':
                     status = status + ' (inactive)'
-                member = CvuufMember(email, fname, lname, status, hoodname, hood_mails.get(hoodname, 'unassigned'))
+                member = CvuufMember(email, fname, lname, status, hoodname, hood_mails.get(hoodname))
                 if member.email not in expected_anomalies:
                     entries.append(member)
             except:
-                print 'failed split on \\t: "%s"' % (line.strip())
+                print('failed split on \\t: "%s"' % (line.strip()))
                 raise
     return entries
 
@@ -67,7 +70,7 @@ def filter_inactive(emails):
         'select people.Email, people.Inactive from people where people.email in (%s);' % (','.join(['"%s"' % e for e in emails]))], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, outerr = p.communicate()
     if outerr:
-        print 'stderr from mysql in filter_inactive: %s' % (outerr)
+        print('stderr from mysql in filter_inactive: %s' % (outerr))
     still_active = []
     for line in out.rstrip('\n').split('\n')[1:]:
         try:
@@ -76,7 +79,7 @@ def filter_inactive(emails):
                 email = email.lower()
                 still_active.append(email)
         except:
-            print 'filter_inactive failed split on \\t: "%s"' % (line.strip())
+            print('filter_inactive failed split on \\t: "%s"' % (line.strip()))
     return still_active
 
 if __name__=="__main__":
@@ -90,10 +93,10 @@ if __name__=="__main__":
         if mem.status not in status_count:
             status_count[mem.status] = 0
         status_count[mem.status] += 1
-    print 'Neighborhood counts:'
+    print('Neighborhood counts:')
     for k,v in hood_count.items():
-        print '  {0}: {1}'.format(v, k)
-    print 'Status counts:'
+        print('  {0}: {1}'.format(v, k))
+    print('Status counts:')
     for k,v in status_count.items():
-        print '  {0}: {1}'.format(v, k)
+        print('  {0}: {1}'.format(v, k))
 
