@@ -475,6 +475,10 @@ def breeze_diffs(in1, in2, outfname):
       print('Please check if a new neighborhood is appropriate for added or changed addresses, and if so update the group membership:', file=outf)
       for hood in FilterSet.hood_mails.values():
           print('- https://groups.google.com/a/cvuuf.org/g/%s' % hood, file=outf)
+      print('Mapping:', file=outf)
+      print('- https://docs.google.com/spreadsheets/d/1Ni2PHK84EAaWqjIWmwAP817n_cMmb9ZL/', file=outf)
+      print('4-digit zip code lookup:', file=outf)
+      print('- https://tools.usps.com/zip-code-lookup.htm?byaddress', file=outf)
 
   return len(updates)
 
