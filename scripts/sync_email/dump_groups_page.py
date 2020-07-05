@@ -61,7 +61,7 @@ def dump_groups(fname):
       if now - last_log > datetime.timedelta(seconds=2):
         print('%s: %s/%s done (on %s)' % (now, idx, ngroups, group.group_email))
         last_log = now
-      print('<b>{0}</b>:<br/>'.format(group.group_email), file=outf)
+      print('<b><a href="https://groups.google.com/a/cvuuf.org/g/{1}">{0}</a></b>:<br/>'.format(group.group_email, group.group_email.split('@')[0]), file=outf)
       for member in group.members:
         if member.email in db_members:
           mem = db_members[member.email]

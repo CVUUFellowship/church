@@ -20,7 +20,7 @@ import breezeapi_secrets
 verbose = False
 domain = breezeapi_secrets.domain()
 api_key = breezeapi_secrets.api_key()
-print domain
+print(domain)
 
 class FilterSet(object):
     def __init__(self, nbrhood, status):
@@ -96,6 +96,7 @@ def get_response_data(req):
         resp_data = resp.read()
         return resp_data
 
+debug_idx = 0
 def get_filter_sets():
     filter_sets = []
     #filt_str = 'filter_json=%7B%22tag_does_not_contain%22%3A+%22n_1760789-n_1621083%22%7D'
@@ -125,6 +126,9 @@ def get_filter_sets():
                 headers={'Content-type':'application/json','Api-key':api_key})
         resp_data = get_response_data(req)
         custom_top_fields = json.loads(resp_data)
+        global debug_idx
+        if debug_idx == 0: print(json.dumps(custom_top_fields, indent=4, sort_keys=True))
+        debug_idx += 1
         #print(json.dumps(custom_top_fields, indent=4, sort_keys=True))
         neighbor_ids = ['Unassigned']
         neighbor_names = ['Unassigned']
@@ -206,6 +210,8 @@ def breeze_people():
         resp = json.loads(resp_data)
         
         #print('%s: %s' % (filt_set, len(resp)))
+        print('%d, first: %s' % (len(resp), json.dumps(resp[0], indent=4) if resp else ''))
+        #if resp: print('%s' % json.dumps(resp[0].get('details', {}), indent=4))
         for person in resp:
             details1 = person.get('details', {})
             fname = details1.get('first_name')
@@ -251,7 +257,7 @@ def breeze_people():
                 best_group = g
                 best_dist = dist
 
-        if person.recommended_hood == 'unknown':
+        if person.recommended_hood == 'unknown' or person.recommended_hood == 'unassigned':
             person.recommended_hood = best_group
         person.distance_hood = best_group
 
@@ -260,10 +266,18 @@ def breeze_people():
 if __name__=="__main__":
     people = breeze_people()
     mismatch = {}
+    statuses = {}
+    missing_email = 0
     for person in people:
         print('%s,%s,%s,%s,%s,%s,%s' % (person.fname, person.lname, person.email, person.status, person.hood_group, person.hood_name, person.recommended_hood))
-        if person.recommended_hood != person.hood_name:
-            key = '->'.join([person.hood_name, person.recommended_hood])
+        if person.recommended_hood != person.hood_group:
+            key = '->'.join([person.hood_group, person.recommended_hood])
             mismatch[key] = mismatch.get(key, 0) + 1
+        statuses[person.status] = statuses.get(person.status, 0) + 1
+        if person.email.strip() == '':
+            missing_email += 1
     print('%s people, mismatched neighborhoods: %s' % (len(people), json.dumps(mismatch, indent=4)))
+    for status, count in statuses.items():
+        print('%s: %d' % (status, count))
+    print('missing emails: %d' % missing_email)
 
