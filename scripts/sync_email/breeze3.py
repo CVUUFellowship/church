@@ -33,18 +33,18 @@ debug_dir = None
 debug_req_idx = 0
 
 class FilterSet(object):
+    hood_mails = {
+        '10 Degrees Cooler':'tendegreescooler',
+        'Suddenly Seymour':'suddenlyseymour',
+        'Eastenders':'eastenders',
+        'Newbury Neighbors':'newburyneighbors',
+        'Wild West':'wildwest',
+        'Meadowood':'meadowood',
+        'Unassigned':'unassigned',
+    }
     def __init__(self, nbrhood, status):
-        hood_mails = {
-            '10 Degrees Cooler':'tendegreescooler',
-            'Suddenly Seymour':'suddenlyseymour',
-            'Eastenders':'eastenders',
-            'Newbury Neighbors':'newburyneighbors',
-            'Wild West':'wildwest',
-            'Meadowood':'meadowood',
-            'Unassigned':'unassigned',
-        }
         self.nbrhood = nbrhood
-        self.group = hood_mails.get(nbrhood, 'unknown')
+        self.group = FilterSet.hood_mails.get(nbrhood, 'unknown')
         self.status = status
 
     def __str__(self):
@@ -370,7 +370,7 @@ def dump_breeze_csv(outfile):
 
 def do_import(fname, tname, outf):
   lines = None
-  with open(fname) as f:
+  with open(fname, encoding='utf-8', errors='replace') as f:
     lines = f.readlines()
 
   # first line should be field names, and should include:
@@ -417,6 +417,7 @@ def breeze_diffs(in1, in2, outfname):
 
     print('%d updates:' % len(updates), file=outf)
     email_changed = False
+    address_changed = False
     for name in updates:
       if name in added:
         v = vnew[name]
@@ -441,6 +442,12 @@ def breeze_diffs(in1, in2, outfname):
       print('Please check and update changed emails in our groups and let them know you did.', file=outf)
       print('https://members.cvuuf.org/private/group', file=outf)
 
+    if address_changed or len(added):
+      print('', file=outf)
+      print('Please check if a new neighborhood is appropriate for added or changed addresses, and if so update the group membership:', file=outf)
+      for hood in FilterSet.hood_mails.values():
+          print('- https://groups.google.com/a/cvuuf.org/g/%s' % hood, file=outf)
+
   return len(updates)
 
 def send_notice(message):
@@ -454,7 +461,7 @@ def send_notice(message):
   header = '''Subject: Breeze Automated Scan (%s)
 
 '''  % datetime.datetime.now()
-  message = header + message
+  message = header + message.encode('ascii', errors='replace').decode('ascii')
 
   # Create a secure SSL context
   context = ssl.create_default_context()
