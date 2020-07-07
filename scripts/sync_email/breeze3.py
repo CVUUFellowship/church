@@ -381,7 +381,8 @@ def dump_breeze_csv(outfile):
             person.hood_group,
             '%s' % ('/'.join([v.strip() for v in [person.street, person.city, person.state, person.zipcode] if v])),
           ]
-          vals = [v.replace(',','_').strip() for v in vals]
+
+          vals = [v.replace(',','_').strip().encode('ascii', errors='replace').decode('ascii') for v in vals]
           print(','.join(vals), file=outf)
           statuses[person.status] = statuses.get(person.status, 0) + 1
           if person.email.strip() == '':

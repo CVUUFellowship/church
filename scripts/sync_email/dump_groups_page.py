@@ -13,7 +13,9 @@ import urllib
 import shutil
 import cgi
 
-suppress = set([
+suppress = set()
+
+neighborhoods = set([
     'eastenders@cvuuf.org',
     'meadowood@cvuuf.org',
     'newburyneighbors@cvuuf.org',
