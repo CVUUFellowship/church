@@ -446,10 +446,11 @@ def breeze_diffs(in1, in2, outfname):
     print('%d updates:' % len(updates), file=outf)
     email_changed = False
     address_changed = False
+    membership_changed = False
     for name in updates:
       if name in added:
         v = vnew[name]
-        print('added %s %s: %s,%s' % (v.first,v.last,v.email,v.address), file=outf)
+        print('added %s %s(%s): %s,%s' % (v.first,v.last,v.status,v.email,v.address), file=outf)
       elif name in removed:
         v = vold[name]
         print('removed %s %s: %s,%s' % (v.first,v.last,v.email,v.address), file=outf)
@@ -458,11 +459,15 @@ def breeze_diffs(in1, in2, outfname):
         nw = vnew[name]
         fields = [nw.first,nw.last]
         if od.email != nw.email:
-          print('changed email %s %s: from(%s) to(%s)' % (nw.first, nw.last, od.email, nw.email), file=outf)
+          print('changed email %s %s(%s): from(%s) to(%s)' % (nw.first, nw.last, nw.status, od.email, nw.email), file=outf)
           email_changed = True
         if od.address != nw.address:
-          print('changed address %s %s: from(%s) to(%s)' % (nw.first, nw.last, od.address, nw.address), file=outf)
+          print('changed address %s %s(%s): from(%s) to(%s)' % (nw.first, nw.last, nw.status, od.address, nw.address), file=outf)
           address_changed = True
+        if od.status != nw.status:
+          print('changed status %s %s: from(%s) to(%s)' % (nw.first, nw.last, od.status, nw.status), file=outf)
+          if od.status == 'Member' or nw.status == 'Member':
+            changed_status = True
       else:
         print('error: %s changed but not in added, removed, or changed list', file=outf)
 
@@ -480,6 +485,10 @@ def breeze_diffs(in1, in2, outfname):
       print('- https://docs.google.com/spreadsheets/d/1Ni2PHK84EAaWqjIWmwAP817n_cMmb9ZL/', file=outf)
       print('4-digit zip code lookup:', file=outf)
       print('- https://tools.usps.com/zip-code-lookup.htm?byaddress', file=outf)
+    if membership_changed:
+      print('if membership changed, please update announcement mailing lists:')
+      print('- https://groups.google.com/a/cvuuf.org/g/members', file=outf)
+      print('- https://groups.google.com/a/cvuuf.org/g/announcements', file=outf)
 
   return len(updates)
 
