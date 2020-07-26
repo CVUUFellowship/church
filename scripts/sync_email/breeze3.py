@@ -333,6 +333,7 @@ def dump_breeze_csv(outfile):
       pass
     debug_top = Path('debug')
     if debug_top.is_dir():
+        global debug_dir
         debug_path_idx = 5
         dead_dir = debug_top.joinpath('%d' % debug_path_idx)
         if dead_dir.exists():
@@ -410,13 +411,17 @@ def do_import(fname, tname, outf):
   ImportType = collections.namedtuple(tname, fields)
 
   by_name = {}
+  dups = {}
   for line in lines[1:]:
     vals = ImportType(*line.strip().split(','))
     name = (vals.last, vals.first)
     if name in by_name:
-      print('skipping line in %s: %s duplicated' % (fname, name), file=outf)
+      dups[name] = dups.get(name, 0) + 1
     by_name[name] = vals
 
+  if dups:
+    name_list = ','.join([n if c==1 else ('%s (%d times)' % (n,c)) for n,c in dups.items()])
+    print('warning: duplicate names (some entries skipped): %s' % name_list, file=outf)
   return by_name
 
 
