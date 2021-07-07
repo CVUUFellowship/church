@@ -420,8 +420,8 @@ def do_import(fname, tname, outf):
     by_name[name] = vals
 
   if dups:
-    name_list = ','.join([n if c==1 else ('%s (%d times)' % (n,c)) for n,c in dups.items()])
-    print('warning: duplicate names (some entries skipped): %s' % name_list, file=outf)
+    name_list = '\n'.join([f'{n}' if c==1 else f'{n} ({c} times)' for n,c in dups.items()])
+    print('warning: duplicate names (some entries skipped):\n%s' % name_list, file=outf)
   return by_name
 
 
@@ -467,10 +467,10 @@ def breeze_diffs(in1, in2, outfname):
           print('changed email %s %s(%s): from(%s) to(%s)' % (nw.first, nw.last, nw.status, od.email, nw.email), file=outf)
           email_changed = True
         if od.address != nw.address:
-          print('changed address %s %s(%s): from(%s) to(%s)' % (nw.first, nw.last, nw.status, od.address, nw.address), file=outf)
+          print('changed address %s %s(%s,%s): from(%s) to(%s)' % (nw.first, nw.last, nw.status, nw.email, od.address, nw.address), file=outf)
           address_changed = True
         if od.status != nw.status:
-          print('changed status %s %s: from(%s) to(%s)' % (nw.first, nw.last, od.status, nw.status), file=outf)
+          print('changed status %s %s: from(%s) to(%s) (%s)' % (nw.first, nw.last, od.status, nw.status, nw.email), file=outf)
           if od.status == 'Member' or nw.status == 'Member':
             changed_status = True
       else:
@@ -478,7 +478,7 @@ def breeze_diffs(in1, in2, outfname):
 
     if email_changed:
       print('', file=outf)
-      print('Please check and update changed emails in our groups and let them know you did.', file=outf)
+      print('Please check and update changed emails in our groups and let them know you did.  Here is a page that lists all our groups and their members (check the date, you may want to click the rebuild button):', file=outf)
       print('https://members.cvuuf.org/private/group', file=outf)
 
     if address_changed or len(added):
